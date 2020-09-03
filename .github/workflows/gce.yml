@@ -15,9 +15,10 @@
 name: Build and Deploy to Google Compute Engine
 
 on:
-  push:
-    branches:
-    - master
+  workflow_run:    
+    workflows : ["Java CI with Gradle"]
+    types: 
+      - completed
 
 env:
   PROJECT_ID: ${{ secrets.GCE_PROJECT }}
