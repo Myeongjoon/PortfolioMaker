@@ -6,6 +6,9 @@
     <title>Title</title>
     <td th:text="${hello}">0</td>
     <a href="/sync">동기화</a>
+    <div th:each="main : ${mains}" >
+        <span th:text="${main.value}"></span>
+    </div>
 </head>
 <body>
 

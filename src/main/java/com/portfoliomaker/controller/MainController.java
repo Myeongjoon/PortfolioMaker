@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "/")
 public class MainController {
@@ -18,14 +20,18 @@ public class MainController {
     @GetMapping()
     public String main(Model model) {
         model.addAttribute("hello", "hello");
-        model.addAttribute("main", mainService.findAll());
+        List<Main> list = mainService.findAll();
+        model.addAttribute("mains", list);
         return "main/main";
     }
 
     @GetMapping("sync")
     public String sync() {
         mainService.deleteAll();
-        mainService.save(new Main());
+        Main main = new Main();
+        main.id = "123";
+        main.value = "1";
+        mainService.save(main);
         return "main/main";
     }
 }
