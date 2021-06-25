@@ -32,6 +32,6 @@ public class MainController {
         main.id = "123";
         main.value = "1";
         mainService.save(main);
-        return "main/main";
+        return "redirect:";
     }
 }
