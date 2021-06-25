@@ -14,4 +14,9 @@ public class MainController {
         model.addAttribute("hello", "hello");
         return "main/main";
     }
+
+    @GetMapping("sync")
+    public String sync() {
+        return "main/main";
+    }
 }
