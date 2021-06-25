@@ -6,7 +6,8 @@
             <pattern>[%d{HH:mm:ss:SSS}] - [%t] [%p] - %logger{36} - %m%n</pattern>
         </encoder>
     </appender>
-	<logger name="org.hibernate.engine.jdbc.spi.SqlExceptionHelper" level="OFF"/>	
+    <logger name="org.springframework.web" level="debug"/>
+    <logger name="org.hibernate.engine.jdbc.spi.SqlExceptionHelper" level="OFF"/>
     <appender name="RollingFileTrace" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
         <file>${LOG_HOME}/trace.log</file>
