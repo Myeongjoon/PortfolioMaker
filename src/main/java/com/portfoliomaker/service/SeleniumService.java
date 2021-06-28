@@ -13,12 +13,12 @@ import java.util.Locale;
 public class SeleniumService {
     Logger logger = LoggerFactory.getLogger(SeleniumService.class);
     public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-    public static final String WEB_DRIVER_PATH = "./src/main/resources/driver/91/chromedriver";
+    public static final String WEB_DRIVER_PATH_WINDOW = "src/main/resources/driver/91/window/chromedriver.exe";
 
     public void setDriver() {
         switch (System.getProperty("os.name").toLowerCase(Locale.ROOT)) {
             case "windows 10":
-                System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
+                System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH_WINDOW);
                 break;
             default:
                 logger.info("unsupported type : " + System.getProperty("os.name"));
