@@ -28,6 +28,11 @@ public class MainController {
         return "main/main";
     }
 
+    @GetMapping("/index.html")
+    public String index(Model model) {
+        return "main/main";
+    }
+
     @GetMapping("sync")
     public String sync() {
         mainService.deleteAll();
