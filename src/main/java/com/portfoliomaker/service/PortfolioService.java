@@ -15,4 +15,8 @@ public class PortfolioService {
     public List<Portfolio> findAll() {
         return portfolioRepository.findAll();
     }
+
+    public void save(Portfolio portfolio) {
+        portfolioRepository.save(portfolio);
+    }
 }

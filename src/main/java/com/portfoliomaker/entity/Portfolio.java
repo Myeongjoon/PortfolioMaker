@@ -18,4 +18,13 @@ public class Portfolio {
      * 포트폴리오 가격
      */
     public double price;
+
+    public Portfolio() {
+
+    }
+
+    public Portfolio(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
 }
