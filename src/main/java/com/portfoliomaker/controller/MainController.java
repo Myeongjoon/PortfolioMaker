@@ -25,8 +25,6 @@ public class MainController {
 
     @GetMapping()
     public String main(Model model) {
-        model.addAttribute("hello", "hello");
-        model.addAttribute("mains", mainService.findAll());
         model.addAttribute("portfolios", portfolioService.findAll());
         return "main/main";
     }
@@ -38,11 +36,6 @@ public class MainController {
 
     @GetMapping("sync")
     public String sync() {
-        mainService.deleteAll();
-        Main main = new Main();
-        main.id = "123";
-        main.value = "1";
-        mainService.save(main);
         seleniumService.doProcess();
         return "redirect:";
     }

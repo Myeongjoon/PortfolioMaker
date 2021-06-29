@@ -7,7 +7,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script th:src="@{/js/main.js}"></script>
     <title>Title</title>
-    <td th:text="${hello}">0</td>
     <a href="/sync">동기화</a>
     <div th:each="main : ${mains}">
         <span th:text="${main.value}"></span>
