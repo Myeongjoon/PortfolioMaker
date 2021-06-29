@@ -23,13 +23,12 @@
         <div id="piechart" style="width: 900px; height: 500px;"></div>
 
 
-        <form action="/portfolio" method="post">
             이름
-            <input type="text" name="name">
+            <input type="text" name="name" id="name">
             가격
-            <input type="text" name="price">
-            <button type="submit">포트폴리오 추가/수정</button>
-        </form>
+            <input type="text" name="price" id="price">
+            <button type="submit" onclick="uploadPortfolio()">포트폴리오 추가/수정</button>
+
     </main>
 </body>
 

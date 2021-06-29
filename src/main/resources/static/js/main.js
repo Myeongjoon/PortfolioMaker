@@ -28,3 +28,19 @@ function drawChart() {
     }
   });
 }
+
+function uploadPortfolio(){
+  $.ajax({
+    url: '/portfolio',
+    method: 'post',
+    context: this,
+    data:{
+        name:$('#name').val(),
+        price:$('#price').val()
+    },
+
+    success: function (data, status, xhr) {
+        location.reload()
+    }
+  });
+}
