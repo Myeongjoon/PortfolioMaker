@@ -2,6 +2,7 @@ package com.portfoliomaker.controller;
 
 import com.portfoliomaker.entity.Main;
 import com.portfoliomaker.service.MainService;
+import com.portfoliomaker.service.PortfolioService;
 import com.portfoliomaker.service.SeleniumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,12 +20,14 @@ public class MainController {
     MainService mainService;
     @Autowired
     SeleniumService seleniumService;
+    @Autowired
+    PortfolioService portfolioService;
 
     @GetMapping()
     public String main(Model model) {
         model.addAttribute("hello", "hello");
-        List<Main> list = mainService.findAll();
-        model.addAttribute("mains", list);
+        model.addAttribute("mains", mainService.findAll());
+        model.addAttribute("portfolios", portfolioService.findAll());
         return "main/main";
     }
 
