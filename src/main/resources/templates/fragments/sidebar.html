@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<title th:fragment="title">T-CRALWER</title>
+</head>
+
+<body>
+
+	<nav class="sidenav" th:fragment="sidebar(activeItem)">
+		<ul>
+			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'MAIN' ? 'active'"
+					th:href="@{/}">MAIN</a></li>
+		</ul>
+		<br>
+	</nav>
+</body>
+
+</html>
