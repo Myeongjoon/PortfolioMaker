@@ -28,4 +28,9 @@ public class PortfolioController {
         portfolioService.save(new Portfolio(name, price));
         return "redirect:";
     }
+
+    @GetMapping("/detail")
+    public String detail() {
+        return "portfolio/detail";
+    }
 }
