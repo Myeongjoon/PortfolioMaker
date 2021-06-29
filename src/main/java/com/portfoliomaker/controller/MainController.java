@@ -1,7 +1,5 @@
 package com.portfoliomaker.controller;
 
-import com.portfoliomaker.entity.Main;
-import com.portfoliomaker.service.MainService;
 import com.portfoliomaker.service.PortfolioService;
 import com.portfoliomaker.service.SeleniumService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-
 @Controller
 @RequestMapping(value = "/")
 public class MainController {
-
-    @Autowired
-    MainService mainService;
     @Autowired
     SeleniumService seleniumService;
     @Autowired

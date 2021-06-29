@@ -17,13 +17,13 @@ public class Portfolio {
     /**
      * 포트폴리오 가격
      */
-    public double price;
+    public long price;
 
     public Portfolio() {
 
     }
 
-    public Portfolio(String name, double price) {
+    public Portfolio(String name, long price) {
         this.name = name;
         this.price = price;
     }
