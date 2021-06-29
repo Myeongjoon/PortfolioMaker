@@ -8,14 +8,15 @@ function drawChart() {
     method: 'get',
     context: this,
     success: function (data, status, xhr) {
-      var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ['Work', 11],
-        ['Eat', 2],
-        ['Commute', 2],
-        ['Watch TV', 2],
-        ['Sleep', 7]
-      ]);
+        array = [];
+        array.push(['type','price'])
+        for (const element of data) {
+          temp = []
+          temp.push(element.name)
+          temp.push(element.price)
+          array.push(temp)
+        }
+      var data = google.visualization.arrayToDataTable(array);
 
       var options = {
         title: 'My Daily Activities'
