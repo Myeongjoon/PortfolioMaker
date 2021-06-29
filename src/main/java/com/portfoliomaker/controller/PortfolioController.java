@@ -30,14 +30,7 @@ public class PortfolioController {
 
     @GetMapping("/detail")
     public String detail(Model model) {
-        List<Portfolio> list = portfolioService.findAll();
-        long sum = 0;
-        for (Portfolio p : list) {
-            sum += p.price;
-        }
-        Portfolio sum_port = new Portfolio("합계", sum);
-        list.add(sum_port);
-        model.addAttribute("details", list);
+        model.addAttribute("details", portfolioService.getDetail());
         return "portfolio/detail";
     }
 
