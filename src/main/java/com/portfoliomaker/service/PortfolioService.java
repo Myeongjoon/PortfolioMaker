@@ -19,4 +19,8 @@ public class PortfolioService {
     public void save(Portfolio portfolio) {
         portfolioRepository.save(portfolio);
     }
+
+    public void deleteById(String id){
+        portfolioRepository.deleteById(id);
+    }
 }

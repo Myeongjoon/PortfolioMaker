@@ -4,10 +4,8 @@ import com.portfoliomaker.entity.Portfolio;
 import com.portfoliomaker.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,7 +28,14 @@ public class PortfolioController {
     }
 
     @GetMapping("/detail")
-    public String detail() {
+    public String detail(Model model) {
+        model.addAttribute("details", portfolioService.findAll());
         return "portfolio/detail";
+    }
+
+    @DeleteMapping()
+    @ResponseBody
+    public void delete(String id) {
+        portfolioService.deleteById(id);
     }
 }
