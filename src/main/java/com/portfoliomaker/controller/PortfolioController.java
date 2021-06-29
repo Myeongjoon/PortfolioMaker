@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -29,7 +30,14 @@ public class PortfolioController {
 
     @GetMapping("/detail")
     public String detail(Model model) {
-        model.addAttribute("details", portfolioService.findAll());
+        List<Portfolio> list = portfolioService.findAll();
+        long sum = 0;
+        for (Portfolio p : list) {
+            sum += p.price;
+        }
+        Portfolio sum_port = new Portfolio("합계", sum);
+        list.add(sum_port);
+        model.addAttribute("details", list);
         return "portfolio/detail";
     }
 
