@@ -19,7 +19,7 @@ function drawChart() {
       var data = google.visualization.arrayToDataTable(array);
 
       var options = {
-        title: 'My Daily Activities'
+        title: '나의 포트폴리오'
       };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
