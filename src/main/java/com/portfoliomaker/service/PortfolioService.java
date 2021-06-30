@@ -2,6 +2,7 @@ package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.PortfolioDTO;
 import com.portfoliomaker.entity.Portfolio;
+import com.portfoliomaker.repository.PortfolioDetailRepository;
 import com.portfoliomaker.repository.PortfolioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,8 @@ import java.util.List;
 public class PortfolioService {
     @Autowired
     PortfolioRepository portfolioRepository;
+    @Autowired
+    PortfolioDetailRepository portfolioDetailRepository;
 
     public List<PortfolioDTO> getDetail() {
         List<Portfolio> data = portfolioRepository.findAll();

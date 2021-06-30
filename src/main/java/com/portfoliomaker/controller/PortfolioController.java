@@ -28,10 +28,10 @@ public class PortfolioController {
         return "redirect:";
     }
 
-    @GetMapping("/detail")
-    public String detail(Model model) {
+    @GetMapping("/portfolio")
+    public String portfolio(Model model) {
         model.addAttribute("details", portfolioService.getDetail());
-        return "portfolio/detail";
+        return "portfolio/portfolio";
     }
 
     @DeleteMapping()
