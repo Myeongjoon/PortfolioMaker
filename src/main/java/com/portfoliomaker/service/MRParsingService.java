@@ -12,6 +12,14 @@ import java.util.ArrayList;
 
 @Service
 public class MRParsingService {
+    public long parseFundSummary(Document document) {
+        Elements fundTable = document.select("#fundTable");
+        Element target = fundTable.select("td").get(1);
+        String txt = target.text();
+        String split = txt.split(" ")[0];
+        return StringUtil.parseMoney(split);
+    }
+
     public ArrayList<StockPortfolio> parse(Document document) {
         ArrayList<StockPortfolio> response = new ArrayList<>();
         Elements codes = document.select("#stockTable2").select("tbody").select("tr");

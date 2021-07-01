@@ -4,7 +4,9 @@ import com.portfoliomaker.entity.stock.StockPortfolio;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface StockPortfolioRepository extends JpaRepository<StockPortfolio, String> {
-    void deleteByType(String type);
+    List<StockPortfolio> findByType(String type);
 }

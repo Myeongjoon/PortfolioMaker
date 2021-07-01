@@ -28,4 +28,11 @@ public class MRParsingServiceTest {
         assertEquals(response.get(0).buyPriceSum, 1477500);
         assertEquals(response.get(0).currentPriceSum, 1474000);
     }
+
+    @Test
+    public void fundTableTest() {
+        String source = TestUtil.getHtmlByString("fundTable.html");
+        Document document = Jsoup.parse(source);
+        assertEquals(mrParsingService.parseFundSummary(document), 3870089);
+    }
 }

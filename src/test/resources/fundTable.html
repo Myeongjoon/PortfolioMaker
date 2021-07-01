@@ -1,0 +1,2493 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" class="stylish-select">
+<head>
+	<title>�ݵ� | ��ǰ���ڻ� | MY�ڻ� | �̷���������</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="cache-control" content="no-store">
+	<link rel="shortcut icon" href="https://img.securities.miraeasset.com/new2016/layout/favicon.ico">
+	<script type="text/javascript">
+	
+	
+	//Mobile web mapping url and replcae url array
+	var urlArray = [
+	                "/hku/hku3005/u01.do",         
+	                "/hku/hku2001/c07.do",         
+	                "/hku/hku2001/t01.do",         
+	                "/bbs/board/message/list.do?categoryId=1296",  
+	                "/hkd/hkd1001/r01.do",        
+	                "/hkp/hkp1002/r01.do",		 
+	                "/hkp/hkp2001/r01.do",		 
+	                "/hkd/hkd1005/r01.do",		 
+	                "/hks/hks4116/r01.do",		 
+	                "/hks/hks4023/n01_1.do",	 
+	                "/hks/hks4022/n02_2.do",	 
+	                "/hks/hks4048/r05.do",		 
+	                "/hks/hks4113/n02.do",		 
+	                "/hks/hks4036/r01.do",		 
+	                "/hks/hks4054/v03.do",		 
+	                "/hks/hks4033/n01.do",		 
+	                "/hks/hks4033/n02.do",		 
+	                "/hks/hks4318/n01.do",		 
+	                "/hks/hks4323/n05.do",		 
+	                "/hks/hks4041/n01.do",		 
+	                "/hks/hks4125/n11.do",		 
+	                "/hkp/hkp1003/r01.do",		   
+	                "/hkp/hkp1004/n01.do",		   
+	                "/hkp/hkp1004/n05.do",		   
+	                "/hkp/hkp1004/n06.do",		   
+	                "/hkp/hkp2002/r01.do",		   
+	                "/hkp/hkp2007/n01.do",		   
+	                "/hkp/hkp2009/c01.do",		   
+	                "/hks/hks4000/n02_1.do",	   
+	                "/hks/hks4000/n06.do",		   
+	                "/hks/hks4318/n11.do",		   
+	                "/hku/hku4196/n01.do",		 
+	                "/hku/hku3014/u01.do",		 
+	                "/hku/hku4010/r01.do",		 
+	                "/hku/hku4013/r02.do",		 
+	                "/hki/hki7000/r05.do",		 
+                    "/hki/hki3096/r01.do"		 
+	                ];
+	var urlArrayMobile = [
+	                      "/mw/mku/mku3014/u01.do",          
+	                      "/mw/mku/mku2001/n01.do",          
+	                      "/mw/mku/mku2001/n01.do",          
+	                      "/mw/mki/mki3001/r01.do",          
+	                      "/mw/mkd/mkd1001/r01.do",          
+	                      "/mw/mkd/mkd1001/r03.do",			  
+	                      "/mw/mkd/mkd1001/r03.do",			  
+	                      "/mw/mkd/mkd1001/r04.do",			  
+	                      "/mw/mks/mks4116/r01.do",			  
+	                      "/mw/mks/mks4022/r01.do",			  
+	                      "/mw/mks/mks4022/r02.do",			  
+	                      "/mw/mks/mks4048/r06.do",			  
+	                      "/mw/mks/mks4113/n02.do",			  
+	                      "/mw/mks/mks4036/n01.do",			  
+	                      "/mw/mks/mks4036/r02.do",			  
+	                      "/mw/mks/mks4033/n01.do",			  
+	                      "/mw/mks/mks4033/n02.do",			  
+	                      "/mw/mks/mks4318/n04.do",			  
+	                      "/mw/mks/mks4323/n05.do",			  
+	                      "/mw/mks/mks4041/n01.do",			  
+	                      "/mw/mks/mks4041/n02.do",			  
+	                      "/mw/mkp/mkp1003/r01.do",			  
+	                      "/mw/mkp/mkp1004/n01.do",			  
+	                      "/mw/mkp/mkp1004/n02.do",			  
+	                      "/mw/mkp/mkp1004/n03.do",			  
+	                      "/mw/mkp/mkp2002/r01.do",			  
+	                      "/mw/mkp/mkp2007/n01.do",			  
+	                      "/mw/mkp/mkp2009/c02.do",			  
+	                      "/mw/mks/mks4000/r01.do",			  
+	                      "/mw/mkr/mkr1001/r02.do",			  
+	                      "/mw/mks/mks4318/n11.do",			  
+	                      "/mw/mku/mku4196/n01.do",			  
+	                      "/mw/mku/mku3014/u01.do",			  
+	                      "/mw/mku/mku4010/r01.do",			  
+	                      "/mw/mku/mku4013/r02.do",			  
+	                      "/mw/mki/mki7000/r01.do",			  
+	                      "/mw/mki/mki3096/r01.do"			  
+	                      ];				  
+	var hkiUrlArray = [
+					"/hki/hki3060",
+					"/hki/hki3061",
+					"/hki/hki3075",
+					"/hki/hki3096",
+					"/hki/hki3080",
+					"/hki/hki3091"
+	               ];
+	var imfUrlArray = [
+							"/imf/100/imf101.do",
+							"/imf/200/imf101.do",
+							"/imf/400/imf201.do",
+							"/imf/500/imf101.do",
+							"/imf/600/imf401.do",
+							"/imf/700/imf101.do"
+	                      ];
+	
+	var hkiUrlArrayNotRedirect = [
+							"/hki/hki3096/r01.do"
+	                              ];
+	
+	
+	
+	var mobilecheck=function(){var check = false;(function(a,b){if(/(android|bb\d+|meego).+mobile|android|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od|ad)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);return check;}
+	var login_back_url = "";
+	var url = location.pathname;
+	if(url.indexOf("login.do")>-1 && typeof(login_back_url) != 'undefined' && login_back_url != null && login_back_url != "null" && String(login_back_url) != ""  && login_back_url.length != 0){
+		url = login_back_url;
+	}
+	if(url != null && url != "null" && url != "" && typeof(url) != 'undefined' && urlArray.length == urlArrayMobile.length){
+		for(var i=0; i<urlArray.length; i++){
+			if(url.indexOf(urlArray[i])>-1){
+				if(mobilecheck()) {
+					//alert(i+":"+urlArray[i]+":"+urlArrayMobile[i]+":"+url+":"+login_back_url);
+					location.replace(urlArrayMobile[i]);
+				}
+			}
+		}
+	}
+	
+	if(url != null && url != "null" && url != "" && typeof(url) != 'undefined' && hkiUrlArray.length == imfUrlArray.length){
+		for(var i=0; i<hkiUrlArray.length; i++){
+			//not redirct, hki/hki3096/r01.do)
+			if(url.indexOf(hkiUrlArrayNotRedirect)==-1 && url.indexOf(hkiUrlArray[i])>-1){
+					//alert(i+":"+urlArray[i]+":"+urlArrayMobile[i]+":"+url+":"+login_back_url);
+					location.replace(imfUrlArray[i]);
+			}
+		}
+	}
+	
+	</script>
+	<!-- ���� CSS / JS -->
+	<link rel="stylesheet" type="text/css" href="/advancement/html/com/css/cm.myasset.css">
+	<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/advancement/html/com/js/cm.jQuery.design.js"></script>
+	<script type="text/javascript" src="/js/jquery-migrate-1.2.1.js" charset="euc-kr"></script>
+	<script type="text/javascript" src="/js/datepicker-web-access_new.js" charset="euc-kr"></script>
+	<script type="text/javascript" src="/advancement/html/com/js/cm.jQuery.browser.check.js" charset="euc-kr"></script>
+	<script type="text/javascript" src="/advancement/html/com/js/jquery.easing.1.3.js" charset="euc-kr"></script>
+	<script type="text/javascript" src="/advancement/html/com/js/cm.jQuery.ui.js" charset="euc-kr"></script>
+	<script type="text/javascript" src="/advancement/html/com/js/commonUtil.js"></script>
+	<script src="/advancement/html/com/js/ajax.js" type="text/javascript"></script>
+	<script src="/advancement/resource/js/loading.js" type="text/javascript"></script>
+	<script src="/advancement/resource/js/popup.js" type="text/javascript"></script>
+	<script src="/advancement/resource/js/coordinate.js" type="text/javascript"></script>
+	<script src="/js/bestez.menu.ui.js?d=127 type=" text="" javascript"=""></script>
+	<script src="/site_variable.jsp?d=142" type="text/javascript" charset="euc-kr"></script>
+	<script type="text/javascript" src="/js/bestez.menu.js"></script>
+	<script type="text/javascript" src="/js/bestez.menu.data.js"></script>
+	<script type="text/javascript" src="/js/bestez.banner.data.js"></script>
+	<script type="text/javascript" src="/js/bestez.specialmenu.data.js"></script>
+	<script type="text/javascript" src="/js/bestez.guide.data.js"></script>
+	<script type="text/javascript" src="/advancement/html/com/js/cm.jQuery.browser.check.js"></script>
+	<script src="/js/bestez.menu.ui.new.js?d=127 type=" text="" javascript"=""></script>
+	<script src="/js/jquery.jmpopups.js" type="text/javascript"></script>
+	<script src="/js/bestez.form.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/js/jquery.stylish-select.js"></script>
+	<script type="text/javascript" src="/advancement/html/com/js/jquery.selectbox.js"></script>
+	<script type="text/javascript" src="/advancement/resource/js/fundCommon.js"></script>
+	<script type="text/javascript">
+			//���뺯������
+			var common = {
+				listData					: [],
+				isFirst					: true,	//������ȸ����
+				next_acno				: "",		//�������¹�ȣ
+				next_itm_no			: "",		//���������ȣ
+				next_fd_bal_srno	: "",		//�����ݵ��ܰ��Ϸù�ȣ
+				reset						: function (){	//�ʱ�ȭ
+					this.listData = [];
+					this.isFirst = true;
+					this.next_acno = "";
+					this.next_itm_no = "";
+					this.next_fd_bal_srno = "";
+				}
+			};
+
+			$(document).ready(function(){
+				
+				hkd1003a01();
+				hkd1003a02(true);
+				$('#fundTable2 thead tr th:nth-child(2)').css('border-left', 'none');
+				
+				
+				
+				
+				//���¹�ȣ���� ��ư Ŭ���� ���¹�ȣ hidden �Ӽ� ���̱�/�����
+				$('#showAccount').on('click', function(){
+					var status = $(this).hasClass('on');
+					
+					$(this).text((status) ? '���¹�ȣ����':'���¹�ȣ�ݱ�').toggleClass('on');
+					
+					var hiddens = $('#fundTable2')
+					.find('colgroup col:nth-child(1), thead tr th:nth-child(1), tbody tr td:nth-child(1)');
+					
+					$(hiddens).each(function(i){
+						var display = (status && !$(this).hasClass('no_data')) ? 'none':'';
+						$(this).css('display', display);
+						$('#fundTable2 thead tr th:nth-child(2)').css('border-left', display);
+					});
+					
+					// ���¹�ȣ����/�ݱ⿡ ���� ���� ���߱�
+					var lineL = $('#fundTable2')
+					.find('thead tr th:nth-child(2), tbody tr td:nth-child(2)');
+					
+					$(lineL).each(function(i){
+						var displaylineL = (status && !$(this).hasClass('no_data')) ? 'none':'';
+						$(this).css('border-left', displaylineL);
+						$('#fundTable2 tbody tr td:nth-child(2)').css('border-left', displaylineL);
+					});
+					
+				});
+				
+				//��ȭȯ��ǥ��
+				$('#exchangeWon').on('click', function(){
+					var status = $(this).hasClass('on');
+					$(this).toggleClass('on');
+					
+					$('.frc').each(function(){
+						var cur = $(this).data('krw');
+						if(status){
+							cur = ($(this).data('stat') == 'krw') ? cur : $(this).data('frc');
+						}
+						$(this).html(cur);
+					});
+				});
+			});
+			
+			
+			function hkd1003a01(){
+				callAjaxObj({
+					url 	: "/hkd/hkd1003/a01.json",	//ȣ��������
+					data	: {},									//�Ķ����
+					success	: hkd1003a01Complete	//�ݹ��Լ�
+				});
+			}
+
+			function hkd1003a01Complete(data){
+				if(data.result == 'error' || data.returnCode != '0'){
+					$("#fundTable tbody").html("<tr><td class='no_data' colspan='4'><span>"+data.message+"</span></td></tr>");
+					showMsg(data.message);
+					return;
+				}
+				var str = "";
+				if(typeof(data.grid01) != "undefined" && data.grid01.length > 0){
+					for(var i=0; i<data.grid01.length; i++){
+						var	obj = data.grid01[i];
+						var	scrn_qry_pdgrp_nm	= obj.scrn_qry_pdgrp_nm;															//ȭ����ȸ��ǰ����
+						var	pchs_a						= numberFormat(obj.pchs_a, "###,###");									//���Աݾ�
+						var	ea								= numberFormat(obj.ea, "###,###");										//�򰡱ݾ�
+						var	ev_pl_a						= updownTagMPM(numberFormat(obj.ev_pl_a, "###,###"),"��");	//�򰡼��ͱݾ�
+						var	ev_pl_r						= updownTagMPM(numberFormat(obj.ev_pl_r, "##.##"),"%");		//�򰡼�����
+						
+						if(scrn_qry_pdgrp_nm == '�ݵ�'){
+							str += "<tr>";
+							str += "<td class='r'>"+pchs_a+" ��</td>";	//���Աݾ�
+							str += "<td class='r'>"+ea+" ��</td>";		//�򰡱ݾ�
+							str += "<td class='r'>"+ev_pl_a+"</td>";	//�򰡼���
+							str += "<td class='c'>"+ev_pl_r+"</td>";	//���ͷ�
+							str += "</tr>";
+						}
+					}
+				}
+				
+				if(str == ""){
+					str += "<tr><td class='no_data' colspan='4'><span>��ȸ�� ������ �����ϴ�.</span></td></tr>";
+				}
+				$("#fundTable tbody").html(str);
+			}
+
+			
+			function hkd1003a02(isFirst){
+				common.isFirst = isFirst;
+				if(isFirst){
+					common.reset();
+				}
+				
+				var params = {
+					inpt_tp_vl				: "2",										//�Է±���(1. ���¹�ȣ 2. htsId)
+					ac_pcd					: "00",									//��������
+					qry_tcd					: "1",										//��ȸ����
+					next_acno				: common.next_acno,				//�������¹�ȣ
+					next_itm_no			: common.next_itm_no,			//���������ȣ
+					next_fd_bal_srno	: common.next_fd_bal_srno	//�����ݵ��ܰ��Ϸù�ȣ
+				};
+				callAjaxObj({
+					url 	: "/hkd/hkd1003/a02.json",	//ȣ��������
+					data	: params,							//�Ķ����
+					success	: hkd1003a02Complete	//�ݹ��Լ�
+				});
+			}
+
+			function hkd1003a02Complete(data){
+				//if(data.result == 'error' || data.returnCode != '0'){ 
+				if(data.result == 'error'){	
+					$("#fundTable2 tbody").html("<tr><td class='no_data' colspan='9'><span>"+data.message+"</span></td></tr>");
+					showMsg(data.message);
+					return;
+				}
+
+				var str = "";
+				var frc_cnt = 0;
+				
+				if(typeof(data.grid01) != "undefined" && data.grid01.length > 0){
+					for(var i=0; i<data.grid01.length; i++){
+						var obj =	data.grid01[i];
+						common.listData.push(obj);
+						var	acno					=	obj.acno;
+						var	itm_no				=	obj.itm_no;
+						var	itm_nm				=	obj.itm_nm;
+						var	curr_cd				=	obj.curr_cd;		//��ȭ�ڵ�
+						var	fd_tday_bas_pr	=	numberFormatWN(obj.fd_tday_bas_pr, "###,###.###");	//���ذ�
+						var	won_buy_pca		=	numberFormatWN(obj.won_buy_pca);	//���Աݾ� (��ȭ)
+						var	won_txbf_ea		=	numberFormatWN(obj.won_txbf_ea);	//�򰡱ݾ� (��ȭ)
+						var	won_txbf_ev_pl	=	updownTagMP(numberFormatWN(obj.won_txbf_ev_pl));//�򰡼���(��ȭ)
+						var	frc_buy_pca		=	numberFormatWN(obj.frc_buy_pca);	//���Աݾ� (��ȭ)
+						var	frc_txbf_ea		=	numberFormatWN(obj.frc_txbf_ea, "###,###.##");		//�򰡱ݾ� (��ȭ)
+						var	frc_txbf_ev_pl	=	updownTagMP(numberFormatWN(obj.frc_txbf_ev_pl, "###,###.##"));	//�򰡼��� (��ȭ)
+						var	txbf_ern_r			=	updownTagMPM(numberFormatWN(obj.txbf_ern_r, "###,###.##"),"%");	//���ͷ�
+						var	fd_bal_srno		=	obj.fd_bal_srno;	//�ݵ��ܰ��Ϸù�ȣ
+						
+						var stat = (curr_cd == 'KRW') ? 'krw':'frc';
+						if(stat != 'krw'){frc_cnt++;}
+						var isWon = $('#exchangeWon').hasClass('on');
+						isWon = (isWon || stat == 'krw') ? true:false;	//��ȭȯ��ǥ�� Ŭ������ �̰ų�, ���� ��ȭ�� ��� ��ȭǥ��
+						
+						str += "<tr>";
+						str += "<td class='c' style='display:"+(($('#showAccount').hasClass('on')) ? '':'none')+"'>"+converAccountNo(acno)+"</td>";	//���¹�ȣ
+						str += "<td class='l'><a href=\"javascript:fund_DetailView(\'" + itm_no +"\')\" title=\"��â����\"><em>"+itm_nm+"</em></a></td>";
+						str += '<td class="'+stat+'" data-krw="KRW" data-frc="'+curr_cd+'">'+((isWon) ? 'KRW':curr_cd)+'</td>';	//��ȭ�ڵ�
+						str += "<td class=''>"+fd_tday_bas_pr+"</td>";	//���ذ�
+						str += "<td class='r'>";	//���Աݾ�
+							str += '<span class="'+stat+'" data-krw="'+won_buy_pca+'" data-frc="'+frc_buy_pca+'">'+((isWon) ? won_buy_pca:frc_buy_pca) +'</span>';
+						str += "</td>";	
+						str += "<td class='r'>";	//�򰡱ݾ�
+							str += '<span class="'+stat+'" data-krw="'+won_txbf_ea+'" data-frc="'+frc_txbf_ea+'">'+((isWon) ? won_txbf_ea:frc_txbf_ea) +'</span>';
+						str += "</td>";		
+						str += "<td class='r'>";	//�򰡼���
+							str += '<span class="'+stat+'" data-krw="'+won_txbf_ev_pl+'" data-frc="'+frc_txbf_ev_pl+'">'+((isWon) ? won_txbf_ev_pl:frc_txbf_ev_pl) +'</span>';
+						str += "</td>";	
+						str += "<td class='r'>"+txbf_ern_r+"</td>";//���ͷ�
+
+						// �ٷΰ���
+						str += "<td>";
+						str += "<div class='btnWrap small ssgroup'>";
+						str += "<a href='javascript:detailPop(\"" + i +"\");' class='btn' title='��â����'>�ڻ��</a><br/>";
+						//������ ������ 01-006�� �߰��ż�/�ŵ� ��ư ����ó�� 2019.12.03
+						if(!(obj.ac_bz_pcd=='01' && obj.ac_dl_cd=='006')){
+							str += "<a href='javascript:fund_code_addDealView(\"1\", \"" + itm_no +"\", \"" + acno +"\", \"" + fd_bal_srno +"\")' class='btn red' title='������ �̵�'>�߰��ż�</a><br/>";
+							str += "<a href='javascript:fund_code_addDealView(\"2\", \"" + itm_no +"\", \"" + acno +"\", \"" + fd_bal_srno +"\")' class='btn' title='������ �̵�'>�ŵ�</a>";
+						}
+						str += "</div>";
+						str += "</td>";
+						str += "</tr>";
+					}
+				}else{
+					if(common.isFirst){
+						str += "<tr><td class='no_data' colspan='9'><span>��ȸ�� ������ �����ϴ�.</span></td></tr>";
+					}
+				}
+				
+				//��ȭ��ǰ�� ������ ��� ��ȭȯ��ǥ�� ��ư Ȱ��ȭ
+				if(frc_cnt > 0){
+					$('#exchangeWon').css('display', '');
+				}
+				
+				//������ �Է�
+				if(common.isFirst){
+					$("#fundTable2 tbody").html(str);
+				}else{
+					$("#fundTable2 tbody").append(str);
+				}
+				$('#fundTable2 tbody tr td:nth-child(2)').css('border-left', 'none');
+				if(typeof(data.cts) != "undefined" && data.cts.length > 0){
+					common.next_acno = data.cts[0].next_acno;
+					common.next_itm_no = data.cts[0].next_itm_no;
+					common.next_fd_bal_srno = data.cts[0].next_fd_bal_srno;
+				}
+
+				//���� ó�� - ���ӿ���
+				if("" != common.next_acno){
+					$("#moreList").shownr();
+				}else{
+					$("#moreList").hidenr();
+				}
+			}
+			
+			//�����˾�
+			function detailPop(idx){
+				if(common.listData.length > 0){
+					var listObj = common.listData[idx];
+					setParams(listObj, true);
+					showCommonPopup("/hkd/hkd1003/p01.do?itm_no="+ listObj.itm_no, 720, 830);
+				}else{
+					showMsg("�ݵ������� ��ȸ���� �ʾҽ��ϴ�.");
+				}
+
+			}
+			//�ݵ�����˾�
+			/* function fundPop(itm_no){
+				showCommonPopup("/hks/hks4116/p11.do?fd_cd="+ itm_no, 720, 830);
+			} */
+
+			function move(seq){
+				if(!isCommonNull(seq)){
+					var f = document.f;
+					f.action = "/hkd/hkd1003/r"+fillLeft(String(seq), 2, "0")+".do";
+					f.submit();
+				}
+			}
+
+			/*��������*/
+			function excelRegist(){
+				var excelArea	= $("#excelTable").clone();
+				excelArea.removeClass("link");
+				excelArea.find("a").each(function(){
+					$(this).parent().html($(this).text());
+				});
+				var oriHtml	= excelArea.html();
+				var excelTableHtml = "";
+
+				// EXCEL Header ����
+				var len = $("#fundTable2 thead th").length;
+				excelTableHtml += '<table style="width:100%;border-collapse:collapse;table-layout:fixed;word-break:break-all;font-size:12px;">';
+				excelTableHtml += '<tr style="border-bottom:5px solid #5e5e5e;padding:12px 0;"><td colspan="'+len+'" style="text-align:center;font-weight:bold;font-size:18px">�ݵ�</td></tr>';
+				excelTableHtml += '<tr style="padding:12px 0;text-align:center;border-bottom:1px solid #d8d8d8;border-right:1px solid #d8d8d8;" ><td colspan="'+len+'"></td></tr>';
+				excelTableHtml += '</table>';
+
+				// ���� ����
+				excelTableHtml += '<table><tr><td></td></tr></table>';
+
+				// EXCEL Table CSS ����
+				excelArea.find('table').css({'width':'100%','border-collapse':'collapse','table-layout':'fixed','word-break':'break-all','font-size':'12px'});
+				excelArea.find('th').css({'text-align':'center','border-top':'1px solid #5e5e5e','border-bottom':'1px solid #a2a2a2','border-right':'1px solid #d8d8d8','color':'#212121','font-weight':'bold','background':'#f2f2f2','padding':'12px 0'});
+				excelArea.find('td').css({'padding':'12px 0','text-align':'center','border-bottom':'1px solid #d8d8d8','border-right':'1px solid #d8d8d8'});
+
+				excelArea.find("tr").each(function(){
+					$(this).find("th").eq(len).remove();
+					$(this).find("td").eq(len).remove();
+				});
+				excelTableHtml += excelArea.html();
+
+				// ���� Tag ����
+				excelArea.html(oriHtml);
+
+				$("#dataToTitle").val(encodeURIComponent("�ݵ�"));
+				$("#dataToDisplay").val(encodeURIComponent(excelTableHtml));
+
+				document.excelForm.submit();
+			}
+
+			/* �μ� */
+			function assetPrint(){
+				window.open("/advancement/jsp/common/commonPrint.jsp","printPop","width=795,height=700,scrollbars=yes");
+			}			
+		</script>
+	<style type="text/css">
+.col_type tbody tr td:first-child[style="display:none"]+td {border-left:none;}
+</style>
+</head>
+<body class="chrome chrome">
+<div id="loading" name="loading" style="position: fixed; left: 50%; top: 50%; margin: 0px; width: 80px; height: 80px; z-index: 1099; visibility: hidden; display: none;">
+	<p id="loadingImg"><img src="https://img.securities.miraeasset.com/common/Loding.gif" alt="�ε���"></p>
+</div>
+<div id="loadingEmpty" name="loadingEmpty" style="position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; background: rgb(255, 255, 255); visibility: hidden; display: none; opacity: 0.3; z-index: 1098;"></div>
+<div title="��ŵ�޴�" class="skipMenu">
+	<a href="#contents">���� ���� �ٷΰ���</a>
+	<a href="#headerWrap">�� �޴� �ٷΰ���</a>
+</div>
+<hr>
+<div id="wrap" class="myasset">
+	<div id="dvContainer">
+		<script type="text/javascript" src="/srh/autoComplete/dqAutoCompleteCommon.js"></script>
+		<script type="text/javascript" src="/advancement/html/com/js/cm.GNB.ui.js"></script>
+		<script type="text/javascript">
+	//<![CDATA[
+	           
+		var _gnb_common = {
+			nowDate : "20210701",	
+			nowTime : "1742"
+		};
+		
+		var _currentMenuCode 	= '';
+		var menus 				= BestEzMenu.menu;
+		var loginUserId			= "joon8409";
+		getMenuCodeByUrl(menus);
+		
+		var _thisMenu = getMenuFromMenuCode(_currentMenuCode);
+		if (_currentMenuCode != '' && _thisMenu && (_thisMenu.secure == 'true' || _thisMenu.menuCode == 'login' || _thisMenu.menuCode == 'add')) {
+		
+			//Ű���庸�� 
+			document.writeln('<scr' + 'ipt src="/pluginfree/jsp/nppfs.script.jsp" type="text/javascript" charset="euc-kr"><\/scr' + 'ipt>\n');
+			document.writeln('<scr' + 'ipt src="/pluginfree/js/nppfs-1.6.0.js" type="text/javascript" charset="euc-kr"><\/scr' + 'ipt>\n');
+			document.writeln('<scr' + 'ipt src="/astx/astx2.js" type="text/javascript" charset="euc-kr"><\/scr' + 'ipt>\n');
+		
+		}
+		
+		$(document).ready(function() {
+			if (_currentMenuCode != '' && _thisMenu && (_thisMenu.secure == 'true' || _thisMenu.menuCode == 'login' || _thisMenu.menuCode == 'add')) {
+				try{ keyInit(); }catch(e){};
+			}
+		});
+
+	//]]>
+	</script>
+		<div id="headerWrap">
+			<div id="header">
+				<div id="util_wrap">
+					<a href="javascript:doMain();"><img src="https://img.securities.miraeasset.com/renew2019/logo.gif" alt="MIRAE ASSET �̷���������"></a>
+					<div id="util">
+						<ul class="quick_menu">
+							<!-- <li><a href="javascript:openGuide('/imf/200/imf101.do#wrap-collapse1-01');">HTS �ٿ�ε�</a></li> -->
+							<li><a href="https://download.securities.miraeasset.com/Kairos/Setup_KairosHTS.exe" title="���� �ٿ�ε�">HTS �ٿ�ε�</a></li>
+							<li><a href="javascript:wtsOpen();">Ʈ���̵�</a></li>
+							<li><a href="javascript:openHp('/hku/hku2001/t01.do', true);">��������/OTP</a></li>
+							<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1296', false);">�����ϴ� ����</a></li>
+							<li><a href="javascript:openTalk();">ä�û��</a></li>
+							<li><a href="javascript:openHp('/hki/hki3016/n04.do', false);">��������</a></li>
+							<li><a href="javascript:openHp('/hki/hki3062/n05.do', false);">�����Һ�����Ż</a></li>
+						</ul>
+						<!-- �α��� �Ǿ��� ��  : login_box �� Ŭ���� on �߰� -->
+						<div class="login_box on">
+							<div class="inner">
+								<span><em>�����</em>��</span>
+								<span><a href="javascript:showCommonPopup('/advancement/jsp/common/mkaPopup.jsp',470, 625);">���°���</a></span>
+								<span><a href="javascript:openHp('/login/logout.do');">�α׾ƿ�</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="gnb_wrap">
+					<ul id="gnb">
+						<li class="menu"> <a href="javascript:openHp('/hkd/hkd1001/r01.do', true);">MY�ڻ�</a>
+							<div class="line">
+								<span class="line_left"></span>
+								<span class="line_right"></span>
+							</div> </li>
+						<li class="menu"> <a href="javascript:void(0);">��ŷ/����/û��</a>
+							<div class="line">
+								<span class="line_left"></span>
+								<span class="line_right"></span>
+							</div>
+							<div class="depth">
+								<dl class="menu_tit">
+									<dt>
+										��ŷ/����/
+										<br>û��
+									</dt>
+									<dd>
+										<a href="javascript:allMenuPop();">��ü �޴� ����</a>
+									</dd>
+								</dl>
+								<ul class="depth_01">
+									<li><a href="javascript:openHp('/hku/hku4055/c01.do',true);">��ü<span class="mb">�α����ʿ�</span></a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku4055/c01.do',true);" class="depth_no">������ü<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4163/c01.do',true);" class="depth_no">�ٰ���/������ü<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4164/v01.do',true);" class="depth_no">��ü����/������ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4164/n04.do',true);" class="depth_no">��ü������ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4166/n02.do',true);" class="depth_no">�ڵ���ü<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4054/c01.do',true);" class="depth_no">������ü�Ա�(���̷�Ʈ)<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4163/p01.do',true);" class="depth_no">���־��°��°���<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4055/c04.do',true);" class="depth_no">��ü���Ȱ�ȭ ���� ��û/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4168/n01.do',true);" class="depth_no">���̹� ��ü �ѵ� ����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4169/n03.do',false);" class="depth_no">������ü ����</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hku/hku4188/n01.do',false);">�뿩</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku4188/n01.do',false);" class="depth_no">�ֽĴ뿩 ���� �ȳ�</a></li>
+											<li><a href="javascript:openHp('/hku/hku4188/c01.do',true);" class="depth_no">�ֽĴ뿩���� ��û/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4188/c02.do',true);" class="depth_no">�ֽĴ뿩���� ����<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hki/hki3010/t01.do',false);">����</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hki/hki3010/t01.do',false);" class="depth_no">�ſ�/���� �ȳ�</a></li>
+											<li><a href="javascript:openHp('/hku/hku4033/c01.do',true);" class="depth_no">�������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4035/c01.do',true);" class="depth_no">���ŵ� ��������/���ǰŷ� �̼� ���<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4036/u01.do',true);" class="depth_no">��������/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4037/c01.do',true);" class="depth_no">�ڵ��̼���ȯ���� ��û/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/nku/nku4139/c01.do',true);" class="depth_no">�����û<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4156/n01.do',true);" class="depth_no">���ݻ�ȯ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4156/n03.do',true);" class="depth_no">�ſ�/���� ��Ȳ ��ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4156/n02.do',true);" class="depth_no">���⿬��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4057/n07.do',true);" class="depth_no">���޴���</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hku/hku4043/r10.do',true);">û��</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku4043/r10.do',true);" class="depth_no">û������</a></li>
+											<li><a href="javascript:openHp('/hku/hku4044/r01.do',true);" class="depth_no">������û��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4056/r01.do',true);" class="depth_no">������ ǲ��ɼ� ��û/���<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4046/v02.do',true);" class="depth_no">�Ǳ���û��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4150/v02.do',true);" class="depth_no">����û��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4047/v02.do',true);" class="depth_no">ELS/DLSû��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4048/v02.do',true);" class="depth_no">�Ϲ�ä��û��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4049/c01.do',true);" class="depth_no">���º��Ǹ�����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=41',false);" class="depth_no">û�����ڼ���/����ǥ</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=43',false);" class="depth_no">���俹��</a></li>
+											<li><a href="javascript:openHp('/hku/hku4051/c09.do',true);" class="depth_no">���û��</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hku/hku4161/a01.do',true);" class="depth_no">����/������ ����</a></li>
+									<li><a href="javascript:openHp('/hku/hku4196/n01.do',false);">üũī��</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku4196/n01.do',false);" class="depth_no">ī���ǰ�ȳ�</a></li>
+											<li><a href="javascript:openHp('/hku/hku4196/c01.do',true);" class="depth_no">ī���û<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4196/c02.do',true);" class="depth_no">�߱�/�����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4196/c04.do',true);" class="depth_no">�̿���ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4196/c07.do',true);" class="depth_no">ī�����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4196/c10.do',true);" class="depth_no">��������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4196/c13.do',true);" class="depth_no">�н�/��߱�/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4196/n02.do',false);" class="depth_no">�̿�ȳ�</a></li>
+										</ul> </li>
+								</ul>
+							</div></li>
+						<li class="menu"> <a href="javascript:void(0);">������ǰ</a>
+							<div class="line">
+								<span class="line_left"></span>
+								<span class="line_right"></span>
+							</div>
+							<div class="depth">
+								<dl class="menu_tit">
+									<dt>
+										������ǰ
+									</dt>
+									<dd>
+										<a href="javascript:allMenuPop();">��ü �޴� ����</a>
+									</dd>
+								</dl>
+								<ul class="depth_01">
+									<li><a href="javascript:openHp('/hks/hks4000/n02_1.do',false);">��õ��ǰ</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4000/n02_1.do',false);" class="depth_no">���� ��õ��ǰ</a></li>
+											<li><a href="javascript:openHp('/hks/hks4000/n06.do',false);" class="depth_no">m.Club �ְ���ǰ<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4035/r01.do',false);">��������</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4035/r01.do',false);" class="depth_no">�������� �ȳ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4035/r02.do',true);" class="depth_no">�����ǻ� Ȯ��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4035/r03.do',true);" class="depth_no">�����ǻ� ��ȸ<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4318/n11.do',false);">GPS</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4318/n11.do',false);" class="depth_no">�̿�ȳ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks7001/r01.do',false);" class="depth_no">�ڻ��� Advisor<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks7002/c01.do',true);" class="depth_no">������ Advisor<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks7003/r01.do',true);" class="depth_no">�Ÿ����� ��ȸ<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4116/r01.do',false);">�ݵ�</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4116/r01.do',false);" class="depth_no">�ݵ�˻�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4049/v03.do',false);" class="depth_no">�ݵ�Ÿ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4632/r01.do',true);" class="depth_no">�ݵ��ڵ��ż�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4644/r01.do',true);" class="depth_no">�ݵ�Ÿų���<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4312/r02.do',false);" class="depth_no">�ݵ��ܰ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4645/r01.do',false);" class="depth_no">���ذ�/���ͷ���ȸ</a></li>
+											<li><a href="javascript:openHp('/hks/hks4049/v05.do',false);" class="depth_no">�ݵ� ��ǰ��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4049/r01.do',true);" class="depth_no">�ؿ��ݵ� ����ȯ�޳���</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4113/n02.do',false);">CMA</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4113/n02.do',false);" class="depth_no">CMA��ǰ�Ұ�</a></li>
+											<li><a href="javascript:openHp('/hku/hku4091/c04.do',true);" class="depth_no">CMA���� ��û/��ȯ/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4201/r02.do',true);" class="depth_no">Wrap��CMA ���ڱݾ���ȸ<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4023/n01_1.do',false);">ELS/DLS/ETN/ELW</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4023/n01_1.do',false);" class="depth_no">ELS/DLS �˻�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4023/r01.do',false);" class="depth_no">ELS/DLS ���ذ���ȸ</a></li>
+											<li><a href="javascript:openHp('/hks/hks4023/r03.do',false);" class="depth_no">�����ڻ꺰 ���� ��ȸ</a></li>
+											<li><a href="javascript:openHp('/hku/hku4047/v02.do',true);" class="depth_no">ELS/DLSû��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4053/v01.do',true);" class="depth_no">ELS/DLS �ŵ�����/���<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4055/n01.do',true);" class="depth_no">ELS/DLS�����ܰ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4318/n01.do',false);" class="depth_no">ETN��ǰ����</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=723',false);" class="depth_no">ETN��������</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1496',false);" class="depth_no">ELW��������</a></li>
+											<li><a href="javascript:openHp('/hks/hks4318/n12.do',false);" class="depth_no">ELW�ŷ����</a></li>
+											<li><a href="javascript:openHp('/hks/hks4023/r02.do',false);" class="depth_no">����ȭ������ȸ</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks3001/r01.do',false);">�������</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks3001/r01.do',false);" class="depth_no">������� ��ǰ�ȳ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks3002/c01.do',true);" class="depth_no">������� �Ÿ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks3006/r01.do',true);" class="depth_no">������� �ܰ�/�Ÿų���<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4036/r01.do?gubun=01',false);">ä��/RP</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4036/r01.do?gubun=01',false);" class="depth_no">���ä��</a></li>
+											<li><a href="javascript:openHp('/hks/hks4127/n01.do',false);" class="depth_no">����������ä</a></li>
+											<li><a href="javascript:openHp('/hks/hks4051/v03.do',true);" class="depth_no">���ä�ǸŸ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4801/c01.do',true);" class="depth_no">���ڴܱ��ä�Ÿ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4054/v03.do',false);" class="depth_no">��ȭä��</a></li>
+											<li><a href="javascript:openHp('/hks/hks4036/c04.do',true);" class="depth_no">��ȭä��/���ڴܱ��ä�Ÿ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4062/r01.do',true);" class="depth_no">��ȭä�� �������ڰ�꼭</a></li>
+											<li><a href="javascript:openHp('/hks/hks4052/v03.do',true);" class="depth_no">RP�Ÿ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4061/v01.do',true);" class="depth_no">��ȭ RP�Ÿ�<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4659/n01.do',false);">ISA����</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4659/n01.do',false);" class="depth_no">ISA �����ȳ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4323/n01.do',true);" class="depth_no">ISA �����ȸ(��Ź��, ������)<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkd/hkd1002/r01.do', true);" title="��â" class="depth_no">ISA ��ǰ�� �ܰ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkd/hkd1004/r02.do', true);" title="��â" class="depth_no">ISA �Ÿų���<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4323/n02.do',true);" class="depth_no">ISA ���������<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:wtsOpen();" title="��â">�߰���ISA</a>
+										<ul class="depth_02">
+											<li><a href="javascript:wtsOpen();" title="��â" class="depth_no">�ֽ�/ETF/ETN/�����������</a></li>
+											<li><a href="javascript:openHp('/hks/hks4049/v03.do', true);" title="��â" class="depth_no">�ݵ�</a></li>
+											<li><a href="javascript:openHp('/hku/hku4047/v02.do', true);" title="��â" class="depth_no">ELS/DLS</a></li>
+											<li><a href="javascript:openHp('/hks/hks4052/v03.do', true);" title="��â" class="depth_no">RP</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4324/n01.do',false);">��Ź��ISA</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4324/n01.do',false);" class="depth_no">��Ź�� ISA ��ǰ�������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4324/n40.do',true);" class="depth_no">��Ź�� ISA �Ÿų�����ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4323/n03.do',true);" class="depth_no">��Ź�� ISA �л������Է�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4324/n41.do',true);" class="depth_no">��Ź�� ISA �ڵ��Ÿ� �ֹ����� ��ȸ �� ����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4323/n04.do',true);" class="depth_no">��Ź�� ISA �����ѵ� ����<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1175',false);">������ISA</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1175',false);" class="depth_no">ISA ��������</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4323/n05.do',false);">��Ź/Wrap</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4323/n05.do',false);" class="depth_no">Wrap Account �ȳ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4323/n06.do',false);" class="depth_no">Wrap Account ���� �Ұ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4663/n01.do',false);" class="depth_no">Wrap Account ����/���</a></li>
+											<li><a href="javascript:openHp('/hks/hks4314/c01.do',true);" class="depth_no">Wrap �ܰ���ȸ</a></li>
+											<li><a href="javascript:openHp('/hks/hks4041/n01.do',false);" class="depth_no">��Ź�Ұ� �� �����ȸ</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4125/n11.do',false);">��ī������</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4125/n11.do',false);" class="depth_no">��ī��������ǰ�Ұ�</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hks/hks4316/n02.do',true);">�������û�ǰ</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hks/hks4316/n02.do',true);" class="depth_no">�������������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4322/n01.do',false);" class="depth_no">�ؿ��ֽ����������ݵ�����</a></li>
+											<li><a href="javascript:openHp('/hks/hks4310/n03.do',false);" class="depth_no">���������ݵ�/<br>�ҵ��������ݵ�</a></li>
+											<li><a href="javascript:openHp('/hks/hks4325/n01.do',false);" class="depth_no">��ó������ڽ�Ź(�ݵ�)</a></li>
+											<li><a href="javascript:openHp('/hku/hku4185/c06.do',true);" class="depth_no">�ҵ��������ݵ� �ֿ��������� �� �л����ں��� ����<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+								</ul>
+							</div></li>
+						<li class="menu"> <a href="javascript:void(0);">�����ڻ�</a>
+							<div class="line">
+								<span class="line_left"></span>
+								<span class="line_right"></span>
+							</div>
+							<div class="depth">
+								<dl class="menu_tit">
+									<dt>
+										�����ڻ�
+									</dt>
+									<dd>
+										<a href="javascript:allMenuPop();">��ü �޴� ����</a>
+									</dd>
+								</dl>
+								<ul class="depth_01">
+									<li><a href="javascript:openHp('/hkp/hkp1002/r01.do',false);">MY���ο���<span class="mb">�α����ʿ�</span></a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp1002/r01.do',false);" class="depth_no">���ο��� �ܰ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp1002/r02.do',false);" class="depth_no">���ο��� ���ͷ���ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp1002/c01.do',true);" class="depth_no">���ο��� ����������ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4319/u02.do',true);" class="depth_no">���ο��� �ѵ�����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4319/u03.do',true);" class="depth_no">���ο��� ����/������û<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp1003/r01.do',false);">���ο��ݸŸ�</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp1003/r01.do',false);" class="depth_no">���ο��� �ݵ�˻�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp1003/c01.do',false);" class="depth_no">���ο��� �ݵ�Ÿ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp1003/n05.do',true);" class="depth_no">���ο��� ETF�Ÿ�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp1003/c08.do',true);" class="depth_no">���ο��� ������ȯ/��ü<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hks/hks4319/u01_1.do',true);" class="depth_no">���ο��� �л���������<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp7004/r01.do',false);">���ο���GPS<span class="mb">�α����ʿ�</span></a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp7004/r01.do',false);" class="depth_no">�����м�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp7005/r01.do',false);" class="depth_no">�����м�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp7001/r01.do',false);" class="depth_no">�ڻ��� Advisor<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp7002/c01.do',true);" class="depth_no">������ Advisor<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp7003/r01.do',true);" class="depth_no">�Ÿ����� ��ȸ<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp1004/n01.do',false);">���ο��ݰ���</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp1004/n01.do',false);" class="depth_no">���ο��� �����ȳ�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp1004/n06.do',false);" class="depth_no">���ο��� �����������</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp1004/c01.do',true);" class="depth_no">���ο��� ������û<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4189/n01.do',false);" class="depth_no">���ο��� �ſ�ī�弭��</a></li>
+											<li><a href="javascript:openHp('/hku/hku4032/c01.do',false);" class="depth_no">���ο��� �㺸���� ��û<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp2009/c01.do',false);" class="depth_no">���ݰ���</a></li>
+									<li><a href="javascript:openHp('/hkp/hkp2001/r01.do',false);">MY��������<span class="mb">�α����ʿ�</span></a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp2001/r01.do',false);" class="depth_no">���������ܰ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2001/c02.do',false);" class="depth_no">��������Ȯ�� �� �߱�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2001/v01.do',false);" class="depth_no">�������� �¶��� �����ڱ���<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp2002/r01.do',false);">��������/IRP�Ÿ�</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp2002/r01.do',false);" class="depth_no">��������/IRP ��ǰ�˻�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2002/c01.do',true);" class="depth_no">��������/IRP ��ǰ�Ÿ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2002/c05.do',true);" class="depth_no">��������/IRP ����/ETF/ETN<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2002/r06.do',false);" class="depth_no">��������/IRP �����ѵ��ʰ���Ȳ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2002/c06.do',false);" class="depth_no">��������/IRP ��ǰ���ξ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2002/c07.do',true);" class="depth_no">��������/IRP �����ǰ����ż�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2002/c08.do',true);" class="depth_no">��������/IRP ���Ҹż�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2012/c01.do',false);" class="depth_no">��������/IRP ELB�ż�<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp2003/c01.do',false);">��������/IRP����</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp2003/c01.do',false);" class="depth_no">��������/IRP �Ա��ѵ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2003/c02.do',true);" class="depth_no">��������/IRP ��ü��û����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2004/c05.do',false);" class="depth_no">IRP ���ݰ�������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2004/u01.do',false);" class="depth_no">IRP ������û<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2004/u02.do',false);" class="depth_no">IRP ���������ȳ�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2004/c07.do',true);" class="depth_no">IRP ������û<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp2006/r01.do',false);">�������ݼ���</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp2006/r01.do',false);" class="depth_no">�����ڸ� ���� ����</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2006/r04.do',false);" class="depth_no">����� ���� ����</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2008/n01.do',false);" class="depth_no">�������ݱ���</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2008/n05.do',false);" class="depth_no">�����������</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2008/n06.do',false);" class="depth_no">���ڿͿ��ݼ���</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkp/hkp2007/n01.do',false);">�������ݾȳ�</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkp/hkp2007/n01.do',false);" class="depth_no">�����ȳ�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2007/n07.do',false);" class="depth_no">���Ծȳ�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2005/n01.do',false);" class="depth_no">DC/IRP ��밡�̵�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2005/n04.do',false);" class="depth_no">DB ��밡�̵�</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1494',false);" class="depth_no">�������� ��ǰ ���ȼ�</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1158',false);">����ڰ���</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1158',false);" class="depth_no">��������</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2007/n10.do',false);" class="depth_no">������ ����</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2007/n11.do',false);" class="depth_no">���/�ڻ���� ������</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1196',false);" class="depth_no">���/�ڻ������� ���</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1236',false);" class="depth_no">������ �����/���ͷ�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2007/r08.do',false);" class="depth_no">�̷��������� �����ݿ��ݾ�/���ͷ�</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2007/n12.do',false);" class="depth_no">����� ��ϳ���</a></li>
+											<li><a href="javascript:openHp('/hkp/hkp2007/n13.do',false);" class="depth_no">�����ݺ����ǰ</a></li>
+										</ul> </li>
+									<li><a href="javascript:retireSimplePop();" title="��â" class="depth_no">��������/IRP ������ȸ</a></li>
+								</ul>
+							</div></li>
+						<li class="menu"> <a href="javascript:void(0);">��������</a>
+							<div class="line">
+								<span class="line_left"></span>
+								<span class="line_right"></span>
+							</div>
+							<div class="depth">
+								<dl class="menu_tit">
+									<dt>
+										��������
+									</dt>
+									<dd>
+										<a href="javascript:allMenuPop();">��ü �޴� ����</a>
+									</dd>
+								</dl>
+								<ul class="depth_01">
+									<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1521',false);">����ġ ����Ʈ</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1521',false);" class="depth_no">��ü</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1543',false);" class="depth_no">�ϰ�����Ʈ</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1544',false);" class="depth_no">����м� (�ؿ�)</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1545',false);" class="depth_no">����м� (����)</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1525',false);" class="depth_no">����м� (����/�ؿ�)</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1526',false);" class="depth_no">�۷ι� ETF</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1527',false);" class="depth_no">�ڻ�������</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1578',false);" class="depth_no">�����и���ġ</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1528',false);" class="depth_no">Spot Comment</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1529',false);" class="depth_no">�ֿ���ǥ �� �������</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1530',false);" class="depth_no">��������</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkr/hkr1002/n01.do',false);">���񼭺���</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkr/hkr1002/n01.do',false);" class="depth_no">���񼭺���</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/n06.do',false);" class="depth_no">�б�����Ӻ�</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/n07.do',false);" class="depth_no">�ѱ�����TV���ǹ��</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/n15.do',false);" class="depth_no">�Ӵ����������ǹ��</a></li>
+											<li><a href="javascript:openHp('/oid/oid6001/n01.do',false);" class="depth_no">���ǻ� ����Ʈ<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1541',false);" class="depth_no">�ڳؽ� �����Ȳ ����<span class="mb">�α����ʿ�</span></a></li>
+									<li><a href="javascript:openGuide('/imf/600/imf301.do#wrap-collapse1-01');" title="��â">�ؿ��ֽ�/�����ɼǾȳ�</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openGuide('/imf/600/imf301.do#wrap-collapse1-01');" title="��â" class="depth_no">�ؿ��ֽ� �ŷ��ȳ�</a></li>
+											<li><a href="javascript:openGuide('/imf/600/imf201.do');" title="��â" class="depth_no">�ؿ��ֽ� �ŷ�����</a></li>
+											<li><a href="javascript:openGuide('/imf/600/imf101.do');" title="��â" class="depth_no">�ŷ����ɱ��� �Ұ�</a></li>
+											<li><a href="javascript:openGuide('/imf/700/imf101.do');" title="��â" class="depth_no">�ؿܼ����ɼ� �ȳ�</a></li>
+											<li><a href="javascript:openGuide('/imf/700/imf204.do');" title="��â" class="depth_no">�ؿܼ����ɼ� �ŷ��ȳ�</a></li>
+											<li><a href="javascript:openGuide('/imf/700/imf301.do');" title="��â" class="depth_no">�߰������ɼ� �ȳ�</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkr/hkr1003/n01.do',false);">�ؿ�����</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkr/hkr1003/n01.do',false);" class="depth_no">��������</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/n03.do',false);" class="depth_no">��������</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/n09.do',false);" class="depth_no">��ǰ/��������</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/n10.do',false);" class="depth_no">CME/LME����</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/n11.do',false);" class="depth_no">����ȯ��</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/n14.do',false);" class="depth_no">������Ʈ</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/n12.do',false);" class="depth_no">ä�Ǳݸ�</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/n13.do',false);" class="depth_no">��������</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkr/hkr1003/i01.do?link=usa',false);">�ؿ����ø���Ʈ</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkr/hkr1003/i01.do?link=usa',false);" class="depth_no">�̱�����ġ</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1003/i01.do?link=china',false);" class="depth_no">�߱�ȫ�Ḯ��ġ</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkr/hkr1002/r01.do',false);">�κ���</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkr/hkr1002/r01.do',false);" class="depth_no">�κ��� �ȳ� �� ��û</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=rc',false);" class="depth_no">�� �ŸŽ�ȣ</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=pm',false);" class="depth_no">�Ŀ���(�ǽð����޺м�)</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=gd',false);" class="depth_no">�۷ι�DONUTZ(�̱�)</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=sbcn',false);" class="depth_no">�����Ǵ���</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=st',false);" class="depth_no">ST����</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=rs',false);" class="depth_no">�κ���Ź</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=sb',false);" class="depth_no">���庿</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=rq',false);" class="depth_no">�κ���Ʈ</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=ns',false);" class="depth_no">������Ź</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=dnz',false);" class="depth_no">DONUTZ</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=fabot',false);" class="depth_no">�ĺ�</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1002/r02.do?mediaCode=qtb',false);" class="depth_no">��Ʈ��</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hkr/hkr1004/n01.do',false);">m.�ڹ���</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hkr/hkr1004/n01.do',false);" class="depth_no">���� �Ұ�</a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1004/r01.do',false);" class="depth_no">�ڹ���ǰ/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1004/r02.do',true);" class="depth_no">�ڹ�����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hkr/hkr1004/r05.do',true);" class="depth_no">�ڹ���� ��Ȳ/����<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openBlog('/mw/mki/mki3002/r01.do', 'BLOG');" title="��â">��α�</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openBlog('/mw/mki/mki3002/r01.do', 'BLOG');" title="��â" class="depth_no">��α�</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1166',false);">��.�̷���������</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1166',false);" class="depth_no">��������</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1168',false);" class="depth_no">���/����м�</a></li>
+										</ul> </li>
+								</ul>
+							</div></li>
+						<li class="menu"> <a href="javascript:void(0);">���� ��û/����</a>
+							<div class="line">
+								<span class="line_left"></span>
+								<span class="line_right"></span>
+							</div>
+							<div class="depth">
+								<dl class="menu_tit">
+									<dt>
+										���� ��û/
+										<br>����
+									</dt>
+									<dd>
+										<a href="javascript:allMenuPop();">��ü �޴� ����</a>
+									</dd>
+								</dl>
+								<ul class="depth_01">
+									<li><a href="javascript:openHp('/hku/hku4007/n01.do',false);">���°���/ID</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku4007/n01.do',false);" class="depth_no">�¶��� ���°���</a></li>
+											<li><a href="javascript:openHp('/hku/hku3013/r01.do',true);" class="depth_no">ID���</a></li>
+											<li><a href="javascript:openHp('/hku/hku3014/u01.do',true);" class="depth_no">IDã��</a></li>
+											<li><a href="javascript:openHp('/hku/hku3016/u01.do',true);" class="depth_no">ID����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku3017/u01.do',true);" class="depth_no">��ID���� ��û<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4014/c01.do',true);" class="depth_no">ID�� ���µ��/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku3017/u02.do',true);" class="depth_no">ARS ���/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4030/r01.do',true);" class="depth_no">�޸���� ã��</a></li>
+											<li><a href="javascript:openHp('/hku/hku4010/r01.do',true);" class="depth_no">���¹�ȣ ã��</a></li>
+											<li><a href="javascript:openHp('/hku/hku4007/n10.do',true);" class="depth_no">�������<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hku/hku4198/c03.do',true);">�ŸŽ�û/����</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku4198/c03.do',true);" class="depth_no">�ؿܰŷ����� ��û/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4175/c01.do',true);" class="depth_no">�Ļ�ETF/ETN/������ETN/�ؿ�ETP/DLC ��û/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4012/n01.do',true);" class="depth_no">�ڵ��Ÿ� ���µ��/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4029/c01.do',true);" class="depth_no">ELW�ŸŰŷ���û/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4199/c01.do',true);" class="depth_no">�ŸŰ��� �������� ����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4175/c07.do',true);" class="depth_no">�������� ETF/ETN �����̼� ���<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hku/hku3005/u01.do',true);">����������</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku3005/u01.do',true);" class="depth_no">ID ��й�ȣ ����/����</a></li>
+											<li><a href="javascript:openHp('/hku/hku4116/c01.do',true);" class="depth_no">���º�й�ȣ����/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4013/m01.do',true);" class="depth_no">����ó��������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4013/r02.do',true);" class="depth_no">����������ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku3008/u02.do',true);" class="depth_no">������Ȯ��</a></li>
+											<li><a href="javascript:openHp('/hku/hku4028/c01.do',true);" class="depth_no">����������Ȯ�μ�<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4093/n01.do',true);" class="depth_no">����(�ſ�)���� �����̿����� ���/��ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4038/n01.do',true);" class="depth_no">�����뺸���� ��û/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4183/c01.do',true);" class="depth_no">�뺸ó ���/����<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4183/c02.do',true);" class="depth_no">���̻�� ��������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4183/c03.do',true);" class="depth_no">�ݼ�����<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openGuide('/imf/100/imf202.do');" title="��â">���񽺽�û/����</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openGuide('/imf/100/imf202.do');" title="��â" class="depth_no">�˸��̼��� �ȳ�</a></li>
+											<li><a href="javascript:openHp('/hku/hku4018/c01.do',true);" class="depth_no">�̸��ϼ��� ��û<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4201/c01.do',false);" class="depth_no">��ȭ��Ź�� �ڵ��ż���(RP)</a></li>
+											<li><a href="javascript:openHp('/hku/hku4123/c01.do',true);" class="depth_no">���� �߱�/��ȸ/����Ȯ��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4120/c01.do',true);" class="depth_no">�нǽŰ�(�����)<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku3020/n02.do',false);" class="depth_no">���ڱ���������</a></li>
+											<li><a href="javascript:openHp('/hku/hku4197/n03.do',true);" class="depth_no">���� ��� �� ��볻����ȸ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4800/r01.do',false);" class="depth_no">���������� �ȳ�</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hki/hki7106/r01_0.do?link=local',false);">�������ڴ�ȸ</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hki/hki7106/r01_0.do?link=local',false);" class="depth_no">m.Stock���� (����)</a></li>
+											<li><a href="javascript:openHp('/hki/hki7106/r01_0.do?link=global',false);" class="depth_no">m.Global���� (�ؿ�)</a></li>
+										</ul> </li>
+									<li><a href="https://einfomax.securities.miraeasset.com/vts/#/main" target="_blank" title="��â" class="depth_no">��������</a></li>
+									<li><a href="javascript:openHp('/hku/hku4001/n03.do',false);">API Square</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hku/hku4001/n03.do',false);" class="depth_no">���� �Ұ�</a></li>
+											<li><a href="javascript:openHp('/hku/hku4001/n04.do',true);" class="depth_no">���� ��û<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4001/n06.do',false);" class="depth_no">�ڷ��<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hku/hku4001/n07.do',false);" class="depth_no">������<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1485',false);" class="depth_no">��������<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+								</ul>
+							</div></li>
+						<li class="menu"> <a href="javascript:void(0);">�̿�ȳ�/����</a>
+							<div class="line">
+								<span class="line_left"></span>
+								<span class="line_right"></span>
+							</div>
+							<div class="depth">
+								<dl class="menu_tit">
+									<dt>
+										�̿�ȳ�/
+										<br>����
+									</dt>
+									<dd>
+										<a href="javascript:allMenuPop();">��ü �޴� ����</a>
+									</dd>
+								</dl>
+								<ul class="depth_01">
+									<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=66&amp;selectedId=1000000202&amp;selectedId=1000000203&amp;selectedId=1000003101',true);">����/�̺�Ʈ</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=66&amp;selectedId=1000000202&amp;selectedId=1000000203&amp;selectedId=1000003101',true);" class="depth_no">��������</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1376',true);" class="depth_no">�ſ����� ��������</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=51',true);" class="depth_no">�ؿ��ֽ�/�Ļ� ��������</a></li>
+											<li><a href="javascript:openHp('/hki/hki7000/r05.do',false);" class="depth_no">�������� �̺�Ʈ</a></li>
+											<li><a href="javascript:openHp('/hki/hki7000/r07.do',false);" class="depth_no">������ �̺�Ʈ<span class="mb">�α����ʿ�</span></a></li>
+											<li><a href="javascript:openHp('/hki/hki7000/r06.do',false);" class="depth_no">���� �̺�Ʈ</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=121',false);" class="depth_no">��÷�� ��ǥ</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/ocq/ocq1001/m01.do',false);">���ڻ��</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/ocq/ocq1001/m02.do',false);" class="depth_no">��ȭ���</a></li>
+											<li><a href="javascript:openHp('/ocq/ocq1001/c03.do',false);" class="depth_no">m.����Ʈ�ڻ꼾��</a></li>
+											<li><a href="javascript:openHp('/ocq/ocq1001/c04.do',false);" class="depth_no">�����ڻ��������</a></li>
+											<li><a href="javascript:openHp('/ocq/ocq1001/n01.do',false);" class="depth_no">MY ������ ����<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hki/hki3016/n01.do',false);">������/ARS</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hki/hki3016/n01.do',false);" class="depth_no">������/ARS</a></li>
+											<li><a href="javascript:openHp('/hki/hki3016/n03.do',false);" class="depth_no">��ư�� ARS</a></li>
+											<li><a href="javascript:openHp('/hki/hki3016/n05.do',false);" class="depth_no">Smart ARS</a></li>
+											<li><a href="javascript:openHp('/hki/hki3016/n02.do',false);" class="depth_no">�����ν� ARS</a></li>
+											<li><a href="javascript:openHp('/hki/hki3016/n04.do',false);" class="depth_no">��������</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hki/hki3096/r01.do',false);" class="depth_no">������ ��ġ �� �����ð� �ȳ�</a></li>
+									<li><a href="javascript:openHp('/hki/hki3062/n05.do',false);">�����Һ�������</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hki/hki3062/n05.do',false);" class="depth_no">�����Һ��� ��ȣ �Ұ�</a></li>
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1396',false);" class="depth_no">�����Һ��� ��ȣ ����</a></li>
+											<li><a href="javascript:openHp('/hki/hki3062/n18.do',false);" class="depth_no">�����ο� ��û/ó��</a></li>
+											<li><a href="javascript:openHp('/hki/hki3059/a01.do',false);" class="depth_no">���� �Ҹ�(VOC)</a></li>
+											<li><a href="javascript:openHp('/hki/hki3062/n19.do',false);" class="depth_no">�����Һ��� ��ȣ����</a></li>
+											<li><a href="javascript:openHp('/hki/hki3062/n08.do',false);" class="depth_no">��ǰ����/�Ǹ����� ��Ģ</a></li>
+											<li><a href="javascript:openHp('/hki/hki3062/n13.do',false);" class="depth_no">���������Ƿ�/�������</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/wizvera/veraport/install20/install.html',false);" class="depth_no">PC�������α׷�</a></li>
+									<li><a href="javascript:openBlog('/mw/mki/mki3001/r01.do', 'Guide');" title="��â">�̿�ȳ� ���̵�</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openBlog('/mw/mki/mki3001/r01.do', 'Guide');" title="��â" class="depth_no">�̿�ȳ�</a></li>
+											<li><a href="javascript:openGuide('/imf/100/imf101.do');" title="��â" class="depth_no">�¶��μ��񽺰��̵�</a></li>
+											<li><a href="javascript:openGuide('/imf/200/imf101.do');" title="��â" class="depth_no">Ʈ���̵����̵�</a></li>
+											<li><a href="javascript:openGuide('/imf/300/imf101.do');" title="��â" class="depth_no">���Ǿ������̵�</a></li>
+											<li><a href="javascript:openGuide('/imf/400/imf201.do');" title="��â" class="depth_no">������ǰ���̵�</a></li>
+											<li><a href="javascript:openGuide('/imf/600/imf201.do');" title="��â" class="depth_no">�ؿ��ֽİ��̵�</a></li>
+											<li><a href="javascript:openGuide('/imf/700/imf101.do');" title="��â" class="depth_no">�ؿܼ���/�ɼǰ��̵�</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hki/hki3095/n06.do',false);">���񽺵��</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hki/hki3095/n06.do',false);" class="depth_no">���񽺵��</a></li>
+											<li><a href="javascript:openHp('/hki/hki3095/n07.do',false);" class="depth_no">�����ջ���</a></li>
+											<li><a href="javascript:openHp('/hki/hki3095/n08.do',false);" class="depth_no">��޺� �������</a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/hki/hki3095/n01.do',false);">VIP ����</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/hki/hki3095/n01.do',false);" class="depth_no">�̷����¼�����Ŭ��<br>�ȳ�</a></li>
+											<li><a href="javascript:openHp('/hki/hki3095/n03.do',false);" class="depth_no">ī�̷ν� �������?</a></li>
+											<li><a href="javascript:openHp('/hki/hki3095/n10.do',false);" class="depth_no">ī�̷ν� �����<span class="mb">�α����ʿ�</span></a></li>
+										</ul> </li>
+									<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1296',false);">FAQ</a>
+										<ul class="depth_02">
+											<li><a href="javascript:openHp('/bbs/board/message/list.do?categoryId=1296',false);" class="depth_no">FAQ(�����ϴ�����)</a></li>
+										</ul> </li>
+								</ul>
+							</div></li>
+						<li class="all_menu"> <a href="javascript:void(0);">��ü�޴� ����</a> </li>
+						<li class="search"> <a href="javascript:void(0);">�˻�â ����</a>
+							<!-- �˻�â -->
+							<div id="search_wrap">
+								<div class="search">
+									<form name="topSearch" action="/srh.jsp" onsubmit="return false;" method="post">
+										<div class="search_form">
+											<dl>
+												<dt>
+													<input type="text" name="q" id="q" class="overlay srch_txt" onkeypress="return dq_handleEnter_Top(event);" onfocus="return dq_setTextbox_Top('0',event);" onmousedown="dq_setTextbox_Top('1',event);" onkeydown="dq_setTextbox_Top('1',event);" onkeyup="dq_resetBtn_display();" autocomplete="off" title="�˻�� �Է����ּ���" placeholder="�˻�� �Է����ּ���">
+													<a href="#" title="�˻��� �ʱ�ȭ" id="searchText_reset" onclick="dq_setAcInput_Top('');" class="btn_value_del">����</a>
+													<input type="hidden" name="query" value="">
+												</dt>
+												<dd>
+													<a href="javascript:void(0);" onclick="fn_topSearch();">�˻�</a>
+												</dd>
+											</dl>
+											<script language="JavaScript" type="text/javascript" src="/srh/autoComplete/dqAutoComplete_Top.js" charset="euc-kr"></script>
+										</div>
+										<div class="menu_layer" id="searchList_layer">
+											<h3><span id="searchList_cnt"></span>�� �޴��� �ֽ��ϴ�.<a href="javascript:fn_topSearch();">������</a></h3>
+											<!-- �ڵ��ϼ����-->
+											<ul class="auto_list" id="quick_autolist_Top" style="display:none;"></ul>
+											<!-- �ڵ��ϼ����-->
+											<!-- <a href="javascript:dq_setAcInput_Top('');">�ݱ�</a> -->
+										</div>
+									</form>
+									<div class="recommend">
+										<dl>
+											<dt>
+												��õ�˻���
+											</dt>
+											<dd>
+												<ul>
+													<li><a href="javascript:openHp('/hks/hks4000/n02.do', true);">#��õ��ǰ</a></li>
+													<li><a href="javascript:openGuide('/imf/200/imf601.do');">#������</a></li>
+													<li><a href="https://download.securities.miraeasset.com/Kairos/Setup_KairosHTS.exe" title="���� �ٿ�ε�">#ī�̷ν��ٿ�ε�</a></li>
+													<li><a href="javascript:openHp('/hku/hku2001/t02.do', true);">#OTP</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</div>
+									<div class="list_wrap">
+										<div class="month_recommend">
+											<h3>���� ��õ��ǰ <span><a href="javascript:openHp('/hks/hks4000/n02.do', true);">������</a></span></h3>
+											<ul id="gnb_recommend_fundUL">
+												<li> <span class="num">1</span> <span class="txt"><a href="javascript:showCommonPopup('/hks/hks4116/p11.do?fd_cd=KR5153450226',725, 3600);">�̷����±۷ι��׷���Ʈ���������������ڽ�Ź1ȣ(�ֽ�) ���� Ae</a></span> <span class="rate">6.36%</span></li>
+												<li> <span class="num">2</span> <span class="txt"><a href="javascript:showCommonPopup('/hks/hks4116/p11.do?fd_cd=KR5181490175',725, 3600);">���ϴ��̳������������������ڽ�Ź(�ֽ�ȥ��-�簣����)(Ae)</a></span> <span class="rate">4.66%</span></li>
+												<li> <span class="num">3</span> <span class="txt"><a href="javascript:showCommonPopup('/hks/hks4116/p11.do?fd_cd=KR5117490006',725, 3600);">����H2O�۷ι������������ڽ�Ź(USD)[ä��ȥ��-�Ļ��簣����] ����Ae</a></span> <span class="rate">3.45%</span></li>
+												<li> <span class="num">4</span> <span class="txt"><a href="javascript:showCommonPopup('/hks/hks4116/p11.do?fd_cd=KR5153430217',725, 3600);">�̷����½���Ʈ�������������ڽ�Ź(ä��ȥ��) ����Ae</a></span> <span class="rate">1.66%</span></li>
+												<li> <span class="num">5</span> <span class="txt"><a href="javascript:showCommonPopup('/hks/hks4116/p11.do?fd_cd=KR5153420015',725, 3600);">�̷����±۷ι����̳������������ڽ�Ź 1(ä��)����A-e</a></span> <span class="rate">0.79%</span></li>
+											</ul>
+										</div>
+										<div class="link_wrap">
+											<ul id="searchAreaBanner">
+												<li> <a href="javascript:eventBannerCtrl(&quot;03&quot;, &quot;1&quot;, &quot;D&quot;, &quot;/hkr/hkr1002/r01.do&quot;);"> <strong>�κ��� �ȳ� �� ��û</strong> <span>����߱� ȥ�� ������� ���ð� �ΰ����� �˰��� ������ �м����� ������ ��õ�������� 2�ְ� ����� ü���ϼ���</span> </a></li>
+												<li> <a href="javascript:eventBannerCtrl(&quot;03&quot;, &quot;2&quot;, &quot;D&quot;, &quot;/hkr/hkr1004/n01.do&quot;);"> <strong>�κ���Ʈ(�ڹ���)</strong> <span>�����ڹ����� ���� Know-how�� ���� ��Ʈ������ ��õ�� �Ÿű��� �ѹ��� �ذ��� �� �ִ� �¶��� �ڻ���� �����Դϴ�.</span> </a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<a href="javascript:void(0);" class="search_close">�˻�â �ݱ�</a>
+							</div>
+							<!-- //�˻�â --> </li>
+					</ul>
+				</div>
+			</div>
+			<!-- GNB BG -->
+			<div id="gnb_cover" class=""></div>
+			<!-- SEARCH BG -->
+			<div id="search_cover"></div>
+		</div>
+		<div id="alpha_bg"></div>
+		<script type="text/javascript">
+	
+		//��ü�޴��˾�
+		function allMenuPop(){
+			try{ showCommonPopup('/advancement/jsp/common/allMenuPopup.jsp', '1050', '750'); }catch(e){}
+		}
+	
+		//��������(DC) ������ȸ �˾�
+		function retireSimplePop(){
+			try{
+				closeCommonPopup();
+				showCommonPopup('/hkp/hkp2010/p01.do', '720', '600'); 
+			}catch(e){}
+		}
+		
+		//WTS �˾� ����
+		function wtsOpen(){
+			
+			window.open('https://securities.miraeasset.com/advancement/jsp/trading/wts.jsp','MiraeassetDaewoo_WTS','width=1125,height=840,resizable=yes,scrollbars=yes');
+		}
+		
+		function openTalk(){
+			window.open("https://securities.miraeasset.com/chat/chatting_qr.html", 'hka_talk', 'width=470,height=600,scrollbars=yes,location=0,status=0');
+		}
+		
+		function doGnbLogin() {
+		    if (isMobile()) {
+		        openHp('/login.do?url=/main.do', false);
+		    } else {
+		        if (location.href.indexOf('wts') > -1) {
+		            top.wtsFrame.location.href = '/login.do?url=' + encodeURI(location.href);
+		            $("#topFrame", top.document).attr("rows", "0, 0, *, 0");
+		        } else {
+		            openHp('/login.do?url=/main.do', true);
+		        }
+		    }
+		}
+		
+		//��� Ŭ��ī��Ʈ ������ �̵�
+		function eventBannerCtrl(areaCd, bnrCd, linkType, linkUrl){
+			//console.log("areaCd["+areaCd+"], bnrCd["+bnrCd+"], linkType["+linkType+"], linkUrl["+linkUrl+"]");
+			var params = {
+				"areaCd" 	: areaCd,
+				"bnrCd" 	: bnrCd
+			};
+			$.ajax({
+				url 		: "/main/bannerViewCnt.json",	//ȣ��������
+				data		: params,
+				dataType	: "json",
+				type		: "POST",
+				success		: function(data){
+					linkTypeCtrl(linkType, linkUrl); //��ũ�̵�
+				},
+				error	: function(data, status, err){}
+			});
+		}
+		
+		//��ũ������ �̵� ��Ʈ�ѷ�
+		function linkTypeCtrl(linkType, linkUrl){
+			//console.log("linkTypeCtrl ["+linkType+"]["+linkUrl+"]"); return;
+			if(linkUrl && linkUrl != ""){
+				if(linkType == "D") 		openHp(linkUrl,false);			//�޴��̵�
+				else if(linkType == "N") 	window.open(linkUrl, '_blank');	//��â				
+			}
+		}
+		
+	// ]]>
+	</script>
+		<script type="text/javascript">
+	//<![CDATA[
+		/* ace log */
+		var _ctid=_urid=_imid=_gset='';
+		_ctid	= _currentMenuCode;
+		_urid	= loginUserId;
+		_id		= loginUserId;
+		_imid	= '';
+		_gset	= '';
+	//]]>
+	</script>
+		<!--// include area end - gnb.jsp -->
+		<div id="layerarea">
+			<div id="container">
+				<div class="loaction"></div>
+				<div id="snbWrap">
+					<dl class="snb" id="lnbMenuLayer">
+						<dt class="snbTit blind" id="lnbTitle">
+							MY�ڻ�
+						</dt>
+						<dd>
+							<ul class="snbMenu" id="lnbUL">
+								<li><a id="lnb_li1_hkd1001r01" class="blind dep02_1" href="javascript:openHp('/hkd/hkd1001/r01.do', false);">MY�ڻ�</a></li>
+								<li><a id="lnb_li1_hkd1001m02" class="blind dep02_2" href="javascript:openHp('/hkd/hkd1002/r01.do', false);">���º��ڻ�</a></li>
+								<li><a id="lnb_li1_hkd1001m03" class="blind dep02_3 on" href="javascript:openHp('/hkd/hkd1003/r01.do', false);">��ǰ���ڻ�</a></li>
+								<li><a id="lnb_li1_hkd1001m04" class="blind dep02_4" href="javascript:openHp('/hkd/hkd1004/r01.do', false);">�ŷ�����</a></li>
+								<li><a id="lnb_li1_hkd1005r01" class="blind dep02_5" href="javascript:openHp('/hkd/hkd1005/r01.do', false);">���ڼ��ͷ�</a></li>
+								<li><a id="lnb_li1_hkd1001m05" class="blind dep02_6" href="javascript:openHp('/hkd/hkd1006/r01.do', false);">�����м�</a></li>
+								<li><a id="lnb_li1_hkd1007r01" class="blind dep02_7" href="javascript:mClub_popup('/hki/hki3100/k01.do');">m.Club ���񽺾ȳ�/��û</a></li>
+							</ul>
+						</dd>
+						<dd class="snbInfo">
+							<span class="alim" id="alimCount"><a href="javascript:openHp('/hkd/hkd1008/r01.do', 'false');">12</a></span>
+							<span class="inv_type" id="investType">������</span>
+							<span class="service_type type04" id="serviceType"><a href="javascript:openHp('/hki/hki3095/n08.do', 'false');">Silver</a></span>
+						</dd>
+					</dl>
+				</div>
+				<script type="text/javascript">
+//<![CDATA[
+printMyBalaceLnb();
+$(window).load(function(){
+	var __height__ = $("body").prop("scrollHeight");
+	
+	$(window).scroll(function(){
+		//try{
+			var $layer 	= $("#snbWrap"),
+				$contH = $("#container").height(),
+				$bodyH = $("body").height(),
+				$footH = ( $("#footerWrap").offset().top ) - 1050;
+			$layer.css("position", "relative");
+			
+			var pos = $(window).scrollTop();
+			
+			if( pos == 0 ){
+				$layer.stop().animate({top: pos}, 700);
+			}else if(pos < $contH - 900){					
+				$layer.stop().animate({top: pos-93}, 700);
+			}else if( $contH > 880 ) {
+				$layer.stop().animate({top: $footH }, 700);
+			}
+		//}catch(e){}
+	}).resize(function(){
+		//ȭ������� ������ ���� �޴��� �̵���ġ������ ���Ͽ�
+		__height__ = $("body").prop("scrollHeight");
+	});
+});
+
+$(function(){		
+	var __height__ = $("body").prop("scrollHeight");
+	
+	//�α����� ��츸
+	if("joon8409" != ""){
+		//Lnb���� Ȱ��ȭ üũ
+		if(!isCommonNull($("#alimCount"))){
+			myAlimCount();		//�˸�ī��Ʈ��ȸ
+			myInvestType();	//���ڼ�����ȸ
+			//myUserGrade();		//���ڼ�����ȸ
+		}else{
+			setTimeout("myAlimCount()"	, 300);
+			setTimeout("myInvestType()"	, 300);
+			//setTimeout("myUserGrade()"	, 300);
+		}
+	}else{
+		//Default Setting
+		setAlimCount(0);
+	}
+});
+
+/*
+* MY�˸� ���� ��ȸ TRȣ��
+*/
+
+function myAlimCount(){
+	var params = {
+		qry_tcd		:	"R"	//��ȸ����
+	};
+	callAjaxObj({
+		url 	: "/com/myBalanceLnb/a01.json",	//ȣ��������
+		data	: params,				//�Ķ����
+		success	: function(data){
+			//MY�˸� ���� ��ȸ �Ϸ�
+			setAlimCount(data.grid_cnt01);
+		},
+		load 	: false
+	});
+}
+
+/*�˸� ī��Ʈ ����*/
+function setAlimCount(count){
+	var intCnt = 0;
+	if(!isCommonNull(count)){
+		try{ intCnt = parseInt(count, 10); }catch(e){ intCnt = 0; }
+	}
+	$("#alimCount").html("<a href=\"javascript:openHp('/hkd/hkd1008/r01.do', 'false');\">"+intCnt+"</a>");
+}
+
+/*
+* ���ڼ�����ȸ TRȣ��
+*/
+
+function myInvestType(){
+	callAjaxObj({
+		url 	: "/com/myBalanceLnb/a02.json",	//ȣ��������
+		data	: {},												//�Ķ����
+		success	: function(data){
+			var ivst_nm = "";
+			switch(data.ivsr_incl_tcd){	//���ڼ���з�
+				case "01" : ivst_nm = '������';		break;
+				case "02" : ivst_nm = '�����߱���';	break;
+				case "03" : ivst_nm = '�����߸���';	break;
+				case "04" : ivst_nm = '�����߱���';	break;
+				case "05" : ivst_nm = '������';		break;
+			}
+			$("#investType").html(ivst_nm);
+			
+			var cs_svc_gcd_nm = '';
+			var class_nm = "";
+			switch(data.cs_svc_gcd){	//�����񽺵���ڵ�
+				case "101" : cs_svc_gcd_nm = 'Diamond';	class_nm = 'service_type type01';	break;
+				case "102" : cs_svc_gcd_nm = 'Platinum';	class_nm = 'service_type type02';	break;
+				case "103" : cs_svc_gcd_nm = 'Gold';			class_nm = 'service_type type03';	break;
+				case "104" : cs_svc_gcd_nm = 'Silver';		class_nm = 'service_type type04';	break;
+				case "105" : cs_svc_gcd_nm = 'Bronze';		class_nm = 'service_type type05';	break;
+			}
+			$("#serviceType").removeClass().addClass(class_nm).html("<a href=\"javascript:openHp('/hki/hki3095/n08.do', 'false');\">"+cs_svc_gcd_nm+"</a>");
+		},
+		load 	: false
+	});
+}
+
+/*
+* ����� TRȣ��
+*/
+
+
+//]]>
+</script>
+				<div id="contents">
+					<!-- ���⼭���� ���� start -->
+					<div class="dep01Sec">
+						<h1 class="tit depth01"> <img src="https://img.securities.miraeasset.com/new2016/my/tit/tit_h1_hkd1003.gif" alt="��ǰ�� �ڻ�"> <a href="#" class="tooltip sub" title="���� ����"></a>
+							<div class="tooltip_wrap" style="width: 292px;">
+								<span></span>
+								<div class="tooltip_cont">
+									<!-- <p>�ݵ�� ���������Դϴ�.<br />�ؿ��ֽ�, ���������� ������ ������ ��ȭ�ڻ��� ���Դ�� ��ȭ���Աݾ����� ���˴ϴ�.<br />(ȯ������ �ݿ��մϴ�. ��, ��ȭ��ư Ŭ�� �� ��ȭ�ڻ��� ȯ������ ȯ������ �ݿ����� �ʽ��ϴ�)</p> -->
+									<ul class="list square">
+										<li>�ݵ�� ���������Դϴ�.</li>
+										<li>�ؿ��ֽ�, ���������� ������ ������ ��ȭ�ڻ��� ���Դ�� ��ȭ���Աݾ����� ���˴ϴ�.<br>(ȯ������ �ݿ��մϴ�. ��, ��ȭ��ư Ŭ�� �� ��ȭ�ڻ��� ȯ������ ȯ������ �ݿ����� �ʽ��ϴ�)</li>
+										<li>��Ź�ڻ��� ���Աݾ��� �������� �ʾ� �򰡼����� ������� �ʽ��ϴ�.</li>
+									</ul>
+									<a href="#" class="btn_tooltip_close" title="���� �ݱ�"></a>
+								</div>
+							</div> </h1>
+						<!-- <span class="judge">* �ع������� �ɻ��� 48-0322(2016.04.07 ~ 2017.04.06)</span> -->
+					</div>
+					<div class="tab_wrap product_tab">
+						<form name="f" method="post">
+							<!-- ### [S] Include TAB LIST ### -->
+							<ul class="tab_menu myasset col8" id="tab_menu">
+								<li class=" "> <a href="javascript:move('01')" class="01" title="">��ü</a> </li>
+								<li class=" "> <a href="javascript:move('03')" class="03" title="">�ֽ�</a> </li>
+								<li class="on "> <a href="javascript:move('02')" class="02" title="����������">�ݵ�</a> </li>
+								<li class=" "> <a href="javascript:move('09')" class="09" title="">�Ļ����ջ�ǰ</a> </li>
+								<li class=" "> <a href="javascript:move('04')" class="04" title="">CMA/RP</a> </li>
+								<li class=" "> <a href="javascript:move('16')" class="16" title="">��ȭ</a> </li>
+								<li class=" row"> <a href="javascript:move('20')" class="20" title="">�ǰ��<br>(�������ܰ�)</a> </li>
+							</ul>
+							<!-- ### [E] Include TAB LIST ### -->
+						</form>
+					</div>
+					<div class="dep02Sec printArea">
+						<h2 class="tit depth02"> <img src="https://img.securities.miraeasset.com/new2016/my/tit/tit_h2_hkd1003_01.gif" alt="�򰡱ݾ�/�򰡼��ͷ�"> <span class="btnWrap middle"> <a href="javascript:excelRegist();" class="btn ico excel">��������</a> <a href="javascript:assetPrint();" class="btn ico print" title="��â">�μ�</a> </span> </h2>
+						<div class="table_wrap" style="margin-bottom: 0px;">
+							<table summary="���Աݾ�, �򰡱ݾ�, �򰡼���, ���ͷ��� ������ ǥ �Դϴ�." class="col_type" id="fundTable">
+								<caption>
+									�򰡱ݾ�/�򰡼��ͷ� ��ǥ
+								</caption>
+								<colgroup>
+									<col style="width:25%" span="4">
+								</colgroup>
+								<thead>
+								<tr>
+									<th scope="col">���Աݾ�</th>
+									<th scope="col">�򰡱ݾ�</th>
+									<th scope="col">�򰡼���</th>
+									<th scope="col">���ͷ�</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="r">3,200,012 ��</td>
+									<td class="r">3,870,089 ��</td>
+									<td class="r"><i title="���">670,077&nbsp;��</i></td>
+									<td class="c"><i title="���">20.94&nbsp;%</i></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- //table_wrap -->
+					</div>
+					<div class="dep02Sec printArea" style="margin-bottom: 0px;">
+						<h2 class="tit depth02"> <img src="https://img.securities.miraeasset.com/new2016/my/tit/tit_h2_hkd1003r02_01.gif" alt="�ݵ� ������Ȳ"> <span class="btnWrap"> <a href="javascript:;" class="btn middle" id="showAccount">���¹�ȣ����</a> <a href="javascript:;" class="btn middle" id="exchangeWon" style="display:none;">��ȭȯ��ǥ��</a> </span> </h2>
+						<div class="table_wrap" id="excelTable" style="margin-bottom: 0px;">
+							<table summary="���¹�ȣ, ��ǰ��, ��ȭ, ���ذ�, ���Աݾ�, �򰡱ݾ�, �򰡼���, ���ͷ�, �ٷΰ���� ������ ǥ �Դϴ�." class="col_type" id="fundTable2">
+								<caption>
+									�ݵ� ������Ȳ ���
+								</caption>
+								<colgroup>
+									<col style="width:15%; display:none;">
+									<col style="width:*">
+									<col style="width:8%">
+									<col style="width:10%" span="2">
+									<col style="width:10%" span="2">
+									<col style="width:10%" span="2">
+								</colgroup>
+								<thead>
+								<tr>
+									<th scope="col" style="display:none;">���¹�ȣ</th>
+									<th scope="col" style="border-left: none;">��ǰ��</th>
+									<th scope="col">��ȭ</th>
+									<th scope="col">���ذ�</th>
+									<th scope="col">���Աݾ�</th>
+									<th scope="col">�򰡱ݾ�</th>
+									<th scope="col">�򰡼���</th>
+									<th scope="col">���ͷ�</th>
+									<th scope="col" class="nonePrintArea">�ٷΰ���</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td class="c" style="display:none">220-20-1799723</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510904141M')" title="��â����"><em>�̷����½���Ʈ�ռ�30���������ڽ�Ź2ȣ(ä��ȥ��)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,151.680</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="52,704" data-frc="0.00">52,704</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>2,704</i>" data-frc="0.00"><i title="���">2,704</i></span></td>
+									<td class="r"><i title="���">5.41&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;0&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510904141M&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510904141M&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-20-1799723</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR511701125M')" title="��â����"><em>�츮�����÷���ä�����������ڽ�Ź1ȣ(ä��)Class A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,021.430</td>
+									<td class="r"><span class="krw" data-krw="1,010,000" data-frc="0">1,010,000</span></td>
+									<td class="r"><span class="krw" data-krw="1,044,129" data-frc="0.00">1,044,129</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>34,129</i>" data-frc="0.00"><i title="����">34,129</i></span></td>
+									<td class="r"><i title="���">3.38&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;1&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR511701125M&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR511701125M&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-20-1799723</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5153450556')" title="��â����"><em>�̷�����G2�̳뺣�������������ڽ�Ź(�ֽ�)����A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">2,993.020</td>
+									<td class="r"><span class="krw" data-krw="10,000" data-frc="0">10,000</span></td>
+									<td class="r"><span class="krw" data-krw="11,445" data-frc="0.00">11,445</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>1,445</i>" data-frc="0.00"><i title="���">1,445</i></span></td>
+									<td class="r"><i title="���">14.45&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;2&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5153450556&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5153450556&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-20-1799723</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5153480047')" title="��â����"><em>�̷�����AI�۷ι������ȥ���ڻ������ڽ�Ź(�簣����) ����A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,084.360</td>
+									<td class="r"><span class="krw" data-krw="110,000" data-frc="0">110,000</span></td>
+									<td class="r"><span class="krw" data-krw="124,081" data-frc="0.00">124,081</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>14,081</i>" data-frc="0.00"><i title="���">14,081</i></span></td>
+									<td class="r"><i title="���">12.80&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;3&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5153480047&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5153480047&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-20-1799723</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5153490532')" title="��â����"><em>�̷����½���Ʈ�����ݵ弿����ȥ���ڻ������ڽ�Ź(��������簣����) ����A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,239.050</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="54,363" data-frc="0.00">54,363</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>4,363</i>" data-frc="0.00"><i title="���">4,363</i></span></td>
+									<td class="r"><i title="���">8.73&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;4&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5153490532&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5153490532&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-20-1799723</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR517509054M')" title="��â����"><em>�������̳�ä�����������ڽ�Ź(ä��-�簣����)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,295.940</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="56,343" data-frc="0.00">56,343</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>6,343</i>" data-frc="0.00"><i title="���">6,343</i></span></td>
+									<td class="r"><i title="���">12.69&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;5&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR517509054M&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR517509054M&quot;, &quot;220201799723&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-33-2342457</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902767M')" title="��â����"><em>�̷����¹̱����Ĩ�ε����������ڽ�Ź1ȣ(�ֽ�)Ae</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,890.320</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="65,690" data-frc="0.00">65,690</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>15,690</i>" data-frc="0.00"><i title="���">15,690</i></span></td>
+									<td class="r"><i title="���">31.38&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;6&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902767M&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902767M&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-33-2342457</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR513304017M')" title="��â����"><em>KB������̽�30�������ڽ�Ź(ä��ȥ��)A-E Ŭ����</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,341.950</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="59,994" data-frc="0.00">59,994</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>9,994</i>" data-frc="0.00"><i title="���">9,994</i></span></td>
+									<td class="r"><i title="���">19.99&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;7&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR513304017M&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR513304017M&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-33-2342457</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5139430016')" title="��â����"><em>�ﱹ��Ƽ�÷���30���������������ڽ�Ź[ä��ȥ��]C-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,000.950</td>
+									<td class="r"><span class="krw" data-krw="110,000" data-frc="0">110,000</span></td>
+									<td class="r"><span class="krw" data-krw="117,438" data-frc="0.00">117,438</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>7,438</i>" data-frc="0.00"><i title="���">7,438</i></span></td>
+									<td class="r"><i title="���">6.76&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;8&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5139430016&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5139430016&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-33-2342457</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR515009116M')" title="��â����"><em>�ǵ���Ƽ����Big4 40���������ڽ�Ź(ä��ȥ��-�簣����)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,331.510</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="57,286" data-frc="0.00">57,286</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>7,286</i>" data-frc="0.00"><i title="���">7,286</i></span></td>
+									<td class="r"><i title="���">14.57&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;9&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR515009116M&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR515009116M&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-33-2342457</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5187470016')" title="��â����"><em>�����÷������ǵ帲���Դ����������ڽ�Ź1ȣ[�ֽ�ȥ��] ����Ce</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,059.210</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="53,933" data-frc="0.00">53,933</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>3,933</i>" data-frc="0.00"><i title="���">3,933</i></span></td>
+									<td class="r"><i title="���">7.87&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;10&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5187470016&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5187470016&quot;, &quot;220332342457&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510802834M')" title="��â����"><em>�̷��������̳��׷ν����������ڽ�Ź1ȣ(�ֽ�)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">2,696.700</td>
+									<td class="r"><span class="krw" data-krw="110,000" data-frc="0">110,000</span></td>
+									<td class="r"><span class="krw" data-krw="162,724" data-frc="0.00">162,724</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>52,724</i>" data-frc="0.00"><i title="���">52,724</i></span></td>
+									<td class="r"><i title="���">47.93&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;11&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510802834M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510802834M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902767M')" title="��â����"><em>�̷����¹̱����Ĩ�ε����������ڽ�Ź1ȣ(�ֽ�)Ae</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,890.320</td>
+									<td class="r"><span class="krw" data-krw="170,000" data-frc="0">170,000</span></td>
+									<td class="r"><span class="krw" data-krw="219,054" data-frc="0.00">219,054</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>49,054</i>" data-frc="0.00"><i title="���">49,054</i></span></td>
+									<td class="r"><i title="���">28.86&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;12&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902767M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902767M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902769M')" title="��â����"><em>�̷����¹̱����Ĩ�ε����������ڽ�Ź1ȣ(�ֽ�)Ce</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,881.390</td>
+									<td class="r"><span class="krw" data-krw="70,000" data-frc="0">70,000</span></td>
+									<td class="r"><span class="krw" data-krw="93,640" data-frc="0.00">93,640</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>23,640</i>" data-frc="0.00"><i title="���">23,640</i></span></td>
+									<td class="r"><i title="���">33.77&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;13&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902769M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902769M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902811M')" title="��â����"><em>�̷����±۷ι��׷ν����������ڽ�Ź1ȣ(�ֽ�)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">2,026.960</td>
+									<td class="r"><span class="krw" data-krw="230,000" data-frc="0">230,000</span></td>
+									<td class="r"><span class="krw" data-krw="296,303" data-frc="0.00">296,303</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>66,303</i>" data-frc="0.00"><i title="���">66,303</i></span></td>
+									<td class="r"><i title="���">28.83&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;14&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902811M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902811M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902875M')" title="��â����"><em>�̷��������̳�H�ε����������ڽ�Ź1ȣ(�ֽ�)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">829.420</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="46,994" data-frc="0.00">46,994</span></td>
+									<td class="r"><span class="krw" data-krw="<em title='�϶�'>-3,006</em>" data-frc="0.00"><em title="�϶�">-3,006</em></span></td>
+									<td class="r"><em title="�϶�">-6.01&nbsp;%</em></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;15&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902875M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902875M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902914M')" title="��â����"><em>�̷������ε��߼�����Ŀ�����������ڽ�Ź(�ֽ�)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">2,500.020</td>
+									<td class="r"><span class="krw" data-krw="80,000" data-frc="0">80,000</span></td>
+									<td class="r"><span class="krw" data-krw="129,098" data-frc="0.00">129,098</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>49,098</i>" data-frc="0.00"><i title="���">49,098</i></span></td>
+									<td class="r"><i title="���">61.37&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;16&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902914M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902914M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902937M')" title="��â����"><em>�̷����´��̿ͳؽ�Ʈ�ƽþ��۽������������ڽ�Ź1ȣ(H-JPY)(�ֽ�)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,659.710</td>
+									<td class="r"><span class="krw" data-krw="50,000" data-frc="0">50,000</span></td>
+									<td class="r"><span class="krw" data-krw="63,475" data-frc="0.00">63,475</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>13,475</i>" data-frc="0.00"><i title="���">13,475</i></span></td>
+									<td class="r"><i title="���">26.95&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;17&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902937M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902937M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510902966M')" title="��â����"><em>�̷��������̳��ַθ��������ڽ�Ź1ȣ(�ֽ�)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">2,501.950</td>
+									<td class="r"><span class="krw" data-krw="70,012" data-frc="0">70,012</span></td>
+									<td class="r"><span class="krw" data-krw="97,853" data-frc="0.00">97,853</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>27,841</i>" data-frc="0.00"><i title="���">27,841</i></span></td>
+									<td class="r"><i title="���">39.77&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;18&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510902966M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510902966M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510909134M')" title="��â����"><em>�̷����¾ƽþƱ׷���Ʈ���������������ڽ�Ź1ȣ(�ֽ�-�簣����)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,980.520</td>
+									<td class="r"><span class="krw" data-krw="130,000" data-frc="0">130,000</span></td>
+									<td class="r"><span class="krw" data-krw="172,166" data-frc="0.00">172,166</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>42,166</i>" data-frc="0.00"><i title="���">42,166</i></span></td>
+									<td class="r"><i title="���">32.44&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;19&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510909134M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510909134M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510909237M')" title="��â����"><em>�̷����±۷ι��ַ�����������ڽ�Ź(�ֽ�-�簣����)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,952.350</td>
+									<td class="r"><span class="krw" data-krw="40,000" data-frc="0">40,000</span></td>
+									<td class="r"><span class="krw" data-krw="56,272" data-frc="0.00">56,272</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>16,272</i>" data-frc="0.00"><i title="���">16,272</i></span></td>
+									<td class="r"><i title="���">40.68&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;20&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510909237M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510909237M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR510909237M')" title="��â����"><em>�̷����±۷ι��ַ�����������ڽ�Ź(�ֽ�-�簣����)A-e</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,952.350</td>
+									<td class="r"><span class="krw" data-krw="40,000" data-frc="0">40,000</span></td>
+									<td class="r"><span class="krw" data-krw="56,264" data-frc="0.00">56,264</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>16,264</i>" data-frc="0.00"><i title="���">16,264</i></span></td>
+									<td class="r"><i title="���">40.66&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;21&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR510909237M&quot;, &quot;220391724713&quot;, &quot;2&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR510909237M&quot;, &quot;220391724713&quot;, &quot;2&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5113450195')" title="��â����"><em>�ѱ����ں�Ʈ���׷ν����������ڽ�Ź(�ֽ�) ����Ae</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,927.080</td>
+									<td class="r"><span class="krw" data-krw="40,000" data-frc="0">40,000</span></td>
+									<td class="r"><span class="krw" data-krw="53,447" data-frc="0.00">53,447</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>13,447</i>" data-frc="0.00"><i title="���">13,447</i></span></td>
+									<td class="r"><i title="���">33.62&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;22&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5113450195&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5113450195&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5114450359')" title="��â����"><em>�Ｚ�Ϻ��߼��� FOCUS ���������ڽ�Ź H[�ֽ�]_Ae</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,576.930</td>
+									<td class="r"><span class="krw" data-krw="80,000" data-frc="0">80,000</span></td>
+									<td class="r"><span class="krw" data-krw="90,392" data-frc="0.00">90,392</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>10,392</i>" data-frc="0.00"><i title="���">10,392</i></span></td>
+									<td class="r"><i title="���">12.99&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;23&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5114450359&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5114450359&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR5123650019')" title="��â����"><em>Ű�򷯽þ��ͽ��÷η��������ڽ�Ź 1[�ֽ�]Class Ae</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">1,726.170</td>
+									<td class="r"><span class="krw" data-krw="110,000" data-frc="0">110,000</span></td>
+									<td class="r"><span class="krw" data-krw="142,685" data-frc="0.00">142,685</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>32,685</i>" data-frc="0.00"><i title="���">32,685</i></span></td>
+									<td class="r"><i title="���">29.71&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;24&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR5123650019&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR5123650019&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								<tr>
+									<td class="c" style="display:none">220-39-1724713</td>
+									<td class="l" style="border-left: none;"><a href="javascript:fund_DetailView('KR517709019M')" title="��â����"><em>AB�̱��׷ν��������ڽ�Ź(�ֽ�-�簣����)Ae</em></a></td>
+									<td class="krw" data-krw="KRW" data-frc="KRW">KRW</td>
+									<td class="">2,536.290</td>
+									<td class="r"><span class="krw" data-krw="340,000" data-frc="0">340,000</span></td>
+									<td class="r"><span class="krw" data-krw="492,316" data-frc="0.00">492,316</span></td>
+									<td class="r"><span class="krw" data-krw="<i title='���'>152,316</i>" data-frc="0.00"><i title="���">152,316</i></span></td>
+									<td class="r"><i title="���">44.80&nbsp;%</i></td>
+									<td>
+										<div class="btnWrap small ssgroup">
+											<a href="javascript:detailPop(&quot;25&quot;);" class="btn" title="��â����">�ڻ��</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;1&quot;, &quot;KR517709019M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn red" title="������ �̵�">�߰��ż�</a>
+											<br>
+											<a href="javascript:fund_code_addDealView(&quot;2&quot;, &quot;KR517709019M&quot;, &quot;220391724713&quot;, &quot;1&quot;)" class="btn" title="������ �̵�">�ŵ�</a>
+										</div></td>
+								</tr>
+								</tbody>
+							</table>
+							<div class="btnWrap middle more" id="moreList" style="display:none;">
+								<a href="javascript:hkd1003a02(false);" class="btn middle ico more">�� ����</a>
+							</div>
+						</div>
+						<!-- //table_wrap -->
+					</div>
+					<!--// ������� ���� end -->
+				</div>
+			</div>
+			<script type="text/javascript">
+	$(function(){
+		// Focus
+		$(this).on('keydown', '.family_site a:last', function(event){
+			var isShift = window.event.shiftKey ? true : false;
+
+			if( !isShift && event.keyCode == 9){
+				$('.family_site a:first').focus();
+				return false;
+			}
+		});
+
+		$(this).on('keydown', '.family_site a:first', function(event){
+			var isShift = window.event.shiftKey ? true : false;
+			if( isShift && event.keyCode == 9){
+				setTimeout(function(){
+					$('.family_site a:last').focus();
+				},15);
+				return false;
+			}
+		});
+
+		// Ȱ��ȭ
+		$('.footer_info_wrap .btn_layer').on('click', function(e){
+			e.preventDefault();
+			var status = $(this).hasClass('on');
+			if ( !status ){
+				$(this).addClass('on');
+				$(this).next().show();
+			}
+		});
+
+		// �ݱ�
+		$('.family_site .btn_close').on('click', function(e){
+			e.preventDefault();
+
+			$(this).parent().hide();
+			$('.footer_info_wrap .btn_layer').removeClass('on').focus();
+
+		});
+	});
+	</script>
+			<style>
+		.info_box {position:fixed;right:20px;bottom:-360px;z-index:25;}
+		.info_box * {line-height:20px;}
+		.info_box.logout #info_footer .today {display:none;}
+		#info_wrap {position:relative;width:326px;}
+		#info_wrap .info_close > a {position:absolute;top:24px;right:28px;display:block;width:16px;height:16px;background:url('https://img.securities.miraeasset.com/new2016/persional/ico_close.png') no-repeat;font-size:0;line-height:0;}
+		#info_header {background:url('https://img.securities.miraeasset.com/new2016/persional/img_info_pop01.png') no-repeat;height:59px;}
+		#info_header h3 {padding:23px 28px;font-size:14px;font-weight:bold;color:#fff;}
+		#info_content {padding:30px 0 17px;background:url('https://img.securities.miraeasset.com/new2016/persional/img_info_pop02.png') repeat-y;}
+		#info_content * {text-align:center;}
+		#info_content .info_title {margin:12px 0 7px;font-size:16px;font-weight:bold;color:#222;line-height:24px;}
+		#info_content .info_btn {margin-top:13px;height:27px;}
+		#info_content .info_btn > a {display:inline-block;height:26px;line-height:26px;padding:0px 14px;border:1px solid #bbb;background:#f9f9f9;color:#444;}
+		.msie #info_content .info_btn > a {line-height:30px;}
+		#info_footer {padding:0 9px;background:url('https://img.securities.miraeasset.com/new2016/persional/img_info_pop03.png') 0 bottom no-repeat;min-height:25px;}
+		#info_footer .today {position:relative;padding:10px 20px 20px;border-top:1px solid #ebebeb;}
+		#info_footer .today > a {position:absolute;right:20px;font-weight:bold;color:#444;}
+
+		/* #footer .footer_quick_menu .quick_wrap ul.quick_menu2 li.active a {font-weight:bold;color:#0059a6;} */
+	</style>
+			<script type="text/javascript" src="/advancement/resource/js/CookieManager.js"></script>
+			<script type="text/javascript">
+	<!--
+		var personalCommonParam = {
+			personalUserID			: "joon8409",
+			personalPopExeYN		: "Y",
+			personalPopLogoutExeYN	: "N",
+			isPreview				: "N",
+			referer					: "https://securities.miraeasset.com/hkd/hkd1003/r03.do"
+		};
+	
+		$("document").ready(function(){
+			// �α��� ��, ù ������������ ��Ÿ������ ����
+			if (personalCommonParam.referer.indexOf("/login.do") > -1 || personalCommonParam.referer.indexOf("/login/tr.do") > -1 || personalCommonParam.referer.indexOf("/login/sign.do") > -1) {
+//				showLoginSlide();
+			}
+
+			if("" == "2") {
+				var img1		=	"";
+				var linkopen1	=	"";
+				var title1		=	"";
+				var text1		=	"";
+				var text2		=	"";
+				var linktype1	=	"";
+				var linkhome1	=	"";
+				var linktext1	=	"";
+
+				text1	=	text1.split("&lt").join("<");
+				text1	=	text1.split("&gt").join(">");
+
+				text2	=	text2.split("&lt").join("<");
+				text2	=	text2.split("&gt").join(">");
+
+				var data	=	{
+					 "img1"			: img1
+					 , "linkopen1"	: linkopen1
+					 , "title1"		: title1
+					 , "text1"		: text1
+					 , "text2"		: text2
+					 , "linktype1"	: linktype1
+					 , "linkhome1"	: linkhome1
+					 , "linktext1"	: linktext1
+				};
+//				previewPersonalReturn(data);
+			}
+		});
+		
+		function hideLoginSlide(){
+			if($("#loginSlideCheckbox").is(":checked")){
+				var todayDate = new Date();
+				todayDate.setDate(todayDate.getDate() + 1);
+				document.cookie = "loginSlideCookie=Y; path=/; expires=" + todayDate.toGMTString() + ";";
+			}
+			$("#personalSlidingLayer").hide();
+		}
+
+		function showLoginSlide(){
+			loginLog();
+			if(!getCookie("loginSlideCookie")){
+				setTimeout(function(){
+					if(personalCommonParam.isPreview=="Y"){
+						personalReturn(previewData);
+					}else{
+						f100201();
+					}
+				}, 2000);
+			}
+		}
+
+		/**
+		 * �α��� �α�(window xp���� �����Ȳ �м��ϱ����� �߰�)
+		 * 2018.12.19
+		 */
+		function loginLog(){
+			try{
+				$.ajax({
+					url		: "/login/log.json",
+					type	: "POST",
+					timeout	: 30000,
+					success	: function(data){
+
+					},
+					error	: function(data, status, err){
+
+					}
+				});
+			}catch(e){}
+		}
+
+		function f100201(){
+			if(personalCommonParam.personalUserID!=""&&personalCommonParam.personalPopExeYN=="N"){
+				return;
+			}
+			if(personalCommonParam.personalUserID==""&&personalCommonParam.personalPopLogoutExeYN=="N"){
+				return;
+			}
+
+			//var personalPopUrl = "/ps/PS1100201.json";
+			//��α����� ����ȭ ǥ������ �ʱ�� �ϸ� ���� ó��
+			if(personalCommonParam.personalUserID==""){
+				//personalPopUrl = "/ps/PS1100801.json";
+				return;
+			}
+
+			var personalPopUrl = "https://securities.miraeasset.com/bt/pjsonweb.jsp?m=1&z=130201&userid="+personalCommonParam.personalUserID+"&ac=ji&url=securities.miraeasset.com/main.do";
+			$.ajax({
+				url		: personalPopUrl,
+				data	: "",
+				type	: "POST",
+				dataType: "jsonp",
+				timeout	: 30000,
+				async 	: false,
+				success	: personalReturn,
+				error	: function(data, status, err){}
+			});
+		}
+
+		function personalReturn(data){
+			if(data==null)	return;
+			//var targetObj = data.ps100201;
+			var targetObj = data;
+			//��α���
+			//if(personalCommonParam.personalUserID==""){
+			//	targetObj = data.ps100801;
+			//	$("#personalSlidingLayer").removeClass("login").addClass("logout");
+			//}
+
+			if(personalCommonParam.isPreview=="Y"){
+				//targetObj = data.preview;
+				$("#personalSlidingLayer").removeClass("logout").addClass("login");
+			}
+
+			if(typeof(targetObj)=='undefined'||targetObj==null)		return;
+			if(typeof(targetObj.text1)=='undefined'||targetObj.text1==null)		return;
+			$("#LS_title1").html(targetObj.title1);
+			var str = '';
+			if(typeof(targetObj.text2)!='undefined'&&targetObj.text2!=null&&targetObj.text2!='') str = targetObj.text2;
+			if(typeof(targetObj.text3)!='undefined'&&targetObj.text3!=null&&targetObj.text3!='') str += '<br>'+targetObj.text3;
+			$("#LS_text1").html(targetObj.text1);
+			$("#LS_text2").html(str);
+			document.getElementById("LS_img1").src = targetObj.img1;
+			$("#LS_link1").html(targetObj.link1);
+			str = '';
+			if(targetObj.linktype1=='notice'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext1+'</a>';
+			}else if(targetObj.linktype1=='link'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')">'+targetObj.linktext1+'</a>';
+			}else if(targetObj.linktype1=='investTrend'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext1+'</a>';
+			}else if(targetObj.linktype1=='popup'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+			}else if(targetObj.linktype1=='trend'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+			}else if(targetObj.linktype1=='download'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+			}else if(targetObj.linktype1=='simplePension'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+			}else if(targetObj.linktype1=='promotionPop'){
+				str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+			}
+			str += "&nbsp;&nbsp;";
+			if(targetObj.linktype2=='link'){
+				str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+			}else if(targetObj.linktype2=='popup'){
+				str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+			}else if(targetObj.linktype2=='trend'){
+				str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+			}else if(targetObj.linktype2=='download'){
+				str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+			}else if(targetObj.linktype2=='simplePension'){
+				str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+			}else if(targetObj.linktype2=='promotionPop'){
+				str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+			}
+			str += '';
+			$("#LS_linkzone").html(str);			//link
+			$("#personalSlidingLayer").show();
+			if(targetObj.text1!=null&&targetObj.text1!=''){
+				$('#personalSlidingLayer').animate({"bottom" : "20px"}, "slow");
+			}
+		}
+
+		function psLink(wepa1, linktype, link1, link2){
+			switch(linktype){
+				//case 'notice'		: clickArticle(link1, link2);		break;
+				case 'link'			: document.location.href = link1;	break;
+				//case 'investTrend'	: setParams(link2);linkGnbMenuAndGo(link1);		break;
+				case 'popup'		: window.open(link1, '');	break;
+				case 'download' 	: window.open(link1, '');	break;
+				//case 'trend'		: showModalHtml('/renewal/popup/kairosMovie_pop.jsp?boardType=I&movieCode='+link1, 900, 800, 'false'); 	break;
+				//case 'simplePension': goSimplePension(); 	break;
+				//case 'promotionPop'	: rejectRegistPromotionPop(); 	break;
+			}
+			_BT_wepa_temp = wepa1;
+			var _BTCC = "securities.miraeasset.com";
+			//var _BT_DEBUG = "off";
+			if(typeof(_bt_run_track)!="undefined"){
+				_bt_run_track(_BTCC);
+			}
+		}
+		
+		//WTS �����˾� ����
+		function wtsEnOpen(){
+			
+			window.open('https://securities.miraeasset.com/advancement/jsp/trading_eu/wts.jsp','MiraeassetSecurities_EN_WTS','width=1125,height=840,resizable=yes,scrollbars=yes');
+		}
+	//-->
+	</script>
+			<!--include area start -->
+			<div id="footerWrap">
+				<div id="footer">
+					<div class="footer_info_wrap">
+						<ul class="footer_info">
+							<li><a href="javascript:openHp('/hki/hki3016/n01.do',false);"><img src="https://img.securities.miraeasset.com/new2016/txt/txt_footer_info1.png" alt="������ 1588-6800"></a></li>
+							<li><a href="javascript:openHp('/ocq/ocq1001/c04.do',false);"><img src="https://img.securities.miraeasset.com/new2016/txt/txt_footer_info2.png" alt="�����ڻ�������� 1588-5577"></a></li>
+							<li><a href="javascript:openHp('/ocq/ocq1001/m02.do',false);"><img src="https://img.securities.miraeasset.com/new2016/txt/txt_footer_info3.png" alt="���ɾ�� 1644-3322"></a></li>
+							<li><a href="javascript:openHp('/ocq/ocq1001/c03.do',false);"><img src="https://img.securities.miraeasset.com/new2016/txt/txt_footer_info4.png" alt="m.����Ʈ�ڻ꼾�� 1644-9300"></a></li>
+						</ul>
+						<ul class="sns_wrap">
+							<li class="facebook"><a href="https://www.facebook.com/miraeassetmstock" target="_blank" title="��â">Facebook</a></li>
+							<li class="twitter"><a href="https://twitter.com/mstock_ebiz" target="_blank" title="��â">Twitter</a></li>
+							<li class="blog"><a href="http://blog.naver.com/how2invest" target="_blank" title="��â">Blog</a></li>
+						</ul>
+						<a href="#" class="btn_layer" title="����"><img src="https://img.securities.miraeasset.com/new2016/btn/btn_footer_layer.gif" alt="�йи� ����Ʈ"></a>
+						<div class="family_site">
+							<dl>
+								<dt>
+									�ѱ� (Headquarter)
+								</dt>
+								<dd>
+									<!-- Ȱ��ȭ �� Ŭ���� on �߰� -->
+									<ul>
+										<li><a href="http://www.miraeasset.co.kr" target="_blank" title="��â����">�̷����±׷�</a></li>
+										<li><a href="http://investments.miraeasset.com" target="_blank" title="��â����">�̷������ڻ���</a></li>
+										<li><a href="https://securities.miraeasset.com" target="_blank" title="��â����">�̷���������</a></li>
+										<li><a href="http://life.miraeasset.com" target="_blank" title="��â����">�̷����»���</a></li>
+										<li><a href="http://multiasset.miraeasset.com/" target="_blank" title="��â����">��Ƽ�����ڻ���</a></li>
+										<li><a href="http://miraeassetlc.com" target="_blank" title="��â����">�̷����±�������</a></li>
+										<li><a href="http://venture.miraeasset.co.kr" target="_blank" title="��â����">�̷����º�ó����</a></li>
+										<li><a href="https://capital.miraeasset.com" target="_blank" title="��â����">�̷�����ĳ��Ż</a></li>
+										<li><a href="http://consulting.miraeasset.com" target="_blank" title="��â����">�̷�����������</a></li>
+										<li><a href="http://fs.miraeasset.com" target="_blank" title="��â����">�̷������ݵ弭��</a></li>
+										<li><a href="http://energyinfra.miraeasset.co.kr/main/index.do" target="_blank" title="��â����">�������������ڻ���</a></li>
+										<li><a href="http://investpension.miraeasset.com" target="_blank" title="��â����">�̷��������ڿͿ��ݼ���</a></li>
+										<li><a href="http://foundation.miraeasset.com" target="_blank" title="��â����">�̷����¹��������</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="half">
+								<dt>
+									Global
+								</dt>
+								<dd>
+									<ul>
+										<li><a href="https://english.securities.miraeasset.com" target="_blank" title="��â����">�̷���������(�۷ι�)</a></li>
+										<li><a href="https://miraeassetsecurities.mn" target="_blank" title="��â����">�̷���������(����)</a></li>
+										<li><a href="http://www.miraeassetusa.com" target="_blank" title="��â����">�̷���������(�̱�-LA)</a></li>
+										<li><a href="http://miraeassetsecuritiesus.com" target="_blank" title="��â����">�̷���������(�̱�-����)</a></li>
+										<li><a href="http://www.masvn.com" target="_blank" title="��â����">�̷���������(��Ʈ��)</a></li>
+										<li><a href="https://corretora.miraeasset.com.br" target="_blank" title="��â����">�̷���������(�����)</a></li>
+										<li>�̷���������(�̰�����)</li>
+										<li>�̷���������(����)</li>
+										<li><a href="http://cm.miraeasset.co.in/" target="_blank" title="��â����">�̷���������(�ε�)</a></li>
+										<li><a href="https://www.miraeasset.co.id" target="_blank" title="��â����">�̷���������(�ε��׽þ�)</a></li>
+										<li><a href="http://securities.miraeasset.hk" target="_blank" title="��â����">�̷���������(ȫ��*)</a></li>
+										<li>�̷������ڹ�(�߱�)</li>
+									</ul>
+								</dd>
+								<dd>
+									<ul>
+										<li><a href="https://www.am.miraeasset.com" target="_blank" title="��â����">�̷������ڻ���(�۷ι�)</a></li>
+										<li><a href="http://investments.miraeasset.us" target="_blank" title="��â����">�̷������ڻ���(�̱�)</a></li>
+										<li><a href="http://fundmanagement-miraeasset.com.vn/" target="_blank" title="��â����">�̷������ڻ���(��Ʈ��)</a></li>
+										<li><a href="http://investments.miraeasset.com.br" target="_blank" title="��â����">�̷������ڻ���(�����)</a></li>
+										<li><a href="http://investments.miraeasset.co.uk/" target="_blank" title="��â����">�̷������ڻ���(����)</a></li>
+										<li><a href="http://www.miraeassetmf.co.in" target="_blank" title="��â����">�̷������ڻ���(�ε�)</a></li>
+										<li>�̷������ڻ���(�߱�-����)</li>
+										<li><a href="http://investments.miraeasset.com.au" target="_blank" title="��â����">�̷������ڻ���(ȣ��)</a></li>
+										<li><a href="https://www.am.miraeasset.com.hk/" target="_blank" title="��â����">�̷������ڻ���(ȫ��*)</a></li>
+										<li><a href="http://www.hcmiraefund.com/" target="_blank" title="��â����">�̷�����ȭ���ڻ���(�߱�)</a></li>
+										<li style="margin-top:30px;"><a href="http://mafc.com.vn" target="_blank" title="��â����">�̷��������̳������۴�(��Ʈ��)</a></li>
+										<!-- ���� -->
+										<li><a href="https://www.map-life.com.vn" target="_blank" title="��â����">�̷������������ƻ���(��Ʈ��)</a></li>
+										<li>�̷�����ĳ��Ż��Ʈ�����۴�</li>
+										<li><a href="http://www.pay4u.vn" target="_blank" title="��â����">�񳪵��������̳����÷���</a></li>
+									</ul>
+								</dd>
+								<!-- ���� -->
+								<dd>
+									<ul>
+										<li><a href="https://www.globalxetfs.com/" target="_blank" title="��â����">Global X(�̱�)</a></li>
+										<li><a href="https://globalxetfs.eu/uk/" target="_blank" title="��â����">Global X(����)</a></li>
+										<li><a href="https://globalxetfs.co/" target="_blank" title="��â����">Global X(�ݷҺ��)</a></li>
+										<li><a href="https://globalxetfs.co.jp" target="_blank" title="��â����">Global X Japn</a></li>
+										<li><a href="http://www.horizonsetfs.com" target="_blank" title="��â����">Horizons ETFs(ĳ����)</a></li>
+										<li><a href="http://www.horizonsetfs.com.hk/" target="_blank" title="��â����">Horizons ETFs(ȫ��*)</a></li>
+										<li><a href="https://www.betashares.com.au" target="_blank" title="��â����">BetaShares(ȣ��)</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<p class="ast">* �߱� ȫ�� Ư��������</p>
+							<a href="#" class="btn_close">�ݱ�</a>
+						</div>
+					</div>
+					<!-- //footer_info_wrap -->
+					<div class="footer_quick_menu">
+						<div class="footer_logo">
+							<img src="https://img.securities.miraeasset.com/renew2019/ico_footer_logo.png" alt="MIRAE ASSET �̷���������">
+						</div>
+						<div class="quick_wrap">
+							<ul class="quick_menu1">
+								<li><a href="https://ci.securities.miraeasset.com" target="_blank" title="��â����">ȸ��Ұ�(����)</a></li>
+								<li><a href="https://english.securities.miraeasset.com" target="_blank" title="��â����">Our Company</a></li>
+								<li><a href="https://securities.miraeasset.com/newir/view/pc/en/investor/researchReportsList.jsp" target="_blank" title="��â����">��������ġ</a></li>
+								<li><a href="javascript:wtsEnOpen();" title="��â����">���� WTS</a></li>
+								<li><a href="javascript:openHp('/hku/hku3020/n02.do',false);" title="��â����">���ڱ���������</a></li>
+								<li><a href="https://tornado.securities.miraeasset.com" target="_blank" title="��â����">Ź����</a></li>
+								<li><a href="https://recruit.securities.miraeasset.com/" target="_blank" title="��â����">ä��</a></li>
+								<li><a href="javascript:openHp('/directMain.do',false);">���̷�Ʈ</a></li>
+								<li><a href="http://webzine.securities.miraeasset.com" target="_blank" title="��â����">�̷��������� ����</a></li>
+								<li><a href="http://magazine.securities.miraeasset.com" target="_blank" title="��â����">�̷��������� �Ű���</a></li>
+							</ul>
+							<ul class="quick_menu2">
+								<li class="active"><a href="javascript:openHp('/hki/hki3040/a00.do',false);">��������ó����ħ</a></li>
+								<li><a href="javascript:openHp('/hki/hki3031/a00.do',false);">��� �� ���� ���ǻ���</a></li>
+								<li><a href="javascript:openHp('/hki/hki3043/n01.do',false);">��ȣ������ǰ��Ϻ�</a></li>
+								<li><a href="javascript:openGuide('http://dis.kofia.or.kr/fs/dis2/com/COMOutItemAnn.jsp?certifyKey=56b5dcf368687fc83006dbd912ef0320168-7b70');" title="��â">��ǰ���ý�</a></li>
+								<li><a href="javascript:openHp('/hki/hki3096/r01.do',false);">������ �ȳ�</a></li>
+								<li><a href="javascript:openHp('/hki/hki3062/n03.do?clasCd=5',false);">���ڹο���û</a></li>
+								<li><a href="javascript:openHp('/hki/hki3062/n04.do',false);">��������</a></li>
+							</ul>
+							<p class="copyright">COPYRIGHT 2021(C) MIRAE ASSET SECURITIES.CO., LTD. ALL RIGHTS RESERVED.</p>
+						</div>
+						<div class="footer_mark">
+							<span><a href="http://webwatch.or.kr/certification/situation.html" target="_blank" title="��â����"><img src="https://img.securities.miraeasset.com/renew2019/ico_footer_mark1.png" alt="���б��������ź� WEB ACCESSIBLITY ��ũ(�� ���ټ� ǰ������ ��ũ)"></a></span>
+						</div>
+					</div>
+				</div>
+				<!--//footer  -->
+				<div class="info_box login" id="personalSlidingLayer" style="display:none;">
+					<div id="info_wrap">
+						<div id="info_header">
+							<h3 id="LS_title1">�̺�Ʈ �ȳ�</h3>
+						</div>
+						<div id="info_content">
+							<p class="info_img"><img src="https://img.securities.miraeasset.com/new2016/persional/ico_img01.png" alt="�ȳ� �̹���" id="LS_img1"></p>
+							<p class="info_title" id="LS_text1">�ֽİŷ� �̺�Ʈ "�������"<br>Ȩ���������� �ѹ���!</p>
+							<p class="info_text" id="LS_text2">�ÿ��� ������ ���� �ް��� ��������<br>�󺹴��� �������� ���� �ܽĺ� ��������</p>
+							<p class="info_btn" id="LS_linkzone"> <a href="#">�ٷΰ���</a> </p>
+						</div>
+						<div id="info_footer">
+							<div class="today">
+								<input type="checkbox" id="loginSlideCheckbox">
+								<label for="loginSlideCheckbox">���� �Ϸ� �׸� ����</label>
+								<a href="javascript:hideLoginSlide();">�ݱ�</a>
+							</div>
+						</div>
+						<div class="info_close">
+							<a href="javascript:hideLoginSlide();">�ݱ�</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// include area end - footer.jsp -->
+			<script type="text/javascript">//<![CDATA[
+		try{
+			if ($("#contentframe", top.document).attr("QWAY") == 'Y') {
+				$("#footer").hide();
+			}
+		}catch(e){}
+	// ]]>
+	</script>
+			<script type="text/javascript" src="/js/weblog_tag.js"></script>
+			<script type="text/javascript">
+		var _BTCC = "securities.miraeasset.com";
+		//var _BT_DEBUG = "off";
+		if(typeof(_bt_run_track)!="undefined"){
+			_bt_run_track(_BTCC);
+		}
+	</script>
+			<script>
+	function previewPersonalReturn(data){
+		if(data==null)	return;
+	
+		var targetObj = data;
+	
+		$("#personalSlidingLayer").removeClass("logout").addClass("login");
+	
+		if(typeof(targetObj)=='undefined'||targetObj==null)		return;
+		if(typeof(targetObj.text1)=='undefined'||targetObj.text1==null)		return;
+		$("#LS_title1").html(targetObj.title1);
+		var str = '';
+		if(typeof(targetObj.text2)!='undefined'&&targetObj.text2!=null&&targetObj.text2!='') str = targetObj.text2;
+		if(typeof(targetObj.text3)!='undefined'&&targetObj.text3!=null&&targetObj.text3!='') str += '<br>'+targetObj.text3;
+		$("#LS_text1").html(targetObj.text1);
+		$("#LS_text2").html(str);
+		document.getElementById("LS_img1").src = targetObj.img1;
+		$("#LS_link1").html(targetObj.link1);
+		str = '';
+		if(targetObj.linktype1=='notice'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext1+'</a>';
+		}else if(targetObj.linktype1=='link'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')">'+targetObj.linktext1+'</a>';
+		}else if(targetObj.linktype1=='investTrend'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext1+'</a>';
+		}else if(targetObj.linktype1=='popup'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+		}else if(targetObj.linktype1=='trend'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+		}else if(targetObj.linktype1=='download'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+		}else if(targetObj.linktype1=='simplePension'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+		}else if(targetObj.linktype1=='promotionPop'){
+			str += '<a href="#" id="LS_linktext1" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype1+'\',\''+targetObj.linkhome1+'\')" >'+targetObj.linktext1+'</a>';
+		}
+		str += "&nbsp;&nbsp;";
+		if(targetObj.linktype2=='link'){
+			str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+		}else if(targetObj.linktype2=='popup'){
+			str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+		}else if(targetObj.linktype2=='trend'){
+			str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+		}else if(targetObj.linktype2=='download'){
+			str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+		}else if(targetObj.linktype2=='simplePension'){
+			str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+		}else if(targetObj.linktype2=='promotionPop'){
+			str += '<a href="#" id="LS_linktext2" onclick="psLink(\''+targetObj.wepa1+'\',\''+targetObj.linktype2+'\',\''+targetObj.linkhome2+'\')">'+targetObj.linktext2+'</a>';
+		}
+		str += '';
+		$("#LS_linkzone").html(str);			//link
+		$("#personalSlidingLayer").show();
+		if(targetObj.text1!=null&&targetObj.text1!=''){
+			$('#personalSlidingLayer').animate({"bottom" : "20px"}, "slow");
+		}
+	}
+	</script>
+		</div>
+	</div>
+</div>
+<form name="excelForm" action="/advancement/jsp/common/commonExcelPrint.jsp" method="post">
+	<input type="hidden" id="dataToDisplay" name="dataToDisplay">
+	<input type="hidden" id="dataToTitle" name="dataToTitle">
+</form>
+</body>
+</html>

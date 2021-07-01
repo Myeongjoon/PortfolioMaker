@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,8 +48,11 @@ public class StockService {
         this.stockPortfolioRepository.saveAll(stockPortfolios);
     }
 
+    @Transactional
     public void deleteByType(String type) {
-        this.stockPortfolioRepository.deleteByType(type);
+        for (StockPortfolio stockPortfolio : stockPortfolioRepository.findByType(type)) {
+            this.stockPortfolioRepository.deleteById(stockPortfolio.ticker);
+        }
     }
 
     public void save(String ticker, int count) {
@@ -63,6 +67,7 @@ public class StockService {
         login();
         parseStockPortfolio();
         parseFundPortfolio();
+        seleniumService.getDriver().close();
     }
 
     /**
@@ -103,7 +108,6 @@ public class StockService {
         seleniumService.getWait().until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("excelTable"), By.className("l")));
         /*기달리고 다시 가져오기*/
         source = seleniumService.getDriver().getPageSource();
-        seleniumService.getDriver().close();
         document = Jsoup.parse(source);
         Element element = document.select("#excelTable").first();
         /*투자 내역 파싱*/
@@ -122,6 +126,18 @@ public class StockService {
      * 현재 펀드 보유량 크롤링
      */
     private void parseFundPortfolio() {
-
+        //펀드 탭
+        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("javascript:move('02')");
+        String source = seleniumService.getDriver().getPageSource();
+        Document document = Jsoup.parse(source, "ecu-kr");
+        /*종목명 기달리기*/
+        seleniumService.getWait().until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("fundTable2"), By.className("l")));
+        /*기달리고 다시 가져오기*/
+        source = seleniumService.getDriver().getPageSource();
+        document = Jsoup.parse(source);
+        Element element = document.select("#fundTable").first();
+        /*펀드 총액 파싱*/
+        long response = mrParsingService.parseFundSummary(document);
+        portfolioService.save("펀드", response);
     }
 }
