@@ -1,6 +1,7 @@
 package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
+import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.repository.stock.StockPortfolioRepository;
 import com.portfoliomaker.util.Util;
@@ -44,6 +45,10 @@ public class StockService {
 
     public void save(List<StockPortfolio> stockPortfolios) {
         this.stockPortfolioRepository.saveAll(stockPortfolios);
+    }
+
+    public void deleteByType(String type) {
+        this.stockPortfolioRepository.deleteByType(type);
     }
 
     public void save(String ticker, int count) {
@@ -107,6 +112,8 @@ public class StockService {
         for (StockPortfolio s : response) {
             sum += s.currentPriceSum;
         }
+        /*이전 내역 삭제*/
+        deleteByType(TypeConst.STOCK);
         save(response);
         portfolioService.save("주식", sum);
     }

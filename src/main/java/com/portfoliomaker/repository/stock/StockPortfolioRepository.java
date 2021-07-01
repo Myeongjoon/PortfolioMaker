@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StockPortfolioRepository extends JpaRepository<StockPortfolio, String> {
-
+    void deleteByType(String type);
 }
