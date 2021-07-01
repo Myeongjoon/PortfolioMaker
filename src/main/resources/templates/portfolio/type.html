@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script th:src="@{/js/detail.js}"></script>
+    <script th:src="@{/js/type.js}"></script>
     <title>Portfolio Detail</title>
 
 </head>
@@ -23,12 +23,18 @@
                 <th>name</th>
                 <th>del</th>
             </tr>
-            <tr th:each="detail : ${details}" data-hasChildren=0>
-                <td th:text="${detail.name}"></td>
-                <td><input th:attr="data-id=${detail.id}" type="button" class="deleteBtn" value="delete"
-                           style="color: red;"></td>
+            <tr th:each="type : ${types}" data-hasChildren=0>
+                <td th:text="${type.name}"></td>
+                <td><input th:attr="data-name=${type.name}" type="button" class="deleteBtn" value="delete"
+                        style="color: red;"></td>
             </tr>
         </table>
+
+
+        <br>
+        이름
+        <input type="text" name="name" id="name">
+        <button type="submit" onclick="saveType()">타입 추가</button>
     </main>
 </body>
 

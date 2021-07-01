@@ -78,6 +78,12 @@ public class PortfolioService {
         insert(detail);
     }
 
+    public void saveType(String name) {
+        PortfolioType type = new PortfolioType();
+        type.name = name;
+        portfolioTypeRepository.save(type);
+    }
+
     public void deleteDetail(String id) {
         portfolioDetailRepository.deleteById(id);
     }

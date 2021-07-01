@@ -15,3 +15,19 @@ $(document).on('click', '.deleteBtn', function () {
   });
 
 });
+
+
+function saveType() {
+  $.ajax({
+    url: '/portfolio/type',
+    method: 'post',
+    context: this,
+    data: {
+      name: $('#name').val()
+    },
+
+    success: function (data, status, xhr) {
+      location.reload()
+    }
+  });
+}
