@@ -2,12 +2,12 @@ package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.PortfolioDTO;
 import com.portfoliomaker.dto.PortfolioDetailDTO;
-import com.portfoliomaker.entity.Portfolio;
-import com.portfoliomaker.entity.PortfolioDetail;
-import com.portfoliomaker.entity.PortfolioType;
-import com.portfoliomaker.repository.PortfolioDetailRepository;
-import com.portfoliomaker.repository.PortfolioRepository;
-import com.portfoliomaker.repository.PortfolioTypeRepository;
+import com.portfoliomaker.entity.portfolio.Portfolio;
+import com.portfoliomaker.entity.portfolio.PortfolioDetail;
+import com.portfoliomaker.entity.portfolio.PortfolioType;
+import com.portfoliomaker.repository.portfolio.PortfolioDetailRepository;
+import com.portfoliomaker.repository.portfolio.PortfolioRepository;
+import com.portfoliomaker.repository.portfolio.PortfolioTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

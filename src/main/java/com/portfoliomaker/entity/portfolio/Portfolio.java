@@ -1,6 +1,4 @@
-package com.portfoliomaker.entity;
-
-import com.portfoliomaker.e.BuySellType;
+package com.portfoliomaker.entity.portfolio;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,6 +1,6 @@
 package com.portfoliomaker.dto;
 
-import com.portfoliomaker.entity.Portfolio;
+import com.portfoliomaker.entity.portfolio.Portfolio;
 
 import java.text.NumberFormat;
 import java.util.Locale;

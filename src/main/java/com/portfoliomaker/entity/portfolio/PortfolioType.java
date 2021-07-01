@@ -1,4 +1,4 @@
-package com.portfoliomaker.entity;
+package com.portfoliomaker.entity.portfolio;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

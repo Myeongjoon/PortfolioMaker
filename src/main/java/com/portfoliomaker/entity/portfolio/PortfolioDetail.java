@@ -1,4 +1,4 @@
-package com.portfoliomaker.entity;
+package com.portfoliomaker.entity.portfolio;
 
 import javax.persistence.*;
 import java.util.Date;
