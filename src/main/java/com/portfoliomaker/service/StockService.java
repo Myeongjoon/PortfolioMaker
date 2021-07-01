@@ -55,17 +55,7 @@ public class StockService {
 
     public void sync() {
         seleniumService.setDriver();
-        seleniumService.getDriver().get("https://securities.miraeasset.com/login/form.do");
-        logger.info("form");
-        seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        Util.sleep(1000);
-        seleniumService.getDriver().findElement(By.name("usid")).sendKeys("joon8409");
-        logger.info("send id");
-        Util.sleep(3500);
-        logger.info("password");
-        //로그인 버튼 클릭
-        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("doSubmit();");
-        seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
+        login();
         //My자산
         ((JavascriptExecutor) seleniumService.getDriver()).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
@@ -94,5 +84,22 @@ public class StockService {
         }
         save(response);
         portfolioService.save("주식", sum);
+    }
+
+    /**
+     * 미래에셋대우 로그인
+     */
+    private void login() {
+        seleniumService.getDriver().get("https://securities.miraeasset.com/login/form.do");
+        logger.info("form");
+        seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
+        Util.sleep(1000);
+        seleniumService.getDriver().findElement(By.name("usid")).sendKeys("joon8409");
+        logger.info("send id");
+        Util.sleep(3500);
+        logger.info("password");
+        //로그인 버튼 클릭
+        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("doSubmit();");
+        seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
     }
 }
