@@ -30,10 +30,16 @@ public class StockPortfolioDTO {
      */
     public String currentPriceSum;
 
+    /**
+     * 수익률
+     */
+    public String rate;
+
     public StockPortfolioDTO(StockPortfolio p) {
         this.ticker = p.ticker;
         this.count = NumberFormat.getNumberInstance(Locale.US).format(p.count);
         this.buyPriceSum = NumberFormat.getNumberInstance(Locale.US).format(p.buyPriceSum);
         this.currentPriceSum = NumberFormat.getNumberInstance(Locale.US).format(p.currentPriceSum);
+        this.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (p.currentPriceSum - p.buyPriceSum) / p.buyPriceSum) * 100);
     }
 }

@@ -1,6 +1,5 @@
 package com.portfoliomaker.entity.stock;
 
-import javax.annotation.Nullable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
