@@ -1,5 +1,6 @@
 package com.portfoliomaker.service;
 
+import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.util.StringUtil;
 import org.jsoup.nodes.Document;
@@ -27,6 +28,7 @@ public class MRParsingService {
             long currentPriceSum = StringUtil.parseMoney(currentPriceSumElement.text());
             temp.ticker = code;
             temp.count = count;
+            temp.type = TypeConst.STOCK;
             temp.buyPriceSum = buyPriceSum;
             temp.currentPriceSum = currentPriceSum;
             response.add(temp);

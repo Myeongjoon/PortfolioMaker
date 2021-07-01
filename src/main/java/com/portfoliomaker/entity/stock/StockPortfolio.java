@@ -22,6 +22,11 @@ public class StockPortfolio {
     public Long buyPriceSum;
 
     /**
+     * 예 : 주식, 펀드
+     */
+    public String type;
+
+    /**
      * 현재 가격 합산
      */
     public Long currentPriceSum;
