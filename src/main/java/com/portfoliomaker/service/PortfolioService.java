@@ -41,6 +41,12 @@ public class PortfolioService {
         }
         PortfolioDTO sum_port = new PortfolioDTO("합계", sum);
         response.add(sum_port);
+        //합계 저장을 위해 합계 저장
+        PortfolioDetail sumDetail = new PortfolioDetail();
+        sumDetail.date = new Date();
+        sumDetail.price = sum;
+        sumDetail.name = "합계";
+        portfolioDetailRepository.save(sumDetail);
         return response;
     }
 
