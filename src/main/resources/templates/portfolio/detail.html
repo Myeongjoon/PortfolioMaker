@@ -21,11 +21,13 @@
         <table>
             <tr>
                 <th>name</th>
+                <th>date</th>
                 <th>price</th>
                 <th>del</th>
             </tr>
             <tr th:each="detail : ${details}" data-hasChildren=0>
                 <td th:text="${detail.name}"></td>
+                <td th:text="${detail.date}"></td>
                 <td th:text="${detail.price}"></td>
                 <td><input th:attr="data-url=${detail.name}" type="button" class="deleteBtn" value="delete"
                            style="color: red;"></td>
