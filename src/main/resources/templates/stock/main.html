@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script th:src="@{/js/portfolio.js}"></script>
+    <script th:src="@{/js/stock/main.js}"></script>
     <title>Portfolio</title>
 
 </head>
@@ -31,6 +31,13 @@
                        style="color: red;"></td>
         </tr>
     </table>
+    <br>
+
+    ticker
+    <input type="text" name="name" id="ticker">
+    잔고
+    <input type="text" name="name" id="count">
+    <button type="submit" onclick="saveStock()">stock 추가</button>
 </main>
 </body>
 </html>

@@ -15,4 +15,11 @@ public class StockService {
     public List<StockPortfolio> findAll() {
         return stockPortfolioRepository.findAll();
     }
+
+    public void save(String ticker, int count) {
+        StockPortfolio stockPortfolio = new StockPortfolio();
+        stockPortfolio.ticker = ticker;
+        stockPortfolio.count = count;
+        stockPortfolioRepository.save(stockPortfolio);
+    }
 }
