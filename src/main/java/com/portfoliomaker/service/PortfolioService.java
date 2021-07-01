@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -47,8 +48,13 @@ public class PortfolioService {
         return portfolioRepository.findAll();
     }
 
-    public void save(Portfolio portfolio) {
-        portfolioRepository.save(portfolio);
+    public void save(String name, long price) {
+        portfolioRepository.save(new Portfolio(name, price));
+        PortfolioDetail detail = new PortfolioDetail();
+        detail.name = name;
+        detail.price = price;
+        detail.date = new Date();
+        portfolioDetailRepository.save(detail);
     }
 
     public void deleteById(String id) {

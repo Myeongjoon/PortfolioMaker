@@ -24,7 +24,7 @@ public class PortfolioController {
 
     @PostMapping()
     public String addPortfolio(String name, long price) {
-        portfolioService.save(new Portfolio(name, price));
+        portfolioService.save(name, price);
         return "redirect:";
     }
 
