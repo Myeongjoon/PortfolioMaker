@@ -29,7 +29,7 @@
                 <td th:text="${detail.name}"></td>
                 <td th:text="${detail.date}"></td>
                 <td th:text="${detail.price}"></td>
-                <td><input th:attr="data-url=${detail.name}" type="button" class="deleteBtn" value="delete"
+                <td><input th:attr="data-id=${detail.id}" type="button" class="deleteBtn" value="delete"
                            style="color: red;"></td>
             </tr>
         </table>

@@ -20,6 +20,13 @@ public class PortfolioService {
     @Autowired
     PortfolioDetailRepository portfolioDetailRepository;
 
+    public void insert(PortfolioDetail detail) {
+        if (detail.id == null) {
+            detail.id = detail.hash();
+        }
+        portfolioDetailRepository.save(detail);
+    }
+
     public List<PortfolioDetailDTO> getDetail(String name) {
         List<PortfolioDetail> data = portfolioDetailRepository.findByNameOrderByDateDesc(name);
         List<PortfolioDetailDTO> response = new ArrayList<>();
@@ -46,7 +53,7 @@ public class PortfolioService {
         sumDetail.date = new Date();
         sumDetail.price = sum;
         sumDetail.name = "합계";
-        portfolioDetailRepository.save(sumDetail);
+        insert(sumDetail);
         return response;
     }
 
@@ -60,7 +67,11 @@ public class PortfolioService {
         detail.name = name;
         detail.price = price;
         detail.date = new Date();
-        portfolioDetailRepository.save(detail);
+        insert(detail);
+    }
+
+    public void deleteDetail(String id) {
+        portfolioDetailRepository.deleteById(id);
     }
 
     public void deleteById(String id) {

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -35,14 +36,20 @@ public class PortfolioController {
     }
 
     @GetMapping("/detail")
-    public String detail(Model model, @RequestParam(value = "name",required = false) String name) {
+    public String detail(Model model, @RequestParam(value = "name", required = false) String name) {
         model.addAttribute("details", portfolioService.getDetail(name));
         return "portfolio/detail";
     }
 
     @DeleteMapping()
     @ResponseBody
-    public void delete(String id) {
-        portfolioService.deleteById(id);
+    public void delete(String name) {
+        portfolioService.deleteById(name);
+    }
+
+    @DeleteMapping("/detail")
+    @ResponseBody
+    public void deleteDetail(String id) {
+        portfolioService.deleteDetail(id);
     }
 }

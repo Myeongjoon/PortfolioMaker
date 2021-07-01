@@ -29,7 +29,7 @@
                    th:href="@{/portfolio/detail?name={name}(name=${portfolio.name})}"></a>
             </td>
             <td th:text="${portfolio.price}"></td>
-            <td><input th:attr="data-url=${portfolio.name}" type="button" class="deleteBtn" value="delete"
+            <td><input th:attr="data-name=${portfolio.name}" type="button" class="deleteBtn" value="delete"
                        style="color: red;"></td>
         </tr>
     </table>

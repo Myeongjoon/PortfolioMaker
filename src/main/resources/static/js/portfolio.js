@@ -3,7 +3,7 @@ $(document).on('click', '.deleteBtn', function () {
     url: '/portfolio',
     method: 'delete',
     context: this,
-    data: { id: $(this).attr('data-url') },
+    data: { name: $(this).attr('data-name') },
     success: function (data, status, xhr) {
       $(this).hide();
       alert('해당 데이터가 제거되었습니다.');
