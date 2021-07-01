@@ -46,22 +46,39 @@ public class SeleniumService {
         driver.get("https://securities.miraeasset.com/login/form.do");
         logger.info("form");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        Util.sleep(500);
+        Util.sleep(1000);
         driver.findElement(By.name("usid")).sendKeys("joon8409");
         logger.info("send id");
-        Util.sleep(3000);
+        Util.sleep(3500);
         logger.info("password");
-        ((JavascriptExecutor)driver).executeScript("doSubmit();");
-        Util.sleep(2000);
-        ((JavascriptExecutor)driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
-        Util.sleep(2000);
-        ((JavascriptExecutor)driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
-        Util.sleep(2000);
-        ((JavascriptExecutor)driver).executeScript("javascript:move('03')");
+        //로그인 버튼 클릭
+        ((JavascriptExecutor) driver).executeScript("doSubmit();");
+        Util.sleep(1500);
+        //My자산
+        ((JavascriptExecutor) driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
+        Util.sleep(1500);
+        ((JavascriptExecutor) driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
+        Util.sleep(1500);
+        //주식 탭
+        ((JavascriptExecutor) driver).executeScript("javascript:move('03')");
         String source = driver.getPageSource();
-        Document document = Jsoup.parse(source,"ecu-kr");
+        Document document = Jsoup.parse(source, "ecu-kr");
+        /*원화환산표시 기달리기*/
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("exchangeWon")));
+        driver.findElement(By.id("exchangeWon")).click();
+        /*종목명 기달리기*/
+        wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("excelTable"), By.className("l")));
+        /*기달리고 다시 가져오기*/
+        source = driver.getPageSource();
+        document = Jsoup.parse(source);
         Element element = document.select("#excelTable").first();
         logger.info(element.toString());
+        for (Element e : element.select("tr")) {
+            String s = e.select(".l").toString();
+            logger.info(s);
+            //String second = s.split("&quot;")[1];
+            /*javascript:guideCompany(&quot;A284430&quot;)*/
+        }
         //driver.findElement(By.id("excelTable"))
     }
 }
