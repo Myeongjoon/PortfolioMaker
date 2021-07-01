@@ -63,10 +63,16 @@ public class StockService {
     }
 
     public void sync() {
-        seleniumService.setDriver();
-        login();
-        parseStockPortfolio();
-        parseFundPortfolio();
+        try {
+            seleniumService.setDriver();
+            login();
+            parseStockPortfolio();
+            parseFundPortfolio();
+            parseCMAPortfolio();
+        }catch (Exception e){
+            seleniumService.getDriver().close();
+            throw e;
+        }
         seleniumService.getDriver().close();
     }
 
@@ -139,5 +145,24 @@ public class StockService {
         /*펀드 총액 파싱*/
         long response = mrParsingService.parseFundSummary(document);
         portfolioService.save("펀드", response);
+    }
+
+    /**
+     * 현재 CMA 보유량 크롤링
+     */
+    private void parseCMAPortfolio() {
+        //펀드 탭
+        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("javascript:move('04')");
+        String source = seleniumService.getDriver().getPageSource();
+        Document document = Jsoup.parse(source, "ecu-kr");
+        /*종목명 기달리기*/
+        seleniumService.getWait().until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("rpTable2"), By.className("l")));
+        /*기달리고 다시 가져오기*/
+        source = seleniumService.getDriver().getPageSource();
+        document = Jsoup.parse(source);
+        Element element = document.select("#rpTable").first();
+        /*펀드 총액 파싱*/
+        long response = mrParsingService.parseRPSummary(document);
+        portfolioService.save("CMA", response);
     }
 }
