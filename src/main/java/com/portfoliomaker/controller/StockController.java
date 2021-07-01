@@ -15,13 +15,11 @@ import java.util.List;
 public class StockController {
     @Autowired
     StockService stockService;
-    @Autowired
-    SeleniumService seleniumService;
 
     @GetMapping("/sync")
     @ResponseBody
     public void sync() {
-        seleniumService.doProcess();
+        stockService.sync();
     }
 
     @GetMapping("/main")

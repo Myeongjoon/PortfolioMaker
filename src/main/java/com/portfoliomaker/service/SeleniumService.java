@@ -22,15 +22,19 @@ import java.util.Locale;
 
 @Service
 public class SeleniumService {
-    @Autowired
-    StockService stockService;
-    @Autowired
-    MRParsingService mrParsingService;
     Logger logger = LoggerFactory.getLogger(SeleniumService.class);
-    protected WebDriverWait wait;
+    WebDriverWait wait;
     WebDriver driver;
     public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
     public static final String WEB_DRIVER_PATH_WINDOW = "src/main/resources/driver/91/window/chromedriver.exe";
+
+    public WebDriver getDriver() {
+        return this.driver;
+    }
+
+    public WebDriverWait getWait(){
+        return this.wait;
+    }
 
     public void setDriver() {
         switch (System.getProperty("os.name").toLowerCase(Locale.ROOT)) {
@@ -44,43 +48,5 @@ public class SeleniumService {
         chromeOptions.setCapability("ignoreProtectedModeSettings", true);
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 1000);
-    }
-
-    public void doProcess() {
-        this.setDriver();
-        driver.get("https://securities.miraeasset.com/login/form.do");
-        logger.info("form");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        Util.sleep(1000);
-        driver.findElement(By.name("usid")).sendKeys("joon8409");
-        logger.info("send id");
-        Util.sleep(3500);
-        logger.info("password");
-        //로그인 버튼 클릭
-        ((JavascriptExecutor) driver).executeScript("doSubmit();");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        //My자산
-        ((JavascriptExecutor) driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        //상품별 자산
-        ((JavascriptExecutor) driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        //주식 탭
-        ((JavascriptExecutor) driver).executeScript("javascript:move('03')");
-        String source = driver.getPageSource();
-        Document document = Jsoup.parse(source, "ecu-kr");
-        /*원화환산표시 기달리기*/
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("exchangeWon")));
-        driver.findElement(By.id("exchangeWon")).click();
-        /*종목명 기달리기*/
-        wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("excelTable"), By.className("l")));
-        /*기달리고 다시 가져오기*/
-        source = driver.getPageSource();
-        document = Jsoup.parse(source);
-        Element element = document.select("#excelTable").first();
-        /*투자 내역 파싱*/
-        ArrayList<StockPortfolio> response = mrParsingService.parse(document);
-        stockService.save(response);
-        driver.close();
     }
 }

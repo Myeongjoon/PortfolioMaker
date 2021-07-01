@@ -26,10 +26,4 @@ public class MainController {
     public String index(Model model) {
         return "main/main";
     }
-
-    @GetMapping("sync")
-    public String sync() {
-        seleniumService.doProcess();
-        return "redirect:";
-    }
 }
