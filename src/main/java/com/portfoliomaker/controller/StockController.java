@@ -1,5 +1,6 @@
 package com.portfoliomaker.controller;
 
+import com.portfoliomaker.service.SeleniumService;
 import com.portfoliomaker.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class StockController {
     @Autowired
     StockService stockService;
+    @Autowired
+    SeleniumService seleniumService;
+
+    @GetMapping("/sync")
+    @ResponseBody
+    public void sync() {
+        seleniumService.doProcess();
+    }
 
     @GetMapping("/main")
     public String main(Model model) {

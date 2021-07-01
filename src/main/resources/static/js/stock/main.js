@@ -13,3 +13,15 @@ function saveStock() {
     }
   });
 }
+
+function sync() {
+  $.ajax({
+    url: '/stock/sync',
+    method: 'get',
+    context: this,
+
+    success: function (data, status, xhr) {
+      location.reload()
+    }
+  });
+}
