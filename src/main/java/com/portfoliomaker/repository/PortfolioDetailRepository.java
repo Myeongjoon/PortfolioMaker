@@ -1,6 +1,5 @@
 package com.portfoliomaker.repository;
 
-import com.portfoliomaker.entity.Portfolio;
 import com.portfoliomaker.entity.PortfolioDetail;
 import com.portfoliomaker.entity.PortfolioDetailId;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,5 +11,5 @@ import java.util.List;
 public interface PortfolioDetailRepository extends JpaRepository<PortfolioDetail, PortfolioDetailId> {
 
 
-    List<PortfolioDetail> findByName(String name);
+    List<PortfolioDetail> findByNameOrderByDateDesc(String name);
 }

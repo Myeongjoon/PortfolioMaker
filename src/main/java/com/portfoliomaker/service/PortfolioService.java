@@ -21,7 +21,7 @@ public class PortfolioService {
     PortfolioDetailRepository portfolioDetailRepository;
 
     public List<PortfolioDetailDTO> getDetail(String name) {
-        List<PortfolioDetail> data = portfolioDetailRepository.findByName(name);
+        List<PortfolioDetail> data = portfolioDetailRepository.findByNameOrderByDateDesc(name);
         List<PortfolioDetailDTO> response = new ArrayList<>();
         for (PortfolioDetail p : data) {
             PortfolioDetailDTO dto = new PortfolioDetailDTO(p);
