@@ -14,24 +14,25 @@
 
 <body>
 
-    <nav class="sidenav" th:replace="fragments/sidebar :: sidebar('PORTFOLIO')"></nav>
+<nav class="sidenav" th:replace="fragments/sidebar :: sidebar('PORTFOLIO')"></nav>
 
-    <main>
+<main>
 
-        <table>
-            <tr>
-                <th>name</th>
-                <th>price</th>
-                <th>del</th>
-            </tr>
-            <tr th:each="portfolio : ${portfolios}" data-hasChildren=0>
-                <td th:text="${portfolio.name}"></td>
-                <td th:text="${portfolio.price}"></td>
-                <td><input th:attr="data-url=${portfolio.name}" type="button" class="deleteBtn" value="delete"
-                           style="color: red;"></td>
-            </tr>
-        </table>
-    </main>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>price</th>
+            <th>del</th>
+        </tr>
+        <tr th:each="portfolio : ${portfolios}" data-hasChildren=0>
+            <td><a th:text="${portfolio.name}"
+                   th:href="@{/portfolio/detail?name={name}(name=${portfolio.name})}"></a>
+            </td>
+            <td th:text="${portfolio.price}"></td>
+            <td><input th:attr="data-url=${portfolio.name}" type="button" class="deleteBtn" value="delete"
+                       style="color: red;"></td>
+        </tr>
+    </table>
+</main>
 </body>
-
 </html>
