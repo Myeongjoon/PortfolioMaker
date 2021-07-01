@@ -58,12 +58,13 @@ public class SeleniumService {
         logger.info("password");
         //로그인 버튼 클릭
         ((JavascriptExecutor) driver).executeScript("doSubmit();");
-        Util.sleep(1500);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
         //My자산
         ((JavascriptExecutor) driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
-        Util.sleep(1500);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
+        //상품별 자산
         ((JavascriptExecutor) driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
-        Util.sleep(1500);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
         //주식 탭
         ((JavascriptExecutor) driver).executeScript("javascript:move('03')");
         String source = driver.getPageSource();
