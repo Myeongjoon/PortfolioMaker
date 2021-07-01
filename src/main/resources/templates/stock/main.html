@@ -27,7 +27,7 @@
         <tr th:each="stock : ${stocks}" data-hasChildren=0>
             <td th:text="${stock.ticker}"></td>
             <td th:text="${stock.count}"></td>
-            <td><input th:attr="data-name=${stock.ticker}" type="button" class="deleteBtn" value="delete"
+            <td><input th:attr="data-ticker=${stock.ticker}" type="button" class="deleteBtn" value="delete"
                        style="color: red;"></td>
         </tr>
     </table>

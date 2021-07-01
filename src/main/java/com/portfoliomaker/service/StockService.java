@@ -16,6 +16,10 @@ public class StockService {
         return stockPortfolioRepository.findAll();
     }
 
+    public void delete(String ticker) {
+        stockPortfolioRepository.deleteById(ticker);
+    }
+
     public void save(List<StockPortfolio> stockPortfolios) {
         this.stockPortfolioRepository.saveAll(stockPortfolios);
     }
