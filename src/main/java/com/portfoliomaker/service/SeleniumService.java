@@ -1,7 +1,10 @@
 package com.portfoliomaker.service;
 
+import com.portfoliomaker.util.Util;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -36,10 +39,30 @@ public class SeleniumService {
 
     public void doProcess() {
         this.setDriver();
+        driver.get("https://securities.miraeasset.com/login/form.do");
+        logger.info("form");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
+        Util.sleep(1000);
+        driver.findElement(By.name("usid")).sendKeys("joon8409");
+        logger.info("send id");
+        Util.sleep(5000);
+        logger.info("password");
+        ((JavascriptExecutor)driver).executeScript("doSubmit();");
+        Util.sleep(5000);
+        ((JavascriptExecutor)driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
+        Util.sleep(5000);
+        ((JavascriptExecutor)driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
+        Util.sleep(5000);
+        ((JavascriptExecutor)driver).executeScript("javascript:move('03')");
+        driver.findElement(By.name("exchangeWon")).click();
+
+        /*
         driver.get("https://securities.miraeasset.com/main.do");
         logger.info("encounter index.html");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
         logger.info("found gnb");
-        //driver.findElement(By.partialLinkText("로그인")).click();
+        WebElement a_tags = driver.findElement(By.cssSelector("a"));
+        ((JavascriptExecutor)driver).executeScript("doGnbLogin(123);");
+        //WebElement logins = a_tags.findElement(By.partialLinkText("로그인"));
+        logger.info("click login");*/
     }
 }
