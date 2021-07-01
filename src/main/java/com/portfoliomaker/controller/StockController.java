@@ -27,6 +27,14 @@ public class StockController {
         model.addAttribute("stocks", stockService.getAllStockPortfolioDTO());
         return "stock/main";
     }
+
+
+    @GetMapping("/detail")
+    public String detail(Model model, @RequestParam(value = "ticker", required = false) String ticker) {
+        model.addAttribute("stocks", stockService.getAllStockPortfolioDTO());
+        return "stock/detail";
+    }
+
     @DeleteMapping("")
     @ResponseBody
     public void delete(String ticker){

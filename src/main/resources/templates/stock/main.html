@@ -28,7 +28,10 @@
             <th>del</th>
         </tr>
         <tr th:each="stock : ${stocks}" data-hasChildren=0>
-            <td th:text="${stock.ticker}"></td>
+            <td>
+                <a th:text="${stock.ticker}"
+                   th:href="@{/stock/detail?ticker={ticker}(ticker=${stock.ticker})}"></a>
+            </td>
             <td th:text="${stock.count}"></td>
             <td th:text="${stock.buyPriceSum}"></td>
             <td th:text="${stock.currentPriceSum}"></td>
