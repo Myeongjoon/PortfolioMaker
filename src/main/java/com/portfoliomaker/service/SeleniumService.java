@@ -1,5 +1,6 @@
 package com.portfoliomaker.service;
 
+import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.util.Util;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,20 +8,24 @@ import org.jsoup.nodes.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.lang.model.util.Elements;
+import java.util.ArrayList;
 import java.util.Locale;
 
 @Service
 public class SeleniumService {
+    @Autowired
+    StockService stockService;
+    @Autowired
+    MRParsingService mrParsingService;
     Logger logger = LoggerFactory.getLogger(SeleniumService.class);
     protected WebDriverWait wait;
     WebDriver driver;
@@ -72,13 +77,9 @@ public class SeleniumService {
         source = driver.getPageSource();
         document = Jsoup.parse(source);
         Element element = document.select("#excelTable").first();
-        logger.info(element.toString());
-        for (Element e : element.select("tr")) {
-            String s = e.select(".l").toString();
-            logger.info(s);
-            //String second = s.split("&quot;")[1];
-            /*javascript:guideCompany(&quot;A284430&quot;)*/
-        }
-        //driver.findElement(By.id("excelTable"))
+        /*투자 내역 파싱*/
+        ArrayList<StockPortfolio> response = mrParsingService.parse(document);
+        stockService.save(response);
+        driver.close();
     }
 }

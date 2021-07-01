@@ -1,6 +1,7 @@
 package com.portfoliomaker.dto;
 
 import com.portfoliomaker.entity.portfolio.Portfolio;
+import com.portfoliomaker.util.StringUtil;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -23,11 +24,11 @@ public class PortfolioDTO {
 
     public PortfolioDTO(String name, long price) {
         this.name = name;
-        this.price = NumberFormat.getNumberInstance(Locale.US).format(price);
+        this.price = StringUtil.formatMoney(price);
     }
 
     public PortfolioDTO(Portfolio p) {
         this.name = p.name;
-        this.price = NumberFormat.getNumberInstance(Locale.US).format(p.price);
+        this.price = StringUtil.formatMoney(p.price);
     }
 }
