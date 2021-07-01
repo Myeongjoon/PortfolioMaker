@@ -1,10 +1,12 @@
 package com.portfoliomaker.service;
 
+import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.repository.stock.StockPortfolioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -12,8 +14,12 @@ public class StockService {
     @Autowired
     StockPortfolioRepository stockPortfolioRepository;
 
-    public List<StockPortfolio> findAll() {
-        return stockPortfolioRepository.findAll();
+    public List<StockPortfolioDTO> getAllStockPortfolioDTO() {
+        List<StockPortfolioDTO> response = new ArrayList<>();
+        for (StockPortfolio p : stockPortfolioRepository.findAll()) {
+            response.add(new StockPortfolioDTO(p));
+        }
+        return response;
     }
 
     public void delete(String ticker) {

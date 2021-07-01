@@ -17,12 +17,18 @@ public class MRParsingService {
         for (Element e : codes) {
             Element codeElement = e.selectFirst(".l");
             Element countElement = e.select(".r").get(1);
+            Element buyPriceSumElement = e.select(".r").get(2);
+            Element currentPriceSumElement = e.select(".r").get(3);
             StockPortfolio temp = new StockPortfolio();
             String target = codeElement.toString();
             String code = target.split("&quot;")[1];
             long count = StringUtil.parseMoney(countElement.text());
+            long buyPriceSum = StringUtil.parseMoney(buyPriceSumElement.text());
+            long currentPriceSum = StringUtil.parseMoney(currentPriceSumElement.text());
             temp.ticker = code;
             temp.count = count;
+            temp.buyPriceSum = buyPriceSum;
+            temp.currentPriceSum = currentPriceSum;
             response.add(temp);
         }
         return response;

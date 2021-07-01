@@ -1,5 +1,6 @@
 package com.portfoliomaker.entity.stock;
 
+import javax.annotation.Nullable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -15,4 +16,14 @@ public class StockPortfolio {
      * 보유 잔고
      */
     public long count;
+
+    /**
+     * 구매 가격 합산
+     */
+    public Long buyPriceSum;
+
+    /**
+     * 현재 가격 합산
+     */
+    public Long currentPriceSum;
 }
