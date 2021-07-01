@@ -1,5 +1,6 @@
 package com.portfoliomaker.controller;
 
+import com.portfoliomaker.dto.PortfolioDetailDTO;
 import com.portfoliomaker.entity.portfolio.Portfolio;
 import com.portfoliomaker.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +49,14 @@ public class PortfolioController {
     @GetMapping("/detail")
     public String detail(Model model, @RequestParam(value = "name", required = false) String name) {
         model.addAttribute("details", portfolioService.getDetail(name));
+        model.addAttribute("name", name);
         return "portfolio/detail";
+    }
+
+    @GetMapping("/detail/chart")
+    @ResponseBody
+    public List<PortfolioDetailDTO> getChart(String name) {
+        return portfolioService.getDetail(name);
     }
 
     @DeleteMapping()
