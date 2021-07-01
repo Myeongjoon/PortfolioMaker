@@ -4,8 +4,10 @@ import com.portfoliomaker.dto.PortfolioDTO;
 import com.portfoliomaker.dto.PortfolioDetailDTO;
 import com.portfoliomaker.entity.Portfolio;
 import com.portfoliomaker.entity.PortfolioDetail;
+import com.portfoliomaker.entity.PortfolioType;
 import com.portfoliomaker.repository.PortfolioDetailRepository;
 import com.portfoliomaker.repository.PortfolioRepository;
+import com.portfoliomaker.repository.PortfolioTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,8 @@ public class PortfolioService {
     PortfolioRepository portfolioRepository;
     @Autowired
     PortfolioDetailRepository portfolioDetailRepository;
+    @Autowired
+    PortfolioTypeRepository portfolioTypeRepository;
 
     public void insert(PortfolioDetail detail) {
         if (detail.id == null) {
@@ -55,6 +59,10 @@ public class PortfolioService {
         sumDetail.name = "합계";
         insert(sumDetail);
         return response;
+    }
+
+    public List<PortfolioType> getPortfolioTypes() {
+        return portfolioTypeRepository.findAll();
     }
 
     public List<Portfolio> findAll() {

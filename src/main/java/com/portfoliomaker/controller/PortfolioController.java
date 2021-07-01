@@ -29,6 +29,12 @@ public class PortfolioController {
         return "redirect:";
     }
 
+    @GetMapping("/type")
+    public String type(Model model) {
+        model.addAttribute("types", portfolioService.getPortfolioTypes());
+        return "portfolio/type";
+    }
+
     @GetMapping("/portfolio")
     public String portfolio(Model model) {
         model.addAttribute("portfolios", portfolioService.getPortfolio());
