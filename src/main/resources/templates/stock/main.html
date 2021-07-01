@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/js/portfolio.js}"></script>
+    <title>Portfolio</title>
+
+</head>
+
+<body>
+
+<nav class="sidenav" th:replace="fragments/sidebar :: sidebar('STOCK_MAIN')"></nav>
+
+<main>
+
+    <table>
+        <tr>
+            <th>name</th>
+            <th>price</th>
+            <th>del</th>
+        </tr>
+        <tr th:each="portfolio : ${portfolios}" data-hasChildren=0>
+            <td><a th:text="${portfolio.name}"
+                   th:href="@{/portfolio/detail?name={name}(name=${portfolio.name})}"></a>
+            </td>
+            <td th:text="${portfolio.price}"></td>
+            <td><input th:attr="data-name=${portfolio.name}" type="button" class="deleteBtn" value="delete"
+                       style="color: red;"></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
