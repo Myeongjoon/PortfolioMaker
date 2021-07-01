@@ -27,6 +27,7 @@ public class SeleniumService {
     WebDriver driver;
     public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
     public static final String WEB_DRIVER_PATH_WINDOW = "src/main/resources/driver/91/window/chromedriver.exe";
+    public static final String WEB_DRIVER_PATH_MAC = "src/main/resources/driver/91/mac/chromedriver";
 
     public WebDriver getDriver() {
         return this.driver;
@@ -40,6 +41,9 @@ public class SeleniumService {
         switch (System.getProperty("os.name").toLowerCase(Locale.ROOT)) {
             case "windows 10":
                 System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH_WINDOW);
+                break;
+            case "mac os x":
+                System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH_MAC);
                 break;
             default:
                 logger.info("unsupported type : " + System.getProperty("os.name"));
