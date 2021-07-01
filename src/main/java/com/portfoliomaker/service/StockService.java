@@ -70,6 +70,7 @@ public class StockService {
             parseFundPortfolio();
             parseCMAPortfolio();
         }catch (Exception e){
+            logger.error(e.toString());
             seleniumService.getDriver().close();
             throw e;
         }
