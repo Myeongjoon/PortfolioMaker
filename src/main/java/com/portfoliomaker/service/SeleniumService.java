@@ -1,6 +1,9 @@
 package com.portfoliomaker.service;
 
 import com.portfoliomaker.util.Util;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import javax.lang.model.util.Elements;
 import java.util.Locale;
 
 @Service
@@ -42,27 +46,22 @@ public class SeleniumService {
         driver.get("https://securities.miraeasset.com/login/form.do");
         logger.info("form");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        Util.sleep(1000);
+        Util.sleep(500);
         driver.findElement(By.name("usid")).sendKeys("joon8409");
         logger.info("send id");
-        Util.sleep(5000);
+        Util.sleep(3000);
         logger.info("password");
         ((JavascriptExecutor)driver).executeScript("doSubmit();");
-        Util.sleep(5000);
+        Util.sleep(2000);
         ((JavascriptExecutor)driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
-        Util.sleep(5000);
+        Util.sleep(2000);
         ((JavascriptExecutor)driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
-        Util.sleep(5000);
+        Util.sleep(2000);
         ((JavascriptExecutor)driver).executeScript("javascript:move('03')");
-        driver.findElement(By.name("exchangeWon")).click();
-
-        /*
-        driver.get("https://securities.miraeasset.com/main.do");
-        logger.info("encounter index.html");
-        logger.info("found gnb");
-        WebElement a_tags = driver.findElement(By.cssSelector("a"));
-        ((JavascriptExecutor)driver).executeScript("doGnbLogin(123);");
-        //WebElement logins = a_tags.findElement(By.partialLinkText("로그인"));
-        logger.info("click login");*/
+        String source = driver.getPageSource();
+        Document document = Jsoup.parse(source,"ecu-kr");
+        Element element = document.select("#excelTable").first();
+        logger.info(element.toString());
+        //driver.findElement(By.id("excelTable"))
     }
 }
