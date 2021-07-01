@@ -30,8 +30,14 @@ public class PortfolioController {
 
     @GetMapping("/portfolio")
     public String portfolio(Model model) {
-        model.addAttribute("details", portfolioService.getDetail());
+        model.addAttribute("portfolios", portfolioService.getPortfolio());
         return "portfolio/portfolio";
+    }
+
+    @GetMapping("/detail")
+    public String detail(Model model, @RequestParam(value = "name",required = false) String name) {
+        model.addAttribute("details", portfolioService.getDetail(name));
+        return "portfolio/detail";
     }
 
     @DeleteMapping()

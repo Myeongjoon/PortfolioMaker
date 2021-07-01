@@ -1,7 +1,9 @@
 package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.PortfolioDTO;
+import com.portfoliomaker.dto.PortfolioDetailDTO;
 import com.portfoliomaker.entity.Portfolio;
+import com.portfoliomaker.entity.PortfolioDetail;
 import com.portfoliomaker.repository.PortfolioDetailRepository;
 import com.portfoliomaker.repository.PortfolioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,17 @@ public class PortfolioService {
     @Autowired
     PortfolioDetailRepository portfolioDetailRepository;
 
-    public List<PortfolioDTO> getDetail() {
+    public List<PortfolioDetailDTO> getDetail(String name) {
+        List<PortfolioDetail> data = portfolioDetailRepository.findByName(name);
+        List<PortfolioDetailDTO> response = new ArrayList<>();
+        for (PortfolioDetail p : data) {
+            PortfolioDetailDTO dto = new PortfolioDetailDTO(p);
+            response.add(dto);
+        }
+        return response;
+    }
+
+    public List<PortfolioDTO> getPortfolio() {
         List<Portfolio> data = portfolioRepository.findAll();
         List<PortfolioDTO> response = new ArrayList<>();
         long sum = 0;

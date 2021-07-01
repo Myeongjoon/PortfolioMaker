@@ -7,14 +7,14 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script th:src="@{/js/portfolio.js}"></script>
+    <script th:src="@{/js/detail.js}"></script>
     <title>Title</title>
 
 </head>
 
 <body>
 
-    <nav class="sidenav" th:replace="fragments/sidebar :: sidebar('PORTFOLIO')"></nav>
+    <nav class="sidenav" th:replace="fragments/sidebar :: sidebar('DETAIL')"></nav>
 
     <main>
 
@@ -24,10 +24,10 @@
                 <th>price</th>
                 <th>del</th>
             </tr>
-            <tr th:each="portfolio : ${portfolios}" data-hasChildren=0>
-                <td th:text="${portfolio.name}"></td>
-                <td th:text="${portfolio.price}"></td>
-                <td><input th:attr="data-url=${portfolio.name}" type="button" class="deleteBtn" value="delete"
+            <tr th:each="detail : ${details}" data-hasChildren=0>
+                <td th:text="${detail.name}"></td>
+                <td th:text="${detail.price}"></td>
+                <td><input th:attr="data-url=${detail.name}" type="button" class="deleteBtn" value="delete"
                            style="color: red;"></td>
             </tr>
         </table>
