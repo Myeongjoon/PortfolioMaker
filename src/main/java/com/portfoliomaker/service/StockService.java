@@ -2,7 +2,9 @@ package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.e.TypeConst;
+import com.portfoliomaker.entity.stock.StockMeta;
 import com.portfoliomaker.entity.stock.StockPortfolio;
+import com.portfoliomaker.repository.stock.StockMetaRepository;
 import com.portfoliomaker.repository.stock.StockPortfolioRepository;
 import com.portfoliomaker.util.Util;
 import org.jsoup.Jsoup;
@@ -26,6 +28,8 @@ public class StockService {
     @Autowired
     StockPortfolioRepository stockPortfolioRepository;
     @Autowired
+    StockMetaRepository stockMetaRepository;
+    @Autowired
     SeleniumService seleniumService;
     @Autowired
     MRParsingService mrParsingService;
@@ -38,6 +42,10 @@ public class StockService {
             response.add(new StockPortfolioDTO(p));
         }
         return response;
+    }
+
+    public List<StockMeta> getAllMetas() {
+        return stockMetaRepository.findAll();
     }
 
     public void delete(String ticker) {
@@ -81,7 +89,11 @@ public class StockService {
         List<StockPortfolio> list = stockPortfolioRepository.findByType(TypeConst.STOCK);
         for (StockPortfolio stockPortfolio : list) {
             String ticker = stockPortfolio.ticker;
-
+            switch (stockPortfolio.location) {
+                default:
+                    logger.error("unsupported location : " + stockPortfolio.location + " ticker : " + ticker);
+                    break;
+            }
         }
     }
 

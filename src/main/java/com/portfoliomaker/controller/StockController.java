@@ -41,9 +41,16 @@ public class StockController {
         return "stock/detail";
     }
 
+
+    @GetMapping("/meta")
+    public String meta(Model model) {
+        model.addAttribute("metas", stockService.getAllMetas());
+        return "stock/meta";
+    }
+
     @DeleteMapping("")
     @ResponseBody
-    public void delete(String ticker){
+    public void delete(String ticker) {
         stockService.delete(ticker);
     }
 

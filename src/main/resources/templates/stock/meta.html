@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/js/stock/meta.js}"></script>
+    <title>Portfolio</title>
+
+</head>
+
+<body>
+
+<nav class="sidenav" th:replace="fragments/sidebar :: sidebar('STOCK_META')"></nav>
+
+<main>
+
+    <table>
+        <tr>
+            <th>ticker</th>
+            <th>del</th>
+        </tr>
+        <tr th:each="meta : ${metas}" data-hasChildren=0>
+            <td>
+                <a th:text="${meta.ticker}"
+                   th:href="@{/stock/detail?ticker={ticker}(ticker=${meta.ticker})}"></a>
+            </td>
+            <td><input th:attr="data-ticker=${meta.ticker}" type="button" class="deleteBtn" value="delete"
+                       style="color: red;"></td>
+        </tr>
+    </table>
+    <br>
+
+    ticker
+    <input type="text" name="name" id="ticker">
+    잔고
+    <input type="text" name="name" id="count">
+    <button type="submit" onclick="saveStock()">stock 추가</button>
+    <button type="submit" onclick="portfolioSync()">포트폴리오 크롤링 진행</button>
+    <button type="submit" onclick="stockSync()">주가 크롤링 진행</button>
+</main>
+</body>
+</html>
