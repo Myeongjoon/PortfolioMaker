@@ -21,6 +21,7 @@
     <table>
         <tr>
             <th>ticker</th>
+            <th>이름</th>
             <th>del</th>
         </tr>
         <tr th:each="meta : ${metas}" data-hasChildren=0>
@@ -28,6 +29,7 @@
                 <a th:text="${meta.ticker}"
                    th:href="@{/stock/detail?ticker={ticker}(ticker=${meta.ticker})}"></a>
             </td>
+            <td th:text="${meta.name}"></td>
             <td><input th:attr="data-ticker=${meta.ticker}" type="button" class="deleteBtn" value="delete"
                        style="color: red;"></td>
         </tr>

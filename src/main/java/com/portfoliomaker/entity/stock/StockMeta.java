@@ -13,6 +13,11 @@ public class StockMeta {
      */
     public String ticker;
 
+    /**
+     * 메타 이름
+     */
+    public String name;
+
     public String hash() {
         return this.ticker;
     }
