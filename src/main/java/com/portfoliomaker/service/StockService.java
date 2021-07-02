@@ -159,6 +159,13 @@ public class StockService {
         ArrayList<StockPortfolio> response = mrParsingService.parse(document);
         long sum = 0;
         for (StockPortfolio s : response) {
+            List<StockMeta> metas = stockMetaRepository.findByTicker(s.ticker);
+            if (metas.size() == 0) {
+                StockMeta stockMeta = new StockMeta();
+                stockMeta.ticker = s.ticker;
+                stockMeta.id = stockMeta.hash();
+                stockMetaRepository.save(stockMeta);
+            }
             sum += s.currentPriceSum;
         }
         /*이전 내역 삭제*/
