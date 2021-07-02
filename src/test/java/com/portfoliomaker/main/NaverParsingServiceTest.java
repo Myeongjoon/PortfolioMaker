@@ -19,9 +19,11 @@ public class NaverParsingServiceTest {
     public void rpTableTest() {
         String source = TestUtil.getHtmlByString("naverFinance.html");
         Document document = Jsoup.parse(source, "utf-8");
-        StockPrice response = naverParsingService.parse(document);
+        StockPrice response = naverParsingService.parse(document, "013360");
         assertEquals(response.currentPrice, 4415);
         assertEquals(response.name, "일성건설");
+        assertEquals(response.ticker, "013360");
         assertEquals(response.location, "코스피");
+        assertEquals(response.id, "013360Fri Jul 02 09:45:00 KST 2021");
     }
 }

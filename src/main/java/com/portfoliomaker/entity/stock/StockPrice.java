@@ -2,14 +2,21 @@ package com.portfoliomaker.entity.stock;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class StockPrice {
+    @Id
+    public String id;
     /**
      * 주식 id
      */
-    @Id
     public String ticker;
+
+    /**
+     *
+     */
+    public Date date;
 
     /**
      * 주식 이름
@@ -30,4 +37,8 @@ public class StockPrice {
      * 예 : 주식, 펀드
      */
     public String type;
+
+    public String hash() {
+        return this.ticker + "" + date.toString();
+    }
 }
