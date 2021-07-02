@@ -14,9 +14,9 @@ function saveStock() {
   });
 }
 
-function sync() {
+function portfolioSync() {
   $.ajax({
-    url: '/stock/sync',
+    url: '/stock/portfolioSync',
     method: 'get',
     context: this,
 
@@ -25,6 +25,19 @@ function sync() {
     }
   });
 }
+
+function stockSync() {
+  $.ajax({
+    url: '/stock/stockSync',
+    method: 'get',
+    context: this,
+
+    success: function (data, status, xhr) {
+      location.reload()
+    }
+  });
+}
+
 
 $(document).on('click', '.deleteBtn', function () {
   $.ajax({

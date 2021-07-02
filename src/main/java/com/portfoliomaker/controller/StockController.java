@@ -16,10 +16,16 @@ public class StockController {
     @Autowired
     StockService stockService;
 
-    @GetMapping("/sync")
+    @GetMapping("/stockSync")
     @ResponseBody
-    public void sync() {
-        stockService.sync();
+    public void stockSync() {
+        stockService.stockSync();
+    }
+
+    @GetMapping("/portfolioSync")
+    @ResponseBody
+    public void portfolioSync() {
+        stockService.portfolioSync();
     }
 
     @GetMapping("/main")

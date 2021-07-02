@@ -62,7 +62,22 @@ public class StockService {
         stockPortfolioRepository.save(stockPortfolio);
     }
 
-    public void sync() {
+    public void stockSync() {
+        try {
+            seleniumService.setDriver();
+            login();
+            parseStockPortfolio();
+            parseFundPortfolio();
+            parseCMAPortfolio();
+        }catch (Exception e){
+            logger.error(e.toString());
+            seleniumService.getDriver().close();
+            throw e;
+        }
+        seleniumService.getDriver().close();
+    }
+
+    public void portfolioSync() {
         try {
             seleniumService.setDriver();
             login();
