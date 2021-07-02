@@ -33,7 +33,7 @@ public class HonestFundService {
         String source = driver.getPageSource();
         Document document = Jsoup.parse(source);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.className("investment-info-ul")));
-        Portfolio p = parse(document, "김명준");
+        Portfolio p = parse(document, name);
         portfolioService.save(p.name, p.price);
     }
 

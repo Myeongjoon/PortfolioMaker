@@ -88,6 +88,8 @@ public class StockService {
      */
     public void p2pSync() {
         honestFundSync("kimmj8409@gmail.com", "apt3550!1", "김명준");
+        honestFundSync("rlaeodudslak@naver.com", "apt3550!1", "김대영");
+        honestFundSync("kimdg691020@naver.com", "apt3550!1", "김동길");
     }
 
     public void honestFundSync(String id, String password, String name) {
