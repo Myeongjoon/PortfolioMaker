@@ -89,7 +89,11 @@ public class StockService {
     public void p2pSync() {
         try {
             seleniumService.setDriver();
-            honestFundService.login(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1");
+            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
+            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
+            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
+            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
+
         } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();

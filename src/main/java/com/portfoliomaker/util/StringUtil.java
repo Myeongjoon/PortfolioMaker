@@ -9,7 +9,7 @@ public class StringUtil {
     }
 
     public static long parseMoney(String money) {
-        String replaced = money.replaceAll(",", "");
+        String replaced = money.replaceAll(",", "").replaceAll("원","").replaceAll(" ","");
         return Long.parseLong(replaced);
     }
 }
