@@ -24,6 +24,5 @@ public class NaverParsingServiceTest {
         assertEquals(response.name, "일성건설");
         assertEquals(response.ticker, "013360");
         assertEquals(response.location, "코스피");
-        assertEquals(response.id, "013360Fri Jul 02 09:45:00 KST 2021");
     }
 }
