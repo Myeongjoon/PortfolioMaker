@@ -3,7 +3,10 @@ package com.portfoliomaker.service;
 import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.portfolio.Portfolio;
 import com.portfoliomaker.entity.stock.StockPortfolio;
+import com.portfoliomaker.repository.portfolio.PortfolioRepository;
 import com.portfoliomaker.util.StringUtil;
+import com.portfoliomaker.util.Util;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -11,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,9 +24,17 @@ import java.util.ArrayList;
  */
 @Service
 public class HonestFundService {
+    @Autowired
+    PortfolioService portfolioService;
+
     public void doProcess(WebDriver driver, WebDriverWait webDriverWait, String id, String password, String name) {
         login(driver, webDriverWait, id, password);
         driver.get("https://www.honestfund.kr/mypage/investor/investments");
+        String source = driver.getPageSource();
+        Document document = Jsoup.parse(source);
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.className("investment-info-ul")));
+        Portfolio p = parse(document, "김명준");
+        portfolioService.save(p.name, p.price);
     }
 
     public void login(WebDriver driver, WebDriverWait webDriverWait, String id, String password) {
@@ -31,7 +43,7 @@ public class HonestFundService {
         driver.findElement(By.name("email")).sendKeys(id);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.className("auth_login")).click();
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("1")));
+        Util.sleep(1000);
     }
 
     public Portfolio parse(Document document, String name) {

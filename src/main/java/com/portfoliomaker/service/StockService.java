@@ -87,13 +87,13 @@ public class StockService {
      * p2p 크롤링
      */
     public void p2pSync() {
+        honestFundSync("kimmj8409@gmail.com", "apt3550!1", "김명준");
+    }
+
+    public void honestFundSync(String id, String password, String name) {
         try {
             seleniumService.setDriver();
-            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
-            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
-            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
-            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1", "김명준");
-
+            honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), id, password, name);
         } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();
