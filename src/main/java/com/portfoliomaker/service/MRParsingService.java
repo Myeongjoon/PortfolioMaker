@@ -13,7 +13,7 @@ import java.util.ArrayList;
 @Service
 public class MRParsingService {
     public long parseRPSummary(Document document) {
-        Elements fundTable = document.select("#rpTable");
+        Elements fundTable = document.select("#rpTable1");
         Element target = fundTable.select("td").get(1);
         String txt = target.text();
         String split = txt.split(" ")[0];

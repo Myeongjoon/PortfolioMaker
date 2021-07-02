@@ -19,7 +19,7 @@ public class MRParsingServiceTest {
 
     @Test
     public void excelTableTest() {
-        String source = TestUtil.getHtmlByString("excelTable.txt");
+        String source = TestUtil.getHtmlByString("excelTable.html");
         Document document = Jsoup.parse(source);
         ArrayList<StockPortfolio> response = mrParsingService.parse(document);
         assertEquals(response.size(), 17);
@@ -34,5 +34,12 @@ public class MRParsingServiceTest {
         String source = TestUtil.getHtmlByString("fundTable.html");
         Document document = Jsoup.parse(source);
         assertEquals(mrParsingService.parseFundSummary(document), 3870089);
+    }
+
+    @Test
+    public void rpTableTest() {
+        String source = TestUtil.getHtmlByString("rpTable.html");
+        Document document = Jsoup.parse(source);
+        assertEquals(mrParsingService.parseRPSummary(document), 42146747);
     }
 }
