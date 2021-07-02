@@ -21,29 +21,30 @@
 
 <main>
 
-    <div id="table"></div>
-    <table>
-        <tr>
-            <th>ticker</th>
-            <th>갯수</th>
-            <th>구매가격</th>
-            <th>현재가격</th>
-            <th>수익률</th>
-            <th>del</th>
-        </tr>
-        <tr th:each="stock : ${stocks}" data-hasChildren=0>
-            <td>
-                <a th:text="${stock.ticker}"
-                   th:href="@{/stock/detail?ticker={ticker}(ticker=${stock.ticker})}"></a>
-            </td>
-            <td th:text="${stock.count}"></td>
-            <td th:text="${stock.buyPriceSum}"></td>
-            <td th:text="${stock.currentPriceSum}"></td>
-            <td th:text="${stock.rate}"></td>
-            <td><input th:attr="data-ticker=${stock.ticker}" type="button" class="deleteBtn" value="delete"
-                       style="color: red;"></td>
-        </tr>
-    </table>
+    <div id="table" style="width: 640px;"></div>
+    <!--
+<table>
+    <tr>
+        <th>ticker</th>
+        <th>갯수</th>
+        <th>구매가격</th>
+        <th>현재가격</th>
+        <th>수익률</th>
+        <th>del</th>
+    </tr>
+    <tr th:each="stock : ${stocks}" data-hasChildren=0>
+        <td>
+            <a th:text="${stock.ticker}"
+               th:href="@{/stock/detail?ticker={ticker}(ticker=${stock.ticker})}"></a>
+        </td>
+        <td th:text="${stock.count}"></td>
+        <td th:text="${stock.buyPriceSum}"></td>
+        <td th:text="${stock.currentPriceSum}"></td>
+        <td th:text="${stock.rate}"></td>
+        <td><input th:attr="data-ticker=${stock.ticker}" type="button" class="deleteBtn" value="delete"
+                   style="color: red;"></td>
+    </tr>
+</table>-->
     <br>
 
     ticker

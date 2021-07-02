@@ -1,10 +1,13 @@
 package com.portfoliomaker.controller;
 
+import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/stock")
@@ -28,6 +31,13 @@ public class StockController {
     public String main(Model model) {
         model.addAttribute("stocks", stockService.getAllStockPortfolioDTO());
         return "stock/main";
+    }
+
+
+    @GetMapping("/main/list")
+    @ResponseBody
+    public List<StockPortfolioDTO> mainList() {
+        return stockService.getAllStockPortfolioDTO();
     }
 
 
