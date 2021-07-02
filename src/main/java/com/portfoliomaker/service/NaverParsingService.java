@@ -1,24 +1,24 @@
 package com.portfoliomaker.service;
 
-import com.portfoliomaker.e.TypeConst;
-import com.portfoliomaker.entity.stock.StockPortfolio;
+import com.portfoliomaker.entity.stock.StockPrice;
 import com.portfoliomaker.util.StringUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 
 @Service
 public class NaverParsingService {
 
-    public StockPortfolio parse(Document document) {
-        StockPortfolio response = new StockPortfolio();
+    public StockPrice parse(Document document) {
+        StockPrice stockPrice = new StockPrice();
         Element codes = document.select("#chart_area").select(".today").select("p").first();
+        String name = document.select(".wrap_company").select("a").first().text();
+        String loc = document.select(".description").first().select("img").attr("alt");
         System.out.println(codes.text().toString());
         long price = StringUtil.parseMoney(codes.text());
-        response.currentPrice = price;
-        return response;
+        stockPrice.currentPrice = price;
+        stockPrice.name = name;
+        stockPrice.location = loc;
+        return stockPrice;
     }
 }

@@ -62,14 +62,14 @@ public class StockService {
         stockPortfolioRepository.save(stockPortfolio);
     }
 
+    /**
+     * 주식 가격 크롤링
+     */
     public void stockSync() {
         try {
             seleniumService.setDriver();
-            login();
-            parseStockPortfolio();
-            parseFundPortfolio();
-            parseCMAPortfolio();
-        }catch (Exception e){
+            parseNaverStock();
+        } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();
             throw e;
@@ -77,6 +77,17 @@ public class StockService {
         seleniumService.getDriver().close();
     }
 
+    public void parseNaverStock() {
+        List<StockPortfolio> list = stockPortfolioRepository.findByType(TypeConst.STOCK);
+        for (StockPortfolio stockPortfolio : list) {
+            String ticker = stockPortfolio.ticker;
+
+        }
+    }
+
+    /**
+     * 증권사 내 포트폴리오 sync
+     */
     public void portfolioSync() {
         try {
             seleniumService.setDriver();
@@ -84,7 +95,7 @@ public class StockService {
             parseStockPortfolio();
             parseFundPortfolio();
             parseCMAPortfolio();
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();
             throw e;
