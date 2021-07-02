@@ -85,6 +85,9 @@ public class StockService {
         seleniumService.getDriver().close();
     }
 
+    /**
+     * 네이버 증권 크롤링
+     */
     public void parseNaverStock() {
         List<StockPortfolio> list = stockPortfolioRepository.findByType(TypeConst.STOCK);
         for (StockPortfolio stockPortfolio : list) {

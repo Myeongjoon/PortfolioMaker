@@ -19,6 +19,7 @@ public class MRParsingService {
         String split = txt.split(" ")[0];
         return StringUtil.parseMoney(split);
     }
+
     public long parseFundSummary(Document document) {
         Elements fundTable = document.select("#fundTable");
         Element target = fundTable.select("td").get(1);
@@ -37,11 +38,20 @@ public class MRParsingService {
             Element currentPriceSumElement = e.select(".r").get(3);
             StockPortfolio temp = new StockPortfolio();
             String target = codeElement.toString();
-            String code = target.split("&quot;")[1];
+            String ticker = target.split("&quot;")[1];
             long count = StringUtil.parseMoney(countElement.text());
             long buyPriceSum = StringUtil.parseMoney(buyPriceSumElement.text());
             long currentPriceSum = StringUtil.parseMoney(currentPriceSumElement.text());
-            temp.ticker = code;
+            //ticker가 A + 숫자일 경우 A 제거
+            if (ticker.charAt(0) == 'A') {
+                try {
+                    long remain = Long.parseLong(ticker.substring(1));
+                    ticker = ticker.substring(1);
+                } catch (Exception ex) {
+                    //
+                }
+            }
+            temp.ticker = ticker;
             temp.count = count;
             temp.type = TypeConst.STOCK;
             temp.buyPriceSum = buyPriceSum;
