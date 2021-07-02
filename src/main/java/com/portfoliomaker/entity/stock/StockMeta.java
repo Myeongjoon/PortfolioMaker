@@ -18,6 +18,11 @@ public class StockMeta {
      */
     public String name;
 
+    /*
+    주식 위치
+     */
+    public String location;
+
     public String hash() {
         return this.ticker;
     }

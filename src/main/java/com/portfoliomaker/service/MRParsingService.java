@@ -42,12 +42,15 @@ public class MRParsingService {
             long count = StringUtil.parseMoney(countElement.text());
             long buyPriceSum = StringUtil.parseMoney(buyPriceSumElement.text());
             long currentPriceSum = StringUtil.parseMoney(currentPriceSumElement.text());
+            temp.location = "NASDAQ";
             //ticker가 A + 숫자일 경우 A 제거
             if (ticker.charAt(0) == 'A') {
                 try {
                     long remain = Long.parseLong(ticker.substring(1));
                     ticker = ticker.substring(1);
+                    temp.location = "코스피";
                 } catch (Exception ex) {
+                    temp.location = "NASDAQ";
                     //
                 }
             }

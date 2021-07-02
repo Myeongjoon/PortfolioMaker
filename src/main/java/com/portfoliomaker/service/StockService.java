@@ -35,6 +35,8 @@ public class StockService {
     MRParsingService mrParsingService;
     @Autowired
     PortfolioService portfolioService;
+    @Autowired
+    NaverParsingService naverParsingService;
 
     public List<StockPortfolioDTO> getAllStockPortfolioDTO() {
         List<StockPortfolioDTO> response = new ArrayList<>();
@@ -93,13 +95,11 @@ public class StockService {
      * 네이버 증권 크롤링
      */
     public void parseNaverStock() {
-        List<StockPortfolio> list = stockPortfolioRepository.findByType(TypeConst.STOCK);
-        for (StockPortfolio stockPortfolio : list) {
-            String ticker = stockPortfolio.ticker;
-            switch (stockPortfolio.location) {
-                default:
-                    logger.error("unsupported location : " + stockPortfolio.location + " ticker : " + ticker);
-                    break;
+        List<StockMeta> list = stockMetaRepository.findAll();
+        for (StockMeta stockMeta : list) {
+            if (stockMeta.name == null || stockMeta.name.equals("")) {
+                naverParsingService.parseMeta(stockMeta);
+                stockMetaRepository.save(stockMeta);
             }
         }
     }
@@ -171,6 +171,7 @@ public class StockService {
                 StockMeta stockMeta = new StockMeta();
                 stockMeta.ticker = s.ticker;
                 stockMeta.id = stockMeta.hash();
+                stockMeta.location = s.location;
                 stockMetaRepository.save(stockMeta);
             }
             sum += s.currentPriceSum;

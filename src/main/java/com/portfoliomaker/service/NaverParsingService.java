@@ -1,9 +1,16 @@
 package com.portfoliomaker.service;
 
+import com.portfoliomaker.entity.stock.StockMeta;
 import com.portfoliomaker.entity.stock.StockPrice;
 import com.portfoliomaker.util.StringUtil;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
@@ -12,8 +19,23 @@ import java.util.Date;
 
 @Service
 public class NaverParsingService {
+    Logger logger = LoggerFactory.getLogger(NaverParsingService.class);
+    @Autowired
+    SeleniumService seleniumService;
 
-    public StockPrice parse(Document document,String ticker) {
+    public StockMeta parseMeta(StockMeta meta) {
+        String url = "https://finance.naver.com/item/main.nhn?code=" + meta.ticker;
+        logger.info(url);
+        seleniumService.getDriver().get(url);
+        String source = seleniumService.getDriver().getPageSource();
+        Document document = Jsoup.parse(source);
+        seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("chart_area")));
+        StockPrice stockPrice = parse(document, meta.ticker);
+        meta.name = stockPrice.name;
+        return meta;
+    }
+
+    public StockPrice parse(Document document, String ticker) {
         StockPrice stockPrice = new StockPrice();
         Element codes = document.select("#chart_area").select(".today").select("p").first();
         String name = document.select(".wrap_company").select("a").first().text();

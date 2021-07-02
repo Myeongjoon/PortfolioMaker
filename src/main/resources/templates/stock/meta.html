@@ -22,6 +22,7 @@
         <tr>
             <th>ticker</th>
             <th>이름</th>
+            <th>위치</th>
             <th>del</th>
         </tr>
         <tr th:each="meta : ${metas}" data-hasChildren=0>
@@ -30,6 +31,7 @@
                    th:href="@{/stock/detail?ticker={ticker}(ticker=${meta.ticker})}"></a>
             </td>
             <td th:text="${meta.name}"></td>
+            <td th:text="${meta.location}"></td>
             <td><input th:attr="data-id=${meta.id}" type="button" class="deleteBtn" value="delete"
                        style="color: red;"></td>
         </tr>
@@ -41,8 +43,6 @@
     잔고
     <input type="text" name="name" id="count">
     <button type="submit" onclick="saveStock()">stock 추가</button>
-    <button type="submit" onclick="portfolioSync()">포트폴리오 크롤링 진행</button>
-    <button type="submit" onclick="stockSync()">주가 크롤링 진행</button>
 </main>
 </body>
 </html>
