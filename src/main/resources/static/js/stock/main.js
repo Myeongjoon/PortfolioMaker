@@ -65,11 +65,16 @@ window.addEventListener("load", function () {
     context: this,
 
     success: function (data, status, xhr) {
-
-      //define data array
-      var tabledata = data;
+      table_data=[]
+      for (const element of data) {
+        if(element.name == null){
+            element.name = element.ticker;
+        }
+        table_data.push(element)
+      }
+      //이름이 있을 경우 ticker를 이름으로 변경
       var table = new Tabulator("#table", {
-        data: tabledata,           //load row data from array
+        data: table_data,           //load row data from array
         layout: "fitColumns",      //fit columns to width of table
         responsiveLayout: "hide",  //hide columns that dont fit on the table
         tooltips: true,            //show tool tips on cells
@@ -83,11 +88,11 @@ window.addEventListener("load", function () {
           { column: "rate", dir: "asc" },
         ],
         columns: [                 //define the table columns
-          { title: "Ticker", field: "ticker", width: 100, editor: "input" },
+          { title: "이름", field: "name", width: 100, editor: "input" },
           { title: "갯수", field: "count", width: 100, hozAlign: "left", formatter: "number", editor: true },
           { title: "구매가격", field: "buyPriceSum", width: 110, editor: "select" },
           { title: "현재가격", field: "currentPriceSum", width: 110, editor: "select" },
-          { title: "수익률", field: "rate", width: 130, editor: "input" },
+          { title: "수익률", field: "rate", width: 100, editor: "input" },
           { title: "삭제", field: "car", width: 90, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
         ],
       });
