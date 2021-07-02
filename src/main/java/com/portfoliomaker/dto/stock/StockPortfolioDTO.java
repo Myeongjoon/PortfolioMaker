@@ -7,13 +7,16 @@ import javax.persistence.Id;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-@Entity
+
 public class StockPortfolioDTO {
     /**
      * 주식 id
      */
-    @Id
     public String ticker;
+    /**
+     * 주식 이름
+     */
+    public String name;
 
     /**
      * 보유 잔고

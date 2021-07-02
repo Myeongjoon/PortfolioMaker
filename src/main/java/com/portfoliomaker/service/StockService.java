@@ -41,7 +41,12 @@ public class StockService {
     public List<StockPortfolioDTO> getAllStockPortfolioDTO() {
         List<StockPortfolioDTO> response = new ArrayList<>();
         for (StockPortfolio p : stockPortfolioRepository.findAll()) {
-            response.add(new StockPortfolioDTO(p));
+            List<StockMeta> stockMeta = stockMetaRepository.findByTicker(p.ticker);
+            StockPortfolioDTO dto = new StockPortfolioDTO(p);
+            if (stockMeta.size() != 0) {
+                dto.name = stockMeta.get(0).name;
+            }
+            response.add(dto);
         }
         return response;
     }
