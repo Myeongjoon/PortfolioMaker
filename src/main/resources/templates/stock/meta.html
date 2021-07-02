@@ -30,7 +30,7 @@
                    th:href="@{/stock/detail?ticker={ticker}(ticker=${meta.ticker})}"></a>
             </td>
             <td th:text="${meta.name}"></td>
-            <td><input th:attr="data-ticker=${meta.ticker}" type="button" class="deleteBtn" value="delete"
+            <td><input th:attr="data-id=${meta.id}" type="button" class="deleteBtn" value="delete"
                        style="color: red;"></td>
         </tr>
     </table>

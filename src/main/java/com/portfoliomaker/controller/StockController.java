@@ -44,6 +44,12 @@ public class StockController {
         return "stock/meta";
     }
 
+    @DeleteMapping("/meta")
+    @ResponseBody
+    public void deleteMeta(String id) {
+        stockService.deleteMeta(id);
+    }
+
     @DeleteMapping("")
     @ResponseBody
     public void delete(String ticker) {

@@ -48,6 +48,10 @@ public class StockService {
         return stockMetaRepository.findAll();
     }
 
+    public void deleteMeta(String id) {
+        stockMetaRepository.deleteById(id);
+    }
+
     public void delete(String ticker) {
         stockPortfolioRepository.deleteById(ticker);
     }
