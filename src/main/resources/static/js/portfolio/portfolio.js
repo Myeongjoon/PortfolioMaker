@@ -15,3 +15,17 @@ $(document).on('click', '.deleteBtn', function () {
   });
 
 });
+
+
+
+function p2pSync() {
+  $.ajax({
+    url: '/stock/p2pSync',
+    method: 'get',
+    context: this,
+
+    success: function (data, status, xhr) {
+      location.reload()
+    }
+  });
+}

@@ -21,6 +21,12 @@ public class StockController {
         stockService.stockSync();
     }
 
+    @GetMapping("/p2pSync")
+    @ResponseBody
+    public void p2pSync() {
+        stockService.p2pSync();
+    }
+
     @GetMapping("/portfolioSync")
     @ResponseBody
     public void portfolioSync() {

@@ -30,6 +30,8 @@ public class StockService {
     @Autowired
     StockMetaRepository stockMetaRepository;
     @Autowired
+    HonestFundService honestFundService;
+    @Autowired
     SeleniumService seleniumService;
     @Autowired
     MRParsingService mrParsingService;
@@ -79,6 +81,21 @@ public class StockService {
         stockPortfolio.ticker = ticker;
         stockPortfolio.count = count;
         stockPortfolioRepository.save(stockPortfolio);
+    }
+
+    /**
+     * p2p 크롤링
+     */
+    public void p2pSync() {
+        try {
+            seleniumService.setDriver();
+            honestFundService.login(seleniumService.getDriver(), seleniumService.getWait(), "kimmj8409@gmail.com", "apt3550!1");
+        } catch (Exception e) {
+            logger.error(e.toString());
+            seleniumService.getDriver().close();
+            throw e;
+        }
+        seleniumService.getDriver().close();
     }
 
     /**
