@@ -50,6 +50,7 @@ public class MRParsingServiceTest {
         Document document = Jsoup.parse(source);
         ArrayList<MyPortfolioDTO> response = mrParsingService.parseMyPortfolio(document);
         assertEquals(response.size(), 6);
+        assertEquals(response.get(3).name, "CMA/RP");
         assertEquals(response.get(3).currentPrice, 39764766);
     }
 }
