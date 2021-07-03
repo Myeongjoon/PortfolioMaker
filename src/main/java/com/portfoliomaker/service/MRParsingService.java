@@ -1,17 +1,23 @@
 package com.portfoliomaker.service;
 
+import com.portfoliomaker.dto.MR.MyPortfolioDTO;
 import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.util.StringUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class MRParsingService {
+    Logger logger = LoggerFactory.getLogger(MRParsingService.class);
+
     public long parseRPSummary(Document document) {
         Elements fundTable = document.select("#rpTable1");
         Element target = fundTable.select("td").get(1);
@@ -26,6 +32,21 @@ public class MRParsingService {
         String txt = target.text();
         String split = txt.split(" ")[0];
         return StringUtil.parseMoney(split);
+    }
+
+    public ArrayList<MyPortfolioDTO> parseMyPortfolio(Document document) {
+        ArrayList<MyPortfolioDTO> response = new ArrayList<>();
+        Element contentE = document.select("#contents").first();
+        Element dep02Sec = contentE.select(".dep02Sec").get(1);
+        Element body = dep02Sec.select("#hkd1001a01Tbody").first();
+        Elements tr = body.select("tr");
+        for (Element e : tr) {
+            MyPortfolioDTO temp = new MyPortfolioDTO();
+            String currentPriceString = e.select(".r").get(1).text();
+            temp.currentPrice = StringUtil.parseMoney(currentPriceString);
+            response.add(temp);
+        }
+        return response;
     }
 
     public ArrayList<StockPortfolio> parse(Document document) {

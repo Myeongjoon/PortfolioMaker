@@ -1,5 +1,6 @@
 package com.portfoliomaker.main;
 
+import com.portfoliomaker.dto.MR.MyPortfolioDTO;
 import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.service.MRParsingService;
 import org.jsoup.Jsoup;
@@ -41,5 +42,13 @@ public class MRParsingServiceTest {
         String source = TestUtil.getHtmlByString("rpTable.html");
         Document document = Jsoup.parse(source);
         assertEquals(mrParsingService.parseRPSummary(document), 42146747);
+    }
+
+    @Test
+    public void MyPortfolioTest() {
+        String source = TestUtil.getHtmlByString("MR/MyPortfolio.html");
+        Document document = Jsoup.parse(source);
+        ArrayList<MyPortfolioDTO> response = mrParsingService.parseMyPortfolio(document);
+        assertEquals(response.size(), 6);
     }
 }
