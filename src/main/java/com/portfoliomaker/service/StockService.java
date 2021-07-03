@@ -158,7 +158,7 @@ public class StockService {
             seleniumService.setDriver();
             login();
             parseMyPortfolioMain(seleniumService.getDriver(), seleniumService.getWait());
-            //parseStockPortfolio(seleniumService.getDriver());
+            parseStockPortfolio(seleniumService.getDriver());
             //parseFundPortfolio();
             //parseCMAPortfolio();
         } catch (Exception e) {
@@ -227,7 +227,7 @@ public class StockService {
         Element element = document.select("#excelTable").first();
         /*투자 내역 파싱*/
         ArrayList<StockPortfolio> response = mrParsingService.parse(document);
-        long sum = 0;
+        //long sum = 0;
         for (StockPortfolio s : response) {
             List<StockMeta> metas = stockMetaRepository.findByTicker(s.ticker);
             if (metas.size() == 0) {
@@ -237,12 +237,12 @@ public class StockService {
                 stockMeta.location = s.location;
                 stockMetaRepository.save(stockMeta);
             }
-            sum += s.currentPriceSum;
+            //sum += s.currentPriceSum;
         }
         /*이전 내역 삭제*/
         deleteByType(TypeConst.STOCK);
         save(response);
-        portfolioService.save("주식", sum);
+        //portfolioService.save("주식", sum);
     }
 
     /**
