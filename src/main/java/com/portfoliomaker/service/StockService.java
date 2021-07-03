@@ -12,6 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -139,7 +140,7 @@ public class StockService {
         try {
             seleniumService.setDriver();
             login();
-            parseStockPortfolio();
+            parseStockPortfolio(seleniumService.getDriver());
             parseFundPortfolio();
             parseCMAPortfolio();
         } catch (Exception e) {
@@ -170,24 +171,25 @@ public class StockService {
     /**
      * 현재 주식 보유량 크롤링
      */
-    private void parseStockPortfolio() {
+    private void parseStockPortfolio(WebDriver driver) {
         //My자산
-        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
+        ((JavascriptExecutor) driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
+        logger.info(driver.getPageSource());
         //상품별 자산
-        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
+        ((JavascriptExecutor) driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
         //주식 탭
-        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("javascript:move('03')");
+        ((JavascriptExecutor) driver).executeScript("javascript:move('03')");
         String source = seleniumService.getDriver().getPageSource();
         Document document = Jsoup.parse(source, "ecu-kr");
         /*원화환산표시 기달리기*/
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("exchangeWon")));
-        seleniumService.getDriver().findElement(By.id("exchangeWon")).click();
+        driver.findElement(By.id("exchangeWon")).click();
         /*종목명 기달리기*/
         seleniumService.getWait().until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("excelTable"), By.className("l")));
         /*기달리고 다시 가져오기*/
-        source = seleniumService.getDriver().getPageSource();
+        source = driver.getPageSource();
         document = Jsoup.parse(source);
         Element element = document.select("#excelTable").first();
         /*투자 내역 파싱*/
