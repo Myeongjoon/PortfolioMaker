@@ -1,6 +1,8 @@
-package com.portfoliomaker.main;
+package com.portfoliomaker.main.p2p;
 
-import com.portfoliomaker.service.TogetherFundingParsingService;
+import com.portfoliomaker.main.Application;
+import com.portfoliomaker.main.TestUtil;
+import com.portfoliomaker.service.p2p.TogetherFundingParsingService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
@@ -18,6 +20,6 @@ public class TogetherFundingParsingServiceTest {
     public void fundTableTest() {
         String source = TestUtil.getHtmlByString("p2p/together.html");
         Document document = Jsoup.parse(source);
-        assertEquals(togetherFundingParsingService.parseTogether(document).currentPriceSum, 2612545);
+        assertEquals(togetherFundingParsingService.parseTogether(document).price, 2612545);
     }
 }

@@ -1,14 +1,11 @@
-package com.portfoliomaker.service;
+package com.portfoliomaker.service.p2p;
 
-import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.portfolio.Portfolio;
-import com.portfoliomaker.entity.stock.StockPortfolio;
-import com.portfoliomaker.repository.portfolio.PortfolioRepository;
+import com.portfoliomaker.service.PortfolioService;
 import com.portfoliomaker.util.StringUtil;
 import com.portfoliomaker.util.Util;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,13 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
 /**
  * 어니스트 펀드 크롤러
  */
 @Service
-public class HonestFundService {
+public class PeopleFundService {
     @Autowired
     PortfolioService portfolioService;
 
@@ -83,12 +78,12 @@ public class HonestFundService {
      */
     public Portfolio parseDeposit(Document document, String name) {
         Portfolio portfolio = new Portfolio();
-        Elements li = document.select(".investment-info-ul").get(1).select("li");
-        li.select("span").remove();
-        String ui = li.select("p").get(0).text();
-        long remain = StringUtil.parseMoney(ui);
-        portfolio.price = remain;
-        portfolio.name = "어니스트펀드-예치금-" + name;
+        Elements investReports = document.select(".invest-report");
+        Elements secTotalAssets = investReports.select(".sec-total-assets");
+        Elements dd = secTotalAssets.select(".fold-area").select("dd");
+        String ui = dd.get(1).text();
+        portfolio.price = StringUtil.parseMoney(ui);
+        portfolio.name = "투게더펀딩-예치금-" + name;
         return portfolio;
     }
 }

@@ -1,8 +1,9 @@
-package com.portfoliomaker.service;
+package com.portfoliomaker.service.p2p;
 
+import com.portfoliomaker.entity.portfolio.Portfolio;
 import com.portfoliomaker.entity.stock.StockPortfolio;
+import com.portfoliomaker.service.PortfolioService;
 import com.portfoliomaker.util.StringUtil;
-import jdk.security.jarsigner.JarSigner;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -30,14 +31,14 @@ public class TogetherFundingParsingService {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("invest_state_area1")));
         String source = webDriver.getPageSource();
         Document document = Jsoup.parse(source);
-        portfolioService.save("투게더-투자" + name, Math.toIntExact(parseTogether(document).currentPriceSum));
+        portfolioService.save("투게더-투자" + name, Math.toIntExact(parseTogether(document).price));
         portfolioService.save("투게더-예치금" + name, Math.toIntExact(parseTogetherDeposit(document).currentPriceSum));
     }
 
-    public StockPortfolio parseTogether(Document document) {
-        StockPortfolio response = new StockPortfolio();
+    public Portfolio parseTogether(Document document) {
+        Portfolio response = new Portfolio();
         Elements tables = document.select("table").select(".w100").select(".invest_repaying_amount");
-        response.currentPriceSum = StringUtil.parseMoney(tables.first().text());
+        response.price = StringUtil.parseMoney(tables.first().text());
         return response;
     }
 

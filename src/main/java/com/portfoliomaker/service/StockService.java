@@ -7,6 +7,8 @@ import com.portfoliomaker.entity.stock.StockMeta;
 import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.repository.stock.StockMetaRepository;
 import com.portfoliomaker.repository.stock.StockPortfolioRepository;
+import com.portfoliomaker.service.p2p.HonestFundService;
+import com.portfoliomaker.service.p2p.TogetherFundingParsingService;
 import com.portfoliomaker.util.Util;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
