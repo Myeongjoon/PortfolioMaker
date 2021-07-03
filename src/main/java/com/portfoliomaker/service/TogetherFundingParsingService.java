@@ -1,21 +1,38 @@
 package com.portfoliomaker.service;
 
-import com.portfoliomaker.dto.MR.MyPortfolioDTO;
-import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.util.StringUtil;
+import jdk.security.jarsigner.JarSigner;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 
 @Service
 public class TogetherFundingParsingService {
     Logger logger = LoggerFactory.getLogger(TogetherFundingParsingService.class);
+    @Autowired
+    StockService service;
+
+    public void doProcess(WebDriver webDriver, WebDriverWait webDriverWait, String id, String password, String name) {
+        webDriver.get("https://www.together.co.kr/menu/index.php?menu=invest_history");
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user_id")));
+        webDriver.findElement(By.id("user_id")).sendKeys(id);
+        webDriver.findElement(By.id("password")).sendKeys(password);
+        webDriver.findElement(By.className("btn_darkblue")).click();
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("invest_state_area1")));
+        String source = webDriver.getPageSource();
+        Document document = Jsoup.parse(source);
+        StockPortfolio stockPortfolio = parseTogether(document);
+        service.save("투게더-투자" + name, Math.toIntExact(stockPortfolio.currentPriceSum));
+    }
 
     public StockPortfolio parseTogether(Document document) {
         StockPortfolio response = new StockPortfolio();

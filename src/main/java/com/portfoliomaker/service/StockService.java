@@ -42,6 +42,8 @@ public class StockService {
     PortfolioService portfolioService;
     @Autowired
     NaverParsingService naverParsingService;
+    @Autowired
+    TogetherFundingParsingService togetherFundingParsingService;
 
     public List<StockPortfolioDTO> getAllStockPortfolioDTO() {
         List<StockPortfolioDTO> response = new ArrayList<>();
@@ -93,6 +95,19 @@ public class StockService {
         honestFundSync("kimmj8409@gmail.com", "apt3550!1", "김명준");
         honestFundSync("rlaeodudslak@naver.com", "apt3550!1", "김대영");
         honestFundSync("kimdg691020@naver.com", "apt3550!1", "김동길");
+        togetherFundSync("kimmj8409@gmail.com", "apt3550!1", "김명준");
+    }
+
+    public void togetherFundSync(String id, String password, String name) {
+        try {
+            seleniumService.setDriver();
+            togetherFundingParsingService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), id, password, name);
+        } catch (Exception e) {
+            logger.error(e.toString());
+            seleniumService.getDriver().close();
+            throw e;
+        }
+        seleniumService.getDriver().close();
     }
 
     public void honestFundSync(String id, String password, String name) {
