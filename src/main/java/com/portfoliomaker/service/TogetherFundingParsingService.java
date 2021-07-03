@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 public class TogetherFundingParsingService {
     Logger logger = LoggerFactory.getLogger(TogetherFundingParsingService.class);
     @Autowired
-    StockService service;
+    PortfolioService portfolioService;
 
     public void doProcess(WebDriver webDriver, WebDriverWait webDriverWait, String id, String password, String name) {
         webDriver.get("https://www.together.co.kr/menu/index.php?menu=invest_history");
@@ -30,13 +30,20 @@ public class TogetherFundingParsingService {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("invest_state_area1")));
         String source = webDriver.getPageSource();
         Document document = Jsoup.parse(source);
-        StockPortfolio stockPortfolio = parseTogether(document);
-        service.save("투게더-투자" + name, Math.toIntExact(stockPortfolio.currentPriceSum));
+        portfolioService.save("투게더-투자" + name, Math.toIntExact(parseTogether(document).currentPriceSum));
+        portfolioService.save("투게더-예치금" + name, Math.toIntExact(parseTogetherDeposit(document).currentPriceSum));
     }
 
     public StockPortfolio parseTogether(Document document) {
         StockPortfolio response = new StockPortfolio();
         Elements tables = document.select("table").select(".w100").select(".invest_repaying_amount");
+        response.currentPriceSum = StringUtil.parseMoney(tables.first().text());
+        return response;
+    }
+
+    public StockPortfolio parseTogetherDeposit(Document document) {
+        StockPortfolio response = new StockPortfolio();
+        Elements tables = document.select(".left_money");
         response.currentPriceSum = StringUtil.parseMoney(tables.first().text());
         return response;
     }
