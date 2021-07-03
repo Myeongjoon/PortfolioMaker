@@ -32,7 +32,7 @@ public class MRParsingServiceTest {
 
     @Test
     public void fundTableTest() {
-        String source = TestUtil.getHtmlByString("fundTable.html");
+        String source = TestUtil.getHtmlByString("MR/fundTable.html");
         Document document = Jsoup.parse(source);
         assertEquals(mrParsingService.parseFundSummary(document), 3870089);
     }
