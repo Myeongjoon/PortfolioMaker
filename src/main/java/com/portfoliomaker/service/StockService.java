@@ -106,13 +106,14 @@ public class StockService {
 
     /**
      * 투게더 펀딩 sync
+     *
      * @param id
      * @param password
      * @param name
      */
     public void togetherFundSync(String id, String password, String name) {
         try {
-            seleniumService.setDriver();
+            seleniumService.setDriver(true);
             togetherFundingParsingService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), id, password, name);
         } catch (Exception e) {
             logger.error(e.toString());
@@ -131,7 +132,7 @@ public class StockService {
      */
     public void peopleFundSync(String id, String password, String name) {
         try {
-            seleniumService.setDriver();
+            seleniumService.setDriver(true);
             peopleFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), id, password, name);
         } catch (Exception e) {
             logger.error(e.toString());
@@ -150,7 +151,7 @@ public class StockService {
      */
     public void honestFundSync(String id, String password, String name) {
         try {
-            seleniumService.setDriver();
+            seleniumService.setDriver(true);
             honestFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), id, password, name);
         } catch (Exception e) {
             logger.error(e.toString());

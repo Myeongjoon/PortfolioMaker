@@ -23,11 +23,15 @@ public class SeleniumService {
         return this.driver;
     }
 
-    public WebDriverWait getWait(){
+    public WebDriverWait getWait() {
         return this.wait;
     }
 
     public void setDriver() {
+        this.setDriver(false);
+    }
+
+    public void setDriver(boolean isHeadless) {
         switch (System.getProperty("os.name").toLowerCase(Locale.ROOT)) {
             case "windows 10":
                 System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH_WINDOW);
@@ -39,6 +43,7 @@ public class SeleniumService {
                 logger.info("unsupported type : " + System.getProperty("os.name"));
         }
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setHeadless(isHeadless);
         chromeOptions.setCapability("ignoreProtectedModeSettings", true);
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 1000);
