@@ -1,5 +1,6 @@
 package com.portfoliomaker.service;
 
+import com.portfoliomaker.dto.MR.MyPortfolioDTO;
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockMeta;
@@ -14,6 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -140,15 +142,32 @@ public class StockService {
         try {
             seleniumService.setDriver();
             login();
-            parseStockPortfolio(seleniumService.getDriver());
-            parseFundPortfolio();
-            parseCMAPortfolio();
+            parseMyPortfolioMain(seleniumService.getDriver(), seleniumService.getWait());
+            //parseStockPortfolio(seleniumService.getDriver());
+            //parseFundPortfolio();
+            //parseCMAPortfolio();
         } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();
             throw e;
         }
         seleniumService.getDriver().close();
+    }
+
+    /**
+     * My 자산 크롤링
+     */
+    private void parseMyPortfolioMain(WebDriver webDriver, WebDriverWait webDriverWait) {
+        //My자산
+        ((JavascriptExecutor) webDriver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hkd1001a01Tbody")));
+        String source = webDriver.getPageSource();
+        Document document = Jsoup.parse(source);
+        ArrayList<MyPortfolioDTO> response = mrParsingService.parseMyPortfolio(document);
+        for (MyPortfolioDTO dto : response) {
+            portfolioService.save(dto.name, dto.currentPrice);
+        }
     }
 
     /**
@@ -175,7 +194,6 @@ public class StockService {
         //My자산
         ((JavascriptExecutor) driver).executeScript("openHp('/hkd/hkd1001/r01.do', true);");
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
-        logger.info(driver.getPageSource());
         //상품별 자산
         ((JavascriptExecutor) driver).executeScript("javascript:openHp('/hkd/hkd1003/r01.do', false)");
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
