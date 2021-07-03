@@ -16,7 +16,7 @@ public class TogetherFundingParsingServiceTest {
 
     @Test
     public void fundTableTest() {
-        String source = TestUtil.getHtmlByString("together.html");
+        String source = TestUtil.getHtmlByString("p2p/together.html");
         Document document = Jsoup.parse(source);
         assertEquals(togetherFundingParsingService.parseTogether(document).currentPriceSum, 2612545);
     }

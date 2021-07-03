@@ -17,7 +17,7 @@ public class HonestFundTest {
 
     @Test
     public void fundTableTest() {
-        String source = TestUtil.getHtmlByString("honestfund.html");
+        String source = TestUtil.getHtmlByString("p2p/honestfund.html");
         Document document = Jsoup.parse(source);
         Portfolio portfolio = honestFundService.parse(document, "김명준");
         assertEquals(portfolio.price, 2150180);
