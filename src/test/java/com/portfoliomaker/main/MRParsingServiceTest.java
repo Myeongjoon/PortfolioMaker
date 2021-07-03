@@ -19,7 +19,7 @@ public class MRParsingServiceTest {
 
     @Test
     public void excelTableTest() {
-        String source = TestUtil.getHtmlByString("excelTable.html");
+        String source = TestUtil.getHtmlByString("MR/excelTable.html");
         Document document = Jsoup.parse(source);
         ArrayList<StockPortfolio> response = mrParsingService.parse(document);
         assertEquals(response.size(), 17);
