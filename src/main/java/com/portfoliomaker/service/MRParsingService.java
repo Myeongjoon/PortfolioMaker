@@ -43,7 +43,7 @@ public class MRParsingService {
         for (Element e : tr) {
             MyPortfolioDTO temp = new MyPortfolioDTO();
             String currentPriceString = e.select(".r").get(1).text();
-            temp.name = e.select(".l").select("a").get(0).text();
+            temp.name = "미래에셋-" + e.select(".l").select("a").get(0).text();
             temp.currentPrice = StringUtil.parseMoney(currentPriceString);
             response.add(temp);
         }
