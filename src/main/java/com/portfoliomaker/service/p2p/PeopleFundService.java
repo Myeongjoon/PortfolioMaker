@@ -15,20 +15,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 어니스트 펀드 크롤러
+ * 피플 펀딩 크롤러
  */
 @Service
 public class PeopleFundService {
+    private static final String NAME = "피플펀딩";
     @Autowired
     PortfolioService portfolioService;
 
     public void doProcess(WebDriver driver, WebDriverWait webDriverWait, String id, String password, String name) {
+        driver.get("https://www.peoplefund.co.kr/mypage/invest/");
         login(driver, webDriverWait, id, password);
-        driver.get("https://www.honestfund.kr/mypage/investor/investments");
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mypage-container")));
+        //sleep 조건 찾기 귀찮아서 그냥 슬립
+        Util.sleep(1000);
         String source = driver.getPageSource();
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.className("investment-info-ul")));
         Document document = Jsoup.parse(source);
-        Portfolio p = parse(document, name);
+        Portfolio p = parseRemain(document, name);
         portfolioService.save(p.name, p.price);
 
         Document document2 = Jsoup.parse(source);
@@ -45,27 +48,30 @@ public class PeopleFundService {
      * @param password
      */
     public void login(WebDriver driver, WebDriverWait webDriverWait, String id, String password) {
-        driver.get("https://www.honestfund.kr/login");
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("inputPassword")));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.className("btn-login")));
         driver.findElement(By.name("email")).sendKeys(id);
         driver.findElement(By.name("password")).sendKeys(password);
-        driver.findElement(By.className("auth_login")).click();
+        driver.findElement(By.className("btn-login")).click();
         Util.sleep(1000);
     }
 
     /**
-     * 잔여 투자 내역
+     * 투자 금액 파싱
      *
      * @param document
      * @param name
      * @return
      */
-    public Portfolio parse(Document document, String name) {
+    public Portfolio parseRemain(Document document, String name) {
         Portfolio portfolio = new Portfolio();
-        String ui = document.select(".investment-info-ul").first().select("li").select("p").get(2).text();
-        long remain = StringUtil.parseMoney(ui);
-        portfolio.price = remain;
-        portfolio.name = "어니스트펀드-" + name;
+        Elements investReports = document.select(".invest-report");
+        Elements secTotalAssets = investReports.select(".sec-total-assets");
+        Elements dd = secTotalAssets.select(".fold-area").select("dd");
+        String ui = dd.get(2).text();
+        portfolio.price = StringUtil.parseMoney(ui);
+        ui = dd.get(3).text();
+        portfolio.price += StringUtil.parseMoney(ui);
+        portfolio.name = NAME + "-투자-" + name;
         return portfolio;
     }
 
@@ -83,7 +89,7 @@ public class PeopleFundService {
         Elements dd = secTotalAssets.select(".fold-area").select("dd");
         String ui = dd.get(1).text();
         portfolio.price = StringUtil.parseMoney(ui);
-        portfolio.name = "투게더펀딩-예치금-" + name;
+        portfolio.name = NAME + "-예치금-" + name;
         return portfolio;
     }
 }

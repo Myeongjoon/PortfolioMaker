@@ -8,6 +8,7 @@ import com.portfoliomaker.entity.stock.StockPortfolio;
 import com.portfoliomaker.repository.stock.StockMetaRepository;
 import com.portfoliomaker.repository.stock.StockPortfolioRepository;
 import com.portfoliomaker.service.p2p.HonestFundService;
+import com.portfoliomaker.service.p2p.PeopleFundService;
 import com.portfoliomaker.service.p2p.TogetherFundingParsingService;
 import com.portfoliomaker.util.Util;
 import org.jsoup.Jsoup;
@@ -36,6 +37,8 @@ public class StockService {
     StockMetaRepository stockMetaRepository;
     @Autowired
     HonestFundService honestFundService;
+    @Autowired
+    PeopleFundService peopleFundService;
     @Autowired
     SeleniumService seleniumService;
     @Autowired
@@ -98,8 +101,15 @@ public class StockService {
         honestFundSync("rlaeodudslak@naver.com", "apt3550!1", "김대영");
         honestFundSync("kimdg691020@naver.com", "apt3550!1", "김동길");
         togetherFundSync("kimmj8409@gmail.com", "apt3550!1", "김명준");
+        peopleFundSync("5252555@naver.com", "vlvmfaudwns!1", "김명준");
     }
 
+    /**
+     * 투게더 펀딩 sync
+     * @param id
+     * @param password
+     * @param name
+     */
     public void togetherFundSync(String id, String password, String name) {
         try {
             seleniumService.setDriver();
@@ -112,6 +122,32 @@ public class StockService {
         seleniumService.getDriver().close();
     }
 
+    /**
+     * 피플 펀드 싱크
+     *
+     * @param id
+     * @param password
+     * @param name
+     */
+    public void peopleFundSync(String id, String password, String name) {
+        try {
+            seleniumService.setDriver();
+            peopleFundService.doProcess(seleniumService.getDriver(), seleniumService.getWait(), id, password, name);
+        } catch (Exception e) {
+            logger.error(e.toString());
+            seleniumService.getDriver().close();
+            throw e;
+        }
+        seleniumService.getDriver().close();
+    }
+
+    /**
+     * 어니스트 펀드 싱크
+     *
+     * @param id
+     * @param password
+     * @param name
+     */
     public void honestFundSync(String id, String password, String name) {
         try {
             seleniumService.setDriver();

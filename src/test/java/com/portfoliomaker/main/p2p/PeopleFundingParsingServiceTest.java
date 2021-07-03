@@ -18,9 +18,16 @@ public class PeopleFundingParsingServiceTest {
     PeopleFundService peopleFundService;
 
     @Test
-    public void fundTableTest() {
+    public void parseDepositTest() {
         String source = TestUtil.getHtmlByString("p2p/peopleFund.html");
         Document document = Jsoup.parse(source);
         assertEquals(peopleFundService.parseDeposit(document, "김명준").price, 5010);
+    }
+
+    @Test
+    public void parseRemainTest() {
+        String source = TestUtil.getHtmlByString("p2p/peopleFund.html");
+        Document document = Jsoup.parse(source);
+        assertEquals(peopleFundService.parseRemain(document, "김명준").price, 3567324);
     }
 }
