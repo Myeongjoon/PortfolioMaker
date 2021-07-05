@@ -122,9 +122,11 @@ window.addEventListener("load", function () {
           { title: "현재가격", field: "currentPriceSum", width: 110, editor: "select" },
           { title: "수익률", field: "rate", width: 100, editor: "input" },
           { title: "크롤링가격", field: "crawledPriceSum", width: 100, editor: "input" },
+          { title: "크롤링수익률", field: "crawledRate", width: 100, editor: "input" },
           { title: "삭제", field: "car", width: 90, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
         ],
       });
     }
   });
 });
+

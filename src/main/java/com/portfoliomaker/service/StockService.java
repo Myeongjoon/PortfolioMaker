@@ -70,7 +70,11 @@ public class StockService {
                     price = p.count * stockMeta.get(0).price;
                 }
                 dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
-                dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
+                if (price == 0) {
+                    dto.crawledRate = dto.rate;
+                } else {
+                    dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
+                }
             }
             response.add(dto);
         }
