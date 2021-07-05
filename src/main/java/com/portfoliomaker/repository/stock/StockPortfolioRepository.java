@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface StockPortfolioRepository extends JpaRepository<StockPortfolio, String> {
     List<StockPortfolio> findByType(String type);
+
+    List<StockPortfolio> findByLocation(String location);
 }
