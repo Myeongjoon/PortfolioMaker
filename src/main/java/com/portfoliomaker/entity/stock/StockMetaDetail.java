@@ -39,4 +39,8 @@ public class StockMetaDetail {
         this.priceDate = p.priceDate;
         this.price = p.price;
     }
+
+    public StockMetaDetail() {
+
+    }
 }
