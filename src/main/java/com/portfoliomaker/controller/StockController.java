@@ -1,5 +1,6 @@
 package com.portfoliomaker.controller;
 
+import com.portfoliomaker.dto.stock.StockDetailDTO;
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,13 @@ public class StockController {
     @GetMapping("/detail")
     public String detail(Model model) {
         return "stock/detail";
+    }
+
+
+    @GetMapping("/detail/list")
+    @ResponseBody
+    public List<StockDetailDTO> detailList(@RequestParam(value = "ticker", required = false) String ticker) {
+        return stockService.findDetailList(ticker);
     }
 
 

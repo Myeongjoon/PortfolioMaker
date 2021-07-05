@@ -1,6 +1,7 @@
 package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.MR.MyPortfolioDTO;
+import com.portfoliomaker.dto.stock.StockDetailDTO;
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockMeta;
@@ -56,6 +57,16 @@ public class StockService {
     NaverParsingService naverParsingService;
     @Autowired
     TogetherFundingParsingService togetherFundingParsingService;
+
+    public List<StockDetailDTO> findDetailList(String ticker) {
+        List<StockDetailDTO> response = new ArrayList<>();
+        List<StockMetaDetail> targets = stockMetaDetailRepository.findByTicker(ticker);
+        for (StockMetaDetail detail : targets) {
+            StockDetailDTO detailDTO = new StockDetailDTO(detail);
+            response.add(detailDTO);
+        }
+        return response;
+    }
 
     public List<StockPortfolioDTO> getAllStockPortfolioDTO(String location) {
         List<StockPortfolioDTO> response = new ArrayList<>();
