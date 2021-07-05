@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PortfolioService {
@@ -69,7 +70,17 @@ public class PortfolioService {
         return portfolioRepository.findAll();
     }
 
+    /**
+     * 포트폴리오 업데이트 및 디테일 업데이트 - 금액이 바뀌지 않으면 업데이트 하지 않음.
+     *
+     * @param name
+     * @param price
+     */
     public void save(String name, long price) {
+        Optional<Portfolio> portfolio = portfolioRepository.findById(name);
+        if (portfolio.isPresent() && portfolio.get().price == price) {
+            return;
+        }
         portfolioRepository.save(new Portfolio(name, price));
         PortfolioDetail detail = new PortfolioDetail();
         detail.name = name;
