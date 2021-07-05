@@ -43,11 +43,6 @@ public class StockPortfolioDTO {
      */
     public String rate;
 
-    /**
-     * 수익률
-     */
-    public String crawledRate;
-
     public StockPortfolioDTO(StockPortfolio p) {
         this.ticker = p.ticker;
         this.count = NumberFormat.getNumberInstance(Locale.US).format(p.count);

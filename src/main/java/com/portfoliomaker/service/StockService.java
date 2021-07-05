@@ -70,10 +70,8 @@ public class StockService {
                     price = p.count * stockMeta.get(0).price;
                 }
                 dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
-                if (price == 0) {
-                    dto.crawledRate = dto.rate;
-                } else {
-                    dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
+                if (price != 0) {
+                    dto.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
                 }
             }
             response.add(dto);
@@ -216,8 +214,6 @@ public class StockService {
             login();
             parseMyPortfolioMain(seleniumService.getDriver(), seleniumService.getWait());
             parseStockPortfolio(seleniumService.getDriver());
-            //parseFundPortfolio();
-            //parseCMAPortfolio();
         } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();
