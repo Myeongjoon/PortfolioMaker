@@ -65,6 +65,7 @@ public class StockService {
                         price = p.count * stockMeta.get(0).price;
                     }
                     dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
+                    dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
                 }
                 response.add(dto);
             }
@@ -76,7 +77,12 @@ public class StockService {
                 StockPortfolioDTO dto = new StockPortfolioDTO(p);
                 if (stockMeta.size() != 0) {
                     dto.name = stockMeta.get(0).name;
+                    long price = 0;
+                    if (stockMeta.get(0).price != null) {
+                        price = p.count * stockMeta.get(0).price;
+                    }
                     dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(p.count * stockMeta.get(0).price);
+                    dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
                 }
                 response.add(dto);
             }
