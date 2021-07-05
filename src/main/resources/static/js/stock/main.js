@@ -95,9 +95,10 @@ window.addEventListener("load", function () {
     success: function (data, status, xhr) {
       table_data = []
       for (const element of data) {
-        if (element.name == null) {
-          element.name = element.ticker;
+        if(element.name == null){
+            element.name = element.ticker;
         }
+        element.url = '<a href="http://localhost:8080/stock/detail?ticker=' + element.ticker + '" >' + element.name + '</a>';
         table_data.push(element)
       }
       //이름이 있을 경우 ticker를 이름으로 변경
@@ -116,7 +117,15 @@ window.addEventListener("load", function () {
           { column: "rate", dir: "asc" },
         ],
         columns: [                 //define the table columns
-          { title: "이름", field: "name", width: 100, editor: "input" },
+          {
+            title: "이름", field: "url", width: 100, formatter: function (cell, formatterParams, onRendered) {
+              //cell - the cell component
+              //formatterParams - parameters set for the column
+              //onRendered - function to call when the formatter has been rendered
+
+              return cell.getValue(); //return the contents of the cell;
+            },
+          },
           { title: "갯수", field: "count", width: 100, hozAlign: "left", formatter: "number", editor: true },
           { title: "구매가격", field: "buyPriceSum", width: 110, editor: "select" },
           { title: "현재가격", field: "currentPriceSum", width: 110, editor: "select" },
