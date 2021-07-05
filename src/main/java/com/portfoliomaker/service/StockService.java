@@ -267,13 +267,10 @@ public class StockService {
      */
     private void login() {
         seleniumService.getDriver().get("https://securities.miraeasset.com/login/form.do");
-        logger.info("form");
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
         Util.sleep(1000);
         seleniumService.getDriver().findElement(By.name("usid")).sendKeys("joon8409");
-        logger.info("send id");
         Util.sleep(3500);
-        logger.info("password");
         //로그인 버튼 클릭
         ((JavascriptExecutor) seleniumService.getDriver()).executeScript("doSubmit();");
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("gnb")));
