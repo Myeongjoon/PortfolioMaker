@@ -126,7 +126,7 @@ window.addEventListener("load", function () {
               return cell.getValue(); //return the contents of the cell;
             },
           },
-          { title: "갯수", field: "count", width: 100, hozAlign: "left", formatter: "number", editor: true },
+          { title: "갯수", field: "count", width: 100, hozAlign: "left", formatter: "money", editor: true },
           { title: "구매가격", field: "buyPriceSum", width: 110, editor: "select" },
           { title: "현재가격", field: "currentPriceSum", width: 110, editor: "select" },
           { title: "수익률", field: "rate", width: 100, editor: "input" },
