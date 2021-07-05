@@ -4,7 +4,9 @@ import com.portfoliomaker.dto.MR.MyPortfolioDTO;
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockMeta;
+import com.portfoliomaker.entity.stock.StockMetaDetail;
 import com.portfoliomaker.entity.stock.StockPortfolio;
+import com.portfoliomaker.repository.stock.StockMetaDetailRepository;
 import com.portfoliomaker.repository.stock.StockMetaRepository;
 import com.portfoliomaker.repository.stock.StockPortfolioRepository;
 import com.portfoliomaker.service.p2p.HonestFundService;
@@ -29,6 +31,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 @Service
 public class StockService {
@@ -37,6 +40,8 @@ public class StockService {
     StockPortfolioRepository stockPortfolioRepository;
     @Autowired
     StockMetaRepository stockMetaRepository;
+    @Autowired
+    StockMetaDetailRepository stockMetaDetailRepository;
     @Autowired
     HonestFundService honestFundService;
     @Autowired
@@ -200,8 +205,16 @@ public class StockService {
         for (StockMeta stockMeta : list) {
             if (stockMeta.location != null && stockMeta.location.equals("코스피")) {
                 naverParsingService.parseMeta(stockMeta);
-                stockMetaRepository.save(stockMeta);
+                staveStockMeta(stockMeta);
             }
+        }
+    }
+
+    public void staveStockMeta(StockMeta stockMeta) {
+        stockMetaRepository.save(stockMeta);
+        Optional<StockMetaDetail> detail = stockMetaDetailRepository.findById(stockMeta.id);
+        if (detail.isEmpty()) {
+            stockMetaDetailRepository.save(new StockMetaDetail(stockMeta));
         }
     }
 
@@ -286,7 +299,7 @@ public class StockService {
             if (metas.size() == 0) {
                 StockMeta stockMeta = new StockMeta();
                 stockMeta.ticker = s.ticker;
-                stockMeta.id = stockMeta.hash();
+                stockMeta.id = s.ticker;
                 stockMeta.location = s.location;
                 stockMetaRepository.save(stockMeta);
             }

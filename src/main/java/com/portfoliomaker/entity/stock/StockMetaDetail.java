@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class StockMeta {
+public class StockMetaDetail {
     @Id
     public String id;
     /**
@@ -18,11 +18,6 @@ public class StockMeta {
      */
     public String name;
 
-    /*
-    주식 위치
-     */
-    public String location;
-
     /**
      * 가격 크롤링 기준일
      */
@@ -34,6 +29,14 @@ public class StockMeta {
     public Long price;
 
     public String hash() {
-        return this.ticker + this.priceDate.toString();
+        return this.ticker;
+    }
+
+    public StockMetaDetail(StockMeta p) {
+        this.id = p.hash();
+        this.ticker = p.ticker;
+        this.name = p.name;
+        this.priceDate = p.priceDate;
+        this.price = p.price;
     }
 }
