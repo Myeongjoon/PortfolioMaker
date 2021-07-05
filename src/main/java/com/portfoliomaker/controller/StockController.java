@@ -42,14 +42,13 @@ public class StockController {
 
     @GetMapping("/main/list")
     @ResponseBody
-    public List<StockPortfolioDTO> mainList() {
-        return stockService.getAllStockPortfolioDTO(null);
+    public List<StockPortfolioDTO> mainList(@RequestParam(value = "location", required = false) String location) {
+        return stockService.getAllStockPortfolioDTO(location);
     }
 
 
     @GetMapping("/detail")
-    public String detail(Model model, @RequestParam(value = "ticker", required = false) String location) {
-        model.addAttribute("stocks", stockService.getAllStockPortfolioDTO(location));
+    public String detail(Model model) {
         return "stock/detail";
     }
 

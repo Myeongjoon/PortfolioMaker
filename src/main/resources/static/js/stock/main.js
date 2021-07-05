@@ -58,17 +58,45 @@ $(document).on('click', '.deleteBtn', function () {
 });
 
 
+
+function getParam(sname) {
+
+  var params = location.search.substr(location.search.indexOf("?") + 1);
+
+  var sval = "";
+
+  params = params.split("&");
+
+  for (var i = 0; i < params.length; i++) {
+
+    temp = params[i].split("=");
+
+    if ([temp[0]] == sname) { sval = temp[1]; }
+
+  }
+
+  return sval;
+
+}
+
+
+
 window.addEventListener("load", function () {
+  url = '/stock/main/list'
+  loc = getParam("location");
+  if (loc != null && loc != "") {
+    url += "?location=" + loc
+  }
   $.ajax({
-    url: '/stock/main/list',
+    url: url,
     method: 'get',
     context: this,
 
     success: function (data, status, xhr) {
-      table_data=[]
+      table_data = []
       for (const element of data) {
-        if(element.name == null){
-            element.name = element.ticker;
+        if (element.name == null) {
+          element.name = element.ticker;
         }
         table_data.push(element)
       }
