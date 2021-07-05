@@ -25,8 +25,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class StockService {
@@ -58,6 +60,11 @@ public class StockService {
                 StockPortfolioDTO dto = new StockPortfolioDTO(p);
                 if (stockMeta.size() != 0) {
                     dto.name = stockMeta.get(0).name;
+                    long price = 0;
+                    if (stockMeta.get(0).price != null) {
+                        price = p.count * stockMeta.get(0).price;
+                    }
+                    dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
                 }
                 response.add(dto);
             }
@@ -69,6 +76,7 @@ public class StockService {
                 StockPortfolioDTO dto = new StockPortfolioDTO(p);
                 if (stockMeta.size() != 0) {
                     dto.name = stockMeta.get(0).name;
+                    dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(p.count * stockMeta.get(0).price);
                 }
                 response.add(dto);
             }

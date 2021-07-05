@@ -34,6 +34,11 @@ public class StockPortfolioDTO {
     public String currentPriceSum;
 
     /**
+     * 크롤링된 현재 가격 합산
+     */
+    public String crawledPriceSum;
+
+    /**
      * 수익률
      */
     public String rate;
