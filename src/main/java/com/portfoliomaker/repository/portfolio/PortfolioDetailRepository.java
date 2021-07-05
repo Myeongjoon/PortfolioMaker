@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface PortfolioDetailRepository extends JpaRepository<PortfolioDetail, String> {
 
-
     List<PortfolioDetail> findByNameOrderByDateDesc(String name);
+
+    List<PortfolioDetail> findTop1ByNameOrderByDateDesc(String name);
 }

@@ -25,7 +25,16 @@ public class PortfolioService {
     @Autowired
     PortfolioTypeRepository portfolioTypeRepository;
 
+    /**
+     * 금액 변동이 없으면 추가 하지 않음.
+     *
+     * @param detail
+     */
     public void insert(PortfolioDetail detail) {
+        List<PortfolioDetail> portfolio = portfolioDetailRepository.findTop1ByNameOrderByDateDesc(detail.name);
+        if (portfolio.size() == 1 && portfolio.get(0).price == detail.price) {
+            return;
+        }
         if (detail.id == null) {
             detail.id = detail.hash();
         }
