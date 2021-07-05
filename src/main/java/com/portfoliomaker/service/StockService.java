@@ -203,8 +203,10 @@ public class StockService {
     public void parseNaverStock() {
         List<StockMeta> list = stockMetaRepository.findAll();
         for (StockMeta stockMeta : list) {
-            naverParsingService.parseMeta(stockMeta);
-            stockMetaRepository.save(stockMeta);
+            if (stockMeta.location != null && stockMeta.location.equals("코스피")) {
+                naverParsingService.parseMeta(stockMeta);
+                stockMetaRepository.save(stockMeta);
+            }
         }
     }
 
