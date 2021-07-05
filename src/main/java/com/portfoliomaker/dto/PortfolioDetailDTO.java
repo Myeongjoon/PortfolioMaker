@@ -25,6 +25,11 @@ public class PortfolioDetailDTO {
      */
     public Date date;
 
+    /**
+     * 세부 내용
+     */
+    public String detail;
+
     public PortfolioDetailDTO() {
 
     }
@@ -34,5 +39,6 @@ public class PortfolioDetailDTO {
         this.date = p.date;
         this.name = p.name;
         this.price = NumberFormat.getNumberInstance(Locale.US).format(p.price);
+        this.detail = p.detail;
     }
 }

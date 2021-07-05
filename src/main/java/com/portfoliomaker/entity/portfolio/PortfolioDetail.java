@@ -29,6 +29,11 @@ public class PortfolioDetail {
      */
     public long price;
 
+    /**
+     * 세부 내용
+     */
+    public String detail;
+
     public String hash() {
         return name + date;
     }

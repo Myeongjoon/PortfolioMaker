@@ -54,12 +54,15 @@ public class PortfolioService {
     public List<PortfolioDTO> getPortfolio() {
         List<Portfolio> data = portfolioRepository.findAll();
         List<PortfolioDTO> response = new ArrayList<>();
+        String detail = "";
         long sum = 0;
         for (Portfolio p : data) {
             sum += p.price;
             PortfolioDTO dto = new PortfolioDTO(p);
             response.add(dto);
+            detail += p.price + "+";
         }
+        detail = detail.substring(0, detail.length() - 1);
         PortfolioDTO sum_port = new PortfolioDTO("합계", sum);
         response.add(sum_port);
         //합계 저장을 위해 합계 저장
@@ -67,6 +70,7 @@ public class PortfolioService {
         sumDetail.date = new Date();
         sumDetail.price = sum;
         sumDetail.name = "합계";
+        sumDetail.detail = detail;
         insert(sumDetail);
         return response;
     }
