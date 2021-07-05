@@ -23,6 +23,16 @@ public class StockMeta {
      */
     public String location;
 
+    /**
+     * 가격 크롤링 기준일
+     */
+    public Date priceDate;
+
+    /**
+     * 기준 가격
+     */
+    public long price;
+
     public String hash() {
         return this.ticker;
     }

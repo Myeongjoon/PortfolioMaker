@@ -32,6 +32,10 @@ public class NaverParsingService {
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("chart_area")));
         StockPrice stockPrice = parse(document, meta.ticker);
         meta.name = stockPrice.name;
+        if (meta.priceDate == null || meta.priceDate.before(stockPrice.date)) {
+            meta.priceDate = stockPrice.date;
+            meta.price = stockPrice.currentPrice;
+        }
         return meta;
     }
 
