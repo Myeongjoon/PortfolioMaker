@@ -11,10 +11,7 @@ import com.portfoliomaker.repository.portfolio.PortfolioTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class PortfolioService {
@@ -80,7 +77,17 @@ public class PortfolioService {
     }
 
     public List<Portfolio> findAll() {
-        return portfolioRepository.findAll();
+        List<Portfolio> portfolios = portfolioRepository.findAll();
+        portfolios.sort((o1, o2) -> {
+            if (o1.price < o2.price) {
+                return 1;
+            } else if (o1.price > o2.price) {
+                return -1;
+            } else {
+                return 0;
+            }
+        });
+        return portfolios;
     }
 
     /**
