@@ -16,8 +16,6 @@ $(document).on('click', '.deleteBtn', function () {
 
 });
 
-
-
 function p2pSync() {
   $.ajax({
     url: '/stock/p2pSync',
@@ -29,3 +27,17 @@ function p2pSync() {
     }
   });
 }
+
+function updatePortfolio() {
+  $.ajax({
+    url: '/portfolio',
+    method: 'post',
+    data: { name: $("#name").val(),price: $("#price").val() },
+    context: this,
+
+    success: function (data, status, xhr) {
+      location.reload()
+    }
+  });
+}
+
