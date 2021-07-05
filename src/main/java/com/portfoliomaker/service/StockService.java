@@ -184,7 +184,7 @@ public class StockService {
      */
     public void stockSync() {
         try {
-            seleniumService.setDriver();
+            seleniumService.setDriver(true);
             parseNaverStock();
         } catch (Exception e) {
             logger.error(e.toString());
