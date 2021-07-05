@@ -6,9 +6,11 @@
             <pattern>[%d{HH:mm:ss:SSS}] - [%t] [%p] - %logger{36} - %m%n</pattern>
         </encoder>
     </appender>
+    <!--
     <logger name="org.hibernate.type.descriptor.sql" level="trace"/>
     <logger name="org.springframework.web" level="debug"/>
     <logger name="org.hibernate.engine.jdbc.spi.SqlExceptionHelper" level="OFF"/>
+    -->
     <appender name="RollingFileTrace" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
         <file>${LOG_HOME}/trace.log</file>
@@ -79,22 +81,16 @@
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${LOG_HOME}/warn_%d{yyyy-MM-dd-HH}-%i.log.zip</fileNamePattern>
-            <!-- 单个文件大小 -->
             <maxFileSize>10 MB</maxFileSize>
-            <!--fileNamePattern的格式为yyyy-MM-dd-HH,则日志回收时间也应该与fileNamePattern相同 -->
             <maxHistory>168</maxHistory>
-            <!--总得文件日志-->
             <totalSizeCap>10GB</totalSizeCap>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
             <pattern>[%d{HH:mm:ss:SSS}] - [%t] [%p] - %logger{36} - %m%n</pattern>
-            <!--设置日志编码为utf-8-->
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
-    <!-- error日志 -->
     <appender name="RollingFileError" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
         <file>${LOG_HOME}/error.log</file>
@@ -105,44 +101,32 @@
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${LOG_HOME}/error_%d{yyyy-MM-dd-HH}-%i.log.zip</fileNamePattern>
-            <!-- 单个文件大小 -->
             <maxFileSize>10 MB</maxFileSize>
-            <!--fileNamePattern的格式为yyyy-MM-dd-HH,则日志回收时间也应该与fileNamePattern相同 -->
             <maxHistory>168</maxHistory>
-            <!--总得文件日志-->
             <totalSizeCap>10GB</totalSizeCap>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
             <pattern>[%d{HH:mm:ss:SSS}] - [%t] [%p] - %logger{36} - %m%n</pattern>
-            <!--设置日志编码为utf-8-->
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
-    <!-- app应用日志 -->
     <appender name="RollingFileApp" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
         <file>${LOG_HOME}/app.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${LOG_HOME}/app_%d{yyyy-MM-dd-HH}-%i.log.zip</fileNamePattern>
-            <!-- 单个文件大小 -->
             <maxFileSize>10 MB</maxFileSize>
-            <!--fileNamePattern的格式为yyyy-MM-dd-HH,则日志回收时间也应该与fileNamePattern相同 -->
             <maxHistory>168</maxHistory>
-            <!--总得文件日志-->
             <totalSizeCap>10GB</totalSizeCap>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
             <pattern>[%d{HH:mm:ss:SSS}] - [%t] [%p] - %logger{36} - %m%n</pattern>
-            <!--设置日志编码为utf-8-->
             <charset>UTF-8</charset>
         </encoder>
     </appender>
 
     <logger name="org.springframework" level="info"/>
-    <!--使用日志继承属性 addtivity="false" -->
     <logger name="com.javanorth" level="all" addtivity="true"/>
 
     <root level="info">
