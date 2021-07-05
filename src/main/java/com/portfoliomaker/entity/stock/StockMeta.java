@@ -31,7 +31,7 @@ public class StockMeta {
     /**
      * 기준 가격
      */
-    public long price;
+    public Long price;
 
     public String hash() {
         return this.ticker;
