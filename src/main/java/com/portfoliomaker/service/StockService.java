@@ -53,41 +53,28 @@ public class StockService {
     TogetherFundingParsingService togetherFundingParsingService;
 
     public List<StockPortfolioDTO> getAllStockPortfolioDTO(String location) {
+        List<StockPortfolioDTO> response = new ArrayList<>();
+        List<StockPortfolio> target;
         if (location == null) {
-            List<StockPortfolioDTO> response = new ArrayList<>();
-            for (StockPortfolio p : stockPortfolioRepository.findAll()) {
-                List<StockMeta> stockMeta = stockMetaRepository.findByTicker(p.ticker);
-                StockPortfolioDTO dto = new StockPortfolioDTO(p);
-                if (stockMeta.size() != 0) {
-                    dto.name = stockMeta.get(0).name;
-                    long price = 0;
-                    if (stockMeta.get(0).price != null) {
-                        price = p.count * stockMeta.get(0).price;
-                    }
-                    dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
-                    dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
-                }
-                response.add(dto);
-            }
-            return response;
+            target = stockPortfolioRepository.findAll();
         } else {
-            List<StockPortfolioDTO> response = new ArrayList<>();
-            for (StockPortfolio p : stockPortfolioRepository.findByLocation(location)) {
-                List<StockMeta> stockMeta = stockMetaRepository.findByTicker(p.ticker);
-                StockPortfolioDTO dto = new StockPortfolioDTO(p);
-                if (stockMeta.size() != 0) {
-                    dto.name = stockMeta.get(0).name;
-                    long price = 0;
-                    if (stockMeta.get(0).price != null) {
-                        price = p.count * stockMeta.get(0).price;
-                    }
-                    dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(p.count * stockMeta.get(0).price);
-                    dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
-                }
-                response.add(dto);
-            }
-            return response;
+            target = stockPortfolioRepository.findByLocation(location);
         }
+        for (StockPortfolio p : target) {
+            List<StockMeta> stockMeta = stockMetaRepository.findByTicker(p.ticker);
+            StockPortfolioDTO dto = new StockPortfolioDTO(p);
+            if (stockMeta.size() != 0) {
+                dto.name = stockMeta.get(0).name;
+                long price = 0;
+                if (stockMeta.get(0).price != null) {
+                    price = p.count * stockMeta.get(0).price;
+                }
+                dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
+                dto.crawledRate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
+            }
+            response.add(dto);
+        }
+        return response;
     }
 
     public List<StockMeta> getAllMetas() {
