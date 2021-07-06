@@ -1,6 +1,7 @@
 package com.portfoliomaker.controller;
 
 import com.portfoliomaker.dto.stock.StockDetailDTO;
+import com.portfoliomaker.dto.stock.StockFavoriteDTO;
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,6 @@ public class StockController {
 
     @GetMapping("/favorite/k")
     public String favoriteK(Model model) {
-        model.addAttribute("stocks", stockService.getAllStockPortfolioDTO("코스피"));
         return "stock/favorite_k";
     }
 
@@ -56,8 +56,8 @@ public class StockController {
 
     @GetMapping("/favorite/list")
     @ResponseBody
-    public List<StockPortfolioDTO> favoriteList(@RequestParam(value = "location", required = false) String location) {
-        return stockService.getAllStockPortfolioDTO(location);
+    public List<StockFavoriteDTO> favoriteList(@RequestParam(value = "location", required = false) String location) {
+        return stockService.getAllStockFavoriteDTO(location);
     }
 
 

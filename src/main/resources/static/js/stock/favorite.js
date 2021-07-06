@@ -123,7 +123,7 @@ window.addEventListener("load", function () {
         ],
         columns: [                 //define the table columns
           {
-            title: "이름", field: "url", width: 100, formatter: function (cell, formatterParams, onRendered) {
+            title: "이름", field: "url", width: 180, formatter: function (cell, formatterParams, onRendered) {
               //cell - the cell component
               //formatterParams - parameters set for the column
               //onRendered - function to call when the formatter has been rendered
@@ -131,16 +131,9 @@ window.addEventListener("load", function () {
               return cell.getValue(); //return the contents of the cell;
             },
           },
-          {
-            title: "갯수", field: "count", width: 100, hozAlign: "left", formatter: "money", formatterParams: {
-              precision: 0
-            }
-          },
-          { title: "구매가격", field: "buyPriceSum", width: 110, editor: "select" },
-          { title: "현재가격", field: "currentPriceSum", width: 110, editor: "select" },
-          { title: "수익률", field: "rate", width: 100, editor: "input" },
-          { title: "전일대비", field: "previousRate", width: 100, editor: "input" },
-          { title: "삭제", field: "car", width: 90, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
+          { title: "현재가격", field: "price", width: 90, editor: "select" },
+          { title: "전일대비", field: "previousRate", width: 80, editor: "input" },
+          { title: "삭제", field: "car", width: 50, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
         ],
       });
     }

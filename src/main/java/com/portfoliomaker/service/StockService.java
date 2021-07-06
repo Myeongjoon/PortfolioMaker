@@ -2,6 +2,7 @@ package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.MR.MyPortfolioDTO;
 import com.portfoliomaker.dto.stock.StockDetailDTO;
+import com.portfoliomaker.dto.stock.StockFavoriteDTO;
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockMeta;
@@ -68,6 +69,12 @@ public class StockService {
         return response;
     }
 
+    /**
+     * 내 보유 종목
+     *
+     * @param location
+     * @return
+     */
     public List<StockPortfolioDTO> getAllStockPortfolioDTO(String location) {
         List<StockPortfolioDTO> response = new ArrayList<>();
         List<StockPortfolio> target;
@@ -92,6 +99,28 @@ public class StockService {
                     dto.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
                 }
             }
+            response.add(dto);
+        }
+        return response;
+    }
+
+    /**
+     * 내 관심 종목
+     *
+     * @param location
+     * @return
+     */
+    public List<StockFavoriteDTO> getAllStockFavoriteDTO(String location) {
+        List<StockFavoriteDTO> response = new ArrayList<>();
+        List<StockMeta> target;
+        if (location == null) {
+            target = stockMetaRepository.findAll();
+        } else {
+            target = stockMetaRepository.findByLocation(location);
+        }
+        for (StockMeta p : target) {
+            StockFavoriteDTO dto = new StockFavoriteDTO(p);
+            dto.previousRate = p.previousRate == null ? "" : NumberFormat.getNumberInstance(Locale.US).format(p.previousRate);
             response.add(dto);
         }
         return response;
