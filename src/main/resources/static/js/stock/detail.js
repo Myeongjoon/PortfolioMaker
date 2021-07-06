@@ -1,22 +1,12 @@
+import urlModule from './../util/url_util.js';
+
 google.charts.load('current', { packages: ['corechart', 'line'] });
 google.charts.setOnLoadCallback(drawChart);
 
-function getParam(sname) {
-  var params = location.search.substr(location.search.indexOf("?") + 1);
-  var sval = "";
-  params = params.split("&");
-  for (var i = 0; i < params.length; i++) {
-    temp = params[i].split("=");
-    if ([temp[0]] == sname) { sval = temp[1]; }
-
-  }
-  return sval;
-}
-
 
 function drawChart() {
-  url = '/stock/detail/list'
-  ticker = getParam("ticker");
+  var url = '/stock/detail/list'
+  var ticker = urlModule.getParam("ticker");
   if (ticker != null && ticker != "") {
     url += "?ticker=" + ticker
   }
@@ -25,9 +15,9 @@ function drawChart() {
     method: 'get',
     context: this,
     success: function (data, status, xhr) {
-      array = [];
+      var array = [];
       for (const element of data) {
-        temp = []
+        var temp = []
         temp.push(new Date(element.priceDate))
         temp.push(Number(element.price.replace(/,/gi, "")))
         array.push(temp)
