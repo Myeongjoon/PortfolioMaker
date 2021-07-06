@@ -41,10 +41,14 @@ public class StockController {
         return "stock/main";
     }
 
-
     @GetMapping("/favorite/k")
     public String favoriteK(Model model) {
         return "stock/favorite_k";
+    }
+
+    @GetMapping("/favorite/n")
+    public String favoriteN(Model model) {
+        return "stock/favorite_n";
     }
 
     @GetMapping("/main/k")

@@ -26,6 +26,8 @@
                                 th:href="@{/stock/main/n}">보유 종목 나스닥</a></li>
         <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_FAVORITE_K' ? 'active'"
                                 th:href="@{/stock/favorite/k}">관심 종목 코스피</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_FAVORITE_N' ? 'active'"
+                                th:href="@{/stock/favorite/n}">관심 종목 나스닥</a></li>
         <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_DETAIL' ? 'active'"
                                 th:href="@{/stock/detail}">STOCK_DETAIL</a></li>
         <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_META' ? 'active'"

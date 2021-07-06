@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://tabulator.info/js/tabulator/tabulator.min.js"></script>
+
+    <link rel="stylesheet" href="http://tabulator.info/css/tabulator/tabulator_site.min.css">
+    <script type="module" th:src="@{/js/util/url_util.js}"></script>
+    <script type="module" th:src="@{/js/util/graph_util.js}"></script>
+    <script type="module" th:src="@{/js/stock/stock.js}"></script>
+    <script type="module" th:src="@{/js/stock/favorite.js}"></script>
+    <title>Portfolio</title>
+
+</head>
+
+<body>
+
+<nav class="sidenav" th:replace="fragments/sidebar :: sidebar('STOCK_FAVORITE_N')"></nav>
+
+<main>
+
+    <div id="table" style="width: 400px;"></div>
+    <br>
+    <button id="stockSync" type="submit">주가 크롤링 진행</button>
+</main>
+</body>
+</html>
+<script type="module">
+    import stockModule from  '../../js/stock/stock.js';
+    document.getElementById("stockSync").addEventListener("click", stockModule.stockSync);
+</script>
