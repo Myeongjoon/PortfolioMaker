@@ -55,9 +55,7 @@ public class NaverParsingService {
         String loc = document.select(".description").first().select("img").attr("alt");
         Elements previousRate = document.select(".no_exday");
         previousRate.select(".sp_txt1").remove();
-        //previousRate.select(".ico").remove();
         String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
-        System.out.println(previousRate.toString());
         stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
         document.select("#time").select(".date").select("span").remove();
         String time = document.select("#time").select(".date").text();
