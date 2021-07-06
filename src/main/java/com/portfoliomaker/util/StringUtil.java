@@ -9,12 +9,12 @@ public class StringUtil {
     }
 
     public static long parseMoney(String money) {
-        String replaced = money.replaceAll(",", "").replaceAll("원","").replaceAll(" ","");
+        String replaced = money.replaceAll(",", "").replaceAll("원", "").replaceAll(" ", "");
         return Long.parseLong(replaced);
     }
 
     public static double parseDoubleMoney(String money) {
-        String replaced = money.replaceAll(",", "").replaceAll("원","").replaceAll(" ","");
+        String replaced = money.replaceAll(",", "").replaceAll("원", "").replaceAll(" ", "").replaceAll("\\+", "").replaceAll("%", "");
         return Double.parseDouble(replaced);
     }
 }

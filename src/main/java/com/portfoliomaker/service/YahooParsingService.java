@@ -67,8 +67,11 @@ public class YahooParsingService {
         StockPrice stockPrice = new StockPrice();
         Element quoteHeader = document.select("#quote-header-info").first();
         Elements spans = quoteHeader.select("span");
-        Element target = spans.get(3);
-        stockPrice.currentPrice = StringUtil.parseDoubleMoney(target.text());
+        Element priceTarget = spans.get(3);
+        Element previousTarget = spans.get(4);
+        String previousTargetSplit = previousTarget.text().split("\\(")[1].split("\\)")[0];
+        stockPrice.currentPrice = StringUtil.parseDoubleMoney(priceTarget.text());
+        stockPrice.previousRate = StringUtil.parseDoubleMoney(previousTargetSplit);
         stockPrice.date = new Date();
         // TODO
         return stockPrice;
