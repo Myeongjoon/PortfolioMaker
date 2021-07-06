@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="http://tabulator.info/css/tabulator/tabulator_site.min.css">
     <script type="module" th:src="@{/js/util/url_util.js}"></script>
+    <script type="module" th:src="@{/js/stock/stock.js}"></script>
     <script type="module" th:src="@{/js/stock/favorite.js}"></script>
     <title>Portfolio</title>
 
@@ -24,7 +25,11 @@
 
     <div id="table" style="width: 400px;"></div>
     <br>
-    <button type="submit" onclick="stockSync()">주가 크롤링 진행</button>
+    <button id="stockSync" type="submit">주가 크롤링 진행</button>
 </main>
 </body>
 </html>
+<script type="module">
+    import stockModule from  '../../js/stock/stock.js';
+    document.getElementById("stockSync").addEventListener("click", stockModule.stockSync);
+</script>
