@@ -41,7 +41,7 @@ public class StockFavoriteDTO {
     public StockFavoriteDTO(StockMeta p) {
         this.ticker = p.ticker;
         this.name = p.name;
-        this.price = StringUtil.formatMoney(p.price);
+        this.price = StringUtil.formatMoney(p.price == null ? 0 : p.price);
         this.priceDate = p.priceDate;
     }
 
