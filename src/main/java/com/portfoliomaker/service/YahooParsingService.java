@@ -24,6 +24,22 @@ public class YahooParsingService {
     @Autowired
     SeleniumService seleniumService;
 
+    public StockMeta parseMeta(StockMeta meta) {
+        String url = "https://finance.yahoo.com/quote/" + meta.ticker + "?p=" + meta.ticker;
+        seleniumService.getDriver().get(url);
+        String source = seleniumService.getDriver().getPageSource();
+        Document document = Jsoup.parse(source);
+        seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("quote-header-info")));
+        StockPrice stockPrice = parse(document, meta.ticker);
+        meta.name = stockPrice.name;
+        meta.previousRate = stockPrice.previousRate;
+        if (meta.priceDate == null || meta.priceDate.before(stockPrice.date)) {
+            meta.priceDate = stockPrice.date;
+            meta.price = stockPrice.currentPrice;
+        }
+        return meta;
+    }
+
     public StockMeta parse(StockMeta meta) {
         String url = "https://finance.naver.com/item/main.nhn?code=" + meta.ticker;
         seleniumService.getDriver().get(url);
@@ -53,6 +69,8 @@ public class YahooParsingService {
         Elements spans = quoteHeader.select("span");
         Element target = spans.get(3);
         stockPrice.currentPrice = StringUtil.parseDoubleMoney(target.text());
+        stockPrice.date = new Date();
+        // TODO
         return stockPrice;
     }
 }

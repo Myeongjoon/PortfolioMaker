@@ -58,6 +58,8 @@ public class StockService {
     @Autowired
     NaverParsingService naverParsingService;
     @Autowired
+    YahooParsingService yahooParsingService;
+    @Autowired
     TogetherFundingParsingService togetherFundingParsingService;
 
     public List<StockDetailDTO> findDetailList(String ticker) {
@@ -234,12 +236,29 @@ public class StockService {
             if(location == null || location.equals("") || location.equals("코스피")){
                 parseNaverStock();
             }
+            if(location == null || location.equals("") || location.equals("NASDAQ")){
+                parseYahooStock();
+            }
         } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();
             throw e;
         }
         seleniumService.getDriver().close();
+    }
+
+    /**
+     * 야후 크롤링
+     */
+    public void parseYahooStock() {
+        List<StockMeta> list = stockMetaRepository.findAll();
+        for (StockMeta stockMeta : list) {
+            if (stockMeta.location != null && stockMeta.location.equals("NASDAQ")) {
+                yahooParsingService.parseMeta(stockMeta);
+                staveStockMeta(stockMeta);
+            }
+        }
+        logger.info("finish naver crawling");
     }
 
     /**
