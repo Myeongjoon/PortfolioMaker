@@ -2,6 +2,7 @@ package com.portfoliomaker.service;
 
 import com.portfoliomaker.dto.PortfolioDTO;
 import com.portfoliomaker.dto.PortfolioDetailDTO;
+import com.portfoliomaker.e.PortfolioTypeEnum;
 import com.portfoliomaker.entity.portfolio.Portfolio;
 import com.portfoliomaker.entity.portfolio.PortfolioDetail;
 import com.portfoliomaker.entity.portfolio.PortfolioType;
@@ -90,6 +91,32 @@ public class PortfolioService {
         return portfolios;
     }
 
+    public void deleteByPortfolioType(PortfolioTypeEnum type) {
+        for (Portfolio p : portfolioRepository.findByType(type)) {
+            portfolioRepository.delete(p);
+        }
+    }
+
+    /**
+     * 포트폴리오 업데이트 및 디테일 업데이트 - 금액이 바뀌지 않으면 업데이트 하지 않음.
+     *
+     * @param name
+     * @param price
+     */
+    public void save(String name, long price, PortfolioTypeEnum portfolioTypeEnum) {
+        Optional<Portfolio> portfolio = portfolioRepository.findById(name);
+        if (portfolio.isPresent() && portfolio.get().price == price) {
+            return;
+        }
+        portfolioRepository.save(new Portfolio(name, price, portfolioTypeEnum));
+        PortfolioDetail detail = new PortfolioDetail();
+        detail.name = name;
+        detail.price = price;
+        detail.date = new Date();
+        insert(detail);
+    }
+
+
     /**
      * 포트폴리오 업데이트 및 디테일 업데이트 - 금액이 바뀌지 않으면 업데이트 하지 않음.
      *
@@ -97,16 +124,7 @@ public class PortfolioService {
      * @param price
      */
     public void save(String name, long price) {
-        Optional<Portfolio> portfolio = portfolioRepository.findById(name);
-        if (portfolio.isPresent() && portfolio.get().price == price) {
-            return;
-        }
-        portfolioRepository.save(new Portfolio(name, price));
-        PortfolioDetail detail = new PortfolioDetail();
-        detail.name = name;
-        detail.price = price;
-        detail.date = new Date();
-        insert(detail);
+        save(name, price, PortfolioTypeEnum.UNKNOWN);
     }
 
     public void saveType(String name) {

@@ -4,6 +4,7 @@ import com.portfoliomaker.dto.MR.MyPortfolioDTO;
 import com.portfoliomaker.dto.stock.StockDetailDTO;
 import com.portfoliomaker.dto.stock.StockFavoriteDTO;
 import com.portfoliomaker.dto.stock.StockPortfolioDTO;
+import com.portfoliomaker.e.PortfolioTypeEnum;
 import com.portfoliomaker.e.TypeConst;
 import com.portfoliomaker.entity.stock.StockMeta;
 import com.portfoliomaker.entity.stock.StockMetaDetail;
@@ -289,8 +290,9 @@ public class StockService {
         String source = webDriver.getPageSource();
         Document document = Jsoup.parse(source);
         ArrayList<MyPortfolioDTO> response = mrParsingService.parseMyPortfolio(document);
+        portfolioService.deleteByPortfolioType(PortfolioTypeEnum.MIRAEA_ASSET);
         for (MyPortfolioDTO dto : response) {
-            portfolioService.save(dto.name, dto.currentPrice);
+            portfolioService.save(dto.name, dto.currentPrice, PortfolioTypeEnum.MIRAEA_ASSET);
         }
     }
 
