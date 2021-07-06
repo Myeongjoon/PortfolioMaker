@@ -136,12 +136,18 @@ window.addEventListener("load", function () {
             title: "전일대비", field: "previousRate", width: 80, editor: "input", formatter: function (cell, formatterParams, onRendered) {
               console.log(cell.getValue())
               //3퍼 하락
-              if (cell.getValue() < -3) {
+              if (cell.getValue() <= -3) {
                 return "<span class = 'bold_blue'>" + cell.getValue() + "</span>";
+              } else if (cell.getValue() >= 3) {
+                return "<span class = 'bold_red'>" + cell.getValue() + "</span>";
+              } else if (cell.getValue() > 0) {
+                return "<span class = 'red'>" + cell.getValue() + "</span>";
+              } else if (cell.getValue() < 0) {
+                return "<span class = 'blue'>" + cell.getValue() + "</span>";
               } else {
                 return cell.getValue();
               }
-            },
+            }
           },
           { title: "삭제", field: "car", width: 50, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
         ],
