@@ -82,10 +82,15 @@ function getParam(sname) {
 
 
 window.addEventListener("load", function () {
-  url = '/stock/main/list'
-  loc = getParam("location");
-  if (loc != null && loc != "") {
-    url += "?location=" + loc
+  current_url = window.location.href
+  if (current_url.indexOf("stock/main/k") != -1) {
+    url = '/stock/main/list?location=코스피'
+  } else {
+    url = '/stock/main/list'
+    loc = getParam("location");
+    if (loc != null && loc != "") {
+      url += "?location=" + loc
+    }
   }
   $.ajax({
     url: url,

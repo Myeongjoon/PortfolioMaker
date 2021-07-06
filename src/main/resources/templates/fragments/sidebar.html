@@ -2,33 +2,33 @@
 <html xmlns:th="https://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta charset="UTF-8">
-	<title th:fragment="title">T-CRALWER</title>
+    <meta charset="UTF-8">
+    <title th:fragment="title">T-CRALWER</title>
 </head>
 
 <body>
 
-	<nav class="sidenav" th:fragment="sidebar(activeItem)">
-		<ul>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'MAIN' ? 'active'"
-					th:href="@{/}">MAIN</a></li>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'PORTFOLIO' ? 'active'"
-									th:href="@{/portfolio/portfolio}">PORTFOLIO</a></li>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'DETAIL' ? 'active'"
-									th:href="@{/portfolio/detail}">DETAIL</a></li>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'TYPE' ? 'active'"
-									th:href="@{/portfolio/type}">TYPE</a></li>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_MAIN' ? 'active'"
-									th:href="@{/stock/main}">STOCK_MAIN</a></li>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_MAIN' ? 'active'"
-									th:href="@{/stock/main?location=코스피}">STOCK_MAIN_K</a></li>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_DETAIL' ? 'active'"
-									th:href="@{/stock/detail}">STOCK_DETAIL</a></li>
-			<li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_META' ? 'active'"
-									th:href="@{/stock/meta}">STOCK_META</a></li>
-		</ul>
-		<br>
-	</nav>
+<nav class="sidenav" th:fragment="sidebar(activeItem)">
+    <ul>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'MAIN' ? 'active'"
+                                th:href="@{/}">MAIN</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'PORTFOLIO' ? 'active'"
+                                th:href="@{/portfolio/portfolio}">PORTFOLIO</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'DETAIL' ? 'active'"
+                                th:href="@{/portfolio/detail}">DETAIL</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'TYPE' ? 'active'"
+                                th:href="@{/portfolio/type}">TYPE</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_MAIN' ? 'active'"
+                                th:href="@{/stock/main}">STOCK_MAIN</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_MAIN_K' ? 'active'"
+                                th:href="@{/stock/main/k}">STOCK_MAIN_K</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_DETAIL' ? 'active'"
+                                th:href="@{/stock/detail}">STOCK_DETAIL</a></li>
+        <li class="nav-item"><a class="nav-link" th:classappend="${activeItem} == 'STOCK_META' ? 'active'"
+                                th:href="@{/stock/meta}">STOCK_META</a></li>
+    </ul>
+    <br>
+</nav>
 </body>
 
 </html>
