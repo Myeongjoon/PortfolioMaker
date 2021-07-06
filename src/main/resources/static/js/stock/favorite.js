@@ -1,4 +1,5 @@
 import urlModule from './../util/url_util.js';
+import graphModule from './../util/graph_util.js';
 
 function saveStock() {
   $.ajax({
@@ -100,18 +101,7 @@ window.addEventListener("load", function () {
           { title: "현재가격", field: "price", width: 90, editor: "select" },
           {
             title: "전일대비", field: "previousRate", width: 80, editor: "input", formatter: function (cell, formatterParams, onRendered) {
-              //3퍼 하락
-              if (cell.getValue() <= -3) {
-                return "<span class = 'bold_blue'>" + cell.getValue() + "</span>";
-              } else if (cell.getValue() >= 3) {
-                return "<span class = 'bold_red'>" + cell.getValue() + "</span>";
-              } else if (cell.getValue() > 0) {
-                return "<span class = 'red'>" + cell.getValue() + "</span>";
-              } else if (cell.getValue() < 0) {
-                return "<span class = 'blue'>" + cell.getValue() + "</span>";
-              } else {
-                return cell.getValue();
-              }
+              return graphModule.checkPriceRate(cell.getValue());
             }
           },
           { title: "삭제", field: "car", width: 50, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
