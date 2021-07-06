@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 @Service
@@ -63,6 +64,7 @@ public class NaverParsingService {
             try {
                 SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd");
                 date = transFormat.parse(time);
+                date.setHours(15);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
