@@ -1,3 +1,5 @@
+import urlModule from './../util/url_util.js';
+
 function saveStock() {
   $.ajax({
     url: '/stock',
@@ -57,37 +59,15 @@ $(document).on('click', '.deleteBtn', function () {
 
 });
 
-
-
-function getParam(sname) {
-
-  var params = location.search.substr(location.search.indexOf("?") + 1);
-
-  var sval = "";
-
-  params = params.split("&");
-
-  for (var i = 0; i < params.length; i++) {
-
-    temp = params[i].split("=");
-
-    if ([temp[0]] == sname) { sval = temp[1]; }
-
-  }
-
-  return sval;
-
-}
-
-
-
 window.addEventListener("load", function () {
-  current_url = window.location.href
+  var current_url = window.location.href
+  var url;
   if (current_url.indexOf("stock/main/k") != -1) {
     url = '/stock/main/list?location=코스피'
   } else {
+    var loc;
     url = '/stock/main/list'
-    loc = getParam("location");
+    loc = urlModule.getParam("location");
     if (loc != null && loc != "") {
       url += "?location=" + loc
     }
@@ -98,7 +78,7 @@ window.addEventListener("load", function () {
     context: this,
 
     success: function (data, status, xhr) {
-      table_data = []
+      var table_data = []
       for (const element of data) {
         if (element.name == null) {
           element.name = element.ticker;
