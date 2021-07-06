@@ -228,10 +228,12 @@ public class StockService {
     /**
      * 주식 가격 크롤링
      */
-    public void stockSync() {
+    public void stockSync(String location) {
         try {
             seleniumService.setDriver(true);
-            parseNaverStock();
+            if(location == null || location.equals("") || location.equals("코스피")){
+                parseNaverStock();
+            }
         } catch (Exception e) {
             logger.error(e.toString());
             seleniumService.getDriver().close();

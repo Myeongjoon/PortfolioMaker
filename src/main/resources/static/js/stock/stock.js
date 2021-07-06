@@ -1,7 +1,20 @@
 var stockModule = {
   stockSync: function () {
+    var current_url = window.location.href
+    var url;
+    if (current_url.indexOf("/k") != -1) {
+      url = '/stock/stockSync?location=코스피'
+    } else if (current_url.indexOf("/n") != -1) {
+      url = '/stock/stockSync?location=NASDAQ'
+    } else {
+      url = '/stock/stockSync'
+      loc = getParam("location");
+      if (loc != null && loc != "") {
+        url += "?location=" + loc
+      }
+    }
     $.ajax({
-      url: '/stock/stockSync',
+      url: url,
       method: 'get',
       context: this,
 

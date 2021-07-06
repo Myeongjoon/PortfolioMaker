@@ -19,8 +19,8 @@ public class StockController {
 
     @GetMapping("/stockSync")
     @ResponseBody
-    public void stockSync() {
-        stockService.stockSync();
+    public void stockSync(String location) {
+        stockService.stockSync(location);
     }
 
     @GetMapping("/p2pSync")
