@@ -40,10 +40,24 @@ public class StockController {
         return "stock/main";
     }
 
+
+    @GetMapping("/favorite/k")
+    public String favoriteK(Model model) {
+        model.addAttribute("stocks", stockService.getAllStockPortfolioDTO("코스피"));
+        return "stock/favorite_k";
+    }
+
     @GetMapping("/main/k")
     public String mainK(Model model) {
         model.addAttribute("stocks", stockService.getAllStockPortfolioDTO("코스피"));
         return "stock/main_k";
+    }
+
+
+    @GetMapping("/favorite/list")
+    @ResponseBody
+    public List<StockPortfolioDTO> favoriteList(@RequestParam(value = "location", required = false) String location) {
+        return stockService.getAllStockPortfolioDTO(location);
     }
 
 
