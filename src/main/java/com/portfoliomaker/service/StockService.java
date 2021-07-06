@@ -250,6 +250,7 @@ public class StockService {
                 staveStockMeta(stockMeta);
             }
         }
+        logger.info("finish naver crawling");
     }
 
     public void staveStockMeta(StockMeta stockMeta) {

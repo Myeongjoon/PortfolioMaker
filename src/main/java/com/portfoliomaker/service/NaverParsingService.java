@@ -26,7 +26,6 @@ public class NaverParsingService {
 
     public StockMeta parseMeta(StockMeta meta) {
         String url = "https://finance.naver.com/item/main.nhn?code=" + meta.ticker;
-        logger.info(url);
         seleniumService.getDriver().get(url);
         String source = seleniumService.getDriver().getPageSource();
         Document document = Jsoup.parse(source);
