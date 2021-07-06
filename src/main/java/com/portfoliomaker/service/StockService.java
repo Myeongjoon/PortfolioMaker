@@ -258,7 +258,7 @@ public class StockService {
                 staveStockMeta(stockMeta);
             }
         }
-        logger.info("finish naver crawling");
+        logger.info("finish yahoo crawling");
     }
 
     /**
