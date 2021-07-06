@@ -1,6 +1,8 @@
-package com.portfoliomaker.main;
+package com.portfoliomaker.main.stock;
 
 import com.portfoliomaker.entity.stock.StockPrice;
+import com.portfoliomaker.main.Application;
+import com.portfoliomaker.main.TestUtil;
 import com.portfoliomaker.service.NaverParsingService;
 import com.portfoliomaker.service.YahooParsingService;
 import org.jsoup.Jsoup;

@@ -58,12 +58,21 @@ public class NaverParsingService {
         stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
         document.select("#time").select(".date").select("span").remove();
         String time = document.select("#time").select(".date").text();
-        SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
         Date date = new Date();
-        try {
-            date = transFormat.parse(time);
-        } catch (ParseException e) {
-            e.printStackTrace();
+        if (time.length() == 10) {
+            try {
+                SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd");
+                date = transFormat.parse(time);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+                date = transFormat.parse(time);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
         double price = StringUtil.parseDoubleMoney(codes.text());
         stockPrice.date = date;

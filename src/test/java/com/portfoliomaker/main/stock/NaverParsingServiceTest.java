@@ -1,6 +1,8 @@
-package com.portfoliomaker.main;
+package com.portfoliomaker.main.stock;
 
 import com.portfoliomaker.entity.stock.StockPrice;
+import com.portfoliomaker.main.Application;
+import com.portfoliomaker.main.TestUtil;
 import com.portfoliomaker.service.NaverParsingService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -37,5 +39,12 @@ public class NaverParsingServiceTest {
         assertEquals(response.name, "신풍제약");
         assertEquals(response.ticker, "019170");
         assertEquals(response.location, "코스피");
+    }
+
+    @Test
+    public void naver_finance_after_market_test() {
+        String source = TestUtil.getHtmlByString("naver/naver_finance_after_market.html");
+        Document document = Jsoup.parse(source, "utf-8");
+        StockPrice response = naverParsingService.parse(document, "019170");
     }
 }
