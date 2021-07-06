@@ -31,7 +31,7 @@
     잔고
     <input type="text" name="name" id="count">
     <button type="submit" onclick="saveStock()">stock 추가</button>
-    <button type="submit" onclick="portfolioSync()">포트폴리오 크롤링 진행</button>
+    <button type="submit" id="portfolioSync">포트폴리오 크롤링 진행</button>
     <button type="submit" id="stockSync">주가 크롤링 진행</button>
 </main>
 </body>
@@ -40,4 +40,5 @@
 <script type="module">
     import stockModule from  '../../js/stock/stock.js';
     document.getElementById("stockSync").addEventListener("click", stockModule.stockSync);
+    document.getElementById("portfolioSync").addEventListener("click", stockModule.portfolioSync);
 </script>

@@ -9,6 +9,17 @@ var stockModule = {
         location.reload()
       }
     });
+  },
+  portfolioSync: function () {
+    $.ajax({
+      url: '/stock/portfolioSync',
+      method: 'get',
+      context: this,
+
+      success: function (data, status, xhr) {
+        location.reload()
+      }
+    });
   }
 }
 export default stockModule;
