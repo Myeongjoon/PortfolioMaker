@@ -132,7 +132,17 @@ window.addEventListener("load", function () {
             },
           },
           { title: "현재가격", field: "price", width: 90, editor: "select" },
-          { title: "전일대비", field: "previousRate", width: 80, editor: "input" },
+          {
+            title: "전일대비", field: "previousRate", width: 80, editor: "input", formatter: function (cell, formatterParams, onRendered) {
+              console.log(cell.getValue())
+              //3퍼 하락
+              if (cell.getValue() < -3) {
+                return "<span class = 'bold_blue'>" + cell.getValue() + "</span>";
+              } else {
+                return cell.getValue();
+              }
+            },
+          },
           { title: "삭제", field: "car", width: 50, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
         ],
       });
