@@ -6,6 +6,7 @@ import com.portfoliomaker.util.StringUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
@@ -32,6 +33,7 @@ public class NaverParsingService {
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("chart_area")));
         StockPrice stockPrice = parse(document, meta.ticker);
         meta.name = stockPrice.name;
+        meta.previousRate = stockPrice.previousRate;
         if (meta.priceDate == null || meta.priceDate.before(stockPrice.date)) {
             meta.priceDate = stockPrice.date;
             meta.price = stockPrice.currentPrice;
@@ -39,11 +41,23 @@ public class NaverParsingService {
         return meta;
     }
 
+    /**
+     * 네이버 증권 크롤링
+     *
+     * @param document
+     * @param ticker
+     * @return
+     */
     public StockPrice parse(Document document, String ticker) {
         StockPrice stockPrice = new StockPrice();
         Element codes = document.select("#chart_area").select(".today").select("p").first();
         String name = document.select(".wrap_company").select("a").first().text();
         String loc = document.select(".description").first().select("img").attr("alt");
+        Elements previousRate = document.select(".no_exday");
+        previousRate.select(".sp_txt1").remove();
+        previousRate.select(".ico").remove();
+        String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
+        stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
         document.select("#time").select(".date").select("span").remove();
         String time = document.select("#time").select(".date").text();
         SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");

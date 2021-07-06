@@ -24,6 +24,11 @@ public class StockMetaDetail {
     public Date priceDate;
 
     /**
+     * 전일 대비 상승률
+     */
+    public Double previousRate;
+
+    /**
      * 기준 가격
      */
     public Long price;
@@ -38,6 +43,7 @@ public class StockMetaDetail {
         this.name = p.name;
         this.priceDate = p.priceDate;
         this.price = p.price;
+        this.previousRate = p.previousRate;
     }
 
     public StockMetaDetail() {

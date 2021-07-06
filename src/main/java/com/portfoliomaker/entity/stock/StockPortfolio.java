@@ -35,4 +35,9 @@ public class StockPortfolio {
      * 주식 위치
      */
     public String location;
+
+    /**
+     * 전일 대비 상승량
+     */
+    public Double previousRate;
 }

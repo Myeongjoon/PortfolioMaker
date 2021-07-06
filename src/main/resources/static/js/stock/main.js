@@ -134,6 +134,7 @@ window.addEventListener("load", function () {
           { title: "구매가격", field: "buyPriceSum", width: 110, editor: "select" },
           { title: "현재가격", field: "currentPriceSum", width: 110, editor: "select" },
           { title: "수익률", field: "rate", width: 100, editor: "input" },
+          { title: "전일대비", field: "previousRate", width: 100, editor: "input" },
           { title: "삭제", field: "car", width: 90, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
         ],
       });

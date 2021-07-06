@@ -39,6 +39,11 @@ public class StockPortfolioDTO {
     public String crawledPriceSum;
 
     /**
+     * 전일 대비 가격
+     */
+    public String previousRate;
+
+    /**
      * 수익률
      */
     public String rate;
@@ -48,6 +53,7 @@ public class StockPortfolioDTO {
         this.count = NumberFormat.getNumberInstance(Locale.US).format(p.count);
         this.buyPriceSum = NumberFormat.getNumberInstance(Locale.US).format(p.buyPriceSum);
         this.currentPriceSum = NumberFormat.getNumberInstance(Locale.US).format(p.currentPriceSum);
+        this.previousRate = p.previousRate == null ? "" : NumberFormat.getNumberInstance(Locale.US).format(p.previousRate);
         this.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (p.currentPriceSum - p.buyPriceSum) / p.buyPriceSum) * 100);
     }
 }

@@ -21,6 +21,7 @@ public class NaverParsingServiceTest {
         Document document = Jsoup.parse(source, "utf-8");
         StockPrice response = naverParsingService.parse(document, "013360");
         assertEquals(response.currentPrice, 4415);
+        assertEquals(response.previousRate, 21.12);
         assertEquals(response.name, "일성건설");
         assertEquals(response.ticker, "013360");
         assertEquals(response.location, "코스피");

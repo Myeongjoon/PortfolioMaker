@@ -33,6 +33,11 @@ public class StockMeta {
      */
     public Long price;
 
+    /**
+     * 전일 대비 상승량
+     */
+    public Double previousRate;
+
     public String hash() {
         return this.ticker + this.priceDate.toString();
     }

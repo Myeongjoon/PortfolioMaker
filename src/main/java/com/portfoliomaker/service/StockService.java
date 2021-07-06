@@ -77,15 +77,17 @@ public class StockService {
             target = stockPortfolioRepository.findByLocation(location);
         }
         for (StockPortfolio p : target) {
-            List<StockMeta> stockMeta = stockMetaRepository.findByTicker(p.ticker);
+            List<StockMeta> stockMetas = stockMetaRepository.findByTicker(p.ticker);
             StockPortfolioDTO dto = new StockPortfolioDTO(p);
-            if (stockMeta.size() != 0) {
-                dto.name = stockMeta.get(0).name;
+            if (stockMetas.size() != 0) {
+                StockMeta stockMeta = stockMetas.get(0);
+                dto.name = stockMeta.name;
                 long price = 0;
-                if (stockMeta.get(0).price != null) {
-                    price = p.count * stockMeta.get(0).price;
+                if (stockMeta.price != null) {
+                    price = p.count * stockMeta.price;
                 }
                 dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
+                dto.previousRate = stockMeta.previousRate == null ? "" : NumberFormat.getNumberInstance(Locale.US).format(stockMeta.previousRate);
                 if (price != 0) {
                     dto.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
                 }

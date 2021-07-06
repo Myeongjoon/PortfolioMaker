@@ -34,6 +34,11 @@ public class StockPrice {
     public Long currentPrice;
 
     /**
+     * 전일 대비 rate
+     */
+    public Double previousRate;
+
+    /**
      * 예 : 주식, 펀드
      */
     public String type;
