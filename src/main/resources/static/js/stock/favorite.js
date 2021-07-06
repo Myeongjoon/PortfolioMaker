@@ -1,3 +1,5 @@
+import urlModule from './../util/url_util.js';
+
 function saveStock() {
   $.ajax({
     url: '/stock',
@@ -26,19 +28,6 @@ function portfolioSync() {
   });
 }
 
-function stockSync() {
-  $.ajax({
-    url: '/stock/stockSync',
-    method: 'get',
-    context: this,
-
-    success: function (data, status, xhr) {
-      location.reload()
-    }
-  });
-}
-
-
 $(document).on('click', '.deleteBtn', function () {
   $.ajax({
     url: '/stock',
@@ -57,32 +46,9 @@ $(document).on('click', '.deleteBtn', function () {
 
 });
 
-
-
-function getParam(sname) {
-
-  var params = location.search.substr(location.search.indexOf("?") + 1);
-
-  var sval = "";
-
-  params = params.split("&");
-
-  for (var i = 0; i < params.length; i++) {
-
-    temp = params[i].split("=");
-
-    if ([temp[0]] == sname) { sval = temp[1]; }
-
-  }
-
-  return sval;
-
-}
-
-
-
 window.addEventListener("load", function () {
-  current_url = window.location.href
+  var current_url = window.location.href
+  var url;
   if (current_url.indexOf("stock/favorite/k") != -1) {
     url = '/stock/favorite/list?location=코스피'
   } else {
@@ -98,7 +64,7 @@ window.addEventListener("load", function () {
     context: this,
 
     success: function (data, status, xhr) {
-      table_data = []
+      var table_data = []
       for (const element of data) {
         if (element.name == null) {
           element.name = element.ticker;
@@ -134,7 +100,6 @@ window.addEventListener("load", function () {
           { title: "현재가격", field: "price", width: 90, editor: "select" },
           {
             title: "전일대비", field: "previousRate", width: 80, editor: "input", formatter: function (cell, formatterParams, onRendered) {
-              console.log(cell.getValue())
               //3퍼 하락
               if (cell.getValue() <= -3) {
                 return "<span class = 'bold_blue'>" + cell.getValue() + "</span>";
