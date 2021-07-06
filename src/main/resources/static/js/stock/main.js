@@ -28,19 +28,6 @@ function portfolioSync() {
   });
 }
 
-function stockSync() {
-  $.ajax({
-    url: '/stock/stockSync',
-    method: 'get',
-    context: this,
-
-    success: function (data, status, xhr) {
-      location.reload()
-    }
-  });
-}
-
-
 $(document).on('click', '.deleteBtn', function () {
   $.ajax({
     url: '/stock',
