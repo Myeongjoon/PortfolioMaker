@@ -90,7 +90,7 @@ public class StockService {
             if (stockMetas.size() != 0) {
                 StockMeta stockMeta = stockMetas.get(0);
                 dto.name = stockMeta.name;
-                long price = 0;
+                double price = 0;
                 if (stockMeta.price != null) {
                     price = p.count * stockMeta.price;
                 }

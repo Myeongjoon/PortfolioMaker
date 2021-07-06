@@ -31,7 +31,7 @@ public class StockPrice {
     /**
      * 현재 단위 가격
      */
-    public Long currentPrice;
+    public Double currentPrice;
 
     /**
      * 전일 대비 rate

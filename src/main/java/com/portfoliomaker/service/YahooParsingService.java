@@ -19,12 +19,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Service
-public class NaverParsingService {
-    Logger logger = LoggerFactory.getLogger(NaverParsingService.class);
+public class YahooParsingService {
+    Logger logger = LoggerFactory.getLogger(YahooParsingService.class);
     @Autowired
     SeleniumService seleniumService;
 
-    public StockMeta parseMeta(StockMeta meta) {
+    public StockMeta parse(StockMeta meta) {
         String url = "https://finance.naver.com/item/main.nhn?code=" + meta.ticker;
         seleniumService.getDriver().get(url);
         String source = seleniumService.getDriver().getPageSource();
@@ -41,7 +41,7 @@ public class NaverParsingService {
     }
 
     /**
-     * 네이버 증권 크롤링
+     * 야후 증권 크롤링
      *
      * @param document
      * @param ticker
@@ -49,29 +49,10 @@ public class NaverParsingService {
      */
     public StockPrice parse(Document document, String ticker) {
         StockPrice stockPrice = new StockPrice();
-        Element codes = document.select("#chart_area").select(".today").select("p").first();
-        String name = document.select(".wrap_company").select("a").first().text();
-        String loc = document.select(".description").first().select("img").attr("alt");
-        Elements previousRate = document.select(".no_exday");
-        previousRate.select(".sp_txt1").remove();
-        String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
-        stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
-        document.select("#time").select(".date").select("span").remove();
-        String time = document.select("#time").select(".date").text();
-        SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
-        Date date = new Date();
-        try {
-            date = transFormat.parse(time);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        double price = StringUtil.parseDoubleMoney(codes.text());
-        stockPrice.date = date;
-        stockPrice.currentPrice = price;
-        stockPrice.name = name;
-        stockPrice.location = loc;
-        stockPrice.ticker = ticker;
-        stockPrice.id = stockPrice.hash();
+        Element quoteHeader = document.select("#quote-header-info").first();
+        Elements spans = quoteHeader.select("span");
+        Element target = spans.get(3);
+        stockPrice.currentPrice = StringUtil.parseDoubleMoney(target.text());
         return stockPrice;
     }
 }

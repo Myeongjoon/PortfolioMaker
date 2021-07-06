@@ -31,7 +31,7 @@ public class StockMeta {
     /**
      * 기준 가격
      */
-    public Long price;
+    public Double price;
 
     /**
      * 전일 대비 상승량
