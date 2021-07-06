@@ -49,8 +49,12 @@ public class StockController {
 
     @GetMapping("/main/k")
     public String mainK(Model model) {
-        model.addAttribute("stocks", stockService.getAllStockPortfolioDTO("코스피"));
         return "stock/main_k";
+    }
+
+    @GetMapping("/main/n")
+    public String mainN(Model model) {
+        return "stock/main_n";
     }
 
 

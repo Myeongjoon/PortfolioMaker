@@ -40,6 +40,8 @@ window.addEventListener("load", function () {
   var url;
   if (current_url.indexOf("stock/main/k") != -1) {
     url = '/stock/main/list?location=코스피'
+  } else if(current_url.indexOf("stock/main/n") != -1){
+    url = '/stock/main/list?location=NASDAQ'
   } else {
     var loc;
     url = '/stock/main/list'
