@@ -20,6 +20,8 @@ var stockModule = {
 
       success: function (data, status, xhr) {
         location.reload()
+      }, error: function (error) {
+        alert("주식 싱크 실패!");
       }
     });
   },
@@ -31,6 +33,8 @@ var stockModule = {
 
       success: function (data, status, xhr) {
         location.reload()
+      }, error: function (error) {
+        alert("포트폴리오 싱크 실패!");
       }
     });
   }
