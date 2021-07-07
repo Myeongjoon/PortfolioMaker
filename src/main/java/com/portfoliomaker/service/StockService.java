@@ -99,7 +99,7 @@ public class StockService {
                 dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
                 dto.previousRate = stockMeta.previousRate == null ? "" : NumberFormat.getNumberInstance(Locale.US).format(stockMeta.previousRate);
                 if (price != 0) {
-                    dto.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (price - p.buyPriceSum) / p.buyPriceSum) * 100);
+                    dto.rate = NumberFormat.getNumberInstance(Locale.US).format(((price - p.buyPriceSum) / p.buyPriceSum) * 100);
                 }
             }
             response.add(dto);
@@ -372,43 +372,5 @@ public class StockService {
         deleteByType(TypeConst.STOCK);
         save(response);
         //portfolioService.save("주식", sum);
-    }
-
-    /**
-     * 현재 펀드 보유량 크롤링
-     */
-    private void parseFundPortfolio() {
-        //펀드 탭
-        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("javascript:move('02')");
-        String source = seleniumService.getDriver().getPageSource();
-        Document document = Jsoup.parse(source, "ecu-kr");
-        /*종목명 기달리기*/
-        seleniumService.getWait().until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("fundTable2"), By.className("l")));
-        /*기달리고 다시 가져오기*/
-        source = seleniumService.getDriver().getPageSource();
-        document = Jsoup.parse(source);
-        Element element = document.select("#fundTable").first();
-        /*펀드 총액 파싱*/
-        long response = mrParsingService.parseFundSummary(document);
-        portfolioService.save("펀드", response);
-    }
-
-    /**
-     * 현재 CMA 보유량 크롤링
-     */
-    private void parseCMAPortfolio() {
-        //펀드 탭
-        ((JavascriptExecutor) seleniumService.getDriver()).executeScript("javascript:move('04')");
-        String source = seleniumService.getDriver().getPageSource();
-        Document document = Jsoup.parse(source, "ecu-kr");
-        /*종목명 기달리기*/
-        seleniumService.getWait().until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("rpTable2"), By.className("l")));
-        /*기달리고 다시 가져오기*/
-        source = seleniumService.getDriver().getPageSource();
-        document = Jsoup.parse(source);
-        Element element = document.select("#rpTable").first();
-        /*펀드 총액 파싱*/
-        long response = mrParsingService.parseRPSummary(document);
-        portfolioService.save("CMA", response);
     }
 }
