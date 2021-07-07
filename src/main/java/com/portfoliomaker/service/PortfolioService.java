@@ -52,6 +52,9 @@ public class PortfolioService {
     public List<PortfolioDTO> getPortfolio() {
         List<Portfolio> data = portfolioRepository.findAll();
         List<PortfolioDTO> response = new ArrayList<>();
+        if(data.isEmpty()){
+            return response;
+        }
         String detail = "";
         long sum = 0;
         for (Portfolio p : data) {
