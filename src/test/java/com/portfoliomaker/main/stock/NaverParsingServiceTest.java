@@ -19,7 +19,7 @@ public class NaverParsingServiceTest {
 
     @Test
     public void naverFinanceTest() {
-        String source = TestUtil.getHtmlByString("naver/naverFinance.html");
+        String source = TestUtil.getHtmlByString("stock/naver/naverFinance.html");
         Document document = Jsoup.parse(source, "utf-8");
         StockPrice response = naverParsingService.parse(document, "013360");
         assertEquals(response.currentPrice, 4415);
@@ -31,7 +31,7 @@ public class NaverParsingServiceTest {
 
     @Test
     public void naverFinanceTest2() {
-        String source = TestUtil.getHtmlByString("naver/naverFinance2.html");
+        String source = TestUtil.getHtmlByString("stock/naver/naverFinance2.html");
         Document document = Jsoup.parse(source, "utf-8");
         StockPrice response = naverParsingService.parse(document, "019170");
         assertEquals(response.currentPrice, 69800);
@@ -43,15 +43,23 @@ public class NaverParsingServiceTest {
 
     @Test
     public void naverFinanceTest3() {
-        String source = TestUtil.getHtmlByString("naver/naverFinance3.html");
+        String source = TestUtil.getHtmlByString("stock/naver/naverFinance3.html");
         Document document = Jsoup.parse(source, "utf-8");
         StockPrice response = naverParsingService.parse(document, "019170");
         assertEquals(response.currentPrice, 82800);
     }
 
+
+    @Test
+    public void naverFinanceTest4() {
+        String source = TestUtil.getHtmlByString("stock/naver/naverFinance4.html");
+        Document document = Jsoup.parse(source, "utf-8");
+        StockPrice response = naverParsingService.parse(document, "019170");
+        //TODO 개장전 테스트 투가
+    }
     @Test
     public void naver_finance_after_market_test() {
-        String source = TestUtil.getHtmlByString("naver/naver_finance_after_market.html");
+        String source = TestUtil.getHtmlByString("stock/naver/naver_finance_after_market.html");
         Document document = Jsoup.parse(source, "utf-8");
         StockPrice response = naverParsingService.parse(document, "019170");
     }
