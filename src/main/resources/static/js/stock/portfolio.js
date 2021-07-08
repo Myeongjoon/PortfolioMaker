@@ -38,9 +38,9 @@ $(document).on('click', '.deleteBtn', function () {
 window.addEventListener("load", function () {
   var current_url = window.location.href
   var url = '/stock/portfolio/list';
-  if (current_url.indexOf("stock/main/k") != -1) {
+  if (current_url.indexOf("stock/portfolio/k") != -1) {
     url += '?location=코스피'
-  } else if(current_url.indexOf("stock/main/n") != -1){
+  } else if(current_url.indexOf("stock/portfolio/n") != -1){
     url += '?location=NASDAQ'
   } else {
     var loc = urlModule.getParam("location");
