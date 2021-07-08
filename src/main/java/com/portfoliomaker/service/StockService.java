@@ -306,6 +306,7 @@ public class StockService {
         stockMetaRepository.save(stockMeta);
         Optional<StockMetaDetail> detail = stockMetaDetailRepository.findById(stockMeta.id);
         if (detail.isEmpty()) {
+            logger.info(stockMeta.name + " : " + stockMeta.price);
             stockMetaDetailRepository.save(new StockMetaDetail(stockMeta));
         }
     }
