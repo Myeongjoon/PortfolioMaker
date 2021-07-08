@@ -35,10 +35,10 @@ public class StockController {
         stockService.portfolioSync();
     }
 
-    @GetMapping("/main")
-    public String main(Model model, @RequestParam(value = "location", required = false) String location) {
+    @GetMapping("/portfolio")
+    public String portfolio(Model model, @RequestParam(value = "location", required = false) String location) {
         model.addAttribute("stocks", stockService.getAllStockPortfolioDTO(location));
-        return "stock/main";
+        return "stock/portfolio";
     }
 
     @GetMapping("/favorite/k")
@@ -51,14 +51,14 @@ public class StockController {
         return "stock/favorite_n";
     }
 
-    @GetMapping("/main/k")
-    public String mainK(Model model) {
-        return "stock/main_k";
+    @GetMapping("/portfolio/k")
+    public String portfolioK(Model model) {
+        return "stock/portfolio_k";
     }
 
-    @GetMapping("/main/n")
-    public String mainN(Model model) {
-        return "stock/main_n";
+    @GetMapping("/portfolio/n")
+    public String portfolioN(Model model) {
+        return "stock/portfolio_n";
     }
 
 
@@ -69,9 +69,9 @@ public class StockController {
     }
 
 
-    @GetMapping("/main/list")
+    @GetMapping("/portfolio/list")
     @ResponseBody
-    public List<StockPortfolioDTO> mainList(@RequestParam(value = "location", required = false) String location) {
+    public List<StockPortfolioDTO> portfolioList(@RequestParam(value = "location", required = false) String location) {
         return stockService.getAllStockPortfolioDTO(location);
     }
 

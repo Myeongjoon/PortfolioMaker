@@ -56,4 +56,15 @@ public class StockPortfolioDTO {
         this.previousRate = p.previousRate == null ? "" : NumberFormat.getNumberInstance(Locale.US).format(p.previousRate);
         this.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (p.currentPriceSum - p.buyPriceSum) / p.buyPriceSum) * 100);
     }
+
+    public StockPortfolioDTO(String ticker, String name, String count, String buyPriceSum, String currentPriceSum, String crawledPriceSum, String previousRate, String rate) {
+        this.ticker = ticker;
+        this.name = name;
+        this.count = count;
+        this.buyPriceSum = buyPriceSum;
+        this.currentPriceSum = currentPriceSum;
+        this.crawledPriceSum = crawledPriceSum;
+        this.previousRate = previousRate;
+        this.rate = rate;
+    }
 }

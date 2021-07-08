@@ -37,15 +37,13 @@ $(document).on('click', '.deleteBtn', function () {
 
 window.addEventListener("load", function () {
   var current_url = window.location.href
-  var url;
+  var url = '/stock/portfolio/list';
   if (current_url.indexOf("stock/main/k") != -1) {
-    url = '/stock/main/list?location=코스피'
+    url += '?location=코스피'
   } else if(current_url.indexOf("stock/main/n") != -1){
-    url = '/stock/main/list?location=NASDAQ'
+    url += '?location=NASDAQ'
   } else {
-    var loc;
-    url = '/stock/main/list'
-    loc = urlModule.getParam("location");
+    var loc = urlModule.getParam("location");
     if (loc != null && loc != "") {
       url += "?location=" + loc
     }
