@@ -195,6 +195,7 @@ public class StockService {
         honestFundSync("kimdg691020@naver.com", "apt3550!1", "김동길");
         togetherFundSync("kimmj8409@gmail.com", "apt3550!1", "김명준");
         peopleFundSync("5252555@naver.com", "vlvmfaudwns!1", "김명준");
+        logger.info("p2p sync finished");
     }
 
     /**
