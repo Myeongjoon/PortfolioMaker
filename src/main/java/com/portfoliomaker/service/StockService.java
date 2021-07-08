@@ -113,6 +113,7 @@ public class StockService {
         } else {
             target = stockPortfolioRepository.findByLocation(location);
         }
+        //TODO 이부분 쿼리로 변경
         for (StockPortfolio p : target) {
             List<StockMeta> stockMetas = stockMetaRepository.findByTicker(p.ticker);
             StockPortfolioDTO dto = new StockPortfolioDTO(p);
