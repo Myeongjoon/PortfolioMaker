@@ -1,3 +1,5 @@
+import urlModule from './../util/url_util.js';
+
 var stockModule = {
   stockSync: function () {
     var current_url = window.location.href
@@ -8,7 +10,7 @@ var stockModule = {
       url = '/stock/stockSync?location=NASDAQ'
     } else {
       url = '/stock/stockSync'
-      loc = getParam("location");
+      var loc = urlModule.getParam("location");
       if (loc != null && loc != "") {
         url += "?location=" + loc
       }

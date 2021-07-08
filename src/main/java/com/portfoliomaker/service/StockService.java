@@ -92,8 +92,11 @@ public class StockService {
 
     public List<StockPortfolioDTO> findAllStockPortfolioDTO() {
         String query = findAllStockPortfolioDTOQuery;
-        Query nativeQuery = em.createNativeQuery(query,"StockPortfolioMapping");
-        return (List<StockPortfolioDTO>)nativeQuery.getResultList();
+        Query nativeQuery = em.createNativeQuery(query, "StockPortfolioMapping");
+
+        @SuppressWarnings("unchecked")
+        List<StockPortfolioDTO> response = nativeQuery.getResultList();
+        return response;
     }
 
     /**
