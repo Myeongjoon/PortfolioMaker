@@ -62,6 +62,7 @@ public class StockPortfolioDTO {
         this.name = name;
         this.count = count;
         this.buyPriceSum = NumberFormat.getNumberInstance(Locale.US).format(buyPriceSum);
+        //TODO 환율 곱하도록 추가
         this.currentPriceSum = NumberFormat.getNumberInstance(Locale.US).format(currentPriceSum);
         this.previousRate = previousRate;
         this.rate = NumberFormat.getNumberInstance(Locale.US).format(((currentPriceSum - buyPriceSum) / buyPriceSum) * 100);
