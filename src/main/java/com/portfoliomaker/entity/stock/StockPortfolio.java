@@ -1,8 +1,23 @@
 package com.portfoliomaker.entity.stock;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.portfoliomaker.dto.stock.StockPortfolioDTO;
 
+import javax.persistence.*;
+
+@SqlResultSetMapping(
+        name = "StockPortfolioMapping",
+        classes = @ConstructorResult(
+                targetClass = StockPortfolioDTO.class,
+                columns = {
+                        @ColumnResult(name = "current_price_sum", type = Double.class),
+                        @ColumnResult(name = "buy_price_sum", type = Double.class),
+                        @ColumnResult(name = "ticker", type = String.class),
+                        @ColumnResult(name = "name", type = String.class),
+                        @ColumnResult(name = "count", type = String.class),
+                        @ColumnResult(name = "previous_rate", type = String.class),
+                        @ColumnResult(name = "price", type = String.class)
+                })
+)
 @Entity
 public class StockPortfolio {
     /**

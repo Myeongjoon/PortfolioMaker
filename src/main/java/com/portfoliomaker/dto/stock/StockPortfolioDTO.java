@@ -2,11 +2,9 @@ package com.portfoliomaker.dto.stock;
 
 import com.portfoliomaker.entity.stock.StockPortfolio;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.text.NumberFormat;
 import java.util.Locale;
-
 
 public class StockPortfolioDTO {
     /**
@@ -48,6 +46,8 @@ public class StockPortfolioDTO {
      */
     public String rate;
 
+    public String price;
+
     public StockPortfolioDTO(StockPortfolio p) {
         this.ticker = p.ticker;
         this.count = NumberFormat.getNumberInstance(Locale.US).format(p.count);
@@ -57,14 +57,13 @@ public class StockPortfolioDTO {
         this.rate = NumberFormat.getNumberInstance(Locale.US).format(((double) (p.currentPriceSum - p.buyPriceSum) / p.buyPriceSum) * 100);
     }
 
-    public StockPortfolioDTO(String ticker, String name, String count, String buyPriceSum, String currentPriceSum, String crawledPriceSum, String previousRate, String rate) {
+    public StockPortfolioDTO(Double currentPriceSum, Double buyPriceSum, String ticker, String name, String count, String previousRate, String price) {
         this.ticker = ticker;
         this.name = name;
         this.count = count;
-        this.buyPriceSum = buyPriceSum;
-        this.currentPriceSum = currentPriceSum;
-        this.crawledPriceSum = crawledPriceSum;
+        this.buyPriceSum = NumberFormat.getNumberInstance(Locale.US).format(buyPriceSum);
+        this.currentPriceSum = NumberFormat.getNumberInstance(Locale.US).format(currentPriceSum);
         this.previousRate = previousRate;
-        this.rate = rate;
+        this.rate = NumberFormat.getNumberInstance(Locale.US).format(((currentPriceSum - buyPriceSum) / buyPriceSum) * 100);
     }
 }

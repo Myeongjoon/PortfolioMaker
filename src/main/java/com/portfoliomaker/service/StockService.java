@@ -29,6 +29,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -72,6 +75,27 @@ public class StockService {
         return response;
     }
 
+    public static final String findAllStockPortfolioDTOQuery = """
+            select
+            p.ticker as ticker,
+            p.buy_price_sum as buy_price_sum,
+            p.count as count,
+            case when l.price is null then p.current_price_sum else l.price * p.count end as current_price_sum,
+            p.location as location,
+            l.name as name,
+            l.previous_rate as previous_rate,
+            l.price as price
+            from stock_portfolio p left join stock_meta l on p.ticker = l.ticker""";
+
+    @PersistenceContext
+    EntityManager em;
+
+    public List<StockPortfolioDTO> findAllStockPortfolioDTO() {
+        String query = findAllStockPortfolioDTOQuery;
+        Query nativeQuery = em.createNativeQuery(query,"StockPortfolioMapping");
+        return (List<StockPortfolioDTO>)nativeQuery.getResultList();
+    }
+
     /**
      * 내 보유 종목
      *
@@ -82,7 +106,7 @@ public class StockService {
         List<StockPortfolioDTO> response = new ArrayList<>();
         List<StockPortfolio> target;
         if (location == null) {
-            target = stockPortfolioRepository.findAll();
+            return findAllStockPortfolioDTO();
         } else {
             target = stockPortfolioRepository.findByLocation(location);
         }
@@ -233,10 +257,10 @@ public class StockService {
     public void stockSync(String location) {
         try {
             seleniumService.setDriver(true);
-            if(location == null || location.equals("") || location.equals("코스피")){
+            if (location == null || location.equals("") || location.equals("코스피")) {
                 parseNaverStock();
             }
-            if(location == null || location.equals("") || location.equals("NASDAQ")){
+            if (location == null || location.equals("") || location.equals("NASDAQ")) {
                 parseYahooStock();
             }
         } catch (Exception e) {
