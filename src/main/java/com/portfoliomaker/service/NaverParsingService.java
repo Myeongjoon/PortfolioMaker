@@ -64,6 +64,7 @@ public class NaverParsingService {
                 SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd");
                 date = transFormat.parse(time);
                 date.setHours(15);
+                //TODO 장 시작 이전 체크
             } catch (ParseException e) {
                 e.printStackTrace();
             }
