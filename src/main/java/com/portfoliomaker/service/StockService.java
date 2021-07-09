@@ -375,6 +375,7 @@ public class StockService {
                 stockMeta.ticker = s.ticker;
                 stockMeta.id = s.ticker;
                 stockMeta.location = s.location;
+                logger.info(stockMeta.ticker + " : " + stockMeta.price);
                 stockMetaRepository.save(stockMeta);
             }
             //sum += s.currentPriceSum;
@@ -382,6 +383,7 @@ public class StockService {
         /*이전 내역 삭제*/
         deleteByType(TypeConst.STOCK);
         save(response);
+        logger.info("save : " + response.size());
         //portfolioService.save("주식", sum);
     }
 }

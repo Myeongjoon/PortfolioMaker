@@ -9,7 +9,7 @@ function drawChart() {
     context: this,
     success: function (data, status, xhr) {
       array = [];
-      array.push(['type', 'price'])
+      array.push(['name', 'price'])
       for (const element of data) {
         temp = []
         temp.push(element.name)
