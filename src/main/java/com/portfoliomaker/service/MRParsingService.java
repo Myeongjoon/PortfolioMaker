@@ -69,7 +69,7 @@ public class MRParsingService {
                 try {
                     long remain = Long.parseLong(ticker.substring(1));
                     ticker = ticker.substring(1);
-                    temp.location = "코스피";
+                    temp.location = "KOSPI";
                 } catch (Exception ex) {
                     temp.location = "NASDAQ";
                     //

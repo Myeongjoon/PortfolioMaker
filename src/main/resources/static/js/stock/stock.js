@@ -5,7 +5,7 @@ var stockModule = {
     var current_url = window.location.href
     var url;
     if (current_url.indexOf("/k") != -1) {
-      url = '/stock/stockSync?location=코스피'
+      url = '/stock/stockSync?location=KOSPI'
     } else if (current_url.indexOf("/n") != -1) {
       url = '/stock/stockSync?location=NASDAQ'
     } else {

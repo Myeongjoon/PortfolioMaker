@@ -51,7 +51,6 @@ public class NaverParsingService {
         StockPrice stockPrice = new StockPrice();
         Element codes = document.select("#chart_area").select(".today").select("p").first();
         String name = document.select(".wrap_company").select("a").first().text();
-        String loc = document.select(".description").first().select("img").attr("alt");
         Elements previousRate = document.select(".no_exday");
         previousRate.select(".sp_txt1").remove();
         String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
@@ -80,7 +79,7 @@ public class NaverParsingService {
         stockPrice.date = date;
         stockPrice.currentPrice = price;
         stockPrice.name = name;
-        stockPrice.location = loc;
+        stockPrice.location = "KOSPI";
         stockPrice.ticker = ticker;
         stockPrice.id = stockPrice.hash();
         return stockPrice;

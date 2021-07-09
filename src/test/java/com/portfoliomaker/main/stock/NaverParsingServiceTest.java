@@ -26,7 +26,7 @@ public class NaverParsingServiceTest {
         assertEquals(response.previousRate, 21.12);
         assertEquals(response.name, "일성건설");
         assertEquals(response.ticker, "013360");
-        assertEquals(response.location, "코스피");
+        assertEquals(response.location, "KOSPI");
     }
 
     @Test
@@ -38,7 +38,7 @@ public class NaverParsingServiceTest {
         assertEquals(response.previousRate, -26.99);
         assertEquals(response.name, "신풍제약");
         assertEquals(response.ticker, "019170");
-        assertEquals(response.location, "코스피");
+        assertEquals(response.location, "KOSPI");
     }
 
     @Test

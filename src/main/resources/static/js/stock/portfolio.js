@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
   var current_url = window.location.href
   var url = '/stock/portfolio/list';
   if (current_url.indexOf("stock/portfolio/k") != -1) {
-    url += '?location=코스피'
+    url += '?location=KOSPI'
   } else if(current_url.indexOf("stock/portfolio/n") != -1){
     url += '?location=NASDAQ'
   } else {

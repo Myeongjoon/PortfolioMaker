@@ -51,7 +51,7 @@ window.addEventListener("load", function () {
   var current_url = window.location.href
   var url;
   if (current_url.indexOf("stock/favorite/k") != -1) {
-    url = '/stock/favorite/list?location=코스피'
+    url = '/stock/favorite/list?location=KOSPI'
   } else if(current_url.indexOf("stock/favorite/n") != -1){
     url = '/stock/favorite/list?location=NASDAQ'
   } else {

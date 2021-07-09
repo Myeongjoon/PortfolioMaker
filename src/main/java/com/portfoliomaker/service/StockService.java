@@ -85,19 +85,10 @@ public class StockService {
             l.name as name,
             l.previous_rate as previous_rate,
             l.price as price
-            from stock_portfolio p left join stock_meta l on p.ticker = l.ticker""";
+            from stock_portfolio p left join stock_meta l on p.ticker = l.ticker """;
 
     @PersistenceContext
     EntityManager em;
-
-    public List<StockPortfolioDTO> findAllStockPortfolioDTO() {
-        String query = findAllStockPortfolioDTOQuery;
-        Query nativeQuery = em.createNativeQuery(query, "StockPortfolioMapping");
-
-        @SuppressWarnings("unchecked")
-        List<StockPortfolioDTO> response = nativeQuery.getResultList();
-        return response;
-    }
 
     /**
      * 내 보유 종목
@@ -106,32 +97,14 @@ public class StockService {
      * @return
      */
     public List<StockPortfolioDTO> getAllStockPortfolioDTO(String location) {
-        List<StockPortfolioDTO> response = new ArrayList<>();
-        List<StockPortfolio> target;
-        if (location == null) {
-            return findAllStockPortfolioDTO();
-        } else {
-            target = stockPortfolioRepository.findByLocation(location);
+        String query = findAllStockPortfolioDTOQuery;
+        if (location != null) {
+            query += " where l.location = \"" + location + "\"";
         }
-        //TODO 이부분 쿼리로 변경
-        for (StockPortfolio p : target) {
-            List<StockMeta> stockMetas = stockMetaRepository.findByTicker(p.ticker);
-            StockPortfolioDTO dto = new StockPortfolioDTO(p);
-            if (stockMetas.size() != 0) {
-                StockMeta stockMeta = stockMetas.get(0);
-                dto.name = stockMeta.name;
-                double price = 0;
-                if (stockMeta.price != null) {
-                    price = p.count * stockMeta.price;
-                }
-                dto.crawledPriceSum = NumberFormat.getNumberInstance(Locale.US).format(price);
-                dto.previousRate = stockMeta.previousRate == null ? "" : NumberFormat.getNumberInstance(Locale.US).format(stockMeta.previousRate);
-                if (price != 0) {
-                    dto.rate = NumberFormat.getNumberInstance(Locale.US).format(((price - p.buyPriceSum) / p.buyPriceSum) * 100);
-                }
-            }
-            response.add(dto);
-        }
+        Query nativeQuery = em.createNativeQuery(query, "StockPortfolioMapping");
+
+        @SuppressWarnings("unchecked")
+        List<StockPortfolioDTO> response = nativeQuery.getResultList();
         return response;
     }
 
@@ -262,7 +235,7 @@ public class StockService {
     public void stockSync(String location) {
         try {
             seleniumService.setDriver(true);
-            if (location == null || location.equals("") || location.equals("코스피")) {
+            if (location == null || location.equals("") || location.equals("KOSPI")) {
                 parseNaverStock();
             }
             if (location == null || location.equals("") || location.equals("NASDAQ")) {
@@ -296,7 +269,7 @@ public class StockService {
     public void parseNaverStock() {
         List<StockMeta> list = stockMetaRepository.findAll();
         for (StockMeta stockMeta : list) {
-            if (stockMeta.location != null && stockMeta.location.equals("코스피")) {
+            if (stockMeta.location != null && stockMeta.location.equals("KOSPI")) {
                 naverParsingService.parseMeta(stockMeta);
                 staveStockMeta(stockMeta);
             }
