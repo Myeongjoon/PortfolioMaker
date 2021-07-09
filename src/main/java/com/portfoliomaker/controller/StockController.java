@@ -77,7 +77,8 @@ public class StockController {
 
 
     @GetMapping("/detail")
-    public String detail(Model model) {
+    public String detail(Model model, @RequestParam(value = "ticker", required = false) String ticker) {
+        model.addAttribute("details", stockService.findAllStockMetaDetailByTicker(ticker));
         return "stock/detail";
     }
 

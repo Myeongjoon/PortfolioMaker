@@ -65,6 +65,10 @@ public class StockService {
     @Autowired
     TogetherFundingParsingService togetherFundingParsingService;
 
+    public List<StockMetaDetail> findAllStockMetaDetailByTicker(String ticker){
+        return stockMetaDetailRepository.findByTicker(ticker);
+    }
+
     public List<StockDetailDTO> findDetailList(String ticker) {
         List<StockDetailDTO> response = new ArrayList<>();
         List<StockMetaDetail> targets = stockMetaDetailRepository.findByTicker(ticker);

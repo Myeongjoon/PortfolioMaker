@@ -19,6 +19,22 @@
 
 <main>
     <div id="chart_div"></div>
+
+    <table>
+        <tr>
+            <th>ticker</th>
+            <th>기준일</th>
+            <th>기준가</th>
+            <th>del</th>
+        </tr>
+        <tr th:each="detail : ${details}" data-hasChildren=0>
+            <td th:text="${detail.ticker}"></td>
+            <td th:text="${detail.priceDate}"></td>
+            <td th:text="${detail.price}"></td>
+            <td><input th:attr="data-id=${detail.id}" type="button" class="deleteBtn" value="delete"
+                       style="color: red;"></td>
+        </tr>
+    </table>
 </main>
 </body>
 </html>
