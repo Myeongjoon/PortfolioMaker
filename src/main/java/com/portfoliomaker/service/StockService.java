@@ -65,7 +65,11 @@ public class StockService {
     @Autowired
     TogetherFundingParsingService togetherFundingParsingService;
 
-    public List<StockMetaDetail> findAllStockMetaDetailByTicker(String ticker){
+    public void deleteStockMetaDetailById(String ticker) {
+        stockMetaDetailRepository.deleteById(ticker);
+    }
+
+    public List<StockMetaDetail> findAllStockMetaDetailByTicker(String ticker) {
         return stockMetaDetailRepository.findByTicker(ticker);
     }
 

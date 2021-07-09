@@ -83,6 +83,13 @@ public class StockController {
     }
 
 
+    @DeleteMapping("/detail")
+    @ResponseBody
+    public void detail(String id) {
+        stockService.deleteStockMetaDetailById(id);
+    }
+
+
     @GetMapping("/detail/list")
     @ResponseBody
     public List<StockDetailDTO> detailList(@RequestParam(value = "ticker", required = false) String ticker) {
