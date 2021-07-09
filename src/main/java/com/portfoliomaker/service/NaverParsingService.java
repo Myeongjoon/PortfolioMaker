@@ -54,6 +54,7 @@ public class NaverParsingService {
         Elements previousRate = document.select(".no_exday");
         previousRate.select(".sp_txt1").remove();
         String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
+        //TODO 여기서 에러날 경우 파일로 저장하도록 수정
         stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
         document.select("#time").select(".date").select("span").remove();
         String time = document.select("#time").select(".date").text();
