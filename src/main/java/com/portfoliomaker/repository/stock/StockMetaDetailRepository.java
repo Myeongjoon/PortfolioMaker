@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface StockMetaDetailRepository extends JpaRepository<StockMetaDetail, String> {
     List<StockMetaDetail> findByTicker(String ticker);
+    List<StockMetaDetail> findByTickerOrderByPriceDateDesc(String ticker);
 }

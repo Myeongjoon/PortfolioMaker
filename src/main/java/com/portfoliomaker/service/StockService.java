@@ -70,7 +70,7 @@ public class StockService {
     }
 
     public List<StockMetaDetail> findAllStockMetaDetailByTicker(String ticker) {
-        return stockMetaDetailRepository.findByTicker(ticker);
+        return stockMetaDetailRepository.findByTickerOrderByPriceDateDesc(ticker);
     }
 
     public List<StockDetailDTO> findDetailList(String ticker) {
