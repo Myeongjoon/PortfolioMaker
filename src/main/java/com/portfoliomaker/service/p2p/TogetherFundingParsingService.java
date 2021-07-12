@@ -45,7 +45,13 @@ public class TogetherFundingParsingService {
     public StockPortfolio parseTogetherDeposit(Document document) {
         StockPortfolio response = new StockPortfolio();
         Elements tables = document.select(".left_money");
-        response.currentPriceSum = StringUtil.parseMoney(tables.first().text());
+        try {
+            response.currentPriceSum = StringUtil.parseMoney(tables.first().text());
+        } catch (Exception e) {
+            logger.error(e.toString());
+            logger.debug(document.toString());
+            throw e;
+        }
         return response;
     }
 }
