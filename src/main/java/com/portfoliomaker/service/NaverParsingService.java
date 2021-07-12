@@ -76,7 +76,13 @@ public class NaverParsingService {
                 e.printStackTrace();
             }
         }
-        double price = StringUtil.parseDoubleMoney(codes.text());
+        double price = 0;
+        try {
+            price = StringUtil.parseDoubleMoney(codes.text());
+        } catch (Exception e) {
+            logger.error(e.toString());
+            throw e;
+        }
         stockPrice.date = date;
         stockPrice.currentPrice = price;
         stockPrice.name = name;

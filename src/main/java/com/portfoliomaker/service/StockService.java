@@ -276,17 +276,22 @@ public class StockService {
      */
     public void parseNaverStock() {
         List<StockMeta> list = stockMetaRepository.findAll();
+        List<StockMeta> parsedList = new ArrayList<>();
+        List<StockMetaDetail> stockMetaDetails = new ArrayList<>();
         for (StockMeta stockMeta : list) {
             if (stockMeta.location != null && stockMeta.location.equals("KOSPI")) {
                 naverParsingService.parseMeta(stockMeta);
-                staveStockMeta(stockMeta);
+                parsedList.add(stockMeta);
+                stockMetaDetails.add(new StockMetaDetail(stockMeta));
             }
         }
+        stockMetaRepository.saveAll(parsedList);
+        stockMetaDetailRepository.saveAll(stockMetaDetails);
         logger.info("finish naver crawling");
     }
 
     public void staveStockMeta(StockMeta stockMeta) {
-        stockMetaRepository.save(stockMeta);
+        // stockMetaRepository.save(stockMeta);
         Optional<StockMetaDetail> detail = stockMetaDetailRepository.findById(stockMeta.id);
         if (detail.isEmpty()) {
             logger.info(stockMeta.ticker + " : " + stockMeta.price);
