@@ -56,7 +56,7 @@ public class NaverParsingService {
         String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
         try {
             stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             logger.debug(document.toString());
             throw e;
         }
