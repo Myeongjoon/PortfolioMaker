@@ -56,6 +56,7 @@ public class NaverParsingService {
         previousRate.select(".sp_txt1").remove();
         //데이터 변경된 경우 블라인드라는 태그가 추가됨.
         previousRate.select(".blind").remove();
+        //TODO 가격이 두개 찍히는 경우 처리
         String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
         try {
             stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
