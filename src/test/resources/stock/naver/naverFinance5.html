@@ -1,0 +1,7278 @@
+<html lang="ko" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/91.0.4472.124 Safari/537.36"><head>
+
+
+
+	<title>SK�̳뺣�̼� : ���̹� ����</title>
+
+
+
+
+
+
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+
+
+
+
+
+	<meta property="og:url" content="https://finance.naver.com/item/main.nhn?code=096770">
+
+
+
+	<meta property="og:title" content="SK�̳뺣�̼� - ���̹� ���� : ���̹� ����">
+
+
+
+
+	<meta property="og:description" content="���������� �ǽð� �ְ��� ���� ������ Ȯ���ϴ� ��">
+
+
+
+
+
+	<meta property="og:image" content="https://ssl.pstatic.net/static/m/stock/im/2016/08/og_stock-200.png">
+
+
+
+
+
+	<meta property="og:type" content="article">
+	<meta property="og:article:thumbnailUrl" content="">
+	<meta property="og:article:author" content="���̹�����">
+	<meta property="og:article:author:url" content="http://FINANCE.NAVER.COM">
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/finance_header.css">
+
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/newstock.css">
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/common.css">
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/main.css">
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/newstock2.css">
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/newstock3.css">
+	<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/css/world.css">
+
+
+
+	<script type="text/javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/jindo.min.ns.1.5.3.euckr.js"></script>
+	<script type="text/javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/release/common.js"></script>
+	<script type="text/javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/jindoComponent/jindo.Component.1.0.3.js"></script>
+	<script type="text/javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/nhn.autocomplete.stock.js"></script>
+
+
+
+
+
+
+	<!-- smart channel ���� -->
+	<script async="" src="https://ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js">
+	</script>
+	<script type="text/javascript">
+		window.gladsdk = window.gladsdk || { cmd: [] };
+
+		gladsdk.cmd.push(function() {
+				gladsdk.defineAdSlot({
+                    adUnitId: "p_stock",
+                    adSlotElementId: "_SmartChannelTopBanner",
+                    uct: "KR",
+                    customParam: {
+                        calp:
+
+
+
+
+
+
+							"home"
+                    },
+                });
+
+                gladsdk.addEventListener(gladsdk.event.AD_LOADED, function(ad) {
+                    //console.log(gladsdk.event.AD_LOADED);
+                });
+                gladsdk.addEventListener(gladsdk.event.AD_CLICKED, function(ad) {
+                    //console.log(gladsdk.event.AD_CLICKED);
+                });
+                gladsdk.addEventListener(gladsdk.event.AD_IMPRESSED, function(ad) {
+                    //console.log(gladsdk.event.AD_IMPRESSED);
+                });
+                gladsdk.addEventListener(gladsdk.event.ERROR, function(ad, error) {
+                    //TODO: ���� �α�ó��
+                    //console.log(gladsdk.event.ERROR);
+                });
+            });
+
+	</script>
+
+	<link rel="shortcut icon" href="https://www.naver.com/favicon.ico" type="image/x-icon">
+
+	<script type="text/javascript">
+    (function(){
+        var sUserAgent = navigator.userAgent;
+        if(/iPhone|iPad/.test(sUserAgent)){
+            document.write(
+                [
+					'<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://ssl.pstatic.net/static/nfinance/ico/2018_ios_120X120_iphone.png" />',
+					'<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://ssl.pstatic.net/static/nfinance/ico/2018_ios_152x152_ipad.png" />',
+					'<link rel="apple-touch-icon-precomposed" sizes="167x167" href="https://ssl.pstatic.net/static/nfinance/ico/2018_ios_167x167_ipad_pro.png" />',
+					'<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://ssl.pstatic.net/static/nfinance/ico/2018_ios_180x180_iphone.png" />'
+                ]
+                .join('\n')
+            );
+        }
+
+        if(/Android/.test(sUserAgent)){
+            document.write(
+                [
+                    '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://ssl.pstatic.net/static/nfinance/ico/2018_android_72x72_xxxhpdi.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="96x96" href="https://ssl.pstatic.net/static/nfinance/ico/2018_android_96x96_xxxhpdi.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ssl.pstatic.net/static/nfinance/ico/2018_android_144x144_xxxhpdi.png" />',
+                    '<link rel="apple-touch-icon-precomposed" sizes="192x192" href="https://ssl.pstatic.net/static/nfinance/ico/2018_android_192x192_xxxhpdi.png" />'
+				]
+				.join('\n')
+			);
+        }
+    })();
+    </script>
+	<style id="gnb_style" type="text/css">@charset "UTF-8";
+/* NTS UIT Development Office YJH 140717 */
+a.gnb_my, .gnb_icon, #gnb .gnb_my_interface, .gnb_my_li .gnb_my_content .gnb_membership, #gnb .gnb_my_membership, #gnb .gnb_ico_num .gnb_ico_new, #gnb .gnb_ico_num .gnb_ico_new .gnb_count, .gnb_lst .ico_arrow, a.gnb_my .filter_mask, .gnb_my_lyr, .gnb_my_li .gnb_my_content .gnb_mask, .gnb_my_li .gnb_my_content .gnb_change, .gnb_my_li .gnb_my_content .gnb_edit_lst li, .gnb_my_li .gnb_my_content .gnb_pay_check em, #gnb .gnb_my_li .gnb_my_community a.gnb_pay span, .gnb_notice_li .gnb_notice_lyr, .gnb_notice_li .svc_list .gnb_ico_mail, .gnb_notice_li .svc_list .gnb_btn_remove span, .gnb_notice_li .svc_list .gnb_btn_remove i, .gnb_notice_li .gnb_error .gnb_ico_error, .gnb_ly_alert .gnb_btn_close i, .gnb_first_visit, .gnb_search_box, .gnb_search_box .gnb_del_txt, .gnb_svc_more .gnb_svc_lstwrp li.gnb_event em.ic_gnb_new, .gnb_svc_more .svc_btnwrp button { background: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_v14.png) no-repeat -999px -999px;		background: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_v15.png?v=2006) no-repeat -999px -999px; /* background: url(../img/sp_gnb_v15.png) no-repeat -999px -999px; */}
+.gnb_favorite_area, .gnb_search_area, .gnb_banner, .gnb_linkwrp{background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr2_v2.png) no-repeat -999px -999px}
+#gnb .gnb_my_li .gnb_my_community a, .gnb_notice_li .gnb_notice_all, a.gnb_service_all, .gnb_svc_more .svc_btns{display:block;height:38px;border-top:1px solid #ebebeb;background-color:#f8f8f8;text-align:center;font-weight:bold;text-decoration:none;letter-spacing:-1px;line-height:38px}
+#gnb .gnb_my_li .gnb_my_community a:visited, .gnb_notice_li .gnb_notice_all:visited, a.gnb_service_all:visited, .gnb_svc_more .svc_btns:visited{color:#444}
+.gnb_login_li, .gnb_my_li, .gnb_notice_li, .mail_li, .gnb_service_li{float:left;margin-right:2px;overflow:visible}
+.gnb_login_li a, .gnb_my_li a, .gnb_notice_li a, .mail_li a, .gnb_service_li a{position:relative;z-index:100}
+a.gnb_my, .gnb_icon{position:relative}
+#gnb{position:relative;z-index:2147483646;font-family:'�������',NanumGothic,'����',Dotum,'Apple SD Gothic Neo',Helvetica,Sans-serif !important;color:#444;font-size:12px;letter-spacing:0 !important;line-height:normal !important;text-align:left !important}
+#gnb div, #gnb p, #gnb span, #gnb em, #gnb strong, #gnb h1, #gnb h2, #gnb h3, #gnb h4, #gnb h5, #gnb h6, #gnb ul, #gnb ol, #gnb li, #gnb dl, #gnb dt, #gnb dd, #gnb table, #gnb th, #gnb td, #gnb form, #gnb fieldset, #gnb legend, #gnb input, #gnb textarea, #gnb button, #gnb label{font-family:'�������',NanumGothic,'����',Dotum,'Apple SD Gothic Neo',Helvetica,Sans-serif !important}
+#gnb a, #gnb label, #gnb button{cursor:pointer}
+#gnb a, #gnb a:visited, #gnb a:active, #gnb a:focus{color:#444}
+#gnb a:hover{color:#444;text-decoration:underline}
+#gnb input::-ms-clear{display:none}
+#gnb em{font-style:normal}
+#gnb ul{list-style:none}
+#gnb .blind{display:block;overflow:hidden;position:absolute;top:-1000em;left:0;width:1px;height:1px;margin:0;padding:0;font-size:0;line-height:0}
+#gnb .gnb_my_membership{padding: 0;display: block;width: 64px;height: 16px;background-position: -296px -359px;margin: 0;}
+#gnb .gnb_my_interface{padding:5px;position:absolute;top:12px;right:8px;display:block;width:17px;height:16px;background-position:-90px 5px}
+#gnb .gnb_my_interface:hover{background-position:-90px -20px}
+#gnb .gnb_pad_lyr{position:absolute}
+#gnb .gnb_ico_num{display:block;position:absolute;top:1px;width:40px;text-align:center}
+#gnb .gnb_ico_num .gnb_ico_new{height:15px;display:inline-block;background-position:-331px 0;zoom:1}
+#gnb .gnb_ico_num .gnb_ico_new .gnb_count{position:relative;top:0;right:-5px;height:15px;margin:0;padding:0 4px 0 1px;display:inline-block;*display:inline;vertical-align:top;background-position:100% 0;text-indent:-2px;font-family:tahoma !important;font-weight:bold;color:#fff;zoom:1}
+#gnb .gnb_ico_num .gnb_ico_new .plus{margin:1px -1px 0 2px;font-size:8px;display:inline-block;color:#fff;vertical-align:top}
+:root #gnb .gnb_pad_lyr{opacity:1 !important;background:#fff}
+.gnb_lst{margin:0;padding:0;zoom:1}
+.gnb_lst:after{display:block;clear:both;content:''}
+.gnb_lst ul{margin:0;padding:0}
+.gnb_lst .ico_arrow{display:none;position:absolute;left:50%;top:27px;width:10px;height:8px;margin-left:-5px;background-position:-175px -10px}
+.gnb_lyr_opened .gnb_my_lyr, .gnb_lyr_opened .gnb_service_lyr, .gnb_lyr_opened .gnb_notice_lyr, .gnb_lyr_opened .ico_arrow{display:block !important}
+.gnb_login_li{height:23px;padding:5px 7px 0 0}
+.gnb_btn_login, .gnb_bg, .gnb_bdr{display:inline-block;width:46px;height:20px;font-size:12px}
+.gnb_btn_login{position:relative}
+.gnb_bg{background-color: #fff;opacity: 0.05;filter: alpha(opacity=5);}
+.gnb_bdr{position:absolute;top: -1px;left: -1px;width: 46px;height: 20px;border: 1px solid #000;opacity: 0.12;filter: alpha(opacity=12);}
+.gnb_txt{position:absolute;top:0;left:0;width:45px;height:20px;padding-left:1px;line-height:21px;color:#666;text-align:center}
+.gnb_btn_login:hover{text-decoration:none !important}
+.gnb_account .gnb_btn_login{width:54px;margin:-1px 0 0 8px;vertical-align:top}
+.gnb_account a.gnb_btn_login .gnb_txt {padding-left: 0;}
+.gnb_account .gnb_bdr{width:52px}
+.gnb_account .gnb_txt{width:53px}
+.gnb_my_li{margin-right:7px}
+.gnb_my_namebox{padding:2px 9px 0 0;background-repeat:no-repeat;background-position:100% 50%;zoom:1}
+.gnb_my_namebox:after{display:block;clear:both;content:''}
+a.gnb_my{float:left;display:block;font-size:12px;vertical-align:middle}
+a.gnb_my .filter_mask {position: absolute; top: -1px; left: -1px; z-index: 1; width: 28px; height: 28px; background-position: -260px -60px;}
+a.gnb_my img{vertical-align:top;border-radius:16px}
+a.gnb_my .gnb_name{margin-right:-1px;padding-left:5px;display:inline-block;height:28px;line-height:28px;vertical-align:top;font-size:11px;color:#444}
+a.gnb_my:visited{color:#444}
+a.gnb_my:hover, a.gnb_my:active, a.gnb_my:visited, a.gnb_my:focus{text-decoration:none !important}
+a.gnb_my:hover .gnb_name{text-decoration:underline}
+a.gnb_my .ico_arrow{top:25px;margin-left:8px}
+.gnb_my_namebox a.gnb_emp{float:left;display:inline-block;height:28px;margin-left:3px;line-height:28px;font-size:11px;color:#777 !important}
+.gnb_my_lyr{display:none;position:absolute;top:26px;right:-8px;padding:9px 5px 4px 4px;width:316px;height:155px;background-position:-2px -1310px;z-index:10}
+.gnb_my_lyr.gnb_groupid{height:144px;background-position:-2px -1500px}
+.gnb_my_lyr.gnb_groupid .gnb_my_content{height:80px}
+.gnb_my_lyr.gnb_groupid.gnb_longid1{height:144px;/*background-position:-2px -1664px*/}
+.gnb_my_lyr.gnb_groupid.gnb_longid2{height:144px;background-position:-2px -1828px}
+.gnb_my_lyr.gnb_longid1{/*width:318px;*/ /*background-position:-2px -1118px;*/}
+.gnb_my_lyr.gnb_longid2{width:348px;background-position:-2px -926px}
+.gnb_my_li .gnb_my_content{zoom:1;height:91px;padding:15px 0 10px 15px}
+.gnb_my_li .gnb_my_content:after{display:block;clear:both;content:''}
+.gnb_my_li .gnb_my_content .gnb_img_area{float:left;position:relative;display:block;width:80px;margin: 1px 0 0 1px;}
+.gnb_my_li .gnb_my_content .gnb_img_area img{vertical-align:top}
+.gnb_my_li .gnb_my_content .gnb_mask{position:absolute;top:0;left:0;display:block;width:80px;height:80px;background-position:-70px -60px}
+.gnb_my_li .gnb_my_content .gnb_change{position:absolute;bottom:-2px;left:-2px;display:block;width:28px;height:28px;background-position:-140px 0px}
+.gnb_my_li .gnb_my_content .gnb_change:hover{background-position:-140px -30px}
+.gnb_my_li .gnb_my_content .gnb_txt_area{float:left;width:210px;margin:0 0 0 10px}
+.gnb_longid1 .gnb_my_content .gnb_txt_area{/* width:210px; */}
+.gnb_longid2 .gnb_my_content .gnb_txt_area{width:235px}
+.gnb_my_li .gnb_my_content .gnb_account{margin-bottom:3px 0 1px;font-size:0}
+.gnb_my_li .gnb_my_content .gnb_name{color:#666;font-size:14px}
+.gnb_my_li .gnb_my_content .gnb_name a{display:inline-block;vertical-align:top;font-weight:bold;color:#222 !important}
+.gnb_my_li .gnb_my_content a.gnb_mail_address{margin-left:1px;font-family:tahoma;color:#666 !important;font-size:12px}
+.gnb_my_li .gnb_my_content .gnb_edit_lst{zoom:1;margin-top:7px !important}
+.gnb_my_li .gnb_my_content .gnb_edit_lst:after{display:block;clear:both;content:''}
+.gnb_my_li .gnb_my_content .gnb_edit_lst li{float:left;padding-left:6px;margin-left:5px;background-position:-290px -25px}
+.gnb_my_li .gnb_my_content .gnb_edit_lst li.gnb_info{padding-left:0;margin-left:0;background:none}
+.gnb_my_li .gnb_my_content .gnb_edit_lst a{color:#666 !important;letter-spacing:-1px}
+.gnb_my_li .gnb_my_content .gnb_membership {display: inline-block;margin-right: 5px;margin-left: 1px;padding-right: 8px;background-position: -287px -403px;}
+.gnb_my_li .gnb_my_content .gnb_pay_check{height:16px;margin:7px -4px 0 0 !important}
+@media screen and (min-width: 0\0) { .gnb_my_li .gnb_my_content .gnb_pay_check{margin-top:17px} }
+.gnb_my_li .gnb_my_content .gnb_pay_check em{display:inline-block;width:16px;height:16px;background-position:-300px -309px;margin:0 4px 0 0;overflow:hidden;font-size:0;line-height:0;vertical-align:top}
+.gnb_my_li .gnb_my_content .gnb_pay_check a{font-size:14px;letter-spacing:-1px;line-height:16px;vertical-align:top}
+.gnb_my_li .gnb_my_content .gnb_pay_check span{font-weight: bold;}
+.gnb_my_li .gnb_my_content .gnb_pay_check strong{font-family:tahoma;letter-spacing:0;vertical-align:top;}
+.gnb_my_li .gnb_my_content .gnb_pay_check a, .gnb_my_li .gnb_my_content .gnb_pay_check span, .gnb_my_li .gnb_my_content .gnb_pay_check strong{font-size:12px;color:#222 !important}
+#gnb .gnb_my_li .gnb_my_community{clear:both;zoom:1}
+#gnb .gnb_my_li .gnb_my_community:after{display:block;clear:both;content:''}
+#gnb .gnb_my_li .gnb_my_community a{float:left;width:106px;margin-right: 0;border-right:1px solid #ebebeb}
+#gnb .gnb_my_li .gnb_my_community a.gnb_pay{width:102px;border-right:0;line-height:0}
+#gnb .gnb_my_li .gnb_my_community a.gnb_pay span{display:inline-block;width:41px;height:16px;background-position:-300px -334px;margin:11px auto 0;font-size:0;line-height:0}
+#gnb .gnb_my_li .gnb_my_community a:active, #gnb .gnb_my_li .gnb_my_community a:focus, #gnb .gnb_my_li .gnb_my_community a:visited{text-decoration:none !important}
+#gnb .gnb_my_li .gnb_my_community a:hover{text-decoration:underline !important}
+#gnb .gnb_my_lyr.gnb_longid1 .gnb_my_community a{/*width:105px;*/}
+#gnb .gnb_my_lyr.gnb_longid1 .gnb_my_community a.gnb_pay{/* width:106px;*/}
+#gnb .gnb_my_lyr.gnb_longid2 .gnb_my_community a{width:115px}
+#gnb .gnb_my_lyr.gnb_longid2 .gnb_my_community a.gnb_pay{width:116px}
+#gnb.gnb_one .gnb_my_community a, #gnb.gnb_one_small .gnb_my_community a{margin-right: 0 !important;}
+.gnb_notice_li a.gnb_notice{display:block;width:15px;height:17px;padding:7px 9px 4px;text-decoration:none !important}
+.gnb_notice_li a.gnb_notice .gnb_ico_num{left:1px;top:0}
+.gnb_notice_li a.gnb_notice .gnb_icon{display:block;width:15px;height:17px;background-position:-3px -60px}
+.gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-38px -60px;text-decoration:none !important}
+.gnb_notice_li .gnb_notice_lyr{display:none;position:absolute;top:26px;right:-7px;width:297px;height:330px;padding:9px 4px 4px;background-position:-2px -584px;z-index:10;overflow:hidden}
+.gnb_notice_li .svc_scroll{height:291px;overflow:scroll;overflow-x:hidden;position:relative;zoom:1}
+.gnb_notice_li .svc_panel{width:100%;height:330px;overflow:hidden}
+.gnb_notice_li .svc_head{position:relative;height:36px;padding-left:15px;line-height:20px;border-bottom:1px solid #eaeaea;zoom:1}
+.gnb_notice_li .svc_head .gnb_tit{color:#6b6d70;margin-right:1px;line-height:36px}
+.gnb_notice_li .svc_head .task_right{position:absolute;right:8px;top:8px;font-size:0}
+.gnb_notice_li .svc_head .task_right button{height:20px;padding:0 6px;margin-left:4px;border:1px solid #ddd;color:#888;background-color:#fff;font-family:'�������', NanumGothic;font-size:12px;letter-spacing:-1px;line-height:18px;*line-height:16px;overflow:visible}
+.gnb_notice_li .svc_list .gnb_btn_remove i, .gnb_notice_li .svc_list .gnb_btn_remove span, .gnb_notice_li .svc_noti .gnb_ico_mail, .gnb_notice_li .svc_blank .svc_msg_box, .gnb_notice_li .svc_blank .gnb_v_guide{display:inline-block;*display:inline;*zoom:1}
+.gnb_notice_li .svc_list{margin-top:-1px}
+.gnb_notice_li .svc_list li{position:relative;padding:7px 34px 7px 15px;border-top:1px solid #eaeaea;line-height:18px}
+.gnb_notice_li .svc_list .gnb_new{background:#ffffd8}
+.gnb_notice_li .svc_list .gnb_unread .gnb_subject{color:#444}
+.gnb_notice_li .svc_list .gnb_unread .d_cnt{color:#ff630e}
+.gnb_notice_li .svc_list .gnb_unread a:hover .gnb_subject, .gnb_notice_li .svc_list .gnb_unread .gnb_unread a:hover .d_cnt{color:#390}
+.gnb_notice_li .svc_list .gnb_unread .svc_name{color:#444}
+.gnb_notice_li .svc_list a.gnb_list_cover{text-decoration:none !important;display:block;position:relative;zoom:1}
+.gnb_notice_li .svc_list a:hover .gnb_subject{text-decoration:underline}
+.gnb_notice_li .svc_list .gnb_subject{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;color:#adadad}
+.gnb_notice_li .svc_list .d_cnt{font-family:tahoma;font-size:10px}
+.gnb_notice_li .svc_list .gnb_info{color:#adadad}
+.gnb_notice_li .svc_list .svc_name{margin-right:3px;color:#adadad}
+.gnb_notice_li .svc_list .cchr{margin-right:3px}
+.gnb_notice_li .svc_list .dona{position:absolute;top:8px;right:34px;text-decoration:underline}
+.gnb_notice_li .svc_list .dona a{color:#adadad}
+.gnb_notice_li .svc_list .dona a:hover{color:#390}
+.gnb_notice_li .svc_list .gnb_ico_mail{width:14px;height:15px;font-size:0;line-height:0;color:#fff;vertical-align:top}
+.gnb_notice_li .svc_list .gnb_ico_mail.gnb_yes{background-position:-245px -17px}
+.gnb_notice_li .svc_list .gnb_ico_mail.gnb_no{background-position:-245px 4px}
+.gnb_notice_li .svc_list .gnb_btn_remove{position:absolute;right:4px;top:50%;z-index:100;margin-top:-13px;padding:10px;line-height:6px;font-size:0;background:none !important;border:0 !important}
+.gnb_notice_li .svc_list .gnb_btn_remove span, .gnb_notice_li .svc_list .gnb_btn_remove i{display:block !important;width:7px;height:7px;font-size:0;line-height:0;color:transparent;white-space:nowrap;overflow:hidden;vertical-align:top;background-position:-175px 0}
+.gnb_notice_li .svc_blank{position:absolute;top:104px;left:0;width:100%;white-space:nowrap;height:100px;font-size:0;text-align:center}
+.gnb_notice_li .svc_blank .svc_msg_box{white-space:normal;font-size:12px;width:100%}
+.gnb_notice_li .svc_blank .gnb_tit{display:block;color:#2f3743;font-size:14px;margin:0 0 15px}
+.gnb_notice_li .svc_blank .gnb_tit strong{font-weight:normal;color:#390}
+.gnb_notice_li .svc_blank .gnb_desc{line-height:19px;color:#2f3743;margin-bottom:7px}
+.gnb_notice_li .svc_blank .gnb_desc a, .gnb_notice_li .svc_blank .gnb_link{color:#390;text-decoration:underline}
+.gnb_notice_li .svc_blank .gnb_v_guide{vertical-align:middle;height:100%;width:0}
+.gnb_notice_li .svc_blank .gnb_link_wrap{text-align:center}
+.gnb_notice_li .svc_blank .gnb_link_wrap .gnb_link{display:block;width:40px;margin:0 auto !important;text-align:center}
+.gnb_notice_li .svc_loading{background:url(https://ssl.pstatic.net/static/www/2014/loading.gif) no-repeat #fff center center;position:absolute;top:33px;left:0;width:100%;height:245px}
+.gnb_notice_li .gnb_error{position:absolute;top:81px;left:2px;width:100%;color:#444;text-align:center}
+.gnb_notice_li .gnb_error .gnb_ico_error{display:inline-block;width:57px;height:57px;background-position:-280px -190px}
+.gnb_notice_li .gnb_error .gnb_tit{font-size:14px;margin:15px 0 11px}
+.gnb_notice_li .gnb_error .gnb_desc{margin-bottom:13px;line-height:18px}
+.gnb_notice_li .gnb_error .gnb_link{text-decoration:underline}
+.gnb_ly_alert{position:absolute;top:110px;left:13px;background-color:#fff;border:1px solid #b7b9bc;width:260px;padding:34px 0 20px;zoom:1;z-index:100}
+.gnb_ly_alert .gnb_msg{text-align:center;line-height:17px;margin-bottom:14px;color:#2f3743}
+.gnb_.ly_alert .gnb_btn_close{position:absolute;right:2px;top:0;*overflow:visible}
+.gnb_ly_alert .gnb_btns{text-align:center}
+.gnb_ly_alert .gnb_btns button{height:27px;line-height:27px;*line-height:22px;font-weight:bold;font-size:12px;padding:0 8px;color:#2f3743;border:1px solid #ddd;background-color:white}
+.gnb_ly_alert .gnb_btns button:first-child{margin-right:4px}
+.gnb_ly_alert .gnb_btn_close{position:absolute;right:2px;top:0;width:35px;border:0;background:none;cursor:pointer;border-radius:0;padding:10px}
+.gnb_ly_alert .gnb_btn_close i{display:block;width:15px;height:15px;font:0/0 a;color:transparent;white-space:nowrap;overflow:hidden;vertical-align:top;background-position:-240px -60px}
+.mail_li a.gnb_mail{display:block;width:20px;height:15px;padding:7px 9px 6px;text-decoration:none !important}
+.mail_li a.gnb_mail .gnb_icon{display:block;width:20px;height:15px;background-position:0px -95px}
+.mail_li a.gnb_mail:hover .gnb_icon{background-position:-35px -95px;text-decoration:none !important}
+.mail_li .gnb_ico_num{left:6px;top:0}
+.gnb_service_li{margin-right:0}
+.gnb_service_li a.gnb_service{display:block;width:16px;height:16px;padding:7px 9px 5px}
+.gnb_service_li a.gnb_service .gnb_icon{display:block;width:16px;height:16px;background-position:-2px -130px}
+.gnb_service_li a.gnb_service:hover .gnb_icon{background-position:-37px -130px;text-decoration:none !important}
+.gnb_service_li .gnb_service_lyr{display:none;position:absolute;top:27px;right:-7px;z-index:10}
+.gnb_favorite_search{width:301px;letter-spacing:-1px}
+.gnb_response .gnb_favorite_search{display:none}
+.gnb_favorite_area{height:93px;padding:8px 4px 0;background-position:0 0}
+.gnb_favorite_lstwrp{position:relative;padding:22px 1px 15px 15px;border-bottom:1px solid #ebebeb}
+.gnb_favorite_lstwrp .gnb_my_interface{top:3px !important;right:3px !important}
+.gnb_first_visit{position:absolute;top:0;left:0;width:293px;height:92px;background-position:0 -310px;z-index:200}
+.gnb_first_visit .gnb_close{position:absolute;top:0;right:0;display:block;width:32px;height:32px}
+.gnb_favorite_lst{zoom:1}
+.gnb_favorite_lst:after{display:block;clear:both;content:''}
+.gnb_favorite_lst li{float:left;width:65px;text-align:center;white-space:nowrap}
+.gnb_favorite_lst a{display:inline-block;text-align:center;font-weight:bold}
+.gnb_favorite_lst .gnb_add a{display:block;test-align:center;}
+.gnb_favorite_lst .gnb_add a span.ic_add{display:block;width:36px;height:36px;margin:0 auto 4px;background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: 0px 0px;background-repeat: no-repeat;width: 36px;height: 36px;vertical-align: top;}
+.gnb_favorite_lst .gnb_add a:hover span.ic_add{background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: -42px 0px;background-repeat: no-repeat;width: 36px;height: 36px;vertical-align: top;}
+.gnb_favorite_lst img{display:block;margin:0 auto 4px;vertical-align:top}
+.gnb_search_area{position:relative;z-index:200;padding:18px 4px 17px;background-position:-301px 0;background-repeat:repeat-y}
+.gnb_search_box{position:relative;z-index:101;margin:0 12px 16px 0;padding-left:10px;display:block;width:270px;height:35px;background-position:10px -190px}
+.gnb_search_box.over{background-position:10px -230px}
+.gnb_search_box.fcs{background-position:10px -270px}
+.gnb_search_box.fcs input{width:200px;font-size:16px;font-weight:bold;color:#444;outline:0}
+.gnb_search_box input{float:left;display:block;width:210px;height:22px;margin-top:6px;padding-left:10px;font-family:'�������',NamumGothic;letter-spacing:-1px;color:#adadad;font-size:13px;border:0;line-height:22px;background:transparent}
+.gnb_search_box .gnb_del_txt{position:absolute;top:8px;right:32px;display:block;width:17px;height:17px;background-position:-190px 0px}
+.gnb_search_box .gnb_del_txt:hover{background-position:-190px -20px}
+.gnb_search_box .gnb_pop_input{position:absolute;top:34px;left:10px;width:268px;height:170px;*height:172px;border:1px solid #cbc5c5;border-top:0;background:#fff;overflow-x:hidden;overflow-y:scroll;z-index:110}
+.gnb_search_box .gnb_pop_lst{padding:4px 0 2px}
+.gnb_search_box .gnb_pop_lst a{display:block;padding:6px 0 6px 10px;font-weight:bold}
+.gnb_search_box .gnb_pop_lst .on{background-color:#f5f5f5}
+.gnb_search_lstwrp{zoom:1;height:118px;padding-left:12px}
+.gnb_search_lstwrp:after{display:block;clear:both;content:''}
+.gnb_search_lstwrp .gnb_search_lst{float:left;width:69px;border-left:1px solid #eaeaea}
+.gnb_search_lstwrp .gnb_search_lst.gnb_first{width:64px;border:0}
+.gnb_search_lstwrp li{padding:12px 0 0 8px}
+.gnb_search_lstwrp li.gnb_first{font-weight:bold;padding-top:0}
+.gnb_search_lstwrp li a{display:inline-block;vertical-align:top}
+.gnb_banner{height:47px;margin:0;padding:0 18px;background-position:-301px 0;background-repeat:repeat-y}
+.gnb_banner .gnb_service_event{display:inline-block;border-top:1px solid #ebebeb}
+.gnb_linkwrp{padding:0 4px 4px;background-position:-602px 0}
+a.gnb_service_all:hover, a.gnb_service_all:visited, a.gnb_service_all:active, a.gnb_service_all:focus{text-decoration:none}
+.gnb_svc_more{display:none;position:absolute;top:4px;right:303px;width:589px;overflow:hidden;zoom:1;z-index:1000}
+.gnb_svc_more:after{display:block;clear:both;content:''}
+.gnb_response .gnb_svc_more{right:2px}
+.gnb_bg_top{height:6px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) no-repeat}
+.gnb_bg_btm{position:relative;height:6px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) no-repeat -1282px 0}
+.gnb_svc_more .gnb_svc_hd{position:relative;padding:0 18px 2px 23px;letter-spacing:-1px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) repeat-y -641px 0}
+.gnb_svc_more .gnb_svc_hd .gnb_svc_tit{display:block;padding:12px 0 13px;border-bottom:1px solid #ebebeb;font-size:14px;color:#222}
+.gnb_svc_more .gnb_svc_hd .link{position:absolute;top:14px;right:19px;font-size:12px;color:#444}
+.gnb_svc_more .gnb_svc_hd .link a{color:#444 !important;line-height:16px !important}
+.gnb_svc_more .gnb_svc_lstwrp{position:relative;height:283px;overflow:hidden;padding:15px 15px 0 20px;letter-spacing:-1px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) repeat-y -641px 0;zoom:1}
+.gnb_svc_more .gnb_svc_lstwrp:after{display:block;clear:both;content:''}
+.gnb_svc_more .gnb_svc_lstwrp li{height:15px;margin-bottom:5px;color:#6b6d70;white-space:nowrap;line-height:15px}
+.gnb_svc_more .gnb_svc_lstwrp li.gnb_event label{color:#444;font-weight:bold}
+.gnb_svc_more .gnb_svc_lstwrp li.gnb_event em.ic_gnb_new{display:inline-block;width:11px;height:11px;background-position:-215px 0px;margin:2px 0 0 4px;font-size:0;line-height:0;vertical-align:top}
+@media screen and (min-width: 0\0) { .gnb_svc_more .gnb_svc_lstwrp li.gnb_event em.ic{margin-top:3px} }
+.gnb_svc_more .gnb_svc_lstwrp .gnb_input_check{width:13px;height:13px;margin:2px 3px 0 3px;padding:0;vertical-align:top;-webkit-appearance:checkbox;}
+.gnb_svc_more .gnb_svc_lstwrp label{vertical-align:0px}
+.gnb_svc_more .gnb_svc_lstwrp .gnb_disabled strong{color:#a8acb0}
+.gnb_svc_more .gnb_svc_lstwrp .gnb_disabled li{color:#cbcbcb}
+.gnb_svc_more .gnb_svc_lst1{float:left;width:328px;height:280px}
+.gnb_svc_more .gnb_svc_lst1 ul{float:left;width:102px;min-height:260px;padding:5px 0 0 10px;border-left:1px solid #eee}
+.gnb_svc_more .gnb_svc_lst1 ul.gnb_first{padding-left:0;border:0}
+.gnb_svc_more .svc_lst2{float:left;position:relative;width:221px;border:1px solid #eee;background:#fbfbfb;zoom:1}
+.gnb_svc_more .svc_lst2:after{display:block;clear:both;content:''}
+.gnb_svc_more .svc_spc{float:left;position:relative;width:100px;min-height:254px;padding:9px 0 0 10px}
+.gnb_svc_more .svc_spc.gnb_first{border-right:1px solid #eee}
+.gnb_svc_more .svc_spc strong{height:20px;color:#2f3743;line-height:16px}
+.gnb_svc_more .svc_spc a:visited{color:#2f3743}
+.gnb_svc_more .svc_spc ul{padding:8px 0}
+.gnb_svc_more .svc_spc li{margin-bottom:0;padding-bottom:5px;color:#848689}
+.gnb_svc_more .svc_stroy{width:89px;margin-top:-5px;padding:12px 0 0;border-top:1px solid #eee}
+.gnb_svc_more .svc_btns{position:relative;height:33px;overflow:hidden;padding-top:5px;line-height:normal}
+.gnb_svc_more .svc_btnwrp{position:relative;*height:39px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) repeat-y -641px 0;padding:0 2px 0 4px}
+.gnb_svc_more .svc_btnwrp button{display:inline-block;width:60px;height:25px;border:0;vertical-align:top}
+.gnb_svc_more .svc_btnwrp .gnb_save{background-position:0 -160px}
+.gnb_svc_more .svc_btnwrp .gnb_close{margin-left:1px;background-position:-65px -160px}
+.gnb_svc_more .svc_btnwrp .gnb_return{position:absolute;top:5px;left:15px;background-position:-130px -160px}
+.gnb_type2 .gnb_notice_li a.gnb_notice .gnb_icon{background-position:-155px -120px}
+.gnb_type2 .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-155px -140px}
+.gnb_type2 .gnb_service_li .gnb_service .gnb_icon{background-position:-200px -120px}
+.gnb_type2 .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-200px -140px}
+.gnb_type2 .mail_li a.gnb_mail .gnb_icon{background-position:-175px -120px}
+.gnb_type2 .mail_li a.gnb_mail:hover .gnb_icon{background-position:-175px -140px}
+.gnb_dark .gnb_my_li .gnb_my .gnb_name, .gnb_dark .gnb_login_li .gnb_btn_login .gnb_txt{color:#fff}
+.gnb_dark .gnb_notice_li a.gnb_notice .gnb_icon{background-position:-220px -140px}
+.gnb_dark .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-220px -120px}
+.gnb_dark .mail_li a.gnb_mail .gnb_icon{background-position:-238px -141px}
+.gnb_dark .mail_li a.gnb_mail:hover .gnb_icon{background-position:-238px -121px}
+.gnb_dark .gnb_service_li .gnb_service .gnb_icon{background-position:-261px -140px}
+.gnb_dark .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-261px -120px}
+.gnb_dark_type2 .gnb_my_li .gnb_my .gnb_name, .gnb_dark_type2 .gnb_login_li .gnb_btn_login .gnb_txt{color:#fff}
+.gnb_dark_type2 .gnb_notice_li a.gnb_notice .gnb_icon{background-position:-220px -120px}
+.gnb_dark_type2 .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-220px -140px}
+.gnb_dark_type2 .mail_li a.gnb_mail .gnb_icon{background-position:-238px -121px}
+.gnb_dark_type2 .mail_li a.gnb_mail:hover .gnb_icon{background-position:-238px -141px}
+.gnb_dark_type2 .gnb_service_li .gnb_service .gnb_icon{background-position:-261px -120px}
+.gnb_dark_type2 .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-261px -140px;}
+.gnb_dark .gnb_notice_li a.gnb_notice, .gnb_dark_type2 .gnb_notice_li a.gnb_notice {width: 17px;height: 19px;padding: 6px 8px 3px;}
+.gnb_dark .gnb_notice_li a.gnb_notice .gnb_icon, .gnb_dark_type2 .gnb_notice_li a.gnb_notice .gnb_icon {width: 17px;height: 19px;}
+.gnb_dark .mail_li a.gnb_mail, .gnb_dark_type2 .mail_li a.gnb_mail {width: 22px;height: 16px;padding: 7px 8px 4px;}
+.gnb_dark .mail_li a.gnb_mail .gnb_icon, .gnb_dark_type2 .mail_li a.gnb_mail .gnb_icon {width: 22px;height: 16px;}
+.gnb_dark .gnb_service_li a.gnb_service, .gnb_dark_type2 .gnb_service_li a.gnb_service {width: 18px;height: 18px;padding: 6px 8px 4px;}
+.gnb_dark .gnb_service_li .gnb_service .gnb_icon, .gnb_dark_type2 .gnb_service_li .gnb_service .gnb_icon {width: 18px;height: 18px;}
+#gnb.gnb_one .gnb_my_li .gnb_my .gnb_name, #gnb.gnb_one_small .gnb_my_li .gnb_my .gnb_name, #gnb.gnb_one .gnb_login_li .gnb_btn_login .gnb_txt, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login .gnb_txt{color:#fff}
+#gnb.gnb_one .gnb_login_li, #gnb.gnb_one_small .gnb_login_li {height: 28px;}
+#gnb.gnb_one .gnb_login_li .gnb_btn_login, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login, #gnb.gnb_one .gnb_login_li .gnb_bg, #gnb.gnb_one_small .gnb_login_li .gnb_bg, #gnb.gnb_one .gnb_login_li .gnb_bdr, #gnb.gnb_one_small .gnb_login_li .gnb_bdr, #gnb.gnb_one .gnb_login_li .gnb_txt, #gnb.gnb_one_small .gnb_login_li .gnb_txt {width: 53px;height: 23px;}
+#gnb.gnb_one .gnb_login_li .gnb_btn_login .gnb_txt, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login .gnb_txt {top: -1px;width: 53px;height: 23px;line-height: 28px;font-size: 11px;}
+#gnb.gnb_one .gnb_login_li, #gnb.gnb_one_small .gnb_login_li, #gnb.gnb_one .gnb_my_li, #gnb.gnb_one_small .gnb_my_li, #gnb.gnb_one .gnb_notice_li, #gnb.gnb_one_small .gnb_notice_li, #gnb.gnb_one .mail_li, #gnb.gnb_one_small .mail_li, #gnb.gnb_one .gnb_service_li, #gnb.gnb_one_small .gnb_service_li{margin-right: 0;margin-left: 0; background: url(https://ssl.pstatic.net/static/common/gnb/bg_one_line.png) repeat-y right 0;}
+#gnb.gnb_one .gnb_login_li a, #gnb.gnb_one_small .gnb_login_li a, #gnb.gnb_one .gnb_my_li a, #gnb.gnb_one_small .gnb_my_li a, #gnb.gnb_one .gnb_notice_li a, #gnb.gnb_one_small .gnb_notice_li a, #gnb.gnb_one .mail_li a, #gnb.gnb_one_small .mail_li a, #gnb.gnb_one .gnb_service_li a, #gnb.gnb_one_small .gnb_service_li a {margin-right: 1px;}
+#gnb.gnb_one .gnb_login_li.hover .gnb_service, #gnb.gnb_one_small .gnb_login_li.hover .gnb_service, #gnb.gnb_one .gnb_login_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_login_li.hover .gnb_notice, #gnb.gnb_one .gnb_login_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_login_li.hover .gnb_mail, #gnb.gnb_one .gnb_login_li.hover .gnb_service, #gnb.gnb_one_small .gnb_login_li.hover .gnb_service, #gnb.gnb_one .gnb_my_li.hover .gnb_service, #gnb.gnb_one_small .gnb_my_li.hover .gnb_service, #gnb.gnb_one .gnb_my_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_my_li.hover .gnb_notice, #gnb.gnb_one .gnb_my_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_my_li.hover .gnb_mail, #gnb.gnb_one .gnb_my_li.hover .gnb_service, #gnb.gnb_one_small .gnb_my_li.hover .gnb_service, #gnb.gnb_one .gnb_notice_li.hover .gnb_service, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_service, #gnb.gnb_one .gnb_notice_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_notice, #gnb.gnb_one .gnb_notice_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_mail, #gnb.gnb_one .gnb_notice_li.hover .gnb_service, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_service, #gnb.gnb_one .mail_li.hover .gnb_service, #gnb.gnb_one_small .mail_li.hover .gnb_service, #gnb.gnb_one .mail_li.hover .gnb_notice, #gnb.gnb_one_small .mail_li.hover .gnb_notice, #gnb.gnb_one .mail_li.hover .gnb_mail, #gnb.gnb_one_small .mail_li.hover .gnb_mail, #gnb.gnb_one .mail_li.hover .gnb_service, #gnb.gnb_one_small .mail_li.hover .gnb_service, #gnb.gnb_one .gnb_service_li.hover .gnb_service, #gnb.gnb_one_small .gnb_service_li.hover .gnb_service, #gnb.gnb_one .gnb_service_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_service_li.hover .gnb_notice, #gnb.gnb_one .gnb_service_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_service_li.hover .gnb_mail, #gnb.gnb_one .gnb_service_li.hover .gnb_service, #gnb.gnb_one_small .gnb_service_li.hover .gnb_service {background: url(https://ssl.pstatic.net/static/common/gnb/bg_one_hover.png) repeat 0 0;}
+#gnb.gnb_one .gnb_my_li .gnb_my .gnb_name, #gnb.gnb_one_small .gnb_my_li .gnb_my .gnb_name{margin:0 0 0 1px;}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice, #gnb.gnb_one_small .gnb_notice_li a.gnb_notice{width:17px;height:19px}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice .gnb_icon, #gnb.gnb_one_small .gnb_notice_li a.gnb_notice .gnb_icon{width:17px;height:19px;background-position:-284px -119px}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice:hover .gnb_icon, #gnb.gnb_one_small .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-284px -119px}
+#gnb.gnb_one .mail_li a.gnb_mail, #gnb.gnb_one_small .mail_li a.gnb_mail{width:21px;height:17px}
+#gnb.gnb_one .mail_li a.gnb_mail .gnb_icon, #gnb.gnb_one_small .mail_li a.gnb_mail .gnb_icon{width:21px;height:17px;background-position:-302px -120px}
+#gnb.gnb_one .mail_li a.gnb_mail:hover .gnb_icon, #gnb.gnb_one_small .mail_li a.gnb_mail:hover .gnb_icon{background-position:-302px -120px}
+#gnb.gnb_one .gnb_service_li .gnb_service, #gnb.gnb_one_small .gnb_service_li .gnb_service{width:17px;height:17px}
+#gnb.gnb_one .gnb_service_li .gnb_service .gnb_icon, #gnb.gnb_one_small .gnb_service_li .gnb_service .gnb_icon{width:17px;height:17px;background-position:-324px -120px}
+#gnb.gnb_one .gnb_service_li .gnb_service:hover .gnb_icon, #gnb.gnb_one_small .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-324px -120px}
+#gnb.gnb_one .gnb_my_lyr, #gnb.gnb_one_small .gnb_my_lyr, #gnb.gnb_one .gnb_notice_lyr, #gnb.gnb_one_small .gnb_notice_lyr, #gnb.gnb_one .gnb_service_lyr, #gnb.gnb_one_small .gnb_service_lyr {right: 7px;}
+#gnb.gnb_one .gnb_ico_num, #gnb.gnb_one_small .gnb_ico_num{width:34px;top:10px;right:3px;left:auto;vertical-align:top}
+#gnb.gnb_one .gnb_ico_num .gnb_ico_new, #gnb.gnb_one_small .gnb_ico_num .gnb_ico_new{vertical-align:top;height:13px;background-position:-332px -60px;}
+#gnb.gnb_one .gnb_ico_num .gnb_count, #gnb.gnb_one_small .gnb_ico_num .gnb_count {height: 13px;padding: 0 6px 0 2px;background-position: 100% -60px;font-size: 10px;font-weight: normal;}
+#gnb.gnb_one .gnb_ico_num .plus, #gnb.gnb_one_small .gnb_ico_num .plus{margin:1px 0 0 2px}
+#gnb.gnb_one .ico_arrow{top:48px}
+#gnb.gnb_one .gnb_my_lyr, #gnb.gnb_one .gnb_notice_lyr{top:47px}
+#gnb.gnb_one .gnb_service_lyr{top:48px;}
+#gnb.gnb_one .gnb_login_li{padding:16px 21px 10px 1px;}
+#gnb.gnb_one .gnb_my_li{padding:12px 20px 12px 2px}
+#gnb.gnb_one .gnb_my_li .ico_arrow{top:34px}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice{padding:18px 19px 17px 19px}
+#gnb.gnb_one .mail_li a.gnb_mail{padding:19px 17px 18px 17px}
+#gnb.gnb_one .gnb_service_li .gnb_service{padding:19px 19px 18px 19px}
+#gnb.gnb_one_small .ico_arrow{top:33px}
+#gnb.gnb_one_small .gnb_my_lyr, #gnb.gnb_one_small .gnb_notice_lyr{top:32px}
+#gnb.gnb_one_small .gnb_service_lyr{top:33px}
+#gnb.gnb_one_small .gnb_login_li{padding:7px 12px 4px 2px}
+#gnb.gnb_one_small .gnb_my_li{padding:5px 20px 4px 2px}
+#gnb.gnb_one_small .gnb_my_li .ico_arrow{top:27px}
+#gnb.gnb_one_small .gnb_notice_li a.gnb_notice{padding:10px 11px 10px 12px}
+#gnb.gnb_one_small .mail_li a.gnb_mail{padding:11px 10px 11px 9px}
+#gnb.gnb_one_small .gnb_service_li .gnb_service{padding:11px 12px 11px 11px}
+#gnb.gnb_one_small .gnb_ico_num{top:5px;right:6px;width:24px}
+#gnb.gnb_one_flat .gnb_login_li,
+#gnb.gnb_one_flat .gnb_my_li,
+#gnb.gnb_one_flat .gnb_notice_li,
+#gnb.gnb_one_flat .mail_li,
+#gnb.gnb_one_flat .gnb_service_li {border-color: #e0e0e0;}
+#gnb.gnb_one_flat .gnb_notice_li.hover,
+#gnb.gnb_one_flat .mail_li.hover,
+#gnb.gnb_one_flat .gnb_service_li.hover {background-color: rgba(0, 0, 0, 0.04);}
+#gnb.gnb_one_flat .gnb_service_li .gnb_service .gnb_icon,
+#gnb.gnb_one_flat .gnb_service_li .gnb_service:hover .gnb_icon {background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: -84px -24px;background-repeat: no-repeat; width: 16px;height: 16px;vertical-align: top; margin: 0 1px;}
+#gnb.gnb_one_flat .mail_li a.gnb_mail .gnb_icon,
+#gnb.gnb_one_flat .mail_li a.gnb_mail:hover .gnb_icon {background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: 0px -42px;background-repeat: no-repeat;width: 20px;height: 16px;vertical-align: top;margin: 0 1px;}
+#gnb.gnb_one_flat .gnb_notice_li a.gnb_notice .gnb_icon,
+#gnb.gnb_one_flat .gnb_notice_li a.gnb_notice:hover .gnb_icon {background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: -84px 0px;background-repeat: no-repeat;width: 16px;height: 18px;vertical-align: top;margin: 0 1px;}
+#gnb.gnb_one_flat .gnb_my_li .gnb_my .gnb_name,
+#gnb.gnb_one_flat .gnb_login_li .gnb_btn_login .gnb_txt {color: #666;}</style><script type="text/javascript" src="https://ssl.pstatic.net/tveta/libs/glad/prod/gfp-ext-nda.js?sv=0.2.2" async=""></script><script src="https://static.nid.naver.com/getLoginStatus.nhn?callback=showGNB&amp;charset=utf-8&amp;svc=gnbtest&amp;template=gnb_utf8&amp;one_naver=1" id="gnb_user_data" charset="utf-8"></script></head>
+
+
+
+
+<body onload="getGNB();">
+
+
+
+<script type="text/javascript">
+	document.domain = 'naver.com';
+	var nclk_evt = 3;
+	nclk_do();
+</script>
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+var nsc="finance.stockend";
+
+
+var ccsrv="cc.naver.com";
+
+
+
+
+	var gnb_service='finance';
+
+
+
+var gnb_logout=document.URL; //GNB���� �α׾ƿ� �� redirect �� URL
+var gnb_searchbox='off'; //�̴� �˻�â�� on ���� off ����. default�� off
+var gnb_shortnick='off'; //�г��� ������(10��)�� on���� off ����. default�� off.
+
+
+var gnb_naverme_layer_open_callback = function(){
+	   var naverLayerSize = gnbNaverMeLayer.getLayerSize();
+
+		var me_layers = document.getElementById("me_layers");
+		me_layers.width=naverLayerSize.width;
+		me_layers.height=naverLayerSize.height;};
+
+var gnb_naverme_layer_close_callback = function(){
+
+			var me_layers = document.getElementById("me_layers");
+			me_layers.width="0";
+			me_layers.height="0";};
+</script>
+
+
+<div id="u_skip">
+	<a href="#menu" tabindex="1"><span>���� �޴��� �ٷΰ���</span></a>
+
+
+	<a href="#middle" tabindex="2"><span>�������� �ٷΰ���</span></a>
+
+
+
+</div>
+
+
+<div id="header">
+	<div class="snb_area">
+		<div class="snb_inner">
+			<div id="gnb_area">
+				<div id="gnb"><strong class="blind">����� ��ũ</strong><ul class="gnb_lst" id="gnb_lst" style="display:none"><li class="gnb_login_li" id="gnb_login_layer"><a class="gnb_btn_login" href="#" id="gnb_login_button"><span class="gnb_bg"></span><span class="gnb_bdr"></span><span class="gnb_txt">�α���</span></a></li><li class="gnb_my_li" id="gnb_my_layer" style="display:none"><div class="gnb_my_namebox" id="gnb_my_namebox"><a href="javascript:;" class="gnb_my" onclick="gnbUserLayer.clickToggle(); return false;"><img id="gnb_profile_img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRF8PDw5ubm+vr6+/v76enp+Pj47e3t5+fn9/f37Ozs9PT08vLy7+/v6urq9fX15OTk/f39pqwodgAAAQNJREFUeNrs11EOgyAMgOEWUAF19f6n3cMeplJHoSZbsv4H+DIWaCNsNwcGGmiggQZ+D/Q5reuasr8H9ID0CsHfALpA74JTgwPSPnRK0Ac6FrwOXOjcogIdlTkNuDDgogGRAVEBDsQ19IMzC879ILAgGNgAZhbMP3RttonxJs1Lgea/sDYcyreHXjW+oPUHVid2MWC1K+A0sqsDW7CksGmlCNZoFt9pIfjYgY8bwMMexUENQuOtqYCxfHtT7AddYodDcp0gIPEh9IBxous+nBuaTis4Nw/OSLVwloN+JEmjGJR5FyIDRpIWZeAoBkcZGMRgkIEkz0D7GjXQQAMN/GvwKcAAEGGHJh0mmaAAAAAASUVORK5CYII='" width="26" height="26" alt="�� ������ �̹���"><span id="gnb_profile_filter_mask" class="filter_mask"></span> <span class="gnb_name" id="gnb_name1"></span><em class="blind">������ ����</em><span class="ico_arrow"></span></a><a href="#" class="gnb_emp" id="gnb_emp">(����������)</a></div><div class="gnb_my_lyr" id="gnb_my_lyr"><div class="gnb_my_content"><div class="gnb_img_area"><span class="gnb_mask"></span><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRF8PDw5ubm+vr6+/v76enp+Pj47e3t5+fn9/f37Ozs9PT08vLy7+/v6urq9fX15OTk/f39pqwodgAAAQNJREFUeNrs11EOgyAMgOEWUAF19f6n3cMeplJHoSZbsv4H+DIWaCNsNwcGGmiggQZ+D/Q5reuasr8H9ID0CsHfALpA74JTgwPSPnRK0Ac6FrwOXOjcogIdlTkNuDDgogGRAVEBDsQ19IMzC879ILAgGNgAZhbMP3RttonxJs1Lgea/sDYcyreHXjW+oPUHVid2MWC1K+A0sqsDW7CksGmlCNZoFt9pIfjYgY8bwMMexUENQuOtqYCxfHtT7AddYodDcp0gIPEh9IBxous+nBuaTis4Nw/OSLVwloN+JEmjGJR5FyIDRpIWZeAoBkcZGMRgkIEkz0D7GjXQQAMN/GvwKcAAEGGHJh0mmaAAAAAASUVORK5CYII='" width="80" height="80" alt="������ �̹���"><a href="https://nid.naver.com/user2/api/naverProfile.nhn?m=checkIdType" class="gnb_change"><span class="blind">������ ���� ����</span></a></div><div class="gnb_txt_area"><p class="gnb_account"><span class="gnb_name" id="gnb_name2"><a class="gnb_nick" href="https://nid.naver.com/user2/api/naverProfile.nhn?m=checkIdType">_</a>��</span><a class="gnb_btn_login" href="#" id="gnb_logout_button"><span class="gnb_bg"></span><span class="gnb_bdr"></span><span class="gnb_txt">�α׾ƿ�</span></a></p><a href="https://mail.naver.com" class="gnb_mail_address">@naver.com</a><ul class="gnb_edit_lst"><li class="gnb_info"><a href="https://nid.naver.com/user2/help/myInfo.nhn?menu=home">������</a></li><li class="gnb_secure" id="gnb_secure_lnk"><a href="https://nid.naver.com/user2/help/myInfo.nhn?m=viewSecurity&amp;menu=security">���ȼ���</a></li><li class="gnb_cert" id="gnb_cert_lnk"><a href="https://nid.naver.com/user2/eSign/v1/home/land">��������</a></li></ul><div class="gnb_pay_check" id="gnb_pay_check"><p class="gnb_membership" style="display: none;" id="gnb_membership"><a href="https://nid.naver.com/membership/my" class="gnb_my_membership"><i class="blind">���̹� �����</i></a></p><em>N Pay</em><a href="https://pay.naver.com" id="gnb_pay_point"><span style="display: none">�� ��������Ʈ</span></a></div></div></div><div class="gnb_my_community"><a href="https://blog.naver.com/MyBlog.naver" class="gnb_blog">�� ��α�</a><a href="https://section.cafe.naver.com" class="gnb_cafe">������ ī��</a><a href="https://pay.naver.com" class="gnb_pay"><span>N Pay</span></a></div><a href="#" class="gnb_my_interface" style="display:none"><span class="blind">ȯ�漳��</span></a></div><iframe id="gnb_my_lyr_iframe" title="�� ������" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="top:34px;right:-4px;width:320px;height:158px;display:none;opacity:0;-ms-filter:alpha(opacity=0)"></iframe></li><li class="gnb_notice_li" id="gnb_notice_layer" style="display:none"><a href="javascript:;" class="gnb_notice" onclick="gnbNaverMeLayer.clickToggle(); return false;"><span class="blind">�˸�</span><span class="gnb_icon"></span><em class="gnb_ico_num" id="gnb_me_menu" style="display:none"><span class="gnb_ico_new"><span class="gnb_count" id="gnb_me_count"></span></span></em><span class="ico_arrow"></span></a><div class="gnb_notice_lyr" id="gnb_notice_lyr"><div class="svc_noti svc_panel"><div class="svc_scroll"><div class="svc_head"><strong class="gnb_tit">��ü �˸�</strong><div class="task_right"><button onclick="gnbNaverMeLayer.deleteReadList(this, event);" id="gnb_btn_read_noti_del">���� �˸� ����</button><button onclick="gnbNaverMeLayer.showDeleteAlert();" id="gnb_btn_all_noti_del">��� ����</button></div></div><div class="svc_body" id="gnb_naverme_layer"></div></div><div class="gnb_ly_alert" id="gnb_ly_alert" style="display: none;"><p class="gnb_msg"><strong>�˸��� ��� �����Ͻðڽ��ϱ�?</strong></p><div class="gnb_btns"><button id="ly_alert_confirm" onclick="gnbNaverMeLayer.deleteAllList(this, event);">Ȯ��</button><button onclick="gnbNaverMeLayer.hideDeleteAlert();">���</button></div><button class="gnb_btn_close" onclick="gnbNaverMeLayer.hideDeleteAlert();"><i>���̾� �ݱ�</i></button></div><a href="https://noti.naver.com/index.nhn" class="gnb_notice_all">�� �˸� ��ü����</a></div></div><iframe id="gnb_notice_lyr_iframe" title="�� ������" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="top:34px;right:-4px;width:299px;height:332px;display:none;opacity:0;-ms-filter:alpha(opacity=0)"></iframe></li><li class="mail_li" id="gnb_mail_layer" style="display:none"><a href="https://mail.naver.com" class="gnb_mail"><span class="blind">����</span><span class="gnb_icon"></span><em class="gnb_ico_num" id="gnb_mail_menu" style="display:none"><span class="gnb_ico_new"><span class="gnb_count" id="gnb_mail_count"></span></span></em></a></li><li class="gnb_service_li" id="gnb_service_layer"><a href="javascript:;" class="gnb_service" onclick="gnbMoreLayer.clickToggle(); return false;"><span class="blind">���� ������</span><span class="gnb_icon"></span><span class="ico_arrow"></span></a><div class="gnb_service_lyr" id="gnb_service_lyr"><div class="gnb_favorite_search" id="gnb_favorite_search"><div class="gnb_favorite_area"><div class="gnb_favorite_lstwrp"><div class="gnb_first_visit" style="display:none"><span class="blind">������ ���ã�⸦ �߰��� ������!</span><a href="#" class="gnb_close"><span class="blind">�ݱ�</span></a></div><strong class="blind">���ã�� ����</strong><ul class="gnb_favorite_lst" id="gnb_favorite_lst"><li class="gnb_add"><a href="#"><span class="ic_add"></span>�߰�</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>�߰�</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>�߰�</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>�߰�</a></li></ul><a href="#" class="gnb_my_interface" onclick="gnbMoreLayer.clickToggleWhole(); return false;"><span class="blind">���ã�� ����</span></a></div></div><div class="gnb_search_area"><div class="gnb_search_box" onmouseover="gnb_search.mouseOver(this);" onmouseout="gnb_search.mouseOut(this);"><input id="gnb_svc_search_input" type="text" title="���� �˻�" value="�� ���� ���񽺸� �����ϰ� �����ϼ���!" onfocus="gnb_search.clearInput(this);" onblur="gnb_search.resetInput(this);" onkeydown="gnb_search.keyDown(event);" onkeyup="gnb_search.keyUp(event);"><a href="#" class="gnb_del_txt" id="gnb_del_txt" style="display:none"><span class="blind">����</span></a><div class="gnb_pop_input" id="gnb_pop_input" tabindex="0" onfocus="gnb_search.searchPopOnMouse = true; return false;" onfocusout="gnb_search.searchPopOnMouse = false; return false;" onmouseover="gnb_search.searchPopOnMouse = true; return false;" onmouseout="gnb_search.searchPopOnMouse = false; return false;" style="display:none"><ul class="gnb_pop_lst"></ul></div></div><div id="gnb_search_lstwrp" class="gnb_search_lstwrp"><ul class="gnb_search_lst gnb_first"><li class="gnb_first"><a href="https://cafe.naver.com/">ī��</a></li><li><a href="https://news.naver.com/">����</a></li><li><a href="https://map.naver.com/">����</a></li><li><a href="https://sports.news.naver.com/">������</a></li><li><a href="https://game.naver.com/">����</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="https://section.blog.naver.com/">��α�</a></li><li><a href="https://post.naver.com/main.nhn">����Ʈ</a></li><li><a href="https://dict.naver.com/">����</a></li><li><a href="https://kin.naver.com/">����iN</a></li><li><a href="https://n.weather.naver.com/">����</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="https://mail.naver.com/">����</a></li><li><a href="https://stock.naver.com/">����</a></li><li><a href="https://land.naver.com/">�ε���</a></li><li><a href="https://vibe.naver.com/today/">VIBE</a></li><li><a href="https://book.naver.com">å</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="https://shopping.naver.com/">����</a></li><li><a href="https://comic.naver.com/">����</a></li><li><a href="https://movie.naver.com/">��ȭ</a></li><li><a href="https://mybox.naver.com/">MYBOX</a></li><li><a href="https://auto.naver.com/">�ڵ���</a></li></ul></div></div><div class="gnb_banner"><a href="https://campaign.naver.com/npay/rediret/index.nhn" class="gnb_service_event"><img id="gnb_promo" alt="N����, �̺�Ʈ �����ϸ� ����Ʈ ����!" width="265" height="47" src="https://ssl.pstatic.net/static/common/gnb/banner/promo_npay_200108.png"></a></div><div class="gnb_linkwrp"><a href="https://www.naver.com/more.html" class="gnb_service_all" id="gnb_service_all">��ü ���� ����</a></div></div><div class="gnb_svc_more" id="gnb_svc_more" style=""><strong class="blind">���̹� �ֿ� ����</strong><div class="gnb_bg_top"></div><div class="gnb_svc_hd" id="gnb_svc_hd" tabindex="0"><strong class="gnb_svc_tit">�ٷΰ��� ����</strong><span class="link"><a href="https://www.naver.com/more.html">��ü ���� ����</a></span></div><div class="gnb_svc_lstwrp"><div class="gnb_svc_lst1"><ul class="gnb_first"><li><input type="checkbox" id="nsvc_game" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_game">����</label></li><li><input type="checkbox" id="nsvc_weather" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_weather">����</label></li><li><input type="checkbox" id="nsvc_shopping" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_shopping">���̹�����</label></li><li><input type="checkbox" id="nsvc_navercast" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_navercast">���̹�ĳ��Ʈ</label></li><li class="gnb_event"><input type="checkbox" id="nsvc_naverpay" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_naverpay">���̹�����<em class="ic_gnb_new">New</em></label></li><li><input type="checkbox" id="nsvc_mybox" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_mybox">���̹� MYBOX</label></li><li><input type="checkbox" id="nsvc_news" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_news">����</label></li><li><input type="checkbox" id="nsvc_comic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_comic">��ȭ/����</label></li><li><input type="checkbox" id="nsvc_memo" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_memo">�޸�</label></li><li><input type="checkbox" id="nsvc_mail" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_mail">����</label></li><li><input type="checkbox" id="nsvc_music" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_music">����</label></li><li><input type="checkbox" id="nsvc_land" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_land">�ε���</label></li><li><input type="checkbox" id="nsvc_bookmark" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_bookmark">�ϸ�ũ</label></li></ul><ul class=""><li><input type="checkbox" id="nsvc_blog" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_blog">��α�</label></li><li><input type="checkbox" id="nsvc_dic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_dic">����</label></li><li><input type="checkbox" id="nsvc_software" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_software">����Ʈ����</label></li><li><input type="checkbox" id="nsvc_smartboard" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_smartboard">����Ʈ����</label></li><li><input type="checkbox" id="nsvc_sports" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_sports">������</label></li><li><input type="checkbox" id="nsvc_series" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_series">�ø���</label></li><li><input type="checkbox" id="nsvc_serieson" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_serieson">�ø���on</label></li><li><input type="checkbox" id="nsvc_ya9" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_ya9">�߱�9��</label></li><li><input type="checkbox" id="nsvc_movie" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_movie">��ȭ</label></li><li><input type="checkbox" id="nsvc_office" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_office">���ǽ�</label></li><li><input type="checkbox" id="nsvc_novel" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_novel">���Ҽ�</label></li><li><input type="checkbox" id="nsvc_auto" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_auto">�ڵ���</label></li><li><input type="checkbox" id="nsvc_contact" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_contact">�ּҷ�</label></li></ul><ul class=""><li><input type="checkbox" id="nsvc_finance" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_finance">����(����)</label></li><li><input type="checkbox" id="nsvc_map" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_map">����</label></li><li><input type="checkbox" id="nsvc_kin" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_kin">����iN</label></li><li><input type="checkbox" id="nsvc_terms" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_terms">���Ĺ��</label></li><li><input type="checkbox" id="nsvc_book" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_book">å</label></li><li><input type="checkbox" id="nsvc_cafe" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_cafe">ī��</label></li><li><input type="checkbox" id="nsvc_calendar" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_calendar">Ķ����</label></li><li><input type="checkbox" id="nsvc_navertv" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_navertv">���̹�TV</label></li></ul></div><div class="svc_lst2"><div class="svc_spc gnb_first"><strong><a href="https://dict.naver.com/">���л���</a></strong><ul class=""><li><input type="checkbox" id="nsvc_krdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_krdic">�������</label></li><li><input type="checkbox" id="nsvc_endic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_endic">����/��������</label></li><li><input type="checkbox" id="nsvc_hanja" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_hanja">���ڻ���</label></li><li><input type="checkbox" id="nsvc_jpdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_jpdic">�Ͼ����</label></li><li><input type="checkbox" id="nsvc_cndic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_cndic">�߱������</label></li><li><input type="checkbox" id="nsvc_frdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_frdic">�����������</label></li><li><input type="checkbox" id="nsvc_dedic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_dedic">���Ͼ����</label></li><li><input type="checkbox" id="nsvc_rudic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_rudic">���þƾ����</label></li><li><input type="checkbox" id="nsvc_vndic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_vndic">��Ʈ�������</label></li><li><input type="checkbox" id="nsvc_spdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_spdic">�����ξ����</label></li><li><input type="checkbox" id="nsvc_papago" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_papago">���İ�</label></li></ul></div><div class="svc_spc"><strong>�α�/�űԼ���</strong><ul class=""><li><input type="checkbox" id="nsvc_grafolio" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_grafolio">�׶�������</label></li><li><input type="checkbox" id="nsvc_post" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_post">����Ʈ</label></li><li><input type="checkbox" id="nsvc_band" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_band">���</label></li><li><input type="checkbox" id="nsvc_line" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_line">����</label></li><li class="gnb_event"><input type="checkbox" id="nsvc_vibe" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_vibe">VIBE<em class="ic_gnb_new">New</em></label></li><li><input type="checkbox" id="nsvc_pcontents" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_pcontents">�����̾�������</label></li></ul></div></div></div><div class="svc_btnwrp"><div class="svc_btns"><button class="gnb_save" onclick="if(gnbFavorite.addService()){gnbMoreLayer.clickToggleWhole()} return false;"><strong class="blind">Ȯ��</strong></button><button class="gnb_close" onclick="gnbFavorite.cancel(); return false;"><span class="blind">���</span></button><button class="gnb_return" onclick="gnbFavorite.resetService(); return false;"><span class="blind">�ʱ� �������� ����</span></button></div></div><div class="gnb_bg_btm"></div></div></div><iframe id="gnb_service_lyr_iframe" title="�� ������" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="display:none;top:34px;right:297px;width:585px;height:385px;opacity:0;-ms-filter:alpha(opacity=0)"></iframe><iframe id="gnb_svc_more_iframe" title="�� ������" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="display:none;top:34px;right:-4px;width:295px;height:385px;opacity:0;-ms-filter:alpha(opacity=0)"></iframe></li></ul>
+
+
+				</div>
+			</div>
+
+			<div class="sta">
+				<h1 class="logo"> <a href="https://www.naver.com/" class="logo_naver" onclick="clickcr(this, 'STA.naver', '', '', event);"><span class="blind">���̹�</span></a>
+					<a href="/" class="logo_service" onclick="clickcr(this, 'STA.finance', '', '', event);"><span class="blind">����</span></a> </h1>
+				<form name="search" action="/search/search.nhn" method="get" onsubmit="return delayed_submit(this)" style="margin:0; padding:0;">
+					<fieldset>
+						<legend>�˻�</legend>
+						<div class="snb_search_box">
+							<div class="snb_search_box_sub">
+								<input id="stock_items" type="text" title="�˻�" name="query" value="������������ݵ��ȯ����������� �Է�" accesskey="s" class="snb_search_text snb_default" autocomplete="off">
+								<a id="nautocomplete" href="#" onclick="return false" class="btn_arrow"><span class="blind">�ڵ��ϼ� ��ġ��</span></a>
+							</div>
+							<div class="auto_area">
+								<h2 class="blind">�ڵ��ϼ�</h2>
+								<iframe id="autoFrame" src="/ac/reatcmp.nhn?menu=stockend&amp;submenu=" scrolling="no" height="0" frameborder="0" width="400" style="display: none;" marginheight="0" marginwidth="0" title="�ڵ��ϼ�"></iframe>
+							</div>
+							<button type="submit" class="snb_search_btn" onclick="clickcr(this, 'STA.search', '', '', event);" alt="�˻�"><span class="blind">�˻�</span></button>
+							<a href="#" target="_blank" class="snb_search_btn-total" onclick="itegrationSearch();clickcr(this, 'STA.nx', '', '', event);return false;">���հ˻�</a>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="lnb_area ">
+		<div class="lnb_inner">
+			<div id="menu">
+				<ul class="menu">
+					<li class="m1 first "><a href="/" onclick="clickcr(this, 'LNB.home', '', '', event);"><span class="tx">���� Ȩ</span></a></li>
+					<li class="m2 on"><a href="/sise/" onclick="clickcr(this, 'LNB.sise', '', '', event);"><span class="tx">��������</span></a></li>
+					<li class="m3 "><a href="/world/" onclick="clickcr(this, 'LNB.world', '', '', event);"><span class="tx">�ؿ�����</span></a></li>
+					<li class="m4 "><a href="/marketindex/" onclick="clickcr(this, 'LNB.market', '', '', event);"><span class="tx">������ǥ</span></a></li>
+					<li class="m5 "><a href="/fund/" onclick="clickcr(this, 'LNB.fund', '', '', event);"><span class="tx">�ݵ�</span></a>
+
+					</li>
+					<li class="m6 "><a href="/research/" onclick="clickcr(this, 'LNB.research', '', '', event);"><span class="tx">����ġ</span></a></li>
+					<li class="m7 "><a href="/news/"><span class="tx">����</span></a></li>
+					<li class="m8 "><a href="/mystock/" onclick="clickcr(this, 'LNB.mystock', '', '', event);"><span class="tx">MY</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script type="text/JavaScript">
+		/* lcs ���� */
+        ;(function(){
+            var eventType = "onpageshow" in window ? "pageshow" : "load";
+            jindo.$Fn(function(){
+                lcs_do();
+            }).attach(window, eventType);
+        })();
+
+		/* �˻� �ڵ��ϼ� [ ����1 : �˻�input�� ID, ����2 : iframe �±� ID ]   */
+		// AutoComplete ����
+		var acDomain = "ac.finance.naver.com";
+        if (location.hostname.indexOf("staging-") > -1) {
+            acDomain = "staging-" + acDomain;
+        } else if (location.hostname.indexOf("dev-") > -1 || location.hostname.indexOf("localhost") > -1 || location.hostname.indexOf("local-") > -1) {
+			acDomain = "dev-" + acDomain;
+		}
+
+        var acUrl = "https://" + acDomain + "/ac";
+
+		smartSearch = new nhn.Autocomplete(
+			// InputManager ����
+			new nhn.AcInputManager(jindo.$("stock_items")),
+			// DataManager ����
+			new nhn.AcDataManager(acUrl, "jsonp", "get", {
+                    st: "111",
+                    r_lt : "111",
+                    q_enc : "euc-kr",
+                    r_enc : "euc-kr",
+                    frm: "stock"}),
+			// ViewManager ����
+			new nhn.AcStockViewManager(jindo.$("autoFrame"), jindo.$("nautocomplete"), {
+                                        strMax: 200,
+                                        listMax: [7, 2, 2],
+                                        aRedirectUrl : [
+                            			"https://finance.naver.com",
+                            			"https://finance.naver.com",
+                            			"https://finance.naver.com"]}),
+			// Autocomplete Option
+            {formId:"search", cookieDomain:location.hostname, cookieName:"NaverCommonStock"});
+
+			smartSearch.attach({
+	            onFocus: function () {
+	                var weInput = jindo.$Element('stock_items');
+	                if (weInput && weInput.hasClass("snb_default")) {
+	                        weInput.text("");
+	                        weInput.removeClass('snb_default');
+	                }
+	            }
+	        });
+
+		/* ���հ˻�  start ----->  */
+		document.domain = 'naver.com';
+		var sSearchHintText = '������������ݵ��ȯ����������� �Է�';
+		function itegrationSearch() {
+			var query = jindo.$('stock_items').value;
+
+			if ( query == ''  || encodeURIComponent(query) == encodeURIComponent(sSearchHintText))
+			{
+				alert ( '�˻�� �Է��� �ּ���.' );
+				return;
+			}
+
+            var url = location.protocol + "//search.naver.com/search.naver?sm=sta_hty.finance&where=nexearch&ie=UTF8&query=" + encodeURIComponent(query);
+            window.open(url, "_blank");
+
+			return false;
+		}
+
+		function delayed_submit(object) {
+			if (navigator.userAgent.indexOf('MSIE') == -1) {
+				window.setTimeout(function() {stock_search(object)}, 300);
+			} else {
+				stock_search(object);
+			}
+			return false;
+		}
+
+		function stock_search (object)
+		{
+			query = object.query.value.replace(/^\s*/,'').replace(/\s*$/,'');	// trim
+			object.query.value=query;
+
+			if ( query == '' || query == sSearchHintText.replace(/^\s*/,'').replace(/\s*$/,''))
+			{
+				alert ( '�˻�� �Է��� �ּ���.' );
+				return;
+			}
+			else {
+				object.submit();
+			}
+		}
+		/* <---------- ���հ˻�  end */
+
+		function popup()
+		{
+			win = window.open('/template/group_limit_pop.jsp','finan_popup','width=569 height=278 scrollbars=no status=no');
+			win.focus();
+		}
+	</script>
+
+	<iframe id="me_layers" name="test" title="���̹��� ����" width="0" height="0" scrolling="no" frameborder="0" style="display:block;top: 22px; right: 209px; position: absolute; z-index: 15;"></iframe>
+</div>
+<div id="wrap">
+
+	<div class="banner_smart">
+		<div id="_SmartChannelTopBanner">
+			<script type="text/javascript">
+					gladsdk.cmd.push(function() {
+						gladsdk.displayAd("_SmartChannelTopBanner");
+					});
+				</script>
+			<div style="width: 100%; height: auto; margin: 0px auto;"><iframe id="_SmartChannelTopBanner_tgtLREC" frameborder="no" scrolling="no" tabindex="-1" name="" style="width: 100%; height: 80px; visibility: inherit; display: block; border: 0px; vertical-align: bottom;"></iframe></div></div>
+	</div>
+
+
+
+	<script language="javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/ellipse.js"></script>
+	<script type="text/javascript">
+	function financialInfoCommentToggle() {
+		if(jindo.$Element(jindo.$$.getSingle("div.ly_moreifrs")).visible()) {
+			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).html("�׸� �󼼱��� ����");
+			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).removeClass("fd");
+		} else {
+			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).html("�׸� �󼼱��� �ݱ�");
+			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).addClass("fd");
+		}
+		jindo.$Element(jindo.$$.getSingle("div.ly_moreifrs")).toggle();
+	}
+
+</script>
+
+
+
+
+
+
+
+
+	<script language="javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/recent_code.js"></script>
+	<script language="javascript">addCode('096770');</script>
+	<script language="JavaScript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/summary.js"></script>
+	<script language="JavaScript">fchartStatus.setChartStatus('on');</script>
+	<style>
+
+.hide_chart {
+position: absolute;
+top: 0;
+left: -9999px;
+}
+</style>
+	<div id="middle" class="new_totalinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<dl class="blind">
+			<dt>���� �ü� ����</dt>
+			<dd>2021�� 07�� 14�� 10�� 35�� ���� ����</dd>
+			<dd>����� SK�̳뺣�̼�</dd>
+			<dd>�����ڵ� 096770 �ڽ���</dd>
+			<dd>���簡 272,000 ���ϴ�� �϶� 500 ���̳ʽ� 0.18 �ۼ�Ʈ</dd>
+			<dd>���ϰ� 272,500</dd>
+			<dd>�ð� 272,500</dd>
+			<dd>�� 274,500</dd>
+			<dd>���Ѱ� 354,000</dd>
+			<dd>���� 270,500</dd>
+			<dd>���Ѱ� 191,000</dd>
+			<dd>�ŷ��� 187,763</dd>
+			<dd>�ŷ���� 51,107�鸸</dd>
+		</dl>
+
+
+		<div class="h_company">
+			<div class="wrap_company">
+				<h2><a href="#" onclick="clickcr(this, 'sop.title', '', '', event);window.location.reload();">SK�̳뺣�̼�</a></h2>
+
+				<div class="description">
+					<span class="code">096770</span>
+
+					<img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_kospi.gif" width="33" height="16" alt="�ڽ���" class="kospi">
+
+
+
+					<span class="blind">��¥</span>
+					<span id="time">
+
+
+
+							<em class="date">2021.07.14  10:35 <span>����(����)</span></em>
+
+
+
+					</span>
+
+					<em class="realtime">
+						<span class="blind">�ǽð�</span>
+					</em>
+
+
+
+					<em class="summary">
+
+						<a href="#" onclick="togglePannel('summary_lyr'); return false;"></a>
+
+						<span class="blind">�������</span>
+						<div id="summary_lyr" class="summary_lyr" style="display:none;top:22px;left:0">
+							<iframe id="summary_ifr" name="summary_ifr" width="410" height="" src="" scrolling="no" frameborder="0" style="position:absolute;left:0;top:-2;z-index:20"></iframe>
+							<div id="summary_info" class="summary_info">
+								<h4>�������</h4>
+
+								<p>SK(��)�� 2007�� ���ڻ���ι��� ������ SK(��)�� ����, ȭ�� �� ��Ȱ�� ��ǰ�� ���� �Ǹ� ���� ������ ���ҽż������� ���縦 ���� ���������ν� ������.</p>
+
+
+								<p>2009�� 10�� ��Ȱ�� ����ι���, 2011�� 1�� ���� �� ȭ�� ����ι��� ���� ���� �����Ͽ���.</p>
+
+
+								<p>�����ڸ� �����Ϸ� ����� SK������(��)���� SK�̳뺣�̼�(��)�� �����Ͽ���. 2018�� 9�� ���� ȸ���� ������ �Ǵܿ� ���� FCCL����� �ؽ��÷����� �Ű� �Ϸ�.</p>
+
+
+
+								<div class="txt_notice">��ó : �����ذ��̵�</div>
+								<div class="btn_area_top">
+									<a href="#" onclick="hidePannel('summary_lyr'); return false;"><img src="https://ssl.pstatic.net/static/nfinance/img/btn_close.gif" alt="�ݱ�" width="11" height="11"></a>
+								</div>
+								<div class="bg_btm"></div>
+							</div>
+							<span class="bg_lt"></span>
+							<span class="bg_rt"></span>
+							<div class="bu_arrow"></div>
+						</div>
+					</em>
+
+
+
+
+
+				</div>
+			</div>
+
+			<div class="quick">
+				<p>
+					<a href="#" class="snb_top1" onclick="clickcr(this,'sop.2','','',event);"><span class="blind">MY STOCK �߰�</span></a>
+					<a href="javascript:quickorder('on')" class="snb_top3" onclick="clickcr(this,'sop.3','','',event);"><span class="blind">�����ֹ�</span></a>
+				</p>
+
+				<div class="ly_lstmove blind NE=a:sop*m">
+					<span class="bg"></span>
+					<div class="txt _ly_group">
+						<div class="bx_sel scr_white2 _ly_group_list">
+							<ul></ul>
+						</div>
+						<div class="bx_sel _ly_group_blank" style="display:none;">
+							<p class="txt_inner type7">�߰��� �׷��� �����ϴ�.<br>�׷��� �߰����ּ���.</p>
+						</div>
+						<p class="rgt"><button type="button" class="btn_spr btn_groupadd2 NPI=a:add"><span class="blind">�׷��߰�</span></button></p>
+						<p>
+							<button type="button" class="btn_spr btn_cfm2 _btn_ok NPI=a:confirm"><span class="blind">Ȯ��</span></button>
+							<button type="button" class="btn_spr btn_clse2 _btn_cancel NPI=a:close"><span class="blind">�ݱ�</span></button>
+						</p>
+					</div>
+					<div class="txt _ly_message" style="display:none;">
+					</div>
+				</div>
+
+
+
+				<div class="layer_quick_order" id="quickOrderArea" style="display:none">
+					<div class="content">
+						<h5>���̹� �ֽİŷ�����<br>���� �ֹ��� ���͵帳�ϴ�!</h5>
+						<ul>
+							<li>�� ���񽺴� ������ ���� �ֹ��� ���� ����<br><span>���ǻ��� �α����� ����</span>�ص帮�� �ֽ��ϴ�.</li>
+							<li>������ �����ϰ� ��� ���ǻ縦 Ŭ���� ��<br><span>���ǻ��� ���̵�, ��й�ȣ, ������������ �ֹ�</span>��<br>�Ͻ� �� �ֽ��ϴ�. </li>
+							<li>���ǻ� �α��� ���� �ý��� ������ �߻��ϸ�,<br><span>���ǻ� �����ͷ� ���� ����</span> �Ͻñ� �ٶ��ϴ�.   </li>
+							<li>���̹��� ���ǻ� ������ �ý��� ��ֿ� ����<br>���� å���� ���� �ʽ��ϴ�. </li>
+						</ul>
+
+						<div class="ci_area">
+							<div id="quickOrderCiBanner0"></div>
+							<div id="quickOrderCiBanner1"></div>
+							<div id="quickOrderCiBanner2"></div>
+							<div id="quickOrderCiBanner3"></div>
+						</div>
+						<div class="btn_area_btm"><a href="javascript:quickorder('off')"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_close.gif" alt="�ݱ�" width="38" height="20"></a></div>
+						<div class="btn_area_top"><a href="javascript:quickorder('off')"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_close_x.gif" alt="�ݱ�" width="19" height="19"></a></div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div class="content_wrap">
+			<div id="content">
+
+				<div id="chart_area" class="spot"><!-- chart�� �������  <div class="spot spot_short">-->
+					<div class="rate_info">
+
+
+						<dl class="blind">
+							<dt><strong>SK�̳뺣�̼�</strong></dt>
+							<dd>�����ǽü� 272,000 ����Ʈ</dd>
+							<dd>500 ����Ʈ �϶�</dd>
+							<dd>0.18% ���̳ʽ�</dd>
+						</dl>
+
+
+						<div class="today">
+							<p class="no_today">
+
+
+
+								<em class="no_down">
+
+
+
+									<span class="blind">272,000</span>
+									<span class="no2">2</span><span class="no7">7</span><span class="no2">2</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
+								</em>
+							</p>
+							<p class="no_exday">
+								<span class="sptxt sp_txt1">���ϴ��</span>
+
+
+
+
+
+								<em class="no_down">
+									<span class="ico down">�϶�</span>
+
+
+
+									<span class="blind">500</span>
+									<span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+								</em>
+								<span class="bar">l</span>
+
+
+
+								<em class="no_down">
+									<span class="ico minus">-</span>
+
+
+
+									<span class="blind">0.18</span>
+									<span class="no0">0</span><span class="jum">.</span><span class="no1">1</span><span class="no8">8</span>
+									<span class="per">%</span>
+								</em>
+							</p>
+						</div>
+						<table summary="�ֿ� �ü�(��������, �ð�����, �ŷ���, �ŷ����)�� �����մϴ�." class="no_info">
+							<caption>�ֿ� �ü�</caption>
+							<colgroup><col><col width="214"><col width="157"></colgroup>
+							<tbody><tr>
+								<td class="first">
+									<span class="sptxt sp_txt2">����</span>
+									<em>
+										<span class="blind">272,500</span>
+										<span class="no2">2</span><span class="no7">7</span><span class="no2">2</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+									</em>
+								</td>
+								<td>
+									<span class="sptxt sp_txt4">��</span>
+
+
+
+
+
+									<em class="no_up">
+
+
+
+
+
+
+
+										<span class="blind">274,500</span><span class="no2">2</span><span class="no7">7</span><span class="no4">4</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+
+									</em>
+									<span class="sptxt sp_txt6">(���Ѱ�</span>
+									<em class="no_cha">
+
+
+										<span class="blind">354,000</span><span class="no3">3</span><span class="no5">5</span><span class="no4">4</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
+
+									</em>
+									<span class="sptxt sp_txt8">)</span>
+								</td>
+								<td>
+									<span class="sptxt sp_txt9">�ŷ���</span>
+									<em>
+										<span class="blind">187,763</span>
+										<span class="no1">1</span><span class="no8">8</span><span class="no7">7</span><span class="shim">,</span><span class="no7">7</span><span class="no6">6</span><span class="no3">3</span>
+									</em>
+								</td>
+							</tr>
+							<tr>
+								<td class="first">
+									<span class="sptxt sp_txt3">�ð�</span>
+
+
+
+
+
+
+
+									<em>
+
+
+
+
+
+										<span class="blind">272,500</span><span class="no2">2</span><span class="no7">7</span><span class="no2">2</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+
+									</em>
+								</td>
+								<td>
+									<span class="sptxt sp_txt5">����</span>
+
+
+
+
+
+
+									<em class="no_down">
+
+
+
+
+
+
+										<span class="blind">270,500</span><span class="no2">2</span><span class="no7">7</span><span class="no0">0</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+
+									</em>
+									<span class="sptxt sp_txt7">(���Ѱ�</span>
+									<em class="no_cha">
+
+
+										<span class="no1">1</span><span class="no9">9</span><span class="no1">1</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
+
+									</em>
+									<span class="sptxt sp_txt8">)</span>
+								</td>
+								<td>
+									<span class="sptxt sp_txt10">�ŷ����</span>
+									<em>
+
+
+										<span class="blind">51,107</span>
+										<span class="no5">5</span><span class="no1">1</span><span class="shim">,</span><span class="no1">1</span><span class="no0">0</span><span class="no7">7</span>
+
+
+
+									</em>
+									<span class="sptxt sp_txt11">�鸸</span>
+								</td>
+							</tr>
+							</tbody></table>
+					</div>
+					<div class="chart">
+						<p class="blind">���� �ü� ��Ʈ</p>
+						<div class="chart_control_area">
+							<dl class="line">
+								<dt>����Ʈ</dt>
+								<dd>
+									<ul>
+										<li class="day"><a href="#" class="on" onclick="showChart('day')">1��</a></li>
+										<li class="week"><a href="#" onclick="showChart('week')">1����</a></li>
+										<li class="month3"><a href="#" onclick="showChart('month3');">3����</a></li>
+										<li class="year"><a href="#" onclick="showChart('year');">1��</a></li>
+										<li class="year3"><a href="#" onclick="showChart('year3');">3��</a></li>
+										<li class="year5"><a href="#" onclick="showChart('year5');">5��</a></li>
+										<li class="year10"><a href="#" onclick="showChart('year10');">10��</a></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="bar">
+								<dt>����Ʈ</dt>
+								<dd>
+									<ul>
+										<li class="day"><a href="#" onclick="showBarChart('day');">�Ϻ�</a></li>
+										<li class="week"><a href="#" onclick="showBarChart('week');">�ֺ�</a></li>
+										<li class="month"><a href="#" onclick="showBarChart('month');">����</a></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+						<h5 class="blind">�̹��� ��Ʈ</h5>
+						<img id="img_chart_area" src="https://ssl.pstatic.net/imgfinance/chart/item/area/day/096770.png?sidcode=1626226506517" width="700" height="289" alt="�̹��� ��Ʈ" onerror="this.src='https://ssl.pstatic.net/imgstock/chart3/world2008/error_700x289.png'">
+					</div>
+					<a href="javascript:fchartStatus.showChartArea('096770', 'SK%C0%CC%B3%EB%BA%A3%C0%CC%BC%C7', 'false')" class="btn_close" onclick="clickcr(this,'sop.toggle','','',event);">
+						<div id="btn_close">
+
+							<img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_lay_close.gif" alt="��Ʈ�ݱ�" width="45" height="11">
+
+
+						</div>
+					</a>
+				</div>
+
+				<script type="text/template" id="summaryTpl">
+					<div class="today">
+						<p class="no_today">
+							{if rf == 1 || rf == 2}
+							<em class="no_up">
+								{elseif rf == 4 || rf == 5}
+								<em class="no_down">
+									{else}
+									<em class="X">
+										{/if}
+										{js numberFont(changeNumberFormat(=nv))}
+									</em>
+						</p>
+						<p class="no_exday">
+							<span class="sptxt sp_txt1">���ϴ��</span>
+							{if rf == 1}
+							<em class="no_up">
+								<span class="ico up_price">���Ѱ�</span>
+								{elseif rf == 2}
+								<em class="no_up">
+									<span class="ico up">���</span>
+									{elseif rf == 4}
+									<em class="no_down">
+										<span class="ico down_price">���Ѱ�</span>
+										{elseif rf == 5}
+										<em class="no_down">
+											<span class="ico down">�϶�</span>
+											{else}
+											<em class="X">
+												<span class="ico sam">����</span>
+												{/if}
+												{js numberFont(changeNumberFormat(=cv))}
+											</em>
+
+											<span class="bar">l</span>
+											{if rf == 1 || rf == 2}
+											<em class="no_up">
+												<span class="ico plus">+</span>
+												{elseif rf == 4 || rf == 5}
+												<em class="no_down">
+													<span class="ico minus">-</span>
+													{else}
+													<em class="X">
+														{/if}
+														{if cr != null}
+														{js numberFont(changeNumberFormat(=cr.toFixed(2)))}
+														{/if}
+														<span class="per">%</span>
+													</em>
+						</p>
+					</div>
+					<table summary="�ֿ� �ü�(��������, �ð�����, �ŷ���, �ŷ����)�� �����մϴ�." class="no_info">
+						<caption>�ֿ� �ü�</caption>
+						<colgroup><col><col width="214"><col width="157"></colgroup>
+						<tr>
+							<td class="first">
+								<span class="sptxt sp_txt2">����</span>
+								<em>
+									{if sv == 0}
+									{js numberFont(changeNumberFormat(=pcv))}
+									{else}
+									{js numberFont(changeNumberFormat(=sv))}
+									{/if}
+								</em>
+							</td>
+							<td>
+								<span class="sptxt sp_txt4">��</span>
+								{if tyn == "Y"}
+								<em>
+									{else}
+									{if hv == 0}
+									<em>
+										{elseif pcv < hv}
+										<em class="no_up">
+											{elseif pcv > hv}
+											<em class="no_down">
+												{else}
+												<em>
+													{/if}
+													{/if}
+													{if ms == "PREOPEN"}
+													{js numberFont(0)}
+													{else}
+													{js numberFont(changeNumberFormat(=hv))}
+													{/if}
+												</em>
+												<span class="sptxt sp_txt6">(���Ѱ�</span>
+												<em class="no_cha">
+													{if ms == "PREOPEN"}
+													{js numberFont(0)}
+													{else}
+													{js numberFont(changeNumberFormat(=ul))}
+													{/if}
+												</em>
+												<span class="sptxt sp_txt8">)</span>
+							</td>
+							<td>
+								<span class="sptxt sp_txt9">�ŷ���</span>
+								<em>
+									{js numberFont(changeNumberFormat(=aq))}
+								</em>
+							</td>
+						</tr>
+						<tr>
+							<td class="first">
+								<span class="sptxt sp_txt3">�ð�</span>
+								{if tyn == "Y"}
+								<em>
+									{else}
+									{if ov == 0}
+									<em>
+										{elseif pcv < ov}
+										<em class="no_up">
+											{elseif pcv > ov}
+											<em class="no_down">
+												{else}
+												<em>
+													{/if}
+													{/if}
+													{if ms == "PREOPEN"}
+													{js numberFont(0)}
+													{else}
+													{js numberFont(changeNumberFormat(=ov))}
+													{/if}
+												</em>
+							</td>
+							<td>
+								<span class="sptxt sp_txt5">����</span>
+								{if tyn == "Y"}
+								<em>
+									{else}
+									{if lv == 0}
+									<em>
+										{elseif pcv < lv}
+										<em class="no_up">
+											{elseif pcv > lv}
+											<em class="no_down">
+												{else}
+												<em>
+													{/if}
+													{/if}
+													{if ms == "PREOPEN"}
+													{js numberFont(0)}
+													{else}
+													{js numberFont(changeNumberFormat(=lv))}
+													{/if}
+												</em>
+												<span class="sptxt sp_txt7">(���Ѱ�</span>
+												<em class="no_cha">
+													{if ms == "PREOPEN"}
+													{js numberFont(0)}
+													{else}
+													{js numberFont(changeNumberFormat(=ll))}
+													{/if}
+												</em>
+												<span class="sptxt sp_txt8">)</span>
+							</td>
+							<td>
+								<span class="sptxt sp_txt10">�ŷ����</span>
+								<em>
+									{js numberFont(changeNumberFormat((=aa/1000000).toFixed(0)))}
+								</em>
+								<span class="sptxt sp_txt11">�鸸</span>
+							</td>
+						</tr>
+					</table>
+				</script>
+
+				<script type="text/javascript">
+var pollingInterval = 2000;
+var timer = null;
+var pollingAjax = null;
+var itemcodes = '';
+
+var startTimer = function() {
+	clearTimer();
+	timer = setInterval('doPolling()', pollingInterval);
+}
+
+var clearTimer = function() {
+	if (pollingAjax) {
+		pollingAjax.abort();
+		pollingAjax = null;
+	}
+
+	timer = window.clearInterval(timer);
+}
+
+var doPolling = function() {
+	var pollingApiUrl = "https://polling.finance.naver.com/api/realtime?query=SERVICE_ITEM:" + "096770"
+
+	if (requestType == 'recent' && itemcodes != "") {
+		pollingApiUrl += "|" + "SERVICE_RECENT_ITEM:" + itemcodes;
+	} else if (requestType == 'mystock' && itemcodes != ""){
+		pollingApiUrl += "|" + "SERVICE_MYSTOCK_ITEM:" + itemcodes;
+	}
+
+	pollingAjax = jindo.$Ajax(pollingApiUrl, {
+		type : 'jsonp',
+		jsonp_charset : "euc-kr",
+		onload : function(response) {
+			if(response != null && response.readyState() == 4) {
+				refreshQuote(response.json());
+				startTimer();
+			}
+		},
+		timeout : 2,
+		ontimeout : function() {
+			startTimer();
+		},
+		async : true
+	});
+	pollingAjax.request();
+}
+
+function displayTime(ms, time) {
+	var result;
+
+	var utcDate = new Date(time);
+	utcDate.setMinutes(utcDate.getMinutes() + utcDate.getTimezoneOffset());
+	utcDate.setHours(utcDate.getHours() + 9);
+
+	var oDate = jindo.$Date(utcDate);
+
+	if (ms == "PREOPEN") {
+		closeDate = oDate.format('Y.m.d')
+		result = '<em class="date">' + oDate.format('Y.m.d') + ' <span>����(������)</span></em> ';
+	} else if (ms == "CLOSE") {
+		result = '<em class="date">' + closeDate + ' <span>����(�帶��)</span></em> ';
+	} else {
+		closeDate = oDate.format('Y.m.d')
+		result = '<em class="date">' + oDate.format('Y.m.d H:i') + ' <span>����(����)</span></em> ';
+	}
+
+	return result;
+}
+
+/**
+ * ������� �������� ���� ��, NAV �� ����
+ */
+function refreshEtfNav(etfNav) {
+	var elEtfNav = jindo.$Element(jindo.$$.getSingle("#on_board_last_nav"));
+	if (elEtfNav != null) {
+		if (etfNav != null) {
+			elEtfNav.html("<em><strong>" + changeNumberFormat(etfNav.toFixed(0)) + "</strong></em>");
+		} else {
+			elEtfNav.html("<em><strong>N/A</strong></em>");
+		}
+	}
+}
+
+function refreshInvestmentSummary(nv) {
+	if (!(false && false && false)) {
+		return;
+	}
+
+	var averageBuyingPrice = 0;
+	var holdingShares = 0;
+
+	var elEvaluationProfitAmount = jindo.$Element(jindo.$$.getSingle("#evaluation_profit_amount"));
+	// �򰡼��� = (nv - ��ո��԰�) * ��������
+	var evaluationProfitAmount = (nv - 0) * 0;
+	// �򰡼��ͷ� = �򰡼��� / (��ո��԰� * ��������) * 100
+	var evaluationProfitRate = evaluationProfitAmount / (0 * 0) * 100;
+
+	var sPointClass = "";
+	var sSign = "";
+	if (evaluationProfitAmount > 0) {
+		sPointClass = "f_up";
+		sSign = "+";
+	} else {
+		sPointClass = "f_down";
+		sSign = "";
+	}
+
+	var evaluationProfitAmoutText = ""
+	if (evaluationProfitAmount > 10000000000) {
+		var evaluationProfitAmountDivideBillion = evaluationProfitAmount / 100000000;
+		evaluationProfitAmountText = "<em>" + sSign + changeNumberFormat(evaluationProfitAmountDivideBillion.toFixed(0)) + "��</em>";
+	} else {
+		evaluationProfitAmountText = "<em>" + sSign + changeNumberFormat(evaluationProfitAmount) + "</em>";
+	}
+
+	if (elEvaluationProfitAmount != null) {
+		elEvaluationProfitAmount.removeClass("f_up");
+		elEvaluationProfitAmount.removeClass("f_down");
+		elEvaluationProfitAmount.addClass(sPointClass);
+		elEvaluationProfitAmount.html(evaluationProfitAmountText);
+	}
+
+	var elEvaluationProfitRate = jindo.$Element(jindo.$$.getSingle("#evaluation_profit_rate"));
+	if (elEvaluationProfitRate != null) {
+
+		elEvaluationProfitRate.removeClass("f_up");
+		elEvaluationProfitRate.removeClass("f_down");
+		elEvaluationProfitRate.addClass(sPointClass);
+
+		elEvaluationProfitRate.html("<em>" + sSign + changeNumberFormat(evaluationProfitRate.toFixed(2)) + "%</em>");
+	}
+}
+
+
+function refreshCompanyValue(json) {
+	var sPer = "N/A";
+	var sKrxPer = "N/A";
+	/* if ((json.per !== undefined) && (json.per !== null)) {
+		sPer = converToFixedPointNotation(json.per, 2);
+	}
+
+	jindo.$A(jindo.$$("#_per")).forEach(function(v) {
+		jindo.$Element(v).text(sPer);
+	}, this); */
+
+	if ((json.eps !== undefined) && (json.eps !== null)) {
+		sPer = converToFixedPointNotation(json.nv / json.eps, 2);
+	}
+
+	jindo.$A(jindo.$$("#_per")).forEach(function(v) {
+		jindo.$Element(v).text(sPer);
+	}, this);
+
+	if ((json.keps !== undefined) && (json.keps !== null)) {
+		sKrxPer = converToFixedPointNotation(json.nv / json.keps, 2);
+	}
+
+	jindo.$A(jindo.$$("#krx_per")).forEach(function(v) {
+		jindo.$Element(v).text(sKrxPer);
+	}, this);
+
+	var sCnsPer = "N/A";
+	if ((json.cnsEps !== undefined) && (json.cnsEps !== null)) {
+		sCnsPer = converToFixedPointNotation(json.nv / json.cnsEps, 2);
+	}
+
+	jindo.$A(jindo.$$("#_cns_per")).forEach(function(v) {
+		jindo.$Element(v).text(sCnsPer);
+	}, this);
+
+	var sPbr = "N/A";
+	if ((json.bps !== undefined) && (json.bps !== null)) {
+		var bps = converToFixedPointNotation(json.bps, 0)
+		sPbr = converToFixedPointNotation(json.nv / bps, 2);
+	}
+
+	jindo.$A(jindo.$$("#_pbr")).forEach(function(v) {
+		jindo.$Element(v).text(sPbr);
+	}, this);
+
+	var sDvr = "N/A";
+	if ((json.dv !== undefined) && (json.dv !== null)) {
+		var dv = converToFixedPointNotation(json.dv, 0)
+		sDvr = converToFixedPointNotation((dv * 100)/ json.nv, 2);
+	}
+
+	jindo.$A(jindo.$$("#_dvr")).forEach(function(v) {
+		jindo.$Element(v).text(sDvr);
+	}, this);
+}
+
+function refreshQuote(res) {
+	if(res != null && res.resultCode == 'success') {
+		pollingInterval = res.result.pollingInterval;
+
+		for (var index = 0 ; index < res.result.areas.length ; index++) {
+			if (res.result.areas[index].name == "SERVICE_ITEM") {
+				var ms = "NOT DEFINED";
+				ms = res.result.areas[index].datas[0].ms;
+				document.getElementById("time").innerHTML = displayTime(ms, res.result.time);
+
+				jindo.$Element(jindo.$$.getSingle("#chart_area .rate_info")).html(jindo.$Template("summaryTpl").process(res.result.areas[index].datas[0]));
+
+				refreshInvestmentSummary(res.result.areas[index].datas[0].nv);
+				refreshEtfNav(res.result.areas[index].datas[0].nav);
+				refreshCompanyValue(res.result.areas[index].datas[0]);
+			} else if (res.result.areas[index].name == "SERVICE_RECENT_ITEM") {
+				renderRecentAreaRealtime("recent", res.result.areas[index]);
+			} else if (res.result.areas[index].name == "SERVICE_MYSTOCK_ITEM") {
+				renderRecentAreaRealtime("mystock", res.result.areas[index]);
+			}
+		}
+	}
+}
+
+function numberFont(value) {
+	value = value + "";
+	var result = "";
+
+	for (i = 0; i < value.length; i++) {
+		var tmpChar = value.charAt(i);
+
+		result += '<span class="';
+		if (tmpChar == ".") {
+			result += "jum";
+		} else if (tmpChar == ",") {
+			result += "shim";
+		} else {
+			result += "no" + tmpChar;
+		}
+		result += '">' + tmpChar + '</span>';
+	}
+
+	return result;
+}
+
+function changeNumberFormat(vNumber){
+	var sUnderNumber = "";
+	var sNumberString = vNumber || 0;
+	sNumberString = (typeof sNumberString != "String") ? String(sNumberString) : sNumberString;
+
+	if(sNumberString.indexOf(".") > -1){
+		var aNumber = sNumberString.split(".");
+		sNumberString = aNumber[0];
+		sUnderNumber = "." + aNumber[1];
+	}
+
+	return sNumberString.replace(/(\d)(?=(\d{3})+$)/igm, "$1,") + sUnderNumber;
+}
+
+function converToFixedPointNotation (nNumber, nDecimalLength){
+	return parseFloat(nNumber).toFixed(nDecimalLength || 0);
+}
+
+// 1�и��� ���� ������Ʈ
+var updateInformationInterval = 60000;
+var informationTimer = null;
+var oUpdateAjax = null;
+
+var startInformationTimer = function() {
+	clearInformationTimer();
+	informationTimer = setInterval('doUpdateInformation()', updateInformationInterval);
+}
+
+var clearInformationTimer = function() {
+	if (oUpdateAjax) {
+		oUpdateAjax.abort();
+		oUpdateAjax = null;
+	}
+
+	informationTimer = window.clearInterval(informationTimer);
+}
+
+var doUpdateInformation = function() {
+	var sApiUrl = "https://api.finance.naver.com/service/itemSummary.naver?itemcode=096770"
+
+	oUpdateAjax = jindo.$Ajax(sApiUrl, {
+		type : 'jsonp',
+		jsonp_charset : "utf-8",
+		onload : function(response) {
+			if(response != null && response.readyState() == 4) {
+				var json = response.json();
+
+				if (json.now == undefined) {
+					startInformationTimer();
+					return;
+				}
+
+				var sMarketSum = (json.marketSum + "");
+				sMarketSum = sMarketSum.substring(0, sMarketSum.length - 2);
+				sMarketSum = changeNumberFormat(sMarketSum);
+
+				var sPer = changeNumberFormat(json.per);
+				var sEps = changeNumberFormat(json.eps);
+				var sNowVal = changeNumberFormat(json.now);
+				var sDiff = changeNumberFormat(json.diff);
+				var sRate = changeNumberFormat(json.rate) + "%";
+				var sQuant = changeNumberFormat(json.quant);
+				var sAmount = changeNumberFormat(json.amount);
+				var sHigh = changeNumberFormat(json.high);
+				var sLow = changeNumberFormat(json.low);
+
+				if (sRate == "0%") {
+					sRate = "0.00%";
+				}
+
+				if (json.per == undefined) {
+					sPer = "N/A";
+				}
+
+				if (json.eps == undefined) {
+					sEps = "N/A";
+				}
+
+				jindo.$A(jindo.$$("#_sise_market_sum")).forEach(function(v) {
+					jindo.$Element(v).text(sMarketSum);
+				}, this);
+
+				jindo.$A(jindo.$$("#_sise_per")).forEach(function(v) {
+					jindo.$Element(v).text(sPer);
+				}, this);
+
+				jindo.$A(jindo.$$("#_sise_eps")).forEach(function(v) {
+					jindo.$Element(v).text(sEps);
+				}, this);
+
+				jindo.$A(jindo.$$("#_nowVal")).forEach(function(v) {
+					jindo.$Element(v).text(sNowVal);
+				}, this);
+
+				jindo.$A(jindo.$$("#_diff")).forEach(function(v) {
+					var sFormat = null;
+					var sDiffToDisplay = sDiff.replace("-", "");
+
+					if (json.risefall == 1) {
+						sFormat = "<em class=\"bu_p bu_pup2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">����</span></em><span class=\"tah p11 red01\">%s</span>";
+					} else if (json.risefall == 2) {
+						sFormat = "<em class=\"bu_p bu_pup\" style=\"margin:0 4px 0 0\"><span class=\"blind\">���</span></em><span class=\"tah p11 red01\">%s</span>";
+					} else if (json.risefall == 3) {
+						sFormat = "<span class=\"tah p11\">%s</span>";
+					} else if (json.risefall == 4) {
+						sFormat = "<em class=\"bu_p bu_pdn2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">����</span></em><span class=\"tah p11 nv01\">%s</span>";
+					} else {
+						sFormat = "<em class=\"bu_p bu_pdn\" style=\"margin:0 4px 0 0\"><span class=\"blind\">�϶�</span></em><span class=\"tah p11 nv01\">%s</span>";
+					}
+
+					var sHtml = jindo.$S(sFormat).format(sDiffToDisplay);
+
+					jindo.$Element(v).html(sHtml);
+				}, this);
+
+				jindo.$A(jindo.$$("#_rate")).forEach(function(v) {
+					var sCss = "red01";
+					var sRateToDisplay = sRate;
+
+					if (sRate.indexOf("-") > -1) {
+						sCss = "nv01";
+					} else if (sRate.indexOf("0.00") > -1) {
+						sCss = "";
+					} else {
+						sRateToDisplay = "+" + sRateToDisplay;
+					}
+
+					var sHtml = "<span class=\"tah p11 " + sCss + "\">" + sRateToDisplay + "</span>";
+					jindo.$Element(v).html(sHtml);
+				}, this);
+
+				jindo.$A(jindo.$$("#_quant")).forEach(function(v) {
+					jindo.$Element(v).text(sQuant);
+				}, this);
+
+				jindo.$A(jindo.$$("#_amount")).forEach(function(v) {
+					jindo.$Element(v).text(sAmount);
+				}, this);
+
+				jindo.$A(jindo.$$("#_high")).forEach(function(v) {
+					jindo.$Element(v).text(sHigh);
+				}, this);
+
+				jindo.$A(jindo.$$("#_low")).forEach(function(v) {
+					jindo.$Element(v).text(sLow);
+				}, this);
+
+				startInformationTimer();
+			}
+		},
+		timeout : 2,
+		ontimeout : function() {
+			startInformationTimer();
+		},
+		async : true
+	});
+	oUpdateAjax.request();
+}
+
+var dateTime = "20210714103505";
+var closeDate = dateTime.substring(0,4) + "." + dateTime.substring(4,6) + "." + dateTime.substring(6,8);
+
+
+
+/**
+ * ������ Ÿ��(1��, ������, 3����, 1��, 3��, 5�� , 10��)�� ���� �̹��� ��Ʈ ����
+ *
+ * @param chartType ��Ʈ����(1��, ������, 3����, 1��, 3��, 5��, 10��)
+ */
+// �� ��Ʈ ����
+function showChart(target) {
+    jindo.$A(jindo.$$("dl.line dd ul li")).forEach(function(v) {
+        if (jindo.$Element(v).className() == target) {
+            jindo.$Element(v).child()[0].addClass("on");
+            jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/area/" + target + "/096770.png?sidcode=1626226506517");
+        } else {
+            jindo.$Element(v).child()[0].removeClass("on");
+        }
+    });
+
+    jindo.$A(jindo.$$("dl.bar dd ul li")).forEach(function(v) {
+        jindo.$Element(v).child()[0].removeClass("on");
+    });
+
+}
+
+/**
+ * ������ Ÿ��(�Ϻ�, �ֺ�, ����)�� ���� �̹��� ��Ʈ ����
+ *
+ * @param chartType ��Ʈ����(�Ϻ�, �ֺ�, ����)
+ */
+// �� ��Ʈ ����
+function showBarChart(target) {
+    jindo.$A(jindo.$$("dl.bar dd ul li")).forEach(function(v) {
+        if (jindo.$Element(v).className() == target) {
+            jindo.$Element(v).child()[0].addClass("on");
+            jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/candle/" + target + "/096770.png?sidcode=1626226506517");
+        } else {
+            jindo.$Element(v).child()[0].removeClass("on");
+        }
+    });
+
+    jindo.$A(jindo.$$("dl.line dd ul li")).forEach(function(v) {
+        jindo.$Element(v).child()[0].removeClass("on");
+    });
+}
+
+/**
+ * �÷��� �������� Ȯ��
+ */
+function isInstalledFlash() {
+    var aFlash = jindo.$Agent().flash();
+    var bResult = false;
+
+    if (aFlash != null && aFlash.installed) {
+        bResult = true;
+    }
+
+    return bResult;
+}
+
+/**
+ * �÷��� �������ο� ���� ��Ʈ ����
+ */
+function initChartArea(flashAreaClassName, htmlAreaClassName) {
+    var eFlashChartArea = jindo.$Element(jindo.$$.getSingle("." + flashAreaClassName));
+    var eImgChartArea = jindo.$Element(jindo.$$.getSingle("." + htmlAreaClassName));
+
+    if (eFlashChartArea != null && eImgChartArea != null) {
+        if (isInstalledFlash()) {
+            eImgChartArea.hide();
+        } else {
+            eFlashChartArea.hide();
+        }
+    }
+}
+
+</script>
+				<script type="text/javascript">
+<!--
+jindo.$Fn(function() {
+	var itemAddLayer = new MyFinance.MyStock.ItemAddLayer(jindo.$$.getSingle('.ly_lstmove'), {
+		'LayerPosition': {
+			sPosition : "outside-bottom",
+			sAlign : "left",
+			nTop : 4,
+			nLeft : -96
+		}
+	});
+
+	jindo.$Fn(function(e) {
+		e.stopDefault();
+		itemAddLayer.open(['096770'], e.element);
+	}, this).attach(jindo.$$.getSingle('.snb_top1'), 'click');
+
+
+}, this).attach(document, 'domready');
+//-->
+</script>
+				<script type="text/javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/release/commonSummary.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<ul class="tabs_submenu tab_total_submenu">
+					<li class="tab_on"><a href="/item/main.nhn?code=096770" class="tab1" onclick="clickcr(this,'sop.4','','',event);"><span>��������</span></a></li>
+					<li class=""><a href="/item/sise.nhn?code=096770" class="tab2" onclick="clickcr(this,'sop.5','','',event);"><span>�ü�</span></a></li>
+					<li class=""><a href="/item/fchart.nhn?code=096770" class="tab3" onclick="clickcr(this,'sop.6','','',event);"><span>��Ʈ</span></a></li>
+					<li class=""><a href="/item/frgn.nhn?code=096770" class="tab4" onclick="clickcr(this,'sop.10','','',event);"><span>�����ں� �Ÿŵ���</span></a></li>
+					<li class=""><a href="/item/news.nhn?code=096770" class="tab5" onclick="clickcr(this,'sop.7','','',event);"><span>����������</span></a></li>
+					<li class=""><a href="/item/coinfo.nhn?code=096770" class="tab6" onclick="clickcr(this,'sop.9','','',event);"><span>����м�</span></a></li>
+					<li class=""><a href="/item/board.nhn?code=096770" class="tab7" onclick="clickcr(this,'sop.11','','',event);"><span>������н�</span></a></li>
+					<li class=""><a href="/item/dart.nhn?code=096770" class="tab8" onclick="clickcr(this,'sop.12','','',event);"><span>���ڰ���</span></a></li>
+					<li class=""><a href="/item/short_trade.nhn?code=096770" class="tab9" onclick="clickcr(this,'sop.13','','',event);"><span>���ŵ���Ȳ</span></a></li>
+				</ul>
+
+
+
+
+
+
+
+
+
+				<hr>
+				<h3 class="blind">��������</h3>
+
+				<div class="section invest_trend">
+					<h4 class="h_sub sub_tit2"><span>�����ں� �Ÿŵ���</span><em style="position:relative;left:100px;font-style:normal;font-weight:normal;font-size:11px;color:#666;">�ŷ��� ���� : �Ϻ� ���� 5�� �ŷ����� ���� ���� ���� (20�� ����)</em></h4>
+					<div class="sub_section">
+						<h5 class="h_th th_di"><span>�ŷ��� ����</span></h5>
+						<table summary="�����ں� �Ÿŵ��� �ü������� ���� ǥ �� �ŷ��� ����(�ŵ�����, �ż�����, �ŷ���)�� �����մϴ�." class="tb_type1">
+							<caption>�ŷ��� ����</caption>
+							<colgroup><col><col width="80"><col width="90"><col width="80"></colgroup>
+							<thead>
+							<tr>
+								<th scope="col" class="h_th th_sale_top"><span>�ŵ�����</span></th>
+								<th scope="col" class="h_th th_deal_amount"><span>�ŷ���</span></th>
+								<th scope="col" class="h_th th_buy_top"><span>�ż�����</span></th>
+								<th scope="col" class="h_th th_deal_amount"><span>�Ű���</span></th>
+							</tr>
+							</thead>
+							<tfoot>
+							<tr>
+								<td class="left"><strong>�ܱ���������</strong></td>
+								<td>
+									<em class="f_down">1,694</em>
+								</td>
+								<td class="left">
+
+									<em class="f_up">
+										+51,612
+									</em>
+
+								</td>
+								<td>
+									<em class="f_up">53,306</em>
+								</td>
+							</tr>
+							</tfoot>
+							<tbody>
+							<tr><td class="space"></td></tr>
+
+							<tr>
+
+
+								<td class="left">���ѱ�������</td>
+								<td><em>21,923</em></td>
+
+
+								<td class="left"><span class="f_up">�����Ǹ�</span></td>
+								<td><em class="f_up">24,626</em></td>
+
+							</tr>
+
+							<tr>
+
+
+								<td class="left">�ѱ�����</td>
+								<td><em>17,411</em></td>
+
+
+								<td class="left">�̷����´��</td>
+								<td><em>16,594</em></td>
+
+							</tr>
+
+							<tr>
+
+
+								<td class="left">KB����</td>
+								<td><em>13,718</em></td>
+
+
+								<td class="left">�ѱ�����</td>
+								<td><em>16,160</em></td>
+
+							</tr>
+
+							<tr>
+
+
+								<td class="left">�̷����´��</td>
+								<td><em>12,519</em></td>
+
+
+								<td class="left"><span class="f_up">CS����</span></td>
+								<td><em class="f_up">15,080</em></td>
+
+							</tr>
+
+							<tr>
+
+
+								<td class="left">�Ｚ</td>
+								<td><em>12,294</em></td>
+
+
+								<td class="left"><span class="f_up">CLSA</span></td>
+								<td><em class="f_up">13,600</em></td>
+
+							</tr>
+
+							</tbody>
+						</table>
+					</div>
+
+					<div class="sub_section right">
+						<h5 class="h_th th_fo"><span>�ܱ��� ���</span></h5>
+						<table summary="�����ں� �Ÿŵ��� �ü������� ���� ǥ �� �ܱ��� ��� ����(��¥, ����, ���Ϻ�, �ܱ���, ���)�� �����մϴ�." class="tb_type1">
+							<caption>�ܱ��� ���</caption>
+							<colgroup><col width="50"><col width="65"><col width="70"><col width="70"><col></colgroup>
+							<thead>
+							<tr>
+								<th class="h_th th_date"><span>��¥</span></th>
+								<th scope="col" class="h_th th_pass_price"><span>����</span></th>
+								<th scope="col" class="h_th th_pass_day"><span>���Ϻ�</span></th>
+								<th scope="col" class="h_th th_foreigner"><span>�ܱ���</span></th>
+								<th scope="col" class="h_th th_organ"><span>���</span></th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr><td class="space"></td></tr>
+
+							<tr>
+								<th scope="row">07/13</th>
+								<td><em>272,500</em></td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										500
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_up">
+										+134,811
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_down">
+										-35,995
+									</em>
+
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row">07/12</th>
+								<td><em>272,000</em></td>
+								<td>
+
+									<em class="sam"><span>����</span></em>
+
+								</td>
+								<td>
+
+									<em class="f_up">
+										+47,411
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_down">
+										-60,020
+									</em>
+
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row">07/09</th>
+								<td><em>272,000</em></td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										3,000
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_up">
+										+83,987
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_up">
+										+70,163
+									</em>
+
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row">07/08</th>
+								<td><em>269,000</em></td>
+								<td>
+
+									<em class="f_down down"><span>����</span>
+										3,500
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_up">
+										+41,162
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_down">
+										-125,243
+									</em>
+
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row">07/07</th>
+								<td><em>272,500</em></td>
+								<td>
+
+									<em class="f_down down"><span>����</span>
+										4,500
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_down">
+										-49,534
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_down">
+										-121,356
+									</em>
+
+								</td>
+							</tr>
+
+							<tr>
+								<th scope="row">07/06</th>
+								<td><em>277,000</em></td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										6,500
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_up">
+										+235,162
+									</em>
+
+								</td>
+								<td>
+
+									<em class="f_up">
+										+117,593
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr><td class="space2"></td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="dummy"></div>
+					<a href="/item/frgn.nhn?code=096770" class="more" onclick="clickcr(this, 'dle.7', '', '', event);">������</a>
+				</div>
+
+				<hr>
+
+				<div class="section new_bbs">
+					<div class="sub_section news_section">
+						<h4 class="h_sub sub_tit3"><span>��������</span></h4>
+
+
+						<ul>
+
+
+							<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0004577559&amp;office_id=015&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '1', event);">SK�̳뺣�̼�, ģȯ�� ��ŸƮ�� ���°� ����</a>
+
+							</span>
+								<em> 07/13</em>
+							</li>
+
+
+
+
+							<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0002250170&amp;office_id=123&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '2', event);">SK�̳뺣�̼�, 3~7���� ģȯ�� ��...</a>
+							<a href="/item/news.nhn?code=096770&amp;clusterId=1230002250170" class="link_relation" onclick="clickcr(this, 'dle.11', '', '', event);"><span class="bar"></span>���� <em>2</em>��</a>
+							</span>
+								<em> 07/13</em>
+							</li>
+
+
+
+
+							<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0004983006&amp;office_id=018&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '3', event);">"SK�̳뺣�̼�, ������ 2������ ��� ���� ����...</a>
+
+							</span>
+								<em> 07/13</em>
+							</li>
+
+
+
+
+							<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0004576417&amp;office_id=015&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '4', event);">[ESG �귣�� ��ŷ]SK�̳뺣�̼�, �׸� �߽� ��...</a>
+
+							</span>
+								<em> 07/12</em>
+							</li>
+
+
+
+
+							<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0000745703&amp;office_id=366&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '5', event);">SK�̳뺣�̼�, ��5ȸ ���� �ߴ������ �������� ...</a>
+
+							</span>
+								<em> 07/11</em>
+							</li>
+
+						</ul><ul class="line_dot">
+
+
+						<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0004574471&amp;office_id=015&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '6', event);">SK�̳뺣�̼� "�� ���� ������ ������ ����"</a>
+
+							</span>
+							<em> 07/07</em>
+						</li>
+
+
+
+
+						<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0004573816&amp;office_id=015&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '7', event);">SK�̳뺣�̼�, �鼭 '�������� ��...</a>
+							<a href="/item/news.nhn?code=096770&amp;clusterId=0150004573816" class="link_relation" onclick="clickcr(this, 'dle.11', '', '', event);"><span class="bar"></span>���� <em>4</em>��</a>
+							</span>
+							<em> 07/06</em>
+						</li>
+
+
+
+
+						<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0001857789&amp;office_id=016&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '8', event);">�������� ���� �����򰡡� ���� ...</a>
+							<a href="/item/news.nhn?code=096770&amp;clusterId=0160001857789" class="link_relation" onclick="clickcr(this, 'dle.11', '', '', event);"><span class="bar"></span>���� <em>2</em>��</a>
+							</span>
+							<em> 07/06</em>
+						</li>
+
+
+
+
+						<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0004611288&amp;office_id=008&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '9', event);">"SK�̳뺣�̼�, ���͸� ���а�ġ �� ������ ��...</a>
+
+							</span>
+							<em> 07/05</em>
+						</li>
+
+
+
+
+						<li>
+							<span class="txt">
+
+
+
+
+
+
+							<a href="/item/news_read.nhn?article_id=0004668590&amp;office_id=014&amp;code=096770&amp;sm=title_entity_id.basic" onclick="clickcr(this, 'dle.1', '', '10', event);">���͸� �л� ���� SK�̳뺣�̼�.....</a>
+							<a href="/item/news.nhn?code=096770&amp;clusterId=0140004668590" class="link_relation" onclick="clickcr(this, 'dle.11', '', '', event);"><span class="bar"></span>���� <em>3</em>��</a>
+							</span>
+							<em> 07/04</em>
+						</li>
+
+
+
+					</ul>
+
+
+
+
+						<a href="/item/news.nhn?code=096770" class="more" onclick="clickcr(this, 'dle.2', '', '', event);">������</a>
+					</div>
+					<div class="sub_section right">
+						<h4 class="h_sub sub_tit4"><span>������н�</span><a href="/item/board_write_edit.nhn?code=096770&amp;mode=write" onclick="clickcr(this, 'dle.16', '', '', event);" style="position:relative;left:60px"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_write_n.gif" alt="�۾���" width="42" height="18"></a></h4>
+
+
+						<ul>
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184276696" onclick="clickcr(this, 'dle.3', '', '1', event);">SK�̳뺣�̼� ��ü�� Ȯ���غô��� ''</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 10:27</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184276277" onclick="clickcr(this, 'dle.3', '', '2', event);">��� �������� ���� �� ��� ���ڳ�</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 10:26</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184275250" onclick="clickcr(this, 'dle.3', '', '3', event);">�����ϰ� ����� �Ȱ�ɾѳפ�</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 10:23</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184271456" onclick="clickcr(this, 'dle.3', '', '4', event);">����ŵ�</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 10:13</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184271392" onclick="clickcr(this, 'dle.3', '', '5', event);">�̰� �о�� �Ǵܵ� �� �ؿ�...���� ��...</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 10:12</em>
+							</li>
+
+						</ul>
+						<ul class="line_dot">
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184268978" onclick="clickcr(this, 'dle.3', '', '6', event);">�̱� �ɼ� ������ �ٰ� �ɴϴ�</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 10:06</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184264176" onclick="clickcr(this, 'dle.3', '', '7', event);">����� ��..__Ű</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 09:55</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184263714" onclick="clickcr(this, 'dle.3', '', '8', event);">2������ ���ư��µ�, �길 ������.</a><em class="ea_reply">[1]</em><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 09:53</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184262939" onclick="clickcr(this, 'dle.3', '', '9', event);">�ż��� 27��5ó���̴�?</a><em class="ea_reply">[1]</em><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 09:51</em>
+							</li>
+
+
+							<li>
+					<span class="txt">
+						<a href="/item/board_read.nhn?code=096770&amp;nid=184262309" onclick="clickcr(this, 'dle.3', '', '10', event);">�̳�� ���ֵ� ������ ������</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+					</span>
+								<em>07/14 09:50</em>
+							</li>
+
+
+
+						</ul>
+
+
+
+						<a href="/item/board.nhn?code=096770" class="more" onclick="clickcr(this, 'dle.4', '', '', event);">������</a>
+					</div>
+				</div>
+
+				<hr>
+
+
+
+
+				<div class="section cop_analysis">
+					<h4 class="h_sub sub_tit6"><span>��������м�</span></h4>
+
+
+					<div class="sub_section">
+						<table summary="��������м��� ����ǥ�̸� �ֿ��繫������ �ֱ� ���� ����, �б� ������ ���� ������ �����մϴ�." class="tb_type1 tb_num tb_type1_ifrs">
+							<caption>��������м� ���̺�</caption>
+							<colgroup>
+								<col width="86">
+								<col width="59">
+								<col width="59">
+								<col width="59">
+								<col width="62">
+								<col width="58">
+								<col width="58">
+								<col width="58">
+								<col width="58">
+								<col>
+							</colgroup>
+							<thead>
+							<tr class="t_line">
+								<th rowspan="3" class="h_th2 th_cop_anal5 b_line"><strong>�ֿ��繫����</strong></th>
+								<th scope="col" colspan="4" class="h_th2 th_cop_anal6"><strong>�ֱ� ���� ����</strong></th>
+								<th scope="col" colspan="6" class="h_th2 th_cop_anal7 last"><strong>�ֱ� �б� ����</strong></th>
+							</tr>
+							<tr>
+
+
+
+
+
+								<th scope="col" class="">
+									2018.12
+								</th>
+
+
+
+
+
+
+								<th scope="col" class="">
+									2019.12
+								</th>
+
+
+
+
+
+
+								<th scope="col" class="">
+									2020.12
+								</th>
+
+
+
+
+
+
+
+
+								<th scope="col" class="t_line cell_strong">
+									2021.12<em>(E)</em>
+								</th>
+
+
+
+
+
+
+								<th scope="col" class="">
+									2020.03
+								</th>
+
+
+
+
+
+
+								<th scope="col" class="">
+									2020.06
+								</th>
+
+
+
+
+
+
+								<th scope="col" class="">
+									2020.09
+								</th>
+
+
+
+
+
+
+								<th scope="col" class="">
+									2020.12
+								</th>
+
+
+
+
+
+
+								<th scope="col" class="">
+									2021.03
+								</th>
+
+
+
+
+
+
+
+
+								<th scope="col" class="last cell_strong">
+									2021.06<em>(E)</em>
+								</th>
+
+
+							</tr>
+							<tr class="b_line">
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs t_line cell_strong"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<th scope="col" class="link_ifrs last cell_strong"><span>
+
+
+
+											IFRS����
+
+									</span></th>
+
+
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal8"><strong>�����</strong></th>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									542,165
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									493,069
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									341,645
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									443,409
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									111,630
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									71,996
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									84,192
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									73,827
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									92,398
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class=" last cell_strong">
+
+
+
+									106,569
+
+
+								</td>
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal9"><strong>��������</strong></th>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									21,032
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									11,136
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-25,688
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									18,906
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-17,752
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-4,397
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-289
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-3,249
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									5,025
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class=" last cell_strong">
+
+
+
+									4,815
+
+
+								</td>
+
+
+							</tr>
+							<tr class="line_end">
+								<th scope="row" class="h_th2 th_cop_anal10"><strong>��������</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									16,990
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									658
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-21,467
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									10,644
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-15,522
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-3,458
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-161
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-2,326
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-3,681
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" last cell_strong">
+
+
+
+									5,046
+
+
+								</td>
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal11"><strong>�������ͷ�</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3.88
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									2.26
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-7.52
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									4.26
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-15.90
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-6.11
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-0.34
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-4.40
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									5.44
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" last cell_strong">
+
+
+
+									4.52
+
+
+								</td>
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal12"><strong>�����ͷ�</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3.13
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									0.13
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-6.28
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									2.40
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-13.90
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-4.80
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-0.19
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-3.15
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-3.98
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" last cell_strong">
+
+
+
+									4.74
+
+
+								</td>
+
+
+							</tr>
+							<tr class="line_end">
+								<th scope="row" class="h_th2 th_cop_anal13"><strong>ROE(��������)</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									9.12
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-0.20
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-13.58
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									7.06
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-10.69
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-13.81
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-14.85
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-13.58
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-6.60
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null last cell_strong">
+									&nbsp;
+
+								</td>
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal14"><strong>��ä����</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									86.99
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									117.06
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									149.04
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null t_line cell_strong">
+									&nbsp;
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									135.55
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									148.00
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									149.24
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									149.04
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									180.65
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null last cell_strong">
+									&nbsp;
+
+								</td>
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal15"><strong>���º���</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									117.46
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									96.85
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									78.67
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null t_line cell_strong">
+									&nbsp;
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									88.94
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									90.53
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									85.10
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									78.67
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									82.30
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null last cell_strong">
+									&nbsp;
+
+								</td>
+
+
+							</tr>
+							<tr class="line_end">
+								<th scope="row" class="h_th2 th_cop_anal16"><strong>������</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,989.65
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,828.88
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,379.04
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null t_line cell_strong">
+									&nbsp;
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,469.91
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,394.80
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,391.96
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,379.04
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									3,298.32
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null last cell_strong">
+									&nbsp;
+
+								</td>
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal17"><strong>EPS(��)</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									17,619
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-381
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-23,185
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									11,318
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-16,625
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-3,754
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-253
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-2,554
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-4,014
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" last cell_strong">
+
+
+
+									4,742
+
+
+								</td>
+
+
+							</tr>
+
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal20"><strong>PER(��)</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									10.19
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-393.31
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-8.19
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									24.08
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-4.56
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-5.36
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-5.29
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-8.19
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									<em class="f_up">
+										-20.71
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" last cell_strong">
+
+
+
+									57.46
+
+
+								</td>
+
+
+							</tr>
+
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal18"><strong>BPS(��)</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									205,445
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									198,025
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									173,957
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									185,449
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									184,800
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									180,581
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									179,631
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									173,957
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									172,344
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null last cell_strong">
+									&nbsp;
+
+								</td>
+
+
+							</tr>
+
+							<tr class="line_end">
+								<th scope="row" class="h_th2 th_cop_anal21"><strong>PBR(��)</strong></th>
+
+
+
+
+
+
+								<td class="">
+
+
+
+									0.87
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									0.76
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									1.09
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+
+									1.47
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									0.47
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									0.73
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									0.77
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									1.09
+
+
+								</td>
+
+
+
+
+
+
+
+								<td class="">
+
+
+
+									1.27
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+
+								<td class=" null last cell_strong">
+									&nbsp;
+
+								</td>
+
+
+							</tr>
+
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal19"><strong>�ִ����(��)</strong></th>
+
+
+
+
+
+								<td class="">
+
+
+									8,000
+
+
+								</td>
+
+
+
+
+
+
+								<td class="">
+
+
+									3,000
+
+
+								</td>
+
+
+
+
+
+
+								<td class="">
+
+
+									-
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class=" t_line cell_strong">
+
+
+									853
+
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class="no_data 2 last cell_strong">
+
+								</td>
+
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal22"><strong>�ð�����(%)</strong></th>
+
+
+
+
+
+								<td class="">
+
+
+									4.46
+
+
+								</td>
+
+
+
+
+
+
+								<td class="">
+
+
+									2.00
+
+
+								</td>
+
+
+
+
+
+
+								<td class="">
+
+
+									-
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class="no_data 2 t_line cell_strong">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class="no_data 2 last cell_strong">
+
+								</td>
+
+
+
+							</tr>
+							<tr>
+								<th scope="row" class="h_th2 th_cop_anal23"><strong>��缺��(%)</strong></th>
+
+
+
+
+
+								<td class="">
+
+
+									42.90
+
+
+								</td>
+
+
+
+
+
+
+								<td class="">
+
+
+									<em class="f_up">
+										-740.62
+									</em>
+
+
+								</td>
+
+
+
+
+
+
+								<td class="">
+
+
+									-
+
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class="no_data 2 t_line cell_strong">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+								<td class="no_data 2">
+
+								</td>
+
+
+
+
+
+
+
+
+
+
+								<td class="no_data 2 last cell_strong">
+
+								</td>
+
+
+
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="dsc_ifrs">
+						<ul>
+							<li>�б� ������ �ش� �б������ ���� �������� ���� �б������ ���� ������ �����ϴ� ������� ���ǹǷ�,<br>������� ������ �б� ������ ���̰� ���� �� �ֽ��ϴ�.</li>
+							<li>��������(<em>E</em>) : �ֱ� 3������ ���ǻ翡�� ��ǥ�� ����ġ�� ��հ��Դϴ�.</li>
+						</ul>
+					</div>
+					<div class="ly_moreifrs" style="display:none">
+						<ul class="blind">
+							<li> ���Ͱ�꼭
+								<dl>
+									<dt>������������</dt>
+									<dd>�����-�������-�ǰ���</dd>
+									<dt>������������</dt>
+									<dd>����ȸ���� ���п� �ͼӵǴ� ��������</dd>
+									<dt>��������������</dt>
+									<dd>����ȸ���� ���п� �ͼӵǴ� ��������</dd>
+								</dl>
+							</li>
+							<li> ���ͼ�
+								<dl>
+									<dt>�����������ͷ�</dt>
+									<dd>������������/�����</dd>
+									<dt>ROE(������������)</dt>
+									<dd>������������ �������� / (�ں��Ѱ� - ��������������)</dd>
+								</dl>
+							</li>
+							<li> ��ġ��ǥ
+								<dl>
+									<dt>EPS(������������)</dt>
+									<dd>������������ ��������/�������� ��չ����ֽļ�(�켱��+������)</dd>
+									<dt>BPS(������������</dt>
+									<dd>������������ �ͼ� ���ڻ�/�������� �⸻�����ֽ�(�켱��+������)</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="dummy"></div>
+					<span class="btn_more"><a href="/item/coinfo.nhn?code=096770&amp;target=finsum_more">������</a></span>
+
+
+
+				</div>
+
+
+				<hr>
+
+
+
+
+				<div class="section trade_compare">
+					<h4 class="h_sub sub_tit7"><span>����������</span><em style="position:relative;left:70px;">(������ : <a href="/sise/sise_group_detail.nhn?type=upjong&amp;no=313">�����Ͱ���</a><span class="bar">��</span>�繫����: 2021.03 �б� ����)</em></h4>
+					<table summary="�������� �񱳿� ����ǥ�̸� ����� ���� ������ �����մϴ�." class="tb_type1 tb_num">
+						<caption>����������</caption>
+						<thead>
+						<tr>
+							<th class="h_th2 th_cop_comp1"><span>�����</span></th>
+
+
+							<th scope="col"><a href="/item/main.nhn?code=096770">SK�̳뺣�̼�<span class="star">*</span><em>096770</em></a></th>
+
+
+							<th scope="col"><a href="/item/main.nhn?code=010950">S-Oil<span class="star">*</span><em>010950</em></a></th>
+
+
+							<th scope="col"><a href="/item/main.nhn?code=267250">�����߰�������<span class="star">*</span><em>267250</em></a></th>
+
+
+							<th scope="col"><a href="/item/main.nhn?code=078930">GS<span class="star">*</span><em>078930</em></a></th>
+
+
+							<th scope="col"><a href="/item/main.nhn?code=006120">SK��Ŀ����<span class="star">*</span><em>006120</em></a></th>
+
+
+
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp2"><span>���簡</span></th>
+
+
+
+
+
+							<td>272,000</td>
+
+
+
+
+
+
+
+							<td>103,500</td>
+
+
+
+
+
+
+
+							<td>68,900</td>
+
+
+
+
+
+
+
+							<td>44,850</td>
+
+
+
+
+
+
+
+							<td>50,600</td>
+
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp3"><span>���ϴ��</span></th>
+
+
+
+
+
+							<td>
+								<em class="f_down down"><span>����</span>
+									500
+								</em>
+							</td>
+
+
+
+
+
+
+
+							<td>
+								<em class="sam"><span>����</span></em>0</td>
+
+
+
+
+
+
+
+
+							<td>
+								<em class="f_down down"><span>����</span>
+									600
+								</em>
+							</td>
+
+
+
+
+
+
+
+							<td>
+								<em class="f_down down"><span>����</span>
+									400
+								</em>
+							</td>
+
+
+
+
+
+
+
+							<td>
+								<em class="f_up up"><span>����</span>
+									950
+								</em>
+							</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp4"><span>�����</span></th>
+
+
+
+
+							<td>
+								<em class="f_down"><span>����</span>
+									-0.18%
+								</em>
+							</td>
+
+
+
+
+
+
+							<td>
+								<em>
+									0.00%
+								</em>
+							</td>
+
+
+
+
+
+
+							<td>
+								<em class="f_down"><span>����</span>
+									-0.86%
+								</em>
+							</td>
+
+
+
+
+
+
+							<td>
+								<em class="f_down"><span>����</span>
+									-0.88%
+								</em>
+							</td>
+
+
+
+
+
+
+							<td>
+								<em class="f_up"><span>����</span>
+									+1.91%
+								</em>
+							</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp5"><span>�ð��Ѿ�(��)</span></th>
+
+
+
+
+
+							<td>251,506</td>
+
+
+
+
+
+
+
+							<td>116,523</td>
+
+
+
+
+
+
+
+							<td>54,426</td>
+
+
+
+
+
+
+
+							<td>41,672</td>
+
+
+
+
+
+
+
+							<td>9,633</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp6"><span>�ܱ��κ���(%)</span></th>
+
+
+
+
+
+							<td>23.21</td>
+
+
+
+
+
+
+
+							<td>77.64</td>
+
+
+
+
+
+
+
+							<td>17.27</td>
+
+
+
+
+
+
+
+							<td>19.43</td>
+
+
+
+
+
+
+
+							<td>9.06</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp7"><span>�����(��)</span></th>
+
+
+
+
+
+							<td>92,398</td>
+
+
+
+
+
+
+
+							<td>53,448</td>
+
+
+
+
+
+
+
+							<td>60,755</td>
+
+
+
+
+
+
+
+							<td>42,846</td>
+
+
+
+
+
+
+
+							<td>14,650</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp8"><span>��������(��)</span></th>
+
+
+
+
+
+							<td>5,025</td>
+
+
+
+
+
+
+
+							<td>6,292</td>
+
+
+
+
+
+
+
+							<td>5,343</td>
+
+
+
+
+
+
+
+							<td>7,064</td>
+
+
+
+
+
+
+
+							<td>332</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp15"><span>������������(��)</span></th>
+
+
+
+
+
+							<td>5,025</td>
+
+
+
+
+
+
+
+							<td>6,292</td>
+
+
+
+
+
+
+
+							<td>5,343</td>
+
+
+
+
+
+
+
+							<td>7,064</td>
+
+
+
+
+
+
+
+							<td>332</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp9"><span>��������������(%)</span></th>
+
+
+
+
+
+							<td>254.66</td>
+
+
+
+
+
+
+
+							<td>670.42</td>
+
+
+
+
+
+
+
+							<td>269.47</td>
+
+
+
+
+
+
+
+							<td>152.53</td>
+
+
+
+
+
+
+
+							<td>402.27</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp10"><span>��������(��)</span></th>
+
+
+
+
+
+							<td>-3,681</td>
+
+
+
+
+
+
+
+							<td>3,447</td>
+
+
+
+
+
+
+
+							<td>2,944</td>
+
+
+
+
+
+
+
+							<td>5,846</td>
+
+
+
+
+
+
+
+							<td>588</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp11"><span>�ִ������(��)</span></th>
+
+
+
+
+
+							<td>-4,014.41</td>
+
+
+
+
+
+
+
+							<td>2,956.22</td>
+
+
+
+
+
+
+
+							<td>1,918.18</td>
+
+
+
+
+
+
+
+							<td>5,805.34</td>
+
+
+
+
+
+
+
+							<td>1,983.93</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp12"><span>ROE(%)</span></th>
+
+
+
+
+
+							<td>-6.60</td>
+
+
+
+
+
+
+
+							<td>7.39</td>
+
+
+
+
+
+
+
+							<td>-3.16</td>
+
+
+
+
+
+
+
+							<td>7.50</td>
+
+
+
+
+
+
+
+							<td>12.48</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp13"><span>PER(%)</span></th>
+
+
+
+
+
+							<td>-25.72</td>
+
+
+
+
+
+
+
+							<td>28.12</td>
+
+
+
+
+
+
+
+							<td>-24.07</td>
+
+
+
+
+
+
+
+							<td>6.58</td>
+
+
+
+
+
+
+
+							<td>4.17</td>
+
+
+
+						</tr>
+						<tr>
+							<th scope="row" class="h_th2 th_cop_comp14"><span>PBR(��)</span></th>
+
+
+
+
+
+							<td>1.58</td>
+
+
+
+
+
+
+
+							<td>2.00</td>
+
+
+
+
+
+
+
+							<td>.70</td>
+
+
+
+
+
+
+
+							<td>.48</td>
+
+
+
+
+
+
+
+							<td>.46</td>
+
+
+
+						</tr>
+						</tbody>
+					</table>
+					<a href="/sise/sise_group_detail.nhn?type=upjong&amp;no=313" class="more" onclick="clickcr(this, 'dle.22', '', '', event);">������</a>
+				</div>
+
+				<hr>
+				<div class="dsc_ifrs2">
+					<ul>
+						<li>PER, PBR ��ġ�� �ֱ� 4�б� �����Դϴ�.</li>
+						<li><em>*</em> ������ IFRS (����) ȸ������� ������ �����Դϴ�. (�ֱ� �б⺸�� �����̸�, ���� �б�� �������� �ٸ� �� �ֽ��ϴ�.)</li>
+						<li>IFRS (����) ���� ������ �������� �� ��ġ��ǥ(�ִ������, PER, PBR)�� �������������� �������� �����Ͽ����ϴ�.</li>
+					</ul>
+				</div>
+
+
+
+
+
+
+
+			</div>
+
+
+			<div id="aside">
+				<div class="bg_line"></div>
+				<div class="aside_invest_info">
+					<div id="tab_invest" class="tab tab_invest1">
+						<a href="javascript:showArea('tab_invest', 'tab tab_invest1', 'tab_con1', 'tab_con2')" onclick="clickcr(this, 'sop.18', '', '2', event)"><span>��������</span></a>
+						<a href="javascript:showArea('tab_invest', 'tab tab_invest2', 'tab_con2', 'tab_con1')" onclick="clickcr(this, 'sop.20', '', '2', event)"><span>ȣ��10�ܰ�</span></a>
+					</div>
+
+
+					<div id="tab_con1" class="tab_con1" style="display:block">
+
+
+
+
+
+
+						<h3 class="blind">��������</h3>
+						<div class="first">
+							<table summary="�ð��Ѿ� ����">
+								<caption>�ð��Ѿ�</caption>
+
+
+
+
+
+
+								<tbody><tr class="strong">
+									<th scope="row">�ð��Ѿ�</th>
+									<td><em id="_market_sum">
+
+
+
+
+
+
+										25��
+
+										1,506
+
+
+									</em>���</td>
+								</tr>
+
+								<tr><th scope="row">
+
+									<a class="link_site" href="/sise/sise_market_sum.nhn" onclick="clickcr(this, 'sop.19', '', '1', event)">�ð��Ѿ׼���</a>
+
+
+								</th><td>�ڽ��� <em>16</em>��</td></tr>
+
+								<tr>
+									<th scope="row">�����ֽļ�</th>
+									<td><em>92,465,564</em></td>
+								</tr>
+
+								<tr><th scope="row">�׸鰡<span class="bar">l</span>�ŸŴ���</th>
+									<td>
+										<em>5,000</em>��
+										<span class="bar">l</span>
+										<em>1</em>��
+									</td>
+								</tr>
+
+
+								</tbody></table>
+						</div>
+
+
+						<div class="gray">
+							<table summary="�ܱ����ѵ��ֽļ� ����" class="lwidth">
+								<caption>�ܱ����ѵ��ֽļ�</caption>
+								<tbody><tr>
+									<th scope="row">�ܱ����ѵ��ֽļ�(A)</th>
+									<td><em>92,465,564</em></td>
+								</tr>
+								<tr>
+									<th scope="row">�ܱ��κ����ֽļ�(B)</th>
+									<td><em>21,465,558</em></td>
+								</tr>
+								<tr class="strong">
+									<th scope="row"><strong>�ܱ��μ�����(B/A)</strong><a href="javascript:togglePannel('helpPannel0');" onmouseover="showPannel('helpPannel0');" onmouseout="hidePannel('helpPannel0');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="�ܱ��μ�����(B/A) �󼼼���"></a>
+										<div class="lyr_section">
+											<div id="helpPannel0" class="tooltip_lyr" style="display:none">
+												<p>�ܱ���(�ѵ�)�������̶� �ܱ��κ����ֽļ��� �ܱ����ѵ��ֽļ����� ���� ���Դϴ�.</p>
+												<p>�Ϲ����� ��쿡�� �ܱ����ѵ��ֽļ��� �����ֽļ��� ���Ƽ� �ܱ��� �������� �������� ����������, ���� �Ⱓ����� ��� �ѵ��ֽļ��� ������ �־� �� ������ �޶��� �� �ֽ��ϴ�.(Ex. �ѱ�����)</p>
+												<span class="arrow"></span>
+											</div>
+										</div>
+									</th>
+									<td><em>23.21%</em></td>
+								</tr>
+								</tbody></table>
+						</div>
+
+
+						<div>
+							<table summary="�����ǰ� ����" class="rwidth">
+
+								<caption>�����ǰ�</caption>
+								<tbody><tr><th scope="row" style="width:115px">�����ǰ�<span class="bar">l</span>��ǥ�ְ�</th>
+									<td style="width:115px">
+
+
+
+										<span class="f_up"><em>3.95</em>�ż�</span>
+
+
+
+
+
+										<span class="bar">l</span>
+
+
+										<em>360,100</em>
+
+									</td></tr>
+
+								<tr>
+									<th scope="row">52���ְ�<span class="bar">l</span>����
+
+									</th>
+
+
+
+									<td>
+										<em>327,500</em>
+										<span class="bar">l</span>
+										<em>119,500</em>
+									</td>
+
+
+								</tr>
+								</tbody></table>
+						</div>
+
+
+						<div>
+							<table summary="PER/EPS ����" class="per_table">
+								<caption>PER/EPS</caption>
+								<tbody>
+								<tr>
+									<th scope="row">
+										PER<span class="bar">l</span>EPS<span class="date">(2021.03)</span><a href="javascript:togglePannel('helpPannel1');" onmouseover="showPannel('helpPannel1');" onmouseout="hidePannel('helpPannel1');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="����PER EPS �󼼼���"></a>
+										<div class="lyr_section">
+											<div id="helpPannel1" class="tooltip_lyr" style="display:none">
+												<p>
+													<strong>PER = ���簡 �� EPS</strong>
+													EPS�� �������ͼ� �ֱ� 4�б� �ջ� ��������
+													������չ����ֽļ��� ���� ���̸�, �����ֿ�
+													�켱�ָ� �ջ��ؼ� ����մϴ�.
+												</p>
+												<span class="arrow"></span>
+											</div>
+										</div>
+									</th>
+									<td>
+
+
+										<em>N/A</em>
+
+
+										<span class="bar">l</span>
+
+
+										<em id="_eps">-10,575</em>��
+
+									</td>
+								</tr>
+								</tbody>
+								<tbody><tr>
+									<th scope="row">����PER<span class="bar">l</span>EPS<a href="javascript:togglePannel('helpPannel3');" onmouseover="showPannel('helpPannel3');" onmouseout="hidePannel('helpPannel3');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="����PER EPS �󼼼���"></a>
+										<div class="lyr_section">
+											<div id="helpPannel3" class="tooltip_lyr tooltip_lyr2" style="display:none">
+												<p>
+													<strong>����PER = ���簡������EPS</strong>
+													����EPS�� ���� ����EPS�� ���� ���ǻ� ���� ��հ�(��������)���� �����ذ��̵忡�� �����մϴ�. ���� ���ǻ簡 3�� �̻��� ��쿡�� �����մϴ�.
+												</p>
+												<span class="arrow"></span>
+											</div>
+										</div>
+									</th>
+									<td>
+
+
+										<em id="_cns_per">24.00</em>��
+
+										<span class="bar">l</span>
+
+
+										<em id="_cns_eps">11,318</em>��
+
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">PBR<span class="bar">l</span>BPS <span class="date">(2021.03)</span><a href="javascript:togglePannel('helpPannel4');" onmouseover="showPannel('helpPannel4');" onmouseout="hidePannel('helpPannel4');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="PBR | BPS �󼼼���"></a>
+										<div class="lyr_section">
+											<div id="helpPannel4" class="tooltip_lyr tooltip_lyr3" style="display:none">
+												<p>
+													<strong>PBR= ���簡 �� BPS</strong>
+													BPS�� �ֱ� �б� �ں��Ѱ踦 �����⸻�����ֽļ���
+													���� ���̸�, �����ֿ� �켱�ָ� �ջ��ؼ� ����մϴ�.
+												</p>
+												<span class="arrow"></span>
+											</div>
+										</div>
+									</th>
+									<td>
+
+
+										<em id="_pbr">1.58</em>��
+
+										<span class="bar">l</span>
+
+
+										<em>172,344</em>��
+
+									</td>
+								</tr>
+								<tr>
+
+
+
+
+									<th scope="row">�����ͷ�<a href="javascript:togglePannel('helpPannel5');" onmouseover="showPannel('helpPannel5');" onmouseout="hidePannel('helpPannel5');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="�����ͷ� �󼼼���"></a>
+										<div class="lyr_section">
+											<div id="helpPannel5" class="tooltip_lyr dividend_layer" style="display:none">
+												<strong>�����ͷ� = (���� / ���簡) x 100</strong>
+												<p>������ �ֱ� ��꿬�� ������ �߰������ ������ �� �����Դϴ�.</p>
+												<span class="arrow"></span>
+											</div>
+										</div>
+									</th>
+									<td>
+
+										<em>N/A</em>
+
+
+									</td>
+								</tr>
+								</tbody></table>
+						</div>
+						<div class="gray">
+							<table summary="���Ͼ��� PER ����">
+								<caption>���Ͼ��� PER</caption>
+								<tbody><tr class="strong">
+									<th scope="row"><a class="link_site" href="/sise/sise_group_detail.nhn?type=upjong&amp;no=313" onclick="clickcr(this, 'sop.19', '', '2', event)">���Ͼ��� PER</a></th>
+									<td>
+
+
+										<em>279.47</em>��
+
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><a class="link_site" href="/sise/sise_group_detail.nhn?type=upjong&amp;no=313" onclick="clickcr(this, 'sop.19', '', '3', event)">���Ͼ��� �����</a></th>
+
+
+
+									<td class="f_down"><em>
+										-0.23%
+									</em></td>
+
+
+								</tr>
+								</tbody></table>
+						</div>
+
+
+
+
+
+					</div>
+
+
+					<div id="tab_con2" class="tab_con2" style="display:none">
+						<h3 class="blind">ȣ�� 10�ܰ�</h3>
+						<table summary="ȣ��10�ܰ� ����">
+							<caption>ȣ�� 10�ܰ�</caption>
+							<tbody><tr>
+								<th scope="col">�ŵ��ܷ�</th>
+								<th scope="col">ȣ��<span class="txt_color">(20������)</span></th>
+								<th scope="col" class="th_r">�ż��ܷ�</th>
+							</tr>
+							<tr><td colspan="3" class="space"></td></tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									5,576
+
+								</td>
+								<td>
+
+
+									276,000
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									5,974
+
+								</td>
+								<td>
+
+
+									275,500
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									10,837
+
+								</td>
+								<td>
+
+
+									275,000
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									15,237
+
+								</td>
+								<td>
+
+
+									274,500
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									12,980
+
+								</td>
+								<td>
+
+
+									274,000
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									6,207
+
+								</td>
+								<td>
+
+
+									273,500
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									4,783
+
+								</td>
+								<td>
+
+
+									273,000
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									4,485
+
+								</td>
+								<td>
+
+
+									272,500
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down">
+								<td>
+
+
+									2,684
+
+								</td>
+								<td>
+
+
+									272,000
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+
+							<tr class="f_down strong">
+								<td>
+
+
+									1,803
+
+								</td>
+								<td>
+
+
+									271,500
+
+								</td>
+								<td class="td_r"></td>
+							</tr>
+							<tr><td colspan="3" class="line_dot"></td></tr>
+							<tr class="f_up strong">
+								<td></td>
+								<td>
+
+
+									271,000
+
+								</td>
+								<td class="td_r">
+
+
+									9,548
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									270,500
+
+								</td>
+								<td class="td_r">
+
+
+									12,881
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									270,000
+
+								</td>
+								<td class="td_r">
+
+
+									15,957
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									269,500
+
+								</td>
+								<td class="td_r">
+
+
+									6,660
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									269,000
+
+								</td>
+								<td class="td_r">
+
+
+									5,754
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									268,500
+
+								</td>
+								<td class="td_r">
+
+
+									1,984
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									268,000
+
+								</td>
+								<td class="td_r">
+
+
+									3,374
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									267,500
+
+								</td>
+								<td class="td_r">
+
+
+									1,385
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									267,000
+
+								</td>
+								<td class="td_r">
+
+
+									3,224
+
+								</td>
+							</tr>
+
+							<tr class="f_up">
+								<td></td>
+								<td>
+
+
+									266,500
+
+								</td>
+								<td class="td_r">
+
+
+									751
+
+								</td>
+							</tr>
+
+							<tr><td colspan="3" class="space"></td></tr>
+							<tr class="total">
+								<td class="f_down">
+
+
+									70,566
+
+								</td>
+								<td>�ܷ��հ�</td>
+								<td class="f_up">
+
+
+									61,518
+
+								</td>
+							</tr>
+							</tbody></table>
+					</div>
+				</div>
+
+
+
+
+
+				<script language="javascript" src="https://ssl.pstatic.net/imgstock/static.pc/20210713230908/js/item_main_right_area.js"></script>
+
+
+				<div class="aside_section cop_list">
+
+
+					<div id="tab_search" class="tab tab_search1">
+
+
+
+						<a href="javascript:showRecent('tab_search', 'tab tab_search1', '096770', 'recent')" onclick="jindo.$Cookie().set('summary_item_type', 'recent', 30, 'finance.naver.com'); clickcr(this, 'rch.1', '', '', event);"><span>�ֱ���ȸ</span></a>
+						<a href="javascript:showRecent('tab_search', 'tab tab_search2', '096770', 'mystock')" onclick="jindo.$Cookie().set('summary_item_type', 'mystock', 30, 'finance.naver.com'); clickcr(this, 'rch.3', '', '', event);"><span>MY STOCK</span></a>
+						<!-- [D] Ȱ��ȭ�� �Ǹ޴��� ���� blind text �������ּ��� -->
+						<h2 class="blind" id="blind_text_tab_search">�ֱ���ȸ</h2>
+					</div>
+
+
+					<script type="text/template" id="recent_list_none">
+						<div class="no_result">
+							<img src="https://ssl.pstatic.net/static/nfinance/img/no_result_aside1_v2.gif" width="144" height="13" border="0" alt="�ֱ� ��ȸ�� ������ �����ϴ�." class="noresult_txt1">
+						</div>
+					</script>
+					<script type="text/template" id="mystock_logout">
+						<div class="no_result">
+							<map name="no_result_aside2">
+								<area shape="rect" coords="6,38,107,52" href="javascript:naver_login()" alt="My stock �α���">
+							</map>
+							<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_aside2.gif" width="116" height="53" border="0" usemap="#no_result_aside2" title="" alt="�α����Ͻø� ����Ͻ� ������ �ü��� �����˴ϴ�." class="noresult_txt2">
+						</div>
+					</script>
+					<script type="text/template" id="mystock_list_none">
+						<div class="no_result">
+							<map name="no_result_aside3">
+								<area shape="rect" coords="11,38,125,52" href="/mystock/" alt="My stock �ٷΰ���">
+							</map>
+							<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_aside3.gif" width="137" height="53" border="0" usemap="#no_result_aside3" title="" alt="MY STOCK�� ���������� ����Ͻø� �ü��� �����˴ϴ�." class="noresult_txt3">
+						</div>
+					</script>
+					<script type="text/template" id="recent_list_exist">
+						{if type == "recent"}
+						{set listNclicksId="rch.2"}
+						<table summary="�ֱ���ȸ ����Ʈ" class="con_search1">
+							<caption>�ֱ���ȸ</caption>
+							<colgroup><col><col width="50"><col width="72"></colgroup>
+							{else}
+							{set listNclicksId="rch.4"}
+							<table summary="MY STOCK ����Ʈ" class="con_search2">
+								<caption>MY STOCK</caption>
+								<colgroup><col><col width="60"><col width="60"></colgroup>
+								{/if}
+								<thead>
+								<tr>
+									<th>��ü��</th>
+									<th scope="col">�ŷ���</th>
+									<th scope="col">���Ϻ�</th>
+								</tr>
+								</thead>
+								{for index:itemList in item_list}
+								{if index == 5 || index == 10}
+								<tr><td colspan="3" class="line"></td></tr>
+								{/if}
+								<tr>
+									<th scope="row">
+										<a href="/item/main.nhn?code={=itemList.itemcode}" onClick="clickcr(this, '{=listNclicksId}', '{=itemList.itemcode}', '{=index + 1}', event);" target=_top>{=itemList.itemname}</a>
+									</th>
+									<td id="nowVal_td_{=index}">{=itemList.now_val}</td>
+									<td>
+										{if itemList.risefall == '1'}
+										<em class="f_up up_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">���Ѱ�</span>{=itemList.change_val}</em>
+										{elseif itemList.risefall == '2'}
+										<em class="f_up up" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">����</span>{=itemList.change_val}</em>
+										{elseif itemList.risefall == '4'}
+										<em class="f_down down_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">���Ѱ�</span>{=itemList.change_val}</em>
+										{elseif itemList.risefall == '5'}
+										<em class="f_down down" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">����</span>{=itemList.change_val}</em>
+										{else}
+										<em class="sam" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">����</span></em>
+										{/if}
+										{if type == "recent"}
+										<a href="javascript:deleteCodeFromRecent('{=itemList.itemcode}', '{=code}', '{=type}', '{=page}')"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_delete.gif" alt="����" width="11" height="11"></a>
+										{/if}
+									</td>
+								</tr>
+								{/for}
+							</table>
+					</script>
+					<div id="recent_area"></div>
+
+
+					<script type="text/template" id="recent_btn_tmpl">
+						<span>
+				{if prev_page != 0 || next_page != 0}
+				{if prev_page == 0}
+					<a href="#" onClick="clickcr(this, 'rch.5', '', '', event); return false;"><img src="https://ssl.pstatic.net/static/nfinance/btn_prev2.gif" width="17" height="15" alt="����"></a>
+				{elseif prev_page > 0}
+					<a href="javascript:movePage('{=code}', '{=type}', '{=prev_page}');" onClick="clickcr(this, 'rch.5', '', '', event)"><img src="https://ssl.pstatic.net/static/nfinance/btn_prev2.gif" width="17" height="15" alt="����"></a>
+				{/if}
+				{if next_page == 0}
+					<a href="#" onClick="clickcr(this, 'rch.6', '', '', event); return false;"><img src="https://ssl.pstatic.net/static/nfinance/btn_next2.gif" width="17" height="15" alt="����"></a>
+				{elseif next_page > 0}
+					<a href="javascript:movePage('{=code}', '{=type}', '{=next_page}');" onClick="clickcr(this, 'rch.6', '', '', event)"><img src="https://ssl.pstatic.net/static/nfinance/btn_next2.gif" width="17" height="15" alt="����"></a>
+				{/if}
+				{/if}
+			</span>
+						{if type != 'recent'}
+						<a href="/mystock/" class="more" onClick="clickcr(this, 'rch.7', '', '', event)">������</a>
+						{/if}
+					</script>
+					<div id="recent_button" class="more_info"></div>
+
+
+					<script type="text/javascript">
+			var comment_code = "096770";
+			var comment_type = "recent";
+			var comment_page = "1";
+
+			  	jindo.$Fn(function() {
+					movePage('096770', 'recent', '1');
+				}).attach(document,"domready");
+
+			</script>
+				</div>
+
+
+
+				<div class="aside_section ad_banner">
+					<div id="da_240240" name="da_240240">
+						<iframe id="f240240" title="������" name="f240240" src="https://veta.naver.com/fxshow?su=SU10352" width="240" height="240" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" align="center" data-veta-preview="finance_right_new"></iframe>
+					</div>
+				</div>
+
+
+
+				<div class="aside_section cop_list">
+					<h2 class="h_sub sub_tit9"><span>�α�˻�����</span></h2>
+					<div id="tab_fav" class="tab tab_fav1">
+						<a href="javascript:showArea('tab_fav', 'tab tab_fav1', 'fav_kospi', 'fav_kosdaq')" onclick="clickcr(this, 'pss.1', '', '', event);"><span>�ڽ���</span></a>
+						<a href="javascript:showArea('tab_fav', 'tab tab_fav2', 'fav_kosdaq', 'fav_kospi')" onclick="clickcr(this, 'pss.3', '', '', event);"><span>�ڽ���</span></a>
+						<!-- [D] Ȱ��ȭ�� �Ǹ޴��� ���� blind text �������ּ��� -->
+						<h3 class="blind" id="blind_text_tab_fav">�ڽ���</h3>
+					</div>
+
+					<div id="fav_kospi" style="display:block">
+						<table summary="�ڽ��� �α�˻����� ����Ʈ" class="rank">
+							<caption>�ڽ��� �α�˻�����</caption>
+							<colgroup><col><col width="60"><col width="86"></colgroup>
+							<thead>
+							<tr>
+								<th>��ü��</th>
+								<th scope="col">�ŷ���</th>
+								<th scope="col">���Ϻ�</th>
+							</tr>
+							</thead>
+
+
+							<tbody><tr>
+								<th scope="row" class="no1"><a href="/item/main.nhn?code=005930" target="_top" onclick="clickcr(this, 'pss.2', '', '1', event);">�Ｚ����</a></th>
+								<td>79,500</td>
+								<td>
+
+									<em class="f_down down"><span>����</span>
+										300
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no2"><a href="/item/main.nhn?code=009240" target="_top" onclick="clickcr(this, 'pss.2', '', '2', event);">�ѻ�</a></th>
+								<td>132,500</td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										15,000
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no3"><a href="/item/main.nhn?code=035720" target="_top" onclick="clickcr(this, 'pss.2', '', '3', event);">īī��</a></th>
+								<td>162,000</td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										1,000
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no4"><a href="/item/main.nhn?code=011000" target="_top" onclick="clickcr(this, 'pss.2', '', '4', event);">�����������</a></th>
+								<td>44,550</td>
+								<td>
+
+									<em class="f_down down"><span>����</span>
+										1,500
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no5"><a href="/item/main.nhn?code=352820" target="_top" onclick="clickcr(this, 'pss.2', '', '5', event);">���̺�</a></th>
+								<td>320,000</td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										11,000
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr><td colspan="3" class="line"></td></tr>
+
+							<tr>
+								<th scope="row" class="no6"><a href="/item/main.nhn?code=010130" target="_top" onclick="clickcr(this, 'pss.2', '', '6', event);">����ƿ�</a></th>
+								<td>475,000</td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										45,000
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no7"><a href="/item/main.nhn?code=011200" target="_top" onclick="clickcr(this, 'pss.2', '', '7', event);">HMM</a></th>
+								<td>42,850</td>
+								<td>
+
+									<em class="f_down down"><span>����</span>
+										650
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no8"><a href="/item/main.nhn?code=035420" target="_top" onclick="clickcr(this, 'pss.2', '', '8', event);">NAVER</a></th>
+								<td>440,500</td>
+								<td>
+
+									<em class="f_down down"><span>����</span>
+										500
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no9"><a href="/item/main.nhn?code=034020" target="_top" onclick="clickcr(this, 'pss.2', '', '9', event);">�λ��߰���</a></th>
+								<td>25,950</td>
+								<td>
+
+									<em class="f_up up"><span>����</span>
+										450
+									</em>
+
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no10"><a href="/item/main.nhn?code=019170" target="_top" onclick="clickcr(this, 'pss.2', '', '10', event);">��ǳ����</a></th>
+								<td>63,100</td>
+								<td>
+
+									<em class="f_down down"><span>����</span>
+										1,100
+									</em>
+
+								</td>
+							</tr>
+
+							</tbody></table>
+					</div>
+					<div id="fav_kosdaq" style="display:none">
+						<table summary="�ڽ��� �α�˻����� ����Ʈ" class="rank">
+							<caption>�ڽ��� �α�˻�����</caption>
+							<colgroup><col><col width="50"><col width="86"></colgroup>
+							<thead>
+							<tr>
+								<th>��ü��</th>
+								<th scope="col">�ŷ���</th>
+								<th scope="col">���Ϻ�</th>
+							</tr>
+							</thead>
+
+
+							<tbody><tr>
+								<th scope="row" class="no1"><a href="/item/main.nhn?code=035080" target="_top" onclick="clickcr(this, 'pss.4', '', '1', event);">������ũ</a></th>
+								<td>8,660</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										1,720
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no2"><a href="/item/main.nhn?code=205470" target="_top" onclick="clickcr(this, 'pss.4', '', '2', event);">�޸��ý�</a></th>
+								<td>24,800</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										1,400
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no3"><a href="/item/main.nhn?code=289220" target="_top" onclick="clickcr(this, 'pss.4', '', '3', event);">���̾�Ʈ����</a></th>
+								<td>82,000</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										6,000
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no4"><a href="/item/main.nhn?code=269620" target="_top" onclick="clickcr(this, 'pss.4', '', '4', event);">�ý���</a></th>
+								<td>2,690</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										300
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no5"><a href="/item/main.nhn?code=352910" target="_top" onclick="clickcr(this, 'pss.4', '', '5', event);">�����</a></th>
+								<td>22,000</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										1,300
+									</em>
+								</td>
+							</tr>
+
+
+							<tr><td colspan="3" class="line"></td></tr>
+
+							<tr>
+								<th scope="row" class="no6"><a href="/item/main.nhn?code=131180" target="_top" onclick="clickcr(this, 'pss.4', '', '6', event);">����</a></th>
+								<td>2,650</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										535
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no7"><a href="/item/main.nhn?code=043360" target="_top" onclick="clickcr(this, 'pss.4', '', '7', event);">��������</a></th>
+								<td>5,660</td>
+								<td>
+									<em class="f_up up_arrow"><span>���Ѱ�</span>
+										1,300
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no8"><a href="/item/main.nhn?code=066970" target="_top" onclick="clickcr(this, 'pss.4', '', '8', event);">���ؿ���</a></th>
+								<td>113,700</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										2,700
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no9"><a href="/item/main.nhn?code=096530" target="_top" onclick="clickcr(this, 'pss.4', '', '9', event);">����</a></th>
+								<td>85,200</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										1,400
+									</em>
+								</td>
+							</tr>
+
+
+							<tr>
+								<th scope="row" class="no10"><a href="/item/main.nhn?code=024740" target="_top" onclick="clickcr(this, 'pss.4', '', '10', event);">���ϴ���</a></th>
+								<td>5,430</td>
+								<td>
+									<em class="f_up up"><span>����</span>
+										850
+									</em>
+								</td>
+							</tr>
+
+							</tbody></table>
+					</div>
+				</div>
+
+
+
+				<div class="aside_section rate">
+					<h2 class="h_sub sub_tit8"><span>�ü������ٷΰ���</span></h2>
+					<p>
+						<a href="/sise/sise_index.nhn?code=KOSPI" onclick="clickcr(this, 'quk.2', '', '', event);">�ڽ���</a>
+						<a href="/sise/sise_index.nhn?code=KOSDAQ" onclick="clickcr(this, 'quk.3', '', '', event);">�ڽ���</a>
+						<a href="/sise/sise_index.nhn?code=FUT" onclick="clickcr(this, 'quk.4', '', '', event);">����</a>
+						<a href="/sise/konex.nhn" class="end" onclick="clickcr(this, 'quk.konex', '', '', event);">�ڳؽ�</a><br>
+						<a href="/sise/sise_index.nhn?code=KPI200" onclick="clickcr(this, 'quk.30', '', '', event);">�ڽ���200</a>
+						<a href="/sise/etf.nhn" onclick="clickcr(this, 'quk.31', '', '', event);">ETF</a>
+						<a href="/sise/sise_group.nhn?type=upjong" onclick="clickcr(this, 'quk.5', '', '', event);"><strong>������</strong></a>
+						<a href="/sise/theme.nhn" class="end" onclick="clickcr(this, 'quk.6', '', '', event);">�׸���</a><br>
+						<a href="/sise/sise_upper.nhn" onclick="clickcr(this, 'quk.7', '', '', event);"><strong>���Ѱ�</strong></a>
+						<a href="/sise/sise_lower.nhn" onclick="clickcr(this, 'quk.8', '', '', event);">���Ѱ�</a>
+						<a href="/sise/sise_rise.nhn" onclick="clickcr(this, 'quk.9', '', '', event);">���</a>
+						<a href="/sise/sise_steady.nhn" onclick="clickcr(this, 'quk.10', '', '', event);">����</a>
+						<a href="/sise/sise_fall.nhn" class="end" onclick="clickcr(this, 'quk.11', '', '', event);">�϶�</a><br>
+						<a href="/sise/sise_quant.nhn" onclick="clickcr(this, 'quk.12', '', '', event);">�ŷ�����</a>
+						<a href="/sise/sise_quant_high.nhn" onclick="clickcr(this, 'quk.13', '', '', event);"><strong>����</strong></a>
+						<a href="/sise/sise_quant_low.nhn" class="end" onclick="clickcr(this, 'quk.14', '', '', event);">�ް�</a><br>
+						<a href="/sise/sise_high_down.nhn" onclick="clickcr(this, 'quk.15', '', '', event);">�����޶�</a>
+						<a href="/sise/sise_low_up.nhn" class="end" onclick="clickcr(this, 'quk.16', '', '', event);">�������޵�</a>
+					</p>
+					<p>
+						<a href="/sise/sise_market_sum.nhn" onclick="clickcr(this, 'quk.17', '', '', event);"><strong>�ð��Ѿ׻���</strong></a>
+						<a href="/sise/sise_foreign_hold.nhn" class="end" onclick="clickcr(this, 'quk.18', '', '', event);">�ܱ��κ�����Ȳ</a><br>
+						<a href="/sise/sise_deal_rank.nhn" onclick="clickcr(this, 'quk.19', '', '', event);">�ܱ��θŸ�</a>
+						<a href="/sise/sise_deal_rank.nhn?investor_gubun=1000" onclick="clickcr(this, 'quk.19-1', '', '', event);">����Ÿ�</a>
+						<a href="/sise/sise_program.nhn" class="end" onclick="clickcr(this, 'quk.20', '', '', event);">���α׷��Ÿ�</a><br>
+						<a href="/sise/management.nhn" onclick="clickcr(this, 'quk.21', '', '', event);">��������������</a>
+						<a href="/sise/sise_new_stock.nhn" class="end" onclick="clickcr(this, 'quk.22', '', '', event);">�űԻ�������</a><br>
+						<a href="/sise/sise_deposit.nhn" onclick="clickcr(this, 'quk.23', '', '', event);">�����ڱݵ���</a>
+						<a href="/sise/sise_trans_style.nhn" class="end" onclick="clickcr(this, 'quk.24', '', '', event);">�����ں��Ÿŵ���</a>
+					</p>
+					<p>
+						<a href="/sise/item_gap.nhn" onclick="clickcr(this, 'quk.25', '', '', event);">����� ����</a>
+						<a href="/sise/item_gold.nhn" class="end" onclick="clickcr(this, 'quk.26', '', '', event);">���ũ�ν� ����</a><br>
+						<a href="/sise/item_igyuk.nhn" onclick="clickcr(this, 'quk.27', '', '', event);">�̰ݵ���������</a>
+						<a href="/sise/item_overheating_1.nhn" class="end" onclick="clickcr(this, 'quk.28', '', '', event);">���ڽɸ���������</a><br>
+						<a href="/sise/item_overheating_2.nhn" class="end" onclick="clickcr(this, 'quk.29', '', '', event);">��밭����������</a>
+					</p>
+					<a href="/sise/" class="more" onclick="clickcr(this, 'quk.1', '', '', event);">������</a>
+					<div class="hidden_line"></div>
+				</div>
+
+
+
+
+
+
+				<div class="aside_section notice">
+					<h2 class="h_sub sub_tit10"><span>��������</span></h2>
+					<ul>
+
+						<li><a href="https://finance.naver.com/notice.nhn?permLink=/read/1100001004/10000000000030671019" onclick="clickcr(this, 'ice.2', 'https://finance.naver.com/notice.nhn?permLink=/read/1100001004/10000000000030671019', '1', event)">�̱�/���� ����Ÿ�� ���뿡 ���� ...</a></li>
+
+						<li><a href="https://finance.naver.com/notice.nhn?permLink=/read/1100001004/10000000000030670546" onclick="clickcr(this, 'ice.2', 'https://finance.naver.com/notice.nhn?permLink=/read/1100001004/10000000000030670546', '2', event)">���� ���������� �÷�����Ʈ�� ht...</a></li>
+
+						<li><a href="" onclick="clickcr(this, 'ice.2', '', '3', event)"></a></li>
+
+						<li><a href="" onclick="clickcr(this, 'ice.2', '', '4', event)"></a></li>
+
+						<li><a href="" onclick="clickcr(this, 'ice.2', '', '5', event)"></a></li>
+
+					</ul>
+					<a href="https://finance.naver.com/notice.nhn" class="more" onclick="clickcr(this, 'ice.1', '', '', event);">������</a>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="footer">
+		<ul>
+			<li class="first">
+				<a href="https://www.naver.com/rules/service.html" onclick="clickcr(this, 'fot.service', '', '', event);" target="_blank">�̿���</a>
+			</li>
+			<li>
+				<a href="https://finance.naver.com/rules.nhn" onclick="clickcr(this, 'fot.policy', '', '', event);" target="_blank">�����Խ��� ���Ģ</a>
+			</li>
+			<li>
+				<a href="https://www.naver.com/rules/privacy.html" onclick="clickcr(this, 'fot.privacy', '', '', event);" target="_blank"><strong>��������ó����ħ</strong></a>
+			</li>
+			<li>
+				<a href="https://www.naver.com/rules/disclaimer.html" onclick="clickcr(this, 'fot.limit', '', '', event);" target="_blank">å���� �Ѱ�� ��������</a>
+			</li>
+			<li>
+				<a href="https://help.naver.com/support/alias/contents2/finance/finance_1.naver" onclick="clickcr(this, 'fot.help', '', '', event);" target="_blank">���� ������</a>
+			</li>
+		</ul>
+		<p class="desc">���̹�(��)�� �����ϴ� ���� ������ �� ������ ������ü<a href="javascript:;" onclick="togglePanelFooter('footerPanel0');" class="desc_help"><img src="https://ssl.pstatic.net/static/nfinance/2018/06/29/btn_help.png" width="17" height="17" alt="������ü �󼼼���"></a>�κ��� �޴� ���� ��������̸�, ������ �߻��ϰų� ������ �� �ֽ��ϴ�.<br>���̹�(��)�� ������ ������ü�� ������ ������ ���� ���� ����� ������ å���� ���� �ʽ��ϴ�. �Խõ� ������ �������� ������ �� �����ϴ�.</p>
+		<div id="footerPanel0" class="provider_layer" style="display:none" tabindex="0" onblur="hidePannel('footerPanel0')">
+			<strong class="provider_layer__tit">������ ������ü</strong>
+			<div class="provider_layer__txt">
+				<p><span>�ڽ��� : </span>�ǽð� �ְ����� �� �����ü�����</p>
+				<p><span>�����ذ��̵� : </span>��� �� �繫����</p>
+				<p><span>KG������ : </span>�ؿ� �ü�, ������ǥ �� �ݵ� ����</p>
+				<p><span>�ѱ���Ź������ : </span>������ȸ�� �� ������ǥ ����</p>
+				<p><span>������Ź : </span>���� �׸� ����</p>
+			</div>
+			<span class="arrow"></span>
+		</div>
+		<address>
+			<a href="https://www.navercorp.com/" target="_blank" class="logo" onclick="clickcr(this, 'fot.nhn', '', '', event);"><img src="https://ssl.pstatic.net/static/nfinance/2019/02/22/ci_naver.png" width="58" height="11" alt="NAVER"></a>
+			<em>Copyright ?</em>
+			<a href="https://www.navercorp.com/" target="_blank" onclick="clickcr(this, 'fot.nhn', '', '', event);">NAVER Corp.</a>
+			<span>All Rights Reserved.</span>
+		</address>
+
+
+
+	</div>
+
+
+
+	<script type="text/javascript">
+function isVisible(obj) {
+    if (obj == document) return true
+ 
+    if (!obj) return false
+    if (!obj.parentNode) return false
+    if (obj.style) {
+        if (obj.style.display == 'none') return false
+        if (obj.style.visibility == 'hidden') return false
+    }
+ 
+    if (window.getComputedStyle) {
+        var style = window.getComputedStyle(obj, "")
+        if (style.display == 'none') return false
+        if (style.visibility == 'hidden') return false
+    }
+ 
+    var style = obj.currentStyle
+    if (style) {
+        if (style['display'] == 'none') return false
+        if (style['visibility'] == 'hidden') return false
+    }
+ 
+    return isVisible(obj.parentNode)
+}
+
+function isChildOf(myobj, containerObj) {
+	while(myobj != undefined) {
+		if (myobj == document.body) {
+			break;
+		} 
+		if (myobj == containerObj) {
+			return true;
+		}
+		myobj = myobj.parentElement;
+	}
+	return false;	
+}
+
+function gnbLayerClose(e){
+	var target = e.target ? e.target : e.srcElement;
+	if (isVisible(document.getElementById('gnb_service_lyr')) || isVisible(document.getElementById('gnb_notice_lyr')) ||isVisible(document.getElementById('gnb_my_lyr')) ) {
+		if (!isChildOf(target, document.getElementById('gnb'))) {
+			gnbAllLayerClose();
+		}
+	}	
+}
+
+var isIE = (navigator.userAgent.toLowerCase().indexOf("msie")!=-1 && window.document.all) ? true:false;
+if (isIE) {
+	document.attachEvent('onmousedown', gnbLayerClose);
+} else {
+	window.addEventListener('mousedown', gnbLayerClose);
+}
+
+function showPannel(layerId){
+    var layer = jindo.$(layerId);
+    layer.style.display='block';
+
+    if (layerId == "summary_lyr") {
+        var layerHeight = jindo.$Element(layer).height();
+        jindo.$Element("summary_ifr").height(layerHeight);
+    }
+}
+
+function hidePannel(layerId){
+    var layer = jindo.$(layerId);
+    layer.style.display='none';
+}
+
+function togglePanelFooter(layerId) {
+    var elTargetLayer = jindo.$Element(jindo.$$.getSingle("#" + layerId));
+
+    if (elTargetLayer != null) {
+        if (elTargetLayer.visible()) {
+            hidePannel(layerId);
+        } else {
+            showPannel(layerId);
+        }
+    }
+}
+
+// add data-useragent
+document.documentElement.setAttribute('data-useragent',navigator.userAgent);
+</script>
+</div>
+
+
+
+<script language="javascript" type="text/javascript">
+	jindo.$Fn(function(){
+		jindo.EllipseText.factory(jindo.$$(".new_bbs DIV.sub_section li span.txt"), {nAssistWidth: 9});
+	}).attach(document,'domready');
+</script></body></html>
