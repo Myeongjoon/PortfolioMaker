@@ -48,8 +48,7 @@ public class TogetherFundingParsingService {
         try {
             response.currentPriceSum = StringUtil.parseMoney(tables.first().text());
         } catch (Exception e) {
-            logger.error(e.toString());
-            logger.debug(document.toString());
+            logger.warn(document.toString());
             throw e;
         }
         return response;

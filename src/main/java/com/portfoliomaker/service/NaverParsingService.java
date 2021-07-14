@@ -84,8 +84,7 @@ public class NaverParsingService {
         try {
             price = StringUtil.parseDoubleMoney(codes.text());
         } catch (Exception e) {
-            logger.error(e.toString());
-            logger.debug(document.toString());
+            logger.warn(document.toString());
             throw e;
         }
         stockPrice.date = date;
