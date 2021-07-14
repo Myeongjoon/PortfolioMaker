@@ -57,7 +57,7 @@ public class NaverParsingService {
         try {
             stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
         } catch (NumberFormatException e) {
-            logger.debug(document.toString());
+            logger.warn(document.toString());
             throw e;
         }
         document.select("#time").select(".date").select("span").remove();
