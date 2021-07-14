@@ -20,8 +20,7 @@ public class NaverParsingServiceTest {
     @Test
     public void naverFinanceTest() {
         String source = TestUtil.getHtmlByString("stock/naver/naverFinance.html");
-        Document document = Jsoup.parse(source, "utf-8");
-        StockPrice response = naverParsingService.parse(document, "013360");
+        StockPrice response = naverParsingService.parse(source, "013360");
         assertEquals(response.currentPrice, 4415);
         assertEquals(response.previousRate, 21.12);
         assertEquals(response.name, "일성건설");
@@ -32,8 +31,7 @@ public class NaverParsingServiceTest {
     @Test
     public void naverFinanceTest2() {
         String source = TestUtil.getHtmlByString("stock/naver/naverFinance2.html");
-        Document document = Jsoup.parse(source, "utf-8");
-        StockPrice response = naverParsingService.parse(document, "019170");
+        StockPrice response = naverParsingService.parse(source, "019170");
         assertEquals(response.currentPrice, 69800);
         assertEquals(response.previousRate, -26.99);
         assertEquals(response.name, "신풍제약");
@@ -44,23 +42,28 @@ public class NaverParsingServiceTest {
     @Test
     public void naverFinanceTest3() {
         String source = TestUtil.getHtmlByString("stock/naver/naverFinance3.html");
-        Document document = Jsoup.parse(source, "utf-8");
-        StockPrice response = naverParsingService.parse(document, "019170");
+        StockPrice response = naverParsingService.parse(source, "019170");
         assertEquals(response.currentPrice, 82800);
     }
-
 
     @Test
     public void naverFinanceTest4() {
         String source = TestUtil.getHtmlByString("stock/naver/naverFinance4.html");
-        Document document = Jsoup.parse(source, "utf-8");
-        StockPrice response = naverParsingService.parse(document, "019170");
-        //TODO 개장전 테스트 투가
+        StockPrice response = naverParsingService.parse(source, "019170");
+        //TODO 개장전 테스트 추가
     }
+
+
+    @Test
+    public void naverFinanceTest5() {
+        String source = TestUtil.getHtmlByString("stock/naver/naverFinance5.html");
+        StockPrice response = naverParsingService.parse(source, "096770");
+        assertEquals(response.previousRate, -0.18);
+    }
+
     @Test
     public void naver_finance_after_market_test() {
         String source = TestUtil.getHtmlByString("stock/naver/naver_finance_after_market.html");
-        Document document = Jsoup.parse(source, "utf-8");
-        StockPrice response = naverParsingService.parse(document, "019170");
+        StockPrice response = naverParsingService.parse(source, "019170");
     }
 }

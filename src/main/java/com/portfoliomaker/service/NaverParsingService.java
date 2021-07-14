@@ -28,9 +28,8 @@ public class NaverParsingService {
         String url = "https://finance.naver.com/item/main.nhn?code=" + meta.ticker;
         seleniumService.getDriver().get(url);
         String source = seleniumService.getDriver().getPageSource();
-        Document document = Jsoup.parse(source);
         seleniumService.getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("chart_area")));
-        StockPrice stockPrice = parse(document, meta.ticker);
+        StockPrice stockPrice = parse(source, meta.ticker);
         meta.name = stockPrice.name;
         meta.previousRate = stockPrice.previousRate;
         if (meta.priceDate == null || meta.priceDate.before(stockPrice.date)) {
@@ -40,24 +39,28 @@ public class NaverParsingService {
         return meta;
     }
 
+
     /**
      * 네이버 증권 크롤링
      *
-     * @param document
-     * @param ticker
-     * @return
+     * @param source : 원본 html
+     * @param ticker : 주식 ticker
+     * @return : 파싱된 정보
      */
-    public StockPrice parse(Document document, String ticker) {
+    public StockPrice parse(String source, String ticker) {
         StockPrice stockPrice = new StockPrice();
+        Document document = Jsoup.parse(source);
         Element codes = document.select("#chart_area").select(".today").select("p").first();
         String name = document.select(".wrap_company").select("a").first().text();
         Elements previousRate = document.select(".no_exday");
         previousRate.select(".sp_txt1").remove();
+        //데이터 변경된 경우 블라인드라는 태그가 추가됨.
+        previousRate.select(".blind").remove();
         String previousRateReplaced = previousRate.select("em").get(1).text().replace("%", "");
         try {
             stockPrice.previousRate = StringUtil.parseDoubleMoney(previousRateReplaced);
         } catch (NumberFormatException e) {
-            logger.warn(document.toString());
+            logger.warn(source);
             throw e;
         }
         document.select("#time").select(".date").select("span").remove();
