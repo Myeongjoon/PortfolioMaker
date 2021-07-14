@@ -81,7 +81,7 @@
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${LOG_HOME}/warn_%d{yyyy-MM-dd-HH}-%i.log.zip</fileNamePattern>
-            <maxFileSize>10 MB</maxFileSize>
+            <maxFileSize>100 MB</maxFileSize>
             <maxHistory>168</maxHistory>
             <totalSizeCap>10GB</totalSizeCap>
         </rollingPolicy>
