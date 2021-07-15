@@ -25,6 +25,7 @@
             <th>위치</th>
             <th>기준가</th>
             <th>기준일</th>
+            <th>섹터</th>
             <th>del</th>
         </tr>
         <tr th:each="meta : ${metas}" data-hasChildren=0>
@@ -36,6 +37,7 @@
             <td th:text="${meta.location}"></td>
             <td th:text="${meta.price}"></td>
             <td th:text="${meta.priceDate}"></td>
+            <td th:text="${meta.sector}"></td>
             <td><input th:attr="data-id=${meta.id}" type="button" class="deleteBtn" value="delete"
                        style="color: red;"></td>
         </tr>

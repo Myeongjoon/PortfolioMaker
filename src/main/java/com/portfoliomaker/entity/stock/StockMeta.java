@@ -38,6 +38,11 @@ public class StockMeta {
      */
     public Double previousRate;
 
+    /**
+     * 주식 섹터
+     */
+    public String sector;
+
     public String hash() {
         return this.ticker + this.priceDate.toString();
     }
