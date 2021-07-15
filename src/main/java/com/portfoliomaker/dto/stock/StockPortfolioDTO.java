@@ -46,6 +46,11 @@ public class StockPortfolioDTO {
      */
     public String rate;
 
+    /**
+     * 주식 섹터
+     */
+    public String sector;
+
     public String price;
 
     public StockPortfolioDTO(StockPortfolio p) {
