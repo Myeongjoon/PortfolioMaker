@@ -64,15 +64,20 @@ public class NaverParsingService {
             logger.warn(source);
             throw e;
         }
-        document.select("#time").select(".date").select("span").remove();
+        Elements span = document.select("#time").select(".date").select("span");
+        span.remove();
+        int hour = 15;
+        if (span.text().contains("개장전")) {
+            hour = 0;
+        }
         String time = document.select("#time").select(".date").text();
         Date date = new Date();
         if (time.length() == 10) {
+            //시간이 없는 경우
             try {
                 SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd");
                 date = transFormat.parse(time);
-                date.setHours(15);
-                //TODO 장 시작 이전 체크
+                date.setHours(hour);
             } catch (ParseException e) {
                 e.printStackTrace();
             }

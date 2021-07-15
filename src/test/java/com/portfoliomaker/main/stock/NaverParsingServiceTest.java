@@ -4,11 +4,13 @@ import com.portfoliomaker.entity.stock.StockPrice;
 import com.portfoliomaker.main.Application;
 import com.portfoliomaker.main.TestUtil;
 import com.portfoliomaker.service.NaverParsingService;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -47,10 +49,14 @@ public class NaverParsingServiceTest {
     }
 
     @Test
-    public void naverFinanceTest4() {
-        String source = TestUtil.getHtmlByString("stock/naver/naverFinance4.html");
+    public void 개장전_테스트() throws ParseException {
+        String source = TestUtil.getHtmlByString("stock/naver/naver_before_open.html");
         StockPrice response = naverParsingService.parse(source, "019170");
-        //TODO 개장전 테스트 추가
+        assertEquals(response.location, "KOSPI");
+        String targetDateString = "2021.07.15 00:00";
+        SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+        Date targetDate = transFormat.parse(targetDateString);
+        assertEquals(response.date, targetDate);
     }
 
 
