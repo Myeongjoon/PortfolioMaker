@@ -93,6 +93,59 @@ function drawGrid(data, status, xhr) {
   });
 }
 
+function drawPortfolioChart(data, status, xhr) {
+  var array = [];
+  array.push(['name', 'price'])
+  for (const element of data) {
+    var temp = []
+    temp.push(element.name)
+    temp.push(Number(element.currentPriceSum.replace(/,/gi, "")))
+    array.push(temp)
+  }
+  var data = google.visualization.arrayToDataTable(array);
+
+  var options = {
+    title: '나의 포트폴리오'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}
+
+function drawSectorChart(data, status, xhr) {
+  let map = new Map();
+  var array = [];
+  array.push(['sector', 'price'])
+  for (const element of data) {
+    var price = element.currentPriceSum.replace(/,/gi, "");
+    const sector = element.sector == null ? "unkown" : element.sector;
+    if (map.has(sector)) {
+      var temp = map.get(sector);
+      map.delete(sector);
+      map.set(sector, Number(temp) + Number(price));
+    } else {
+      if (sector == null) {
+        map.set("unkown", price);
+      } else {
+        map.set(sector, price);
+      }
+    }
+  }
+  for (const key of map.keys()) {
+    array.push([key, map.get(key)]);
+  }
+  var data = google.visualization.arrayToDataTable(array);
+
+  var options = {
+    title: '섹터 비중'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('sector_pie_chart'));
+
+  chart.draw(data, options);
+}
+
 function drawChart() {
 
   var current_url = window.location.href
@@ -113,24 +166,9 @@ function drawChart() {
     context: this,
 
     success: function (data, status, xhr) {
-      drawGrid(data, status, xhr)
-      var array = [];
-      array.push(['name', 'price'])
-      for (const element of data) {
-        var temp = []
-        temp.push(element.name)
-        temp.push(Number(element.currentPriceSum.replace(/,/gi, "")))
-        array.push(temp)
-      }
-      var data = google.visualization.arrayToDataTable(array);
-
-      var options = {
-        title: '나의 포트폴리오'
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-      chart.draw(data, options);
+      drawGrid(data, status, xhr);
+      drawPortfolioChart(data, status, xhr);
+      drawSectorChart(data, status, xhr);
     }
   });
 }
