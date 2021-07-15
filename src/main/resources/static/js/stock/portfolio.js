@@ -1,6 +1,9 @@
 import urlModule from './../util/url_util.js';
 import graphModule from './../util/graph_util.js';
 
+google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawChart);
+
 function saveStock() {
   $.ajax({
     url: '/stock',
@@ -35,12 +38,13 @@ $(document).on('click', '.deleteBtn', function () {
 
 });
 
-window.addEventListener("load", function () {
+function drawChart() {
+
   var current_url = window.location.href
   var url = '/stock/portfolio/list';
   if (current_url.indexOf("stock/portfolio/k") != -1) {
     url += '?location=KOSPI'
-  } else if(current_url.indexOf("stock/portfolio/n") != -1){
+  } else if (current_url.indexOf("stock/portfolio/n") != -1) {
     url += '?location=NASDAQ'
   } else {
     var loc = urlModule.getParam("location");
@@ -107,7 +111,26 @@ window.addEventListener("load", function () {
           { title: "삭제", field: "car", width: 90, hozAlign: "center", formatter: "tickCross", sorter: "boolean", editor: true },
         ],
       });
+
+
+
+      var array = [];
+      array.push(['name', 'price'])
+      for (const element of data) {
+        var temp = []
+        temp.push(element.name)
+        temp.push(Number(element.currentPriceSum.replace(/,/gi, "")))
+        array.push(temp)
+      }
+      var data = google.visualization.arrayToDataTable(array);
+
+      var options = {
+        title: '나의 포트폴리오'
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
     }
   });
-});
-
+}
