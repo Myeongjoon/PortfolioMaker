@@ -93,8 +93,12 @@ public class NaverParsingService {
         try {
             price = StringUtil.parseDoubleMoney(codes.text());
         } catch (Exception e) {
-            logger.warn(document.toString());
+            logger.warn(source);
             throw e;
+        }
+        //가격이 무조건 잘못된 케이스
+        if (price > 10000000) {
+            logger.warn(source);
         }
         stockPrice.date = date;
         stockPrice.currentPrice = price;
