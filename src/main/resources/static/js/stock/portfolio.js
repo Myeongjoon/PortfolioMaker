@@ -118,12 +118,12 @@ function drawSectorChart(data, status, xhr) {
   var array = [];
   array.push(['sector', 'price'])
   for (const element of data) {
-    var price = element.currentPriceSum.replace(/,/gi, "");
+    var price = Number(element.currentPriceSum.replace(/,/gi, ""));
     const sector = element.sector == null ? "unkown" : element.sector;
     if (map.has(sector)) {
       var temp = map.get(sector);
       map.delete(sector);
-      map.set(sector, Number(temp) + Number(price));
+      map.set(sector, temp + price);
     } else {
       if (sector == null) {
         map.set("unkown", price);

@@ -15,7 +15,7 @@ import javax.persistence.*;
                         @ColumnResult(name = "name", type = String.class),
                         @ColumnResult(name = "count", type = String.class),
                         @ColumnResult(name = "previous_rate", type = String.class),
-                        @ColumnResult(name = "price", type = String.class)
+                        @ColumnResult(name = "sector", type = String.class)
                 })
 )
 @Entity

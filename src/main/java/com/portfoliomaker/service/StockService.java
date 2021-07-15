@@ -88,6 +88,7 @@ public class StockService {
             p.ticker as ticker,
             p.buy_price_sum as buy_price_sum,
             p.count as count,
+            l.sector as sector,
             case when l.price is null then p.current_price_sum else l.price * p.count end as current_price_sum,
             p.location as location,
             l.name as name,
